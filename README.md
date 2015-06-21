@@ -9,7 +9,7 @@ application that you can use as the skeleton for your new applications.
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
-This project contains a custom [UserBundle][2].
+This project contains a custom [UserBundle][2] based on [FOSUserBundle][3].
 
 Features Custom Registration, Password Resetting, Custom Email Activation,
 Custom Profile, Custom Profile Edition, Standard Login. Powered By
@@ -26,3 +26,4 @@ Bootstrap.
 
 [1]:  http://symfony.com/doc/2.6/book/installation.html
 [2]:  https://github.com/fcpauldiaz/plataforma_virtual/tree/master/src/UserBundle
+[3]:  https://github.com/FriendsOfSymfony/FOSUserBundle
