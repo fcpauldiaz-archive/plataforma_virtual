@@ -1,0 +1,69 @@
+<div id="loginbox" class="mainbox col-md-12"> 
+	<div class="panel panel-default" >
+ 		<div class="panel-heading">
+                <div class="panel-title text-center">Actualizar Perfil </div>
+         </div>     
+
+         <div class="panel-body" >
+
+			<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+
+			{{form_start(form)}}
+
+			<br>
+
+           <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+          	{{form_row(form.username,{'attr': {'class': 'form-control','placeholder':'Nombre Usuario'}})}}
+
+           </div>
+
+           <br>
+
+           <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+
+          	{{form_row(form.email,{'attr': {'class': 'form-control','placeholder':'Correo'}})}}
+
+           </div>
+
+
+           <br>
+
+           <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+
+          	{{form_row(form.nombreCompleto,{'attr': {'class': 'form-control','placeholder':'Nombre Completo'}})}}
+
+           </div>
+
+
+           <br>
+
+           <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+          	{{form_row(form.current_password,{'attr': {'class': 'form-control','placeholder':'Contraseña Actual'}})}}
+
+           </div>
+
+
+
+   
+		    <div>
+		        <button type="submit" class="btn btn-primary btn-block" value="">
+		        	{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}
+		        </button>
+		    </div>
+ 			{{form_end(form)}}
+
+    			
+            </form>     
+    	</div>                     
+	</div>  
+</div>
+
+
+  
+

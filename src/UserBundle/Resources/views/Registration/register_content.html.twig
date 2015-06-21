@@ -1,0 +1,79 @@
+    <div id="loginbox" class="mainbox col-md-12"> 
+        
+       
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title text-center">Registro Usuario </div>
+            </div>     
+
+            <div class="panel-body" >
+
+                <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                	
+
+
+    	
+                   
+                    {{form_start(form)}}
+                    
+                    <br>
+
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+
+                      	{{form_row(form.nombreCompleto,{'attr': {'class': 'form-control','placeholder':'Nombre Completo'}})}}
+
+                    </div>
+                    <br>
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                      	{{form_row(form.username,{'attr': {'class': 'form-control','placeholder':'Usuario'}})}}
+
+                    </div>
+
+      				<br>
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+
+                      	{{form_row(form.email,{'attr': {'class': 'form-control','placeholder':'Correo'}})}}
+
+                    </div>
+					<br>
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+                      	{{form_row(form.plainPassword.first,{'attr': {'class': 'form-control','placeholder':'Contraseña'}})}}
+
+                    </div>
+
+         			<br>
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+                      	{{form_row(form.plainPassword.second,{'attr': {'class': 'form-control','placeholder':'Confirmar Contraseña'}})}}
+
+                    </div>
+                                                                                       
+                    <br>
+                    <div class="form-group">
+                        <!-- Button -->
+                        <div class="col-sm-12 controls">
+                            <button type="submit" value="{{ 'Guardar'|trans({}, 'FOSUserBundle') }}" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-log-in"></i>Guardar </button>                          
+                        </div>
+                       
+                    </div>
+
+               
+				{{form_end(form)}}
+
+    			
+                </form>     
+
+            </div>                     
+        </div>  
+    
+      </div>
+
+
+  
