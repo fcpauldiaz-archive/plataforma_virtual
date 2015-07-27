@@ -22,8 +22,7 @@ class Usuario extends BaseUser
     /**
      * @var string
      */
-    protected $nombreCompleto;
-
+    private $nombreCompleto;
 
     /**
      * Get id
