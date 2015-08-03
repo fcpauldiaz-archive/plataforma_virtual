@@ -31,18 +31,11 @@ class Usuario extends BaseUser
     private $nombreCompleto;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Curso", inversedBy="usuario")
+     * @ORM\ManyToMany(targetEntity="Curso", inversedBy="usuario")
      * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;
 
-     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -75,39 +68,5 @@ class Usuario extends BaseUser
     public function getNombreCompleto()
     {
         return $this->nombreCompleto;
-    }
-   
-
-    /**
-     * Add cursos
-     *
-     * @param \UserBundle\Entity\Curso $cursos
-     * @return Usuario
-     */
-    public function addCurso(\UserBundle\Entity\Curso $cursos)
-    {
-        $this->cursos[] = $cursos;
-
-        return $this;
-    }
-
-    /**
-     * Remove cursos
-     *
-     * @param \UserBundle\Entity\Curso $cursos
-     */
-    public function removeCurso(\UserBundle\Entity\Curso $cursos)
-    {
-        $this->cursos->removeElement($cursos);
-    }
-
-    /**
-     * Get cursos
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getCursos()
-    {
-        return $this->cursos;
     }
 }
