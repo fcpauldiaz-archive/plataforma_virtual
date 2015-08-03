@@ -1,14 +1,16 @@
-{% extends '::base.html.twig' %}
+{% extends 'base_page.html.twig' %}
 
-{% block body -%}
-    <h1>Curso list</h1>
+{% block body_title%} <h1>Listado de Cursos</h1> {% endblock %}
 
-    <table class="records_list">
+{% block body_content -%}
+   
+
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nombrecurso</th>
-                <th>Codigocurso</th>
+                <th>Nombre Curso</th>
+                <th>Código Curso</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -36,7 +38,7 @@
         <ul>
         <li>
             <a href="{{ path('curso_new') }}">
-                Create a new entry
+                Crear Nuevo Curso
             </a>
         </li>
     </ul>
