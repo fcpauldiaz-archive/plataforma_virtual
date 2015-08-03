@@ -14,6 +14,15 @@ class RegistrationFormType extends AbstractType
         $builder->add('nombreCompleto',null,array('label' => false));
     }
 
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'validation' => array('registration')
+        ));
+    }
     public function getParent()
     {
         return 'fos_user_registration';

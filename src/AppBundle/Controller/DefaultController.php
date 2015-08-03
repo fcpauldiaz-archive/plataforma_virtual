@@ -12,7 +12,15 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('UserBundle:Default:index.html.twig');
+        return $this->render('default/index.html.twig');
+    }
+
+     /**
+     * @Route("/perfil", name="perfil")
+     */
+    public function lolAction()
+    {
+        return $this->render('base_page.html.twig');
     }
 
     /**

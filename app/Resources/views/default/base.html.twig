@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Learn-In!{% endblock %}</title>
+
+        
+        <!-- Bootstrap Core CSS -->
+        <link href=" {{ asset('bootstrap/css/bootstrap.min.css') }} " rel="stylesheet">
+
+        <!-- Font Awesome CSS -->
+        <link href=" {{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+         <!-- Template js -->
+        <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
+        <script src="{{asset('bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.appear.js') }}"></script>
+        <script src="{{ asset('js/contact_me.js') }}"></script>
+        <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
+        <script src="{{ asset('js/modernizr.custom.js') }}"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
+    
+
+        {% block stylesheets %}{% endblock %}
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

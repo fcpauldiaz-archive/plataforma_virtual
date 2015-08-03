@@ -10,17 +10,23 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
- * Usuario
+ * @ORM\Table(name="Usuarios")
+ * @ORM\Entity
  */
 class Usuario extends BaseUser
 {
     /**
      * @var integer
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
-    /**
+    
+     /**
      * @var string
+     * @ORM\Column(name="nombreCompleto", type="string", length=50)
      */
     private $nombreCompleto;
 
