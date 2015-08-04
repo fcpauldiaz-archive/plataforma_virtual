@@ -1,0 +1,20 @@
+easy_admin:
+    site_name: 'Learn-In Admin'
+    entities:
+        Users:
+            class: UserBundle\Entity\Usuario
+            list:
+                fields:
+                    - id
+                    - username
+                    - email
+                    - nombreCompleto
+            form:
+                fields:
+                    - username
+                    - email
+                    - plainPassword
+                    - roles
+                    - enabled
+        Cursos:
+            class: AppBundle\Entity\Curso
