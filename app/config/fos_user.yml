@@ -7,6 +7,7 @@ fos_user:
     registration: #user registration
         form:
             type:  user_registration #custom user registration service
+            validation_groups:  [EmailDomainValidation,Default,Registration]
         confirmation:
             enabled:    true # change to true for required email confirmation
             template:   UserBundle:Registration:registration.email.twig  
@@ -24,6 +25,7 @@ fos_user:
             template:   UserBundle:Resetting:resetting.email.twig
         form:
             type:               fos_user_resetting
+            
 
     profile:
        form:

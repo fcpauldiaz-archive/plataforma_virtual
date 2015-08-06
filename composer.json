@@ -8,10 +8,7 @@
             "SymfonyStandard\\": "app/SymfonyStandard/"
         }
     },
-    "repositories": [{
-    "type": "git",
-    "url":  "git://github.com/fcpauldiaz/FOSUserBundle.git"
-    }],
+   
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",
