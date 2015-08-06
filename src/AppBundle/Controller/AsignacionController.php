@@ -14,17 +14,16 @@ class AsignacionController extends Controller
     /**
      * Don't forget to add this route annotation!
      *
-     * @Route("/listarCursos/{usuario_id}", name="asignacion")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
+     * @Route("/listarCursos/", name="asignacion")
+     * 
      */
-    public function listarAction(Request $request, Usuario $usuario)
+    public function listarAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $cursos = $em->getRepository('AppBundle:Curso')->findAll();
 
-		return $this->render('AppBundle:Asignacion:listar.html.twig', array('cursos' => $cursos,
-			'usuario' => $usuario ));
+		return $this->render('AppBundle:Asignacion:listar.html.twig', array('cursos' => $cursos));
     }
 
     /**

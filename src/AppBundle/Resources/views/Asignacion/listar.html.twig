@@ -11,13 +11,17 @@
 		</thead>
 		<tbody>
 			{% for curso in cursos %}
+			<tr>
+			
 				<td> {{ curso.nombreCurso }} </td>
 				<td> 
-					<a href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
-						khjhgk
+					<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
+						Asignar Curso
 					</a>
 				</td>
-			{% endfor %}	
+			
+			</tr>	
+			{% endfor %}
 		</tbody>
 	</table>
 {% endblock %}
