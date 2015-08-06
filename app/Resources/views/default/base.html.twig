@@ -25,7 +25,6 @@
         <script src="{{asset('bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/jquery.appear.js') }}"></script>
         <script src="{{ asset('js/contact_me.js') }}"></script>
-        <script src="{{ asset('js/jqBootstrapValidation.js') }}"></script>
         <script src="{{ asset('js/modernizr.custom.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
     
@@ -33,9 +32,9 @@
         {% block stylesheets %}{% endblock %}
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+        </head>
+        <body>
+            {% block body %}{% endblock %}
+            {% block javascripts %}{% endblock %}
+        </body>
 </html>

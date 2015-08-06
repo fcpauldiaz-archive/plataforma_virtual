@@ -7,21 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use AppBundle\Entity\Curso;
-use AppBundle\Form\CursoType;
+use AppBundle\Entity\Foro;
+use AppBundle\Form\ForoType;
 
 /**
- * Curso controller.
+ * Foro controller.
  *
- * @Route("/curso")
+ * @Route("/foro")
  */
-class CursoController extends Controller
+class ForoController extends Controller
 {
 
     /**
-     * Lists all Curso entities.
+     * Lists all Foro entities.
      *
-     * @Route("/", name="curso")
+     * @Route("/", name="foro")
      * @Method("GET")
      * @Template()
      */
@@ -29,22 +29,22 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBundle:Curso')->findAll();
+        $entities = $em->getRepository('AppBundle:Foro')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new Curso entity.
+     * Creates a new Foro entity.
      *
-     * @Route("/", name="curso_create")
+     * @Route("/", name="foro_create")
      * @Method("POST")
-     * @Template("AppBundle:Curso:new.html.twig")
+     * @Template("AppBundle:Foro:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Curso();
+        $entity = new Foro();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -53,7 +53,7 @@ class CursoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('foro_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class CursoController extends Controller
     }
 
     /**
-     * Creates a form to create a Curso entity.
+     * Creates a form to create a Foro entity.
      *
-     * @param Curso $entity The entity
+     * @param Foro $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Curso $entity)
+    private function createCreateForm(Foro $entity)
     {
-        $form = $this->createForm(new CursoType(), $entity, array(
-            'action' => $this->generateUrl('curso_create'),
+        $form = $this->createForm(new ForoType(), $entity, array(
+            'action' => $this->generateUrl('foro_create'),
             'method' => 'POST',
         ));
 
@@ -82,15 +82,15 @@ class CursoController extends Controller
     }
 
     /**
-     * Displays a form to create a new Curso entity.
+     * Displays a form to create a new Foro entity.
      *
-     * @Route("/new", name="curso_new")
+     * @Route("/new", name="foro_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Curso();
+        $entity = new Foro();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -100,9 +100,9 @@ class CursoController extends Controller
     }
 
     /**
-     * Finds and displays a Curso entity.
+     * Finds and displays a Foro entity.
      *
-     * @Route("/{id}", name="curso_show")
+     * @Route("/{id}", name="foro_show")
      * @Method("GET")
      * @Template()
      */
@@ -110,10 +110,10 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Curso')->find($id);
+        $entity = $em->getRepository('AppBundle:Foro')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Curso entity.');
+            throw $this->createNotFoundException('Unable to find Foro entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -125,9 +125,9 @@ class CursoController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Curso entity.
+     * Displays a form to edit an existing Foro entity.
      *
-     * @Route("/{id}/edit", name="curso_edit")
+     * @Route("/{id}/edit", name="foro_edit")
      * @Method("GET")
      * @Template()
      */
@@ -135,10 +135,10 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Curso')->find($id);
+        $entity = $em->getRepository('AppBundle:Foro')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Curso entity.');
+            throw $this->createNotFoundException('Unable to find Foro entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -152,16 +152,16 @@ class CursoController extends Controller
     }
 
     /**
-    * Creates a form to edit a Curso entity.
+    * Creates a form to edit a Foro entity.
     *
-    * @param Curso $entity The entity
+    * @param Foro $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Curso $entity)
+    private function createEditForm(Foro $entity)
     {
-        $form = $this->createForm(new CursoType(), $entity, array(
-            'action' => $this->generateUrl('curso_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new ForoType(), $entity, array(
+            'action' => $this->generateUrl('foro_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -170,20 +170,20 @@ class CursoController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Curso entity.
+     * Edits an existing Foro entity.
      *
-     * @Route("/{id}", name="curso_update")
+     * @Route("/{id}", name="foro_update")
      * @Method("PUT")
-     * @Template("AppBundle:Curso:edit.html.twig")
+     * @Template("AppBundle:Foro:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Curso')->find($id);
+        $entity = $em->getRepository('AppBundle:Foro')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Curso entity.');
+            throw $this->createNotFoundException('Unable to find Foro entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -193,7 +193,7 @@ class CursoController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('curso_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('foro_edit', array('id' => $id)));
         }
 
         return array(
@@ -203,9 +203,9 @@ class CursoController extends Controller
         );
     }
     /**
-     * Deletes a Curso entity.
+     * Deletes a Foro entity.
      *
-     * @Route("/{id}", name="curso_delete")
+     * @Route("/{id}", name="foro_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -215,21 +215,21 @@ class CursoController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBundle:Curso')->find($id);
+            $entity = $em->getRepository('AppBundle:Foro')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Curso entity.');
+                throw $this->createNotFoundException('Unable to find Foro entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('curso'));
+        return $this->redirect($this->generateUrl('foro'));
     }
 
     /**
-     * Creates a form to delete a Curso entity by id.
+     * Creates a form to delete a Foro entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -238,36 +238,10 @@ class CursoController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('curso_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('foro_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
-    }
-    /**
-     * adds a Curso entity to Usuario.
-     *
-     * @Route("/{idCurso}/{idUsuario}", name="add_curso")
-     * @Method("GET")
-     */
-    public function assingCursoAction($idCurso,$idUsuario)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entityCurso = $em->getRepository('AppBundle:Curso')->find($idCurso);
-        $entityUsuario = $em->getRepository('UserBundle:Usuario')->find($idUsuario);
-
-
-        if (!$entityCurso or !$entityUsuario) {
-            throw $this->createNotFoundException('Unable to find Curso or Usuario entity.');
-        }
-
-            $entityUsuario->addCurso($entityCurso);
-            $em->persist($entityUsuario);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('curso_show', array('id' => $entityUsuario1->getId())));
-        
-
     }
 }

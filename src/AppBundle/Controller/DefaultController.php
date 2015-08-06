@@ -23,30 +23,5 @@ class DefaultController extends Controller
         return $this->render('base_page.html.twig');
     }
 
-    /**
-	* @Route("/nuevo/curso", name="curso_nuevo")
-    */
-    public function cursoAction()
-    {
-
-
-    	$curso = new Curso();
-    	$form = $this->createForm(new CursoType(),$curso);
-    	
-    	$form->handleRequest($request);
-
-    	if ($form->isSubmitted() && $form->isValid()){
-    		$em = $this->getDoctrine()->getManager();
-    		$em->persist($curso);
-    		$em->flush();
-
-    		$session = $this->getRequest()->getSession();
-    		$session ->getFlashBag->add('message','Curso Creado');
-
-    		return $this->render('default/nuevo_curso.html.twig', array('form'=>$form->createView()));
-    	}
-
-    	return $this->render('default/nuevo_cliente.html.twig', array('form'=>$form->createView()));
-
-    }
+   
 }

@@ -41,6 +41,7 @@ class Usuario extends BaseUser
      */
     public function __construct()
     {
+        parent::__construct();
         $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -81,10 +82,10 @@ class Usuario extends BaseUser
     /**
      * Add cursos
      *
-     * @param \UserBundle\Entity\Curso $cursos
+     * @param \AppBundle\Entity\Curso $cursos
      * @return Usuario
      */
-    public function addCurso(\UserBundle\Entity\Curso $cursos)
+    public function addCurso(\AppBundle\Entity\Curso $cursos)
     {
         $this->cursos[] = $cursos;
 
@@ -94,9 +95,9 @@ class Usuario extends BaseUser
     /**
      * Remove cursos
      *
-     * @param \UserBundle\Entity\Curso $cursos
+     * @param \AppBundle\Entity\Curso $cursos
      */
-    public function removeCurso(\UserBundle\Entity\Curso $cursos)
+    public function removeCurso(\AppBundle\Entity\Curso $cursos)
     {
         $this->cursos->removeElement($cursos);
     }
@@ -109,5 +110,10 @@ class Usuario extends BaseUser
     public function getCursos()
     {
         return $this->cursos;
+    }
+
+    public function __toString()
+    {
+        return $this->nombreCompleto;
     }
 }

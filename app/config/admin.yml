@@ -9,6 +9,7 @@ easy_admin:
                     - username
                     - email
                     - nombreCompleto
+                    - cursos
             form:
                 fields:
                     - username
@@ -16,5 +17,6 @@ easy_admin:
                     - plainPassword
                     - roles
                     - enabled
+                    - cursos
         Cursos:
             class: AppBundle\Entity\Curso

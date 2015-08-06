@@ -2,7 +2,6 @@ user_homepage:
     path:     /hello/{name}
     defaults: { _controller: UserBundle:Default:index }
 
-
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

@@ -8,6 +8,10 @@
             "SymfonyStandard\\": "app/SymfonyStandard/"
         }
     },
+    "repositories": [{
+    "type": "git",
+    "url":  "git://github.com/fcpauldiaz/FOSUserBundle.git"
+    }],
     "require": {
         "php": ">=5.3.9",
         "symfony/symfony": "2.7.*",
@@ -20,10 +24,11 @@
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "friendsofsymfony/user-bundle": "^1.3",
-        "javiereguiluz/easyadmin-bundle": "^1.5"
+        "javiereguiluz/easyadmin-bundle": "^1.5",
+        "friendsofsymfony/user-bundle": "^1.3"
       
     },
+    
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
     },

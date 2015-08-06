@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ccc5b3b9d9c67e0def72d4338625d8bd",
+    "hash": "f7ab01b4629772e2d706c92c085a85bb",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -708,14 +708,8 @@
             "target-dir": "FOS/UserBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
+                "url": "git://github.com/fcpauldiaz/FOSUserBundle.git",
                 "reference": "2022ac8463a8c50dd631f93a17064bd41795fff2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/2022ac8463a8c50dd631f93a17064bd41795fff2",
-                "reference": "2022ac8463a8c50dd631f93a17064bd41795fff2",
-                "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
@@ -744,7 +738,6 @@
                     "FOS\\UserBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -754,12 +747,12 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "FriendsOfSymfony Community",
-                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
-                },
-                {
                     "name": "Thibault Duplessis",
                     "email": "thibault.duplessis@gmail.com"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSUserBundle/contributors"
                 }
             ],
             "description": "Symfony FOSUserBundle",

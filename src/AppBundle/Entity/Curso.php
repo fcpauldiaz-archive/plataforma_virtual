@@ -36,7 +36,7 @@ class Curso
     private $codigoCurso;
 
     /**
-     * @ORM\ManyToMany(targetEntity="\UserBundle\Entity\Usuario", mappedBy="cursos")
+     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
      **/
     private $usuarios;
 
@@ -111,7 +111,7 @@ class Curso
      * @param \AppBundle\Entity\Usuario $usuarios
      * @return Curso
      */
-    public function addUsuario(\AppBundle\Entity\Usuario $usuarios)
+    public function addUsuario(\UserBundle\Entity\Usuario $usuarios)
     {
         $this->usuarios[] = $usuarios;
 
@@ -123,7 +123,7 @@ class Curso
      *
      * @param \AppBundle\Entity\Usuario $usuarios
      */
-    public function removeUsuario(\AppBundle\Entity\Usuario $usuarios)
+    public function removeUsuario(\UserBundle\Entity\Usuario $usuarios)
     {
         $this->usuarios->removeElement($usuarios);
     }
@@ -136,5 +136,10 @@ class Curso
     public function getUsuarios()
     {
         return $this->usuarios;
+    }
+
+    public function __toString(){
+
+        return $this->nombreCurso;
     }
 }

@@ -1,0 +1,32 @@
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: UserBundle\Entity\Usuario
+    service: #custom email sender
+        mailer: fos_mail.custom_mailer
+    registration: #user registration
+        form:
+            type:  user_registration #custom user registration service
+        confirmation:
+            enabled:    true # change to true for required email confirmation
+            template:   UserBundle:Registration:registration.email.twig  
+            
+            from_email:
+                address:        noreply@elearn.com
+                sender_name:    In- Learn Platform     
+
+    resetting: #password resetting
+        token_ttl: 86400
+        email:
+            from_email:
+                address:        noreply@elearn.com
+                sender_name:    In- Learn Platform
+            template:   UserBundle:Resetting:resetting.email.twig
+        form:
+            type:               fos_user_resetting
+
+    profile:
+       form:
+           type:               user_profile #custom user profile service
+           name:               fos_user_profile_form
+           validation_groups:  [Profile, Default]
