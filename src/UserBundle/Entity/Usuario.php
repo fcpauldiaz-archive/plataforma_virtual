@@ -114,6 +114,26 @@ class Usuario extends BaseUser
         return $this->cursos;
     }
 
+     /**
+     * Get expiresAt
+     *
+     * @return \DateTime 
+     */
+    public function getExpiresAt()
+    {
+        return $this->expiresAt;
+    }
+    
+    /**
+     * Get credentials_expire_at
+     *
+     * @return \DateTime 
+     */
+    public function getCredentialsExpireAt()
+    {
+        return $this->credentialsExpireAt;
+    }
+
     public function __toString()
     {
         return $this->nombreCompleto;
