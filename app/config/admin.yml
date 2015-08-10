@@ -3,20 +3,6 @@ easy_admin:
     entities:
         Users:
             class: UserBundle\Entity\Usuario
-            list:
-                fields:
-                    - id
-                    - username
-                    - email
-                    - nombreCompleto
-                    - cursos
-            form:
-                fields:
-                    - username
-                    - email
-                    - plainPassword
-                    - roles
-                    - enabled
-                    - cursos
+            
         Cursos:
             class: AppBundle\Entity\Curso

@@ -16,11 +16,11 @@ class AsignacionController extends Controller
     /**
      * Don't forget to add this route annotation!
      *
-     * @Route("{usuario_id}/asignar/cursos", name="asignacion")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
+     * @Route("/{username}/asignar/cursos", name="asignacion")
+     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * 
      */
-    public function listarAction(Request $request, Usuario $usuario)
+    public function asignarAction(Request $request, Usuario $usuario)
     {
         $em = $this->getDoctrine()->getManager();
         $cursos = $em->getRepository('AppBundle:Curso')->findAll();
@@ -35,24 +35,57 @@ class AsignacionController extends Controller
             }
         } 
         
-		return $this->render('AppBundle:Asignacion:asignar.html.twig', array('cursos' => $returnData));
+		return $this->render('AppBundle:Asignacion:asignar.html.twig', array('cursos' => $returnData,'cursosAsignados'=>$cursosAsignados));
     }
 
     /**
      * Método para asingar un curso a un usuario
      *
-     * @Route("/listarCursos/agregar/{usuario_id}/{curso_id}/", name="add_asignacion")
+     * @Route("/agregar/curso/{usuario_id}/{curso_id}/", name="add_asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
      * @ParamConverter("curso", class="AppBundle:Curso", options={"id"="curso_id"})
      */
-    public function agregarCursoAction(Request $request, Curso $curso, Usuario $usuario) {
+    public function agregarCursoAction(Curso $curso, Usuario $usuario) {
     	$em = $this->getDoctrine()->getManager();
     	$cursos = $em->getRepository('AppBundle:Curso')->findAll();
     	$usuario->addCurso($curso);
         $em->persist($usuario);
         $em->flush();
 
-		return $this->render('AppBundle:Asignacion:listar.html.twig', array('cursos' => $cursos,
-			'usuario' => $usuario ));
+        $cursosAsignados = $usuario->getCursos();
+
+        return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+        
+		
+    }
+     /**
+     * Listar cursos asignados
+     *
+     * @Route("/{username}/listar/cursos", name="listar_cursos")
+     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * 
+     */
+    public function listarAction(Usuario $usuario)
+    {
+        $em = $this->getDoctrine()->getManager();
+        return $this->render('AppBundle:Asignacion:listar.html.twig', array('cursosAsignados' => $usuario->getCursos()));
+    }
+
+    /**
+     * [removeCursoAction description]
+     * Método para remover curso asignado al usuario
+     * @Route("/quitar/curso/{curso_id}/{username}/",name="remove_curso")
+     * @ParamConverter()
+     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * @ParamConverter("curso", class="AppBundle:Curso", options={"id"="curso_id"})
+     *      */
+    public function removeCursoAction(Curso $curso, Usuario $usuario)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $usuario->removeCurso($curso);
+        $em->persist($usuario);
+        $em->flush();
+        return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+        
     }
 }

@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"curs",
+				"cursosAsignados"
+			],
+			[
+				"cursos",
+				"cursosAsignados"
+			],
+			[
+				"usuar",
+				"usuarioActual"
+			],
+			[
+				"usar",
+				"usuario_id"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"Curso",
+				"CursoType"
+			],
+			[
+				"entity",
+				"entityUsuario"
+			],
+			[
 				"or",
 				"ordenarPorPrecio"
 			],
@@ -486,34 +514,6 @@
 			[
 				"h",
 				"HttpResponseRedirect"
-			],
-			[
-				"num",
-				"numerosPares"
-			],
-			[
-				"positivos",
-				"positivos2"
-			],
-			[
-				"ve",
-				"verificarPares"
-			],
-			[
-				"cnt",
-				"contadorPosyPares"
-			],
-			[
-				"guar",
-				"guardarResultado"
-			],
-			[
-				"form",
-				"formatEnd"
-			],
-			[
-				"tri",
-				"trianguloInferior"
 			]
 		]
 	},
@@ -624,14 +624,60 @@
 	},
 	"file_history":
 	[
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/RegistrationFormType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Form/CursoType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/AsignacionController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/asignar.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listas.html.twgi",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listar.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/admin.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/fos_user.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/CursoController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Curso/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/composer.json",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Curso.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Entity/Usuario.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Controller/DefaultController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Foro/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/AdminController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/routing.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/routing.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/validation.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/parameters.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Controller/UsuarioController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/AppKernel.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/composer.lock",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/DefaultController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/CursoType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/RegistrationFormType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Curso/show.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Curso/new.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Form/CursoType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/doctrine/doctrine-bundle/DependencyInjection/DoctrineExtension.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Comentario.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Curso/new.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Security/login.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/services.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Curso/edit.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/style.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Document/User.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/Resources/views/default/layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/Resources/views/css/admin.css.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/LICENSE.md",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Admin/AdminUser.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/admin.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Profile/show.html.twig",
+		"/Users/usuario/NetBeansProjects/Thomson/src/thomson/TConstruct.java",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Default/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/instruccionesInstalacion.txt",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/User.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/services.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/routing.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/doctrine/Usuario.orm.yml",
 		"/Users/usuario/Documents/cemaco/src/AppBundle/Resources/views/Juguete/index.html.twig",
 		"/Users/usuario/Documents/cemaco/src/AppBundle/Resources/views/Juguete/new.html.twig",
@@ -705,53 +751,7 @@
 		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/project-DRA/app/AppKernel.php",
 		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/project-DRA/app/config/parameters.yml",
 		"/Users/usuario/Desktop/Model/Juguete.java",
-		"/Users/usuario/Desktop/symfony_demo/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/skeleton/bundle/DefaultController.php.twig",
-		"/Users/usuario/Library/Application Support/Sublime Text 2/Packages/User/Colorsublime.sublime-settings",
-		"/Users/usuario/Library/Application Support/Sublime Text 2/Packages/Colorsublime/Colorsublime.sublime-settings",
-		"/Users/usuario/Desktop/plataforma_virtual/src/AppBundle/AppBundle.php",
-		"/Users/usuario/Desktop/plataforma_virtual/src/UserBundle/Resources/FOSUserBundle/views/layout.html.twig",
-		"/Users/usuario/Desktop/plataforma_virtual/src/UserBundle/Resources/views/layout.html.twig",
-		"/Users/usuario/Desktop/plataforma_virtual/app/Resources/FOSUserBundle/views/layout.html.twig",
-		"/Users/usuario/MEGAsync/plataforma_virtual/app/config/routing.yml",
-		"/Users/usuario/MEGAsync/plataforma_virtual/src/UserBundle/Resources/config/routing.yml",
-		"/Users/usuario/MEGAsync/plataforma_virtual/app/config/parameters.yml",
-		"/Users/usuario/MEGAsync/plataforma_virtual/app/config/config.yml",
-		"/Users/usuario/MEGAsync/plataforma_virtual/app/AppKernel.php",
-		"/Users/usuario/MEGAsync/plataforma_virtual/app/config/security.yml",
-		"/Users/usuario/MEGAsync/plataforma_virtual/src/UserBundle/Entity/Usuario.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/Resources/views/layout.html.twig",
-		"/Users/usuario/Dropbox/uvg/5ºsemestre/análisis de sistemas/proyectofinal/plataforma_virtual/app/Resources/FOSUserBundle/views/Security/login.html.twig",
-		"/Users/usuario/symfony_demo/app/Resources/views/security/login.html.twig",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Resources/views/Security/login.html.twig",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Component/Form/FormRegistry.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/RegistrationController.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/DependencyInjection/Configuration.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Resources/config/routing.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/single_email_recipient.xml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/config/services.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Resources/config/services.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views/Collector/security.html.twig",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/AppKernel.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Resources/views/layout.html.twig",
-		"/Users/usuario/Desktop/build-an-html-email-template-from-scratch-master/index.html",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/Resources/FOSUserBundle/views/Registration/email.txt.twig",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/config/routing.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/vendor/sensio/framework-extra-bundle/Sensio/Bundle/FrameworkExtraBundle/EventListener/ControllerListener.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/README.md",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/UPGRADE-2.2.md",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/AppBundle/Controller/DefaultController.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/config/config.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Form/Type/RegistrationFormType.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Entity/Usuario.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/DependencyInjection/PlatformExtension.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/Controller/DefaultController.php",
-		"/Users/usuario/Dropbox/uvg/5ºsemestre/análisis de sistemas/proyectofinal/plataforma_virtual/src/UserBundle/Resources/config/routing.yml",
-		"/Users/usuario/Dropbox/uvg/5ºsemestre/análisis de sistemas/proyectofinal/plataforma_virtual/src/UserBundle/Resources/config/services.yml",
-		"/Users/usuario/Dropbox/uvg/5ºsemestre/análisis de sistemas/proyectofinal/plataforma_virtual/src/UserBundle/Resources/config/doctrine/Usuario.orm.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/UserBundle/PlatformBundle.php",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/app/config/security.yml",
-		"/Users/usuario/Dropbox/UVG/5ºsemestre/Análisis de sistemas/ProyectoFinal/plataforma_virtual/src/PlatformBundle/Resources/config/routing.yml",
-		"/Users/usuario/Dropbox/uvg/5ºsemestre/análisis de sistemas/proyectofinal/plataforma_virtual/src/PlatformBundle/PlatformBundle.php"
+		"/Users/usuario/Desktop/symfony_demo/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/skeleton/bundle/DefaultController.php.twig"
 	],
 	"find":
 	{
@@ -762,6 +762,11 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"",
+			"vendor/javiereguiluz/easyadmin-bundle/Resources/views",
+			"vendor/javiereguiluz/easyadmin-bundle/Resources",
+			"vendor/javiereguiliz/easyadmin-bundle/Resources",
+			"vendor/javier",
 			""
 		]
 	},
@@ -770,6 +775,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			":118",
+			"();\n",
+			"            \n",
+			"carousel interval",
+			"\")\n",
+			"appbundle",
+			"Usuario",
+			"usuario",
+			"new",
+			"head",
+			"foro",
+			"PROFILE",
+			"header-logo",
+			"short",
+			"EasyAdmin",
+			"EasyAdmin ",
+			"EasyAdmin",
+			"Post",
+			"img-responsive",
+			"carousel-inner",
+			"item",
+			"carousel-inner",
+			"background",
+			"img",
+			"epsilon",
+			"EPSILON",
+			"epsilon",
+			"h1",
+			".h1",
 			"\"/\"",
 			"CANT_Juguetes",
 			"    \n",
@@ -868,29 +902,7 @@
 			"xcuadro",
 			"fbInfo",
 			"continuar2",
-			"randomPosicion",
-			"radomPosicion",
-			"randomPosicion",
-			"r6",
-			"r12",
-			"timerOk",
-			"date",
-			"fecha",
-			"ssh",
-			"	\n",
-			"r6",
-			"r10",
-			"r6",
-			"r5r6",
-			"r5",
-			"r4",
-			"ldr",
-			"r12",
-			"r9",
-			"r3",
-			"        \n",
-			"espera",
-			"blne"
+			"randomPosicion"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -959,20 +971,320 @@
 		"selected_items":
 		[
 			[
-				"registratio",
-				"src/UserBundle/Form/Type/RegistrationFormType.php"
+				"lista",
+				"src/AppBundle/Resources/views/Asignacion/listas.html.twgi"
 			],
 			[
-				"cursoty",
-				"src/AppBundle/Form/CursoType.php"
+				"base",
+				"app/Resources/views/default/base.html.twig"
+			],
+			[
+				"asign",
+				"src/AppBundle/Resources/views/Asignacion/asignar.html.twig"
+			],
+			[
+				"asignar.",
+				"src/AppBundle/Resources/views/Asignacion/asignar.html.twig"
+			],
+			[
+				"admin",
+				"app/config/admin.yml"
+			],
+			[
+				"fos",
+				"app/config/fos_user.yml"
+			],
+			[
+				"index.html.twig",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"asigna",
+				"src/AppBundle/Controller/AsignacionController.php"
+			],
+			[
+				"usu",
+				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"cursoc",
+				"src/AppBundle/Controller/CursoController.php"
+			],
+			[
+				"usua",
+				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"compo",
+				"composer.json"
 			],
 			[
 				"curso",
 				"src/AppBundle/Entity/Curso.php"
 			],
 			[
+				"",
+				"src/AppBundle/Controller/AsignacionController.php"
+			],
+			[
+				"index.ht",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"index.",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"para",
+				"app/config/parameters.yml"
+			],
+			[
+				"valid",
+				"src/UserBundle/Resources/config/validation.yml"
+			],
+			[
+				"routin",
+				"app/config/routing.yml"
+			],
+			[
+				"appkernel",
+				"app/AppKernel.php"
+			],
+			[
+				"appk",
+				"app/AppKernel.php"
+			],
+			[
+				"rou",
+				"app/config/routing.yml"
+			],
+			[
+				"confi",
+				"app/config/config.yml"
+			],
+			[
+				"usuari",
+				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"fos_",
+				"app/config/fos_user.yml"
+			],
+			[
+				"com",
+				"composer.lock"
+			],
+			[
+				"cursoinde.htmlt",
+				"src/AppBundle/Resources/views/Curso/index.html.twig"
+			],
+			[
+				"routing",
+				"app/config/routing.yml"
+			],
+			[
+				"defaul",
+				"src/UserBundle/Controller/DefaultController.php"
+			],
+			[
+				"inde",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"new.html",
+				"src/UserBundle/Resources/views/Curso/new.html.twig"
+			],
+			[
+				"default",
+				"src/UserBundle/Controller/DefaultController.php"
+			],
+			[
+				"defa",
+				"src/AppBundle/Controller/DefaultController.php"
+			],
+			[
+				"cursot",
+				"src/UserBundle/Form/Type/CursoType.php"
+			],
+			[
+				"u",
+				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"cursotp",
+				"src/UserBundle/Form/Type/CursoType.php"
+			],
+			[
+				"cursotyp",
+				"src/AppBundle/Form/CursoType.php"
+			],
+			[
+				"cursoty",
+				"src/UserBundle/Form/Type/CursoType.php"
+			],
+			[
+				"def",
+				"src/UserBundle/Controller/DefaultController.php"
+			],
+			[
+				"de",
+				"vendor/doctrine/doctrine-bundle/DependencyInjection/DoctrineExtension.php"
+			],
+			[
+				"cursocon",
+				"src/AppBundle/Controller/CursoController.php"
+			],
+			[
+				"new",
+				"src/AppBundle/Resources/views/Curso/new.html.twig"
+			],
+			[
 				"usuario",
 				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"fos_user",
+				"app/config/fos_user.yml"
+			],
+			[
+				"par",
+				"app/config/parameters.yml"
+			],
+			[
+				"layou",
+				"src/UserBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"login.",
+				"src/UserBundle/Resources/views/Security/login.html.twig"
+			],
+			[
+				"layout",
+				"src/UserBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"layot",
+				"src/UserBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"menut",
+				"app/Resources/views/menu.html.twig"
+			],
+			[
+				"param",
+				"app/config/parameters.yml"
+			],
+			[
+				"show",
+				"src/AppBundle/Resources/views/Curso/show.html.twig"
+			],
+			[
+				"layout.h",
+				"src/UserBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"comp",
+				"composer.json"
+			],
+			[
+				"servi",
+				"app/config/services.yml"
+			],
+			[
+				"routi",
+				"app/config/routing.yml"
+			],
+			[
+				"config",
+				"app/config/config.yml"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
+				"cursocontr",
+				"src/AppBundle/Controller/CursoController.php"
+			],
+			[
+				"admi",
+				"app/config/admin.yml"
+			],
+			[
+				"rout",
+				"app/config/routing.yml"
+			],
+			[
+				"adminc",
+				"src/AppBundle/Controller/AdminController.php"
+			],
+			[
+				"conf",
+				"app/config/config.yml"
+			],
+			[
+				"admin.yml",
+				"src/UserBundle/Resources/config/admin.yml"
+			],
+			[
+				"user",
+				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/User.php"
+			],
+			[
+				"adminu",
+				"src/UserBundle/Admin/AdminUser.php"
+			],
+			[
+				"admin.ym",
+				"src/UserBundle/Resources/config/admin.yml"
+			],
+			[
+				"men",
+				"app/Resources/views/menu.html.twig"
+			],
+			[
+				"bootstra",
+				"web/bootstrap/css/bootstrap.css"
+			],
+			[
+				"style",
+				"web/css/style.css"
+			],
+			[
+				"base.",
+				"app/Resources/views/default/base.html.twig"
+			],
+			[
+				"index",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"sty",
+				"web/css/style.css"
+			],
+			[
+				"index.h",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"layout.ht",
+				"src/UserBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"index.t",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"index.html",
+				"src/UserBundle/Resources/views/Default/index.html.twig"
+			],
+			[
+				"base.html.twig",
+				"app/Resources/views/default/base.html.twig"
+			],
+			[
+				"registratio",
+				"src/UserBundle/Form/Type/RegistrationFormType.php"
 			],
 			[
 				"new.ht",
@@ -981,10 +1293,6 @@
 			[
 				"new.",
 				"src/AppBundle/Resources/views/Juguete/new.html.twig"
-			],
-			[
-				"index.ht",
-				"src/AppBundle/Resources/views/Juguete/index.html.twig"
 			],
 			[
 				"jug",
@@ -999,40 +1307,16 @@
 				"src/AppBundle/Entity/Juguete.php"
 			],
 			[
-				"new",
-				"src/AppBundle/Resources/views/Juguete/new.html.twig"
-			],
-			[
 				"proveedorco",
 				"src/AppBundle/Controller/ProveedorController.php"
-			],
-			[
-				"layout",
-				"src/UserBundle/Resources/views/layout.html.twig"
 			],
 			[
 				"config_de",
 				"app/config/config_dev.yml"
 			],
 			[
-				"para",
-				"app/config/parameters.yml"
-			],
-			[
-				"config",
-				"app/config/config.yml"
-			],
-			[
-				"comp",
-				"composer.json"
-			],
-			[
 				"secu",
 				"app/config/security.yml"
-			],
-			[
-				"base",
-				"app/Resources/views/base.html.twig"
 			],
 			[
 				"config_pr",
@@ -1047,10 +1331,6 @@
 				"app/config/config.yml"
 			],
 			[
-				"compo",
-				"composer.json"
-			],
-			[
 				"config.yml",
 				"app/config/config.yml"
 			],
@@ -1059,40 +1339,16 @@
 				"src/AppBundle/Resources/views/Proveedor/buscar.html.twig"
 			],
 			[
-				"appk",
-				"app/AppKernel.php"
-			],
-			[
 				"proveedorcon",
 				"src/AppBundle/Controller/ProveedorController.php"
-			],
-			[
-				"index.html.twig",
-				"src/AppBundle/Resources/views/Proveedor/index.html.twig"
-			],
-			[
-				"param",
-				"app/config/parameters.yml"
 			],
 			[
 				"juguetec",
 				"src/AppBundle/Controller/JugueteController.php"
 			],
 			[
-				"usua",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"base.",
-				"app/Resources/views/base.html.twig"
-			],
-			[
 				"menu.",
 				"app/Resources/views/menu.html.twig"
-			],
-			[
-				"index.html",
-				"app/Resources/views/default/index.html.twig"
 			],
 			[
 				"registration",
@@ -1131,20 +1387,12 @@
 				"app/Resources/views/menu.html.twig"
 			],
 			[
-				"base.html.twig",
-				"app/Resources/views/base.html.twig"
-			],
-			[
 				"securit",
 				"app/config/security.yml"
 			],
 			[
 				"config.",
 				"app/config/config.yml"
-			],
-			[
-				"rout",
-				"app/config/routing.yml"
 			],
 			[
 				"security",
@@ -1179,10 +1427,6 @@
 				"app/Resources/views/menu.html.twig"
 			],
 			[
-				"routing",
-				"app/config/routing.yml"
-			],
-			[
 				"proveed",
 				"src/AppBundle/Entity/Proveedor.php"
 			],
@@ -1211,28 +1455,12 @@
 				"vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/skeleton/bundle/DefaultController.php.twig"
 			],
 			[
-				"default",
-				"src/AppBundle/Controller/DefaultController.php"
-			],
-			[
 				"appbun",
 				"src/AppBundle/AppBundle.php"
 			],
 			[
 				"login.htm",
 				"src/UserBundle/Resources/views/Security/login.html.twig"
-			],
-			[
-				"user",
-				"src/UserBundle/UserBundle.php"
-			],
-			[
-				"layout.h",
-				"src/UserBundle/Resources/FOSUserBundle/views/layout.html.twig"
-			],
-			[
-				"layout.ht",
-				"src/UserBundle/Resources/views/layout.html.twig"
 			],
 			[
 				"layout.html",
@@ -1253,222 +1481,6 @@
 			[
 				"login.html.tw",
 				"src/UserBundle/Resources/views/Security/login.html.twig"
-			],
-			[
-				"registra",
-				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/RegistrationController.php"
-			],
-			[
-				"",
-				"src/UserBundle/Form/Type/RegistrationFormType.php"
-			],
-			[
-				"servi",
-				"src/UserBundle/Resources/config/services.yml"
-			],
-			[
-				"register_conte",
-				"src/UserBundle/Resources/views/Registration/register_content.html.twig"
-			],
-			[
-				"ser",
-				"vendor/symfony/monolog-bundle/Tests/DependencyInjection/Fixtures/xml/single_email_recipient.xml"
-			],
-			[
-				"services",
-				"src/UserBundle/Resources/config/services.yml"
-			],
-			[
-				"formregi",
-				"vendor/symfony/symfony/src/Symfony/Component/Form/FormRegistry.php"
-			],
-			[
-				"services.ym",
-				"src/UserBundle/Resources/config/services.yml"
-			],
-			[
-				"services.yml",
-				"app/config/services.yml"
-			],
-			[
-				"serices.",
-				"src/UserBundle/Resources/config/services.yml"
-			],
-			[
-				"routing.y",
-				"src/UserBundle/Resources/config/routing.yml"
-			],
-			[
-				"layout.html.twig",
-				"app/Resources/views/layout.html.twig"
-			],
-			[
-				"emai.",
-				"app/Resources/FOSUserBundle/views/Registration/email.txt.twig"
-			],
-			[
-				"userbun",
-				"src/UserBundle/UserBundle.php"
-			],
-			[
-				"controller",
-				"vendor/sensio/framework-extra-bundle/Sensio/Bundle/FrameworkExtraBundle/EventListener/ControllerListener.php"
-			],
-			[
-				"routin",
-				"app/config/routing.yml"
-			],
-			[
-				"usuari",
-				"src/UserBundle/Resources/config/doctrine/Usuario.orm.yml"
-			],
-			[
-				"usuario.or",
-				"src/UserBundle/Resources/config/doctrine/Usuario.orm.yml"
-			],
-			[
-				"composer",
-				"composer.json"
-			],
-			[
-				"app_d",
-				"web/app_dev.php"
-			],
-			[
-				"defaultre",
-				"vendor/doctrine/orm/lib/Doctrine/ORM/Repository/DefaultRepositoryFactory.php"
-			],
-			[
-				"app",
-				"app/AppCache.php"
-			],
-			[
-				"config.ym",
-				"app/config/config.yml"
-			],
-			[
-				"plat",
-				"src/PlatformBundle/PlatformBundle.php"
-			],
-			[
-				"routing_de",
-				"app/config/routing_dev.yml"
-			],
-			[
-				"routing.",
-				"src/PlatformBundle/Resources/config/routing.yml"
-			],
-			[
-				"usuario.",
-				"src/PlatformBundle/Resources/config/doctrine/Usuario.orm.yml"
-			],
-			[
-				"login.htm.twig",
-				"app/Resources/FOSUserBundle/views/Security/login.html.twig"
-			],
-			[
-				"checke",
-				"app/Resources/FOSUserBundle/views/Registration/checkEmail.html.twig"
-			],
-			[
-				"register_",
-				"app/Resources/FOSUserBundle/views/Registration/register_content.html.twig"
-			],
-			[
-				"confirmed",
-				"app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig"
-			],
-			[
-				"register_con",
-				"app/Resources/FOSUserBundle/views/Registration/register_content.html.twig"
-			],
-			[
-				"login.htm.",
-				"app/Resources/FOSUserBundle/views/Security/login.html.twig"
-			],
-			[
-				"register_content",
-				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Registration/register_content.html.twig"
-			],
-			[
-				"register.html.twig",
-				"app/Resources/FOSUserBundle/views/Registration/register.html.twig"
-			],
-			[
-				"login.ht",
-				"app/Resources/FOSUserBundle/views/Security/login.html.twig"
-			],
-			[
-				"xdebug",
-				"vendor/twig/twig/lib/Twig/Extension/Debug.php"
-			],
-			[
-				"config_dev.yml",
-				"app/config/config_dev.yml"
-			],
-			[
-				"reseetting.html",
-				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Resetting/reset.html.twig"
-			],
-			[
-				"register",
-				"app/Resources/FOSUserBundle/views/Registration/register_content.html.twig"
-			],
-			[
-				"login",
-				"app/Resources/FOSUserBundle/views/Security/login.html.twig"
-			],
-			[
-				"compoer",
-				"composer.json"
-			],
-			[
-				"paramete",
-				"app/config/parameters.yml"
-			],
-			[
-				"parameters.yml",
-				"app/config/parameters.yml"
-			],
-			[
-				"orm.xml",
-				"vendor/doctrine/doctrine-bundle/Resources/config/orm.xml"
-			],
-			[
-				"validate",
-				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.es.yml"
-			],
-			[
-				"validator",
-				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validator.xml"
-			],
-			[
-				"validators",
-				"vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Command/Validators.php"
-			],
-			[
-				"loginboo",
-				"src/PlatformBundle/Resources/views/Default/loginBoostrap.html.twig"
-			],
-			[
-				"appkernel",
-				"app/AppKernel.php"
-			],
-			[
-				"ker",
-				"app/AppKernel.php"
-			],
-			[
-				"index.html.twg",
-				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"usu",
-				"src/PlatformBundle/Entity/Usuario.php"
-			],
-			[
-				"formregistra",
-				"src/PlatformBundle/Form/Type/RegistrationFormType.php"
 			]
 		],
 		"width": 0.0

@@ -42,11 +42,14 @@
                         
                         {# espacio para perfil #}
                         <div class="menu-item light-red">
-                            <a href="{{ path('perfil')}} " data-toggle="modal">
+                            <a href="#" data-toggle="modal" data-target="#modalPerfil">
                                 <i class="fa fa-user"></i>
                                 <p>Perfil</p>
                             </a>
                         </div>
+                        
+                        {% include 'modal/modal_perfil.html.twig' %}
+                        {# termina ruta perfil #}
                         
                     </div>
                     
@@ -115,11 +118,13 @@
                         </div>
                         {# ruta para el Cursos #}
                         <div class="menu-item blue">
-                            <a href="/curso" data-toggle="modal">
+                            <a href="#" data-toggle="modal" data-target="#modalCursos">
                                 <i class="fa fa-mortar-board"></i>
                                 <p>Cursos</p>
                             </a>
                         </div>
+
+                        {% include 'modal/modal_curso.html.twig' %}
                         {# termina ruta de Cursos #}
                        
                         
