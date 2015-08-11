@@ -18,15 +18,17 @@ Bootstrap.
 ###Instrucciones de instalación local
 
 1. Instalar [Symfony y Composer][4]
-2. Instalar MySQL y PHP
-3. Iniciar el servicio de MySQL
-4. Clonar este repositorio de github
-5. Dirigirse a la carpeta desde la terminal
-6. Actualizar composer con: composer update
-7. Verificar que se haya instalado la carpeta vendor
-8. Ejecutar php app/console doctrine:schema:update --force
-9. Ejecutar: php app/console server:run
-10. Dirigirse hacia localhost:8000 en un explorador web
+2. Instalar [MySQL][5]
+3. Asegurarse de que se haya instalado PHP4
+4. Iniciar el servicio de MySQL
+5. Clonar este repositorio de github
+6. Dirigirse a la carpeta desde la terminal
+7. Actualizar composer con: composer install
+8. Verificar que se haya creado la carpeta vendor
+9. Crear base de datos con: php app/console doctrine:database:create
+10. Crear tablas: Ejecutar php app/console doctrine:schema:update --force
+11. Correr el Servidor: php app/console server:run
+12. Dirigirse hacia localhost:8000 en un explorador web
  
 
 [1]:  http://symfony.com/doc/2.6/book/installation.html
