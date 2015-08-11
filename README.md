@@ -19,7 +19,7 @@ Bootstrap.
 
 1. Instalar [Symfony y Composer][4]
 2. Instalar [MySQL][5]
-3. Asegurarse de que se haya instalado PHP4
+3. Asegurarse de que se haya instalado PHP
 4. Iniciar el servicio de MySQL
 5. Clonar este repositorio de github
 6. Dirigirse a la carpeta desde la terminal
