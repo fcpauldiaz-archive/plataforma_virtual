@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     font-family: 'Open Sans', sans-serif;
+   
 }
 
 a,
@@ -40,6 +41,8 @@ p {
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     line-height: 21px;
+
+
 }
 
 
@@ -122,6 +125,10 @@ fieldset[disabled] .btn-primary.active {
 
 .logo span {
     color: #999;
+}
+
+.logo-inner{
+    color:#4582ec;
 }
 
 
