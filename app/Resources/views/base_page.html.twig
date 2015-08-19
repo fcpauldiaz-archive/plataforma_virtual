@@ -3,8 +3,12 @@
 {% block stylesheets %}
 <!-- Bootstrap Core CSS -->
 <link href=" {{ asset('bootstrap/css/bootstrap_page.css') }} " rel="stylesheet">
-{% endblock %}
 
+
+{% stylesheets '@FOSCommentBundle/Resources/assets/css/comments.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
 
 {% block body %}
 

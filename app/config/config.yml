@@ -41,7 +41,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ FOSCommentBundle]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -80,6 +80,13 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+fos_comment:
+    db_driver: orm
+    class:
+        model:
+            comment: AppBundle\Entity\Comment
+            thread: AppBundle\Entity\Thread
 
+    
 
 

@@ -519,6 +519,78 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "web/bootstrap/css/bootstrap_page.css",
+			"settings":
+			{
+				"buffer_size": 150181,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/AppKernel.php",
+			"settings":
+			{
+				"buffer_size": 1917,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/config.yml",
+			"settings":
+			{
+				"buffer_size": 2677,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/AppBundle/Entity/Comment.php",
+			"settings":
+			{
+				"buffer_size": 1231,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/AppBundle/Entity/Thread.php",
+			"settings":
+			{
+				"buffer_size": 387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/routing.yml",
+			"settings":
+			{
+				"buffer_size": 540,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/AppBundle/Resources/views/Asignacion/asignar.html.twig",
+			"settings":
+			{
+				"buffer_size": 652,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Resources/views/base_page.html.twig",
+			"settings":
+			{
+				"buffer_size": 1378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/admin.yml",
+			"settings":
+			{
+				"buffer_size": 363,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -624,11 +696,15 @@
 	},
 	"file_history":
 	[
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/search.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Resetting/master-reset.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Registration/email.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Default/index2.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/style.css",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap.css",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap_page.css",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/modal/modal_perfil.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
@@ -747,11 +823,7 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Resources/views/Group/show_content.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Resources/views/Group/list_content.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Document/Group.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Resources/config/routing.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Resources/views/Security/login.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Resources/views/layout.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Form/Type/RegistrationFormType.php"
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Resources/config/routing.yml"
 	],
 	"find":
 	{
@@ -775,6 +847,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"learn",
+			"in learn",
+			"in-learn",
+			"In-Learn",
+			"Learn",
+			"in-learn",
+			"background-color",
+			"background",
+			"body",
 			"a",
 			"presentation",
 			"body",
@@ -893,16 +974,7 @@
 			"MainJuego",
 			"MostrarSeleccion",
 			"bl MostrarSeleccion",
-			"MostrarSeleccion",
-			"ycuadro",
-			"dibujarBala",
-			"animarBala",
-			"posyBala",
-			"ybala",
-			"balaDisparada",
-			"posxBala",
-			"r4",
-			"posx"
+			"MostrarSeleccion"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -920,8 +992,256 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "web/bootstrap/css/bootstrap_page.css",
+					"settings":
+					{
+						"buffer_size": 150181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149666,
+								149666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 129268.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/AppKernel.php",
+					"settings":
+					{
+						"buffer_size": 1917,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1125,
+								1125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 396.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/config/config.yml",
+					"settings":
+					{
+						"buffer_size": 2677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1326,
+								1326
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1156.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/AppBundle/Entity/Comment.php",
+					"settings":
+					{
+						"buffer_size": 1231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1220,
+								1220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 510.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/AppBundle/Entity/Thread.php",
+					"settings":
+					{
+						"buffer_size": 387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								70,
+								70
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/config/routing.yml",
+					"settings":
+					{
+						"buffer_size": 540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								538,
+								538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/AppBundle/Resources/views/Asignacion/asignar.html.twig",
+					"settings":
+					{
+						"buffer_size": 652,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								634,
+								634
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/Resources/views/base_page.html.twig",
+					"settings":
+					{
+						"buffer_size": 1378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								347,
+								347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 31.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/config/admin.yml",
+					"settings":
+					{
+						"buffer_size": 363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								363,
+								363
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -971,16 +1291,40 @@
 		"selected_items":
 		[
 			[
+				"sear",
+				"vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/search.html.twig"
+			],
+			[
+				"admin",
+				"app/config/admin.yml"
+			],
+			[
+				"base",
+				"app/Resources/views/base_page.html.twig"
+			],
+			[
+				"rout",
+				"app/config/routing.yml"
+			],
+			[
+				"config.",
+				"app/config/config.yml"
+			],
+			[
+				"appk",
+				"app/AppKernel.php"
+			],
+			[
+				"bootstra_p",
+				"web/bootstrap/css/bootstrap_page.css"
+			],
+			[
 				"men",
 				"app/Resources/views/menu.html.twig"
 			],
 			[
 				"base_",
 				"app/Resources/views/base_page.html.twig"
-			],
-			[
-				"base",
-				"app/Resources/views/default/base.html.twig"
 			],
 			[
 				"boo",
@@ -1025,10 +1369,6 @@
 			[
 				"asignar.",
 				"src/AppBundle/Resources/views/Asignacion/asignar.html.twig"
-			],
-			[
-				"admin",
-				"app/config/admin.yml"
 			],
 			[
 				"fos",
@@ -1080,10 +1420,6 @@
 			],
 			[
 				"appkernel",
-				"app/AppKernel.php"
-			],
-			[
-				"appk",
 				"app/AppKernel.php"
 			],
 			[
@@ -1237,10 +1573,6 @@
 			[
 				"admi",
 				"app/config/admin.yml"
-			],
-			[
-				"rout",
-				"app/config/routing.yml"
 			],
 			[
 				"adminc",
@@ -1411,10 +1743,6 @@
 				"app/config/security.yml"
 			],
 			[
-				"config.",
-				"app/config/config.yml"
-			],
-			[
 				"security",
 				"app/config/security.yml"
 			],
@@ -1473,14 +1801,6 @@
 			[
 				"defaultcontroler",
 				"vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/skeleton/bundle/DefaultController.php.twig"
-			],
-			[
-				"appbun",
-				"src/AppBundle/AppBundle.php"
-			],
-			[
-				"login.htm",
-				"src/UserBundle/Resources/views/Security/login.html.twig"
 			]
 		],
 		"width": 0.0
@@ -1492,7 +1812,7 @@
 		[
 			[
 				"",
-				"/Users/usuario/Documents/ProyectosHeroku/plataforma_virtual/heroku_learnIn.sublime-project"
+				"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/ejercicio1.sublime-project"
 			]
 		],
 		"width": 380.0

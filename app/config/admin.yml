@@ -6,4 +6,6 @@ easy_admin:
             list:
                 fields: ['nombreCompleto','username','cursos','email','enabled','lastLogin','roles']
         Cursos:
-            class: AppBundle\Entity\Curso           
+            class: AppBundle\Entity\Curso  
+        Comentarios:
+            class: AppBundle\Entity\Comment
