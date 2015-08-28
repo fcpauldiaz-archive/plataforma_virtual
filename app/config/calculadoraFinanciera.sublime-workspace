@@ -624,10 +624,18 @@
 	},
 	"file_history":
 	[
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/AsignacionController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listar.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/app/Resources/views/default/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Controller/DefaultController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/app/config/parameters.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Entity/Calculadora.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/app/Resources/views/base.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Resources/views/Calculadora/new.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Resources/views/Calculadora/edit.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Form/CalculadoraType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Resources/views/Calculadora/show.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/src/AppBundle/Resources/views/Calculadora/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/app/Resources/views/default/index.html",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Métodos Númericos/Proyecto/calculadoraFinanciera/web/index.html",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/routing.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Thread.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Comment.php",
@@ -635,6 +643,7 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/AppKernel.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap_page.css",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/admin.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/CursoController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/Controller/ThreadController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/FormFactory/CommentFormFactory.php",
@@ -648,6 +657,7 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Default/index2.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/style.css",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/modal/modal_perfil.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
@@ -655,6 +665,8 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Entity/Usuario.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/admin.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/modal_curso.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/AsignacionController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listar.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listas.html.twgi",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/fos_user.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Curso/index.html.twig",
@@ -739,19 +751,7 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/edit.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Proveedor/edit.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/show_mechanic_complex.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/show.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/show_electronic_price.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/show_code_price.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/app/config/routing.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/app/config/security.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Proveedor/show_ten.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Proveedor/list.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/app/AppKernel.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/RegistrationController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Form/Type/GroupFormType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Entity/Group.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Group/show_content.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/GroupableInterface.php"
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/AppBundle/Resources/views/Juguete/show.html.twig"
 	],
 	"find":
 	{
@@ -775,6 +775,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"240",
+			"body",
 			"createForm",
 			"ResolvedFormTypeFactory",
 			"factory",
@@ -900,9 +902,7 @@
 			"seleccionar",
 			"instrucciones",
 			"seleccionar",
-			"seleccion",
-			"creditos",
-			"MainJuego"
+			"seleccion"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -971,16 +971,44 @@
 		"selected_items":
 		[
 			[
-				"as",
-				"src/AppBundle/Controller/AsignacionController.php"
+				"new",
+				"src/AppBundle/Resources/views/Calculadora/new.html.twig"
 			],
 			[
-				"list",
-				"src/AppBundle/Resources/views/Asignacion/listar.html.twig"
+				"cal",
+				"src/AppBundle/Entity/Calculadora.php"
+			],
+			[
+				"show",
+				"src/AppBundle/Resources/views/Calculadora/show.html.twig"
 			],
 			[
 				"base",
-				"app/Resources/views/default/base.html.twig"
+				"app/Resources/views/base.html.twig"
+			],
+			[
+				"index",
+				"app/Resources/views/default/index.html"
+			],
+			[
+				"ind",
+				"web/index.html"
+			],
+			[
+				"defa",
+				"src/AppBundle/Controller/DefaultController.php"
+			],
+			[
+				"index.",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"para",
+				"app/config/parameters.yml"
+			],
+			[
+				"calcul",
+				"src/AppBundle/Entity/Calculadora.php"
 			],
 			[
 				"sear",
@@ -1091,14 +1119,6 @@
 				"app/Resources/views/default/index.html.twig"
 			],
 			[
-				"index.",
-				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"para",
-				"app/config/parameters.yml"
-			],
-			[
 				"valid",
 				"src/UserBundle/Resources/config/validation.yml"
 			],
@@ -1155,10 +1175,6 @@
 				"src/UserBundle/Controller/DefaultController.php"
 			],
 			[
-				"defa",
-				"src/AppBundle/Controller/DefaultController.php"
-			],
-			[
 				"cursot",
 				"src/UserBundle/Form/Type/CursoType.php"
 			],
@@ -1191,10 +1207,6 @@
 				"src/AppBundle/Controller/CursoController.php"
 			],
 			[
-				"new",
-				"src/AppBundle/Resources/views/Curso/new.html.twig"
-			],
-			[
 				"fos_user",
 				"app/config/fos_user.yml"
 			],
@@ -1225,10 +1237,6 @@
 			[
 				"param",
 				"app/config/parameters.yml"
-			],
-			[
-				"show",
-				"src/AppBundle/Resources/views/Curso/show.html.twig"
 			],
 			[
 				"layout.h",
@@ -1293,10 +1301,6 @@
 			[
 				"base.",
 				"app/Resources/views/default/base.html.twig"
-			],
-			[
-				"index",
-				"app/Resources/views/default/index.html.twig"
 			],
 			[
 				"sty",
@@ -1477,10 +1481,6 @@
 			[
 				"login.html.twig",
 				"src/UserBundle/Resources/views/Security/login.html.twig"
-			],
-			[
-				"kernel",
-				"app/AppKernel.php"
 			]
 		],
 		"width": 0.0
@@ -1492,7 +1492,7 @@
 		[
 			[
 				"",
-				"/Users/usuario/Google Drive/Docs/Web/fcpauldiazBlog/fcpauldiaz.sublime-project"
+				"/Users/usuario/Documents/diazreyes/system.sublime-project"
 			]
 		],
 		"width": 380.0
