@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  * @Vich\Uploadable
+ * @ORM\Table(name="Documentos")
  */
 class Documento
 {
@@ -39,7 +40,7 @@ class Documento
     /**
      * [$curso relacion one to many a curso]
      * @var ArrayCollection
-     * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso")
+     * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso",inversedBy="documentos")
      * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
      */
     private $curso;

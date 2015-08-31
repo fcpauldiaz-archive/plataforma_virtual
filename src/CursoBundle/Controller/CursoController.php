@@ -29,7 +29,7 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBundle:Curso')->findAll();
+        $entities = $em->getRepository('CursoBundle:Curso')->findAll();
 
         return array(
             'entities' => $entities,
@@ -40,7 +40,7 @@ class CursoController extends Controller
      *
      * @Route("/", name="curso_create")
      * @Method("POST")
-     * @Template("AppBundle:Curso:new.html.twig")
+     * @Template("CursoBundle:Curso:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -110,7 +110,7 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Curso')->find($id);
+        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
@@ -135,7 +135,7 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Curso')->find($id);
+        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
@@ -174,13 +174,13 @@ class CursoController extends Controller
      *
      * @Route("/{id}", name="curso_update")
      * @Method("PUT")
-     * @Template("AppBundle:Curso:edit.html.twig")
+     * @Template("CursoBundle:Curso:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Curso')->find($id);
+        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
@@ -215,7 +215,7 @@ class CursoController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBundle:Curso')->find($id);
+            $entity = $em->getRepository('CursoBundle:Curso')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Curso entity.');
@@ -254,7 +254,7 @@ class CursoController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entityCurso = $em->getRepository('AppBundle:Curso')->find($idCurso);
+        $entityCurso = $em->getRepository('CursoBundle:Curso')->find($idCurso);
         $entityUsuario = $em->getRepository('UserBundle:Usuario')->find($idUsuario);
 
 
