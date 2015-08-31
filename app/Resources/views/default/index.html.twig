@@ -25,13 +25,14 @@
                 <div class="row">
                     
                     <div class="col-md-3">
-                        
+                        {# ruta para descargar parciales #}
                         <div class="menu-item blue">
-                            <a href="#feature-modal" data-toggle="modal">
+                            <a href="/documento" data-toggle="modal">
                                 <i class="fa fa-magic"></i>
                                 <p>Descargar Parciales</p>
                             </a>
                         </div>
+                        {# termina ruta para descargar parciales #}
                         
                         <div class="menu-item green">
                             <a href="#portfolio-modal" data-toggle="modal">
@@ -109,13 +110,14 @@
                     <div class="col-md-3">
                         
                        
-                        
+                        {# ruta para subir documentos #}
                         <div class="menu-item color">
-                            <a href="#testimonial-modal" data-toggle="modal">
+                            <a href="{{ path('documento_new',{'username':app.user.username})}}" data-toggle="modal">
                                 <i class="fa fa-comment-o"></i>
                                 <p>Subir Documentos</p>
                             </a>
                         </div>
+                        {# termina ruta para subir documentos #}  
                         {# ruta para el Cursos #}
                         <div class="menu-item blue">
                             <a href="#" data-toggle="modal" data-target="#modalCursos">

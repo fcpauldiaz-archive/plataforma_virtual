@@ -1,0 +1,31 @@
+{% extends 'base_page.html.twig' %}
+
+{% block body_content %}
+    <h1>Cursos Disponibles</h1>
+	<table class = "table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Curso</th>
+				<th>Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for curso in cursos %}
+			<tr>
+			
+				<td> {{ curso.nombreCurso }} </td>
+				<td> 
+					<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
+						Asignar Curso
+					</a>
+				</td>
+			
+			
+			</tr>	
+			{% endfor %}
+		</tbody>
+	</table>
+	{# comment bundle 
+	{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'foo'} %}
+	#}
+{% endblock %}

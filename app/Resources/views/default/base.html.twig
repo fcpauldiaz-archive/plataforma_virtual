@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Learn-In!{% endblock %}</title>
-
+    
+         {% block stylesheets %}{% endblock %}
         
         <!-- Bootstrap Core CSS -->
         <link href=" {{ asset('bootstrap/css/bootstrap.min.css') }} " rel="stylesheet">
@@ -30,7 +31,7 @@
         
     
 
-        {% block stylesheets %}{% endblock %}
+       
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         </head>

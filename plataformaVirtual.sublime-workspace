@@ -624,6 +624,7 @@
 	},
 	"file_history":
 	[
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Registration/register_content.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/AsignacionController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listar.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
@@ -750,8 +751,7 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/RegistrationController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Form/Type/GroupFormType.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/src/UserBundle/Entity/Group.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Group/show_content.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/GroupableInterface.php"
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Group/show_content.html.twig"
 	],
 	"find":
 	{
@@ -1492,7 +1492,7 @@
 		[
 			[
 				"",
-				"/Users/usuario/Google Drive/Docs/Web/fcpauldiazBlog/fcpauldiaz.sublime-project"
+				"/Users/usuario/Documents/ProyectosHeroku/plataforma_virtual/heroku_learnIn.sublime-project"
 			]
 		],
 		"width": 380.0

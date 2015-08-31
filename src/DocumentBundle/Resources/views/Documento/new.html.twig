@@ -1,0 +1,29 @@
+{% extends '::base_page.html.twig' %}
+
+{% block body_content -%}
+    <h1>Documento creation</h1>
+
+    	
+
+    	{{ form_start(form,{'attr': {'class':'form-group formcolor'}}) }}
+    		{% if not form.vars.valid %}
+			<div class="alert alert-danger" role="alert">
+			    {{ form_errors(form) }}
+			</div>
+			{% endif %}
+		    {{ form_row(form.documentName) }}
+		    {{ form_row(form.tipoDocumento) }}
+		    {{ form_row(form.curso) }}
+		    {{ form_row(form.numeroDocumento) }}
+		    {{ form_row(form.documentFile) }}
+		   
+		{{ form_end(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('documento') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -33,7 +33,7 @@ class Usuario extends BaseUser
     private $nombreCompleto;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Curso", inversedBy="usuario")
+     * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuario")
      * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;
@@ -84,10 +84,10 @@ class Usuario extends BaseUser
     /**
      * Add cursos
      *
-     * @param \AppBundle\Entity\Curso $cursos
+     * @param \CursoBundle\Entity\Curso $cursos
      * @return Usuario
      */
-    public function addCurso(\AppBundle\Entity\Curso $cursos)
+    public function addCurso(\CursoBundle\Entity\Curso $cursos)
     {
         $this->cursos[] = $cursos;
 
@@ -97,9 +97,9 @@ class Usuario extends BaseUser
     /**
      * Remove cursos
      *
-     * @param \AppBundle\Entity\Curso $cursos
+     * @param \CursoBundle\Entity\Curso $cursos
      */
-    public function removeCurso(\AppBundle\Entity\Curso $cursos)
+    public function removeCurso(\CursoBundle\Entity\Curso $cursos)
     {
         $this->cursos->removeElement($cursos);
     }

@@ -587,9 +587,22 @@ and (max-width : 991px) {
 
 
 
+thead th {
+    background-color: #006DCC;
+    color: white;
+}
 
+tbody td {
+    background-color: #FFFFF;
+    color: #000000;
+}
 
-
+h1{
+    color:#000000;
+}
+.formcolor{
+    color:#000000;
+}
 
 /*** Start Pricing Section ****/
 

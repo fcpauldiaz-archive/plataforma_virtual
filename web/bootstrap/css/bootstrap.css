@@ -11,6 +11,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+
   margin: 0;
 }
 article,
@@ -183,7 +184,13 @@ optgroup {
 table {
   border-spacing: 0;
   border-collapse: collapse;
+  color: #000000;
 }
+
+.override{
+  color: #000000;
+}
+
 td,
 th {
   padding: 0;
@@ -4629,7 +4636,7 @@ a.badge:focus {
 }
 .jumbotron h1,
 .jumbotron .h1 {
-  color: inherit;
+  color: ;
 }
 .jumbotron p {
   margin-bottom: 15px;
