@@ -592,9 +592,17 @@ thead th {
     color: white;
 }
 
+.buttonbk{
+    background-color: #006DCC;
+    color: white;
+    font-weight: bolder;
+    font-size:15px;
+}
+
 tbody td {
     background-color: #FFFFF;
     color: #000000;
+
 }
 
 h1{
