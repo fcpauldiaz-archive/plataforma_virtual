@@ -17,6 +17,7 @@
             </thead>
             <tbody>
             {% for document in curso.documentos %}
+                {% if document.tipoDocumento == true %}
                 <tr>
                     <td><a href="{{ path('documento_show', { 'id': document.id }) }}">{{ document.id }}</a></td>
                     <td>{{ document.documentName }}</td>
@@ -39,6 +40,7 @@
                     </ul>
                     </td>
                 </tr>
+                {% endif %}
             {% endfor %}
             </tbody>
         </table>
