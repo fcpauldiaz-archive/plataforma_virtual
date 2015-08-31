@@ -23,18 +23,18 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            
             new CursoBundle\CursoBundle(),
-
-
-            new FOS\UserBundle\FOSUserBundle(),
             new UserBundle\UserBundle(),
-
-            new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
-            new FOS\RestBundle\FOSRestBundle(),
-            new FOS\CommentBundle\FOSCommentBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
             new DocumentBundle\DocumentBundle(),
-            new Vich\UploaderBundle\VichUploaderBundle(),
+           
+            new FOS\UserBundle\FOSUserBundle(),                         //user bunndle
+            new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(), //admin bundle
+            new FOS\RestBundle\FOSRestBundle(),
+            new FOS\CommentBundle\FOSCommentBundle(),                   //comment engine
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Vich\UploaderBundle\VichUploaderBundle(),               //upload engine
+            new FOS\ElasticaBundle\FOSElasticaBundle(),                 //searh engine
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

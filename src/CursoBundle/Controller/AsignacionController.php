@@ -4,12 +4,15 @@ namespace CursoBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use CursoBundle\Entity\Curso;
 use UserBundle\Entity\Usuario;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections;
+
 
 class AsignacionController extends Controller
 {
@@ -36,6 +39,19 @@ class AsignacionController extends Controller
         } 
         
 		return $this->render('CursoBundle:Asignacion:asignar.html.twig', array('cursos' => $returnData,'cursosAsignados'=>$cursosAsignados));
+    }
+     /**
+    * @Route("/sites/search/", name="site_search")
+    * @Method({ "head", "get" })
+    * @Template("CursoBundle:Asignacion:buscar.html.twig")
+    */
+    public function searchQueryAction(Request $request)
+    {
+
+        $finder = $this->get('fos_elastica.finder.bookmarks.site');
+        $searchTerm = $request->query->get('search');
+        $query = $finder->find($searchTerm);
+        return array('query' => $query);
     }
 
     /**

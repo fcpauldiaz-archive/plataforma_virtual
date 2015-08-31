@@ -1,0 +1,37 @@
+{% extends '::base_page.html.twig' %}
+
+{% block body_content -%}
+    <br>
+    <br>
+    <h1>Proveedor Encontrado</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                
+                <th>Nit</th>
+                <th>Nombre Proveedor</th>
+                <th>Telefono Proveedor</th>
+                <th>Correo</th>
+                <th>Juguetes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for proveedor in query %}
+            <tr>
+                
+                <td>{{ proveedor.id }}</td>
+                <td>{{ proveedor.nombreCurso}} </td>
+                
+               
+
+               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+       
+    {% endblock %}
+
