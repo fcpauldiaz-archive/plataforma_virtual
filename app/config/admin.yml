@@ -3,8 +3,6 @@ easy_admin:
     entities:
         Usuario:
             class: UserBundle\Entity\Usuario
-            list:
-                fields: ['nombreCompleto','username','cursos','email','enabled','lastLogin','roles']
         Cursos:
             class: CursoBundle\Entity\Curso  
         Comentarios:

@@ -10,7 +10,7 @@
     },
    
     "require": {
-        "php": ">=5.3.9",
+        "php": ">=5.5.0",
         "symfony/symfony": "2.7.*",
         "ext-mbstring": "*",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
