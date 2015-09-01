@@ -15,7 +15,7 @@
         </thead>
         <tbody>
         {% for document in entities %}
-        {% if document.tipoDocumento === false %}
+        {% if document.tipoDocumento == false %}
             <tr>
                 <td><a href="{{ path('documento_show', { 'id': document.id }) }}">{{ document.id }}</a></td>
                 <td>{{ document.documentName }}</td>
