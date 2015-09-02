@@ -1,10 +1,12 @@
+#Aviso: la relación many to many todavía no se puede mostrar en el admin bundle
+#referencia: https://github.com/javiereguiluz/EasyAdminBundle/issues/423
 easy_admin:
     site_name: 'Learn-In Admin'
     entities:
         Usuario:
             class: UserBundle\Entity\Usuario
             list:
-                fields: ['nombreCompleto','username','cursos','email','enabled','lastLogin','roles']
+                fields: ['nombreCompleto','username','email','enabled','lastLogin','roles']
         Cursos:
             class: CursoBundle\Entity\Curso  
         Comentarios:
