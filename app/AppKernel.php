@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),
             new DocumentBundle\DocumentBundle(),
+            new ForumBundle\ForumBundle(),
            
             new FOS\UserBundle\FOSUserBundle(),                         //user bunndle
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(), //admin bundle
