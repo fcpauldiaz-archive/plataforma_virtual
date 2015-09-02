@@ -11,7 +11,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         // agregar campos personalizados
-        $builder->add('nombreCompleto',null,array('label' => false));
+        $builder->add('nombreCompleto',null,array('label' => 'Nombre Completo'));
     }
 
     /**
