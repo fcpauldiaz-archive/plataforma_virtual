@@ -57,7 +57,7 @@ class CursoController extends Controller
         }
 
         //actuliazar indices
-        exec("heroku run php app/console fos:elastica:populate");
+        exec("php app/console fos:elastica:populate");
 
         return array(
             'entity' => $entity,
