@@ -56,6 +56,9 @@ class CursoController extends Controller
             return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
         }
 
+        //actuliazar indices
+        exec("heroku run php app/console fos:elastica:populate");
+
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),

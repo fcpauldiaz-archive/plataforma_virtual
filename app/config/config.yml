@@ -98,7 +98,8 @@ fos_elastica:
     clients:
         default:
             connections:
-                - url: http://paas:7295fe33da455d47d3308a1e1d414359@dwalin-us-east-1.searchly.com
+                - url: http://127.0.0.1:9200
+                #- url: http://paas:7295fe33da455d47d3308a1e1d414359@dwalin-us-east-1.searchly.com
             connection_strategy: RoundRobin
     indexes:
         bookmarks:
