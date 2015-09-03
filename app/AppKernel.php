@@ -24,10 +24,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             
-            new CursoBundle\CursoBundle(),
-            new UserBundle\UserBundle(),
-            new DocumentBundle\DocumentBundle(),
-            new ForumBundle\ForumBundle(),
            
             new FOS\UserBundle\FOSUserBundle(),                         //user bunndle
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(), //admin bundle
@@ -35,6 +31,11 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Vich\UploaderBundle\VichUploaderBundle(),               //upload engine
             new FOS\ElasticaBundle\FOSElasticaBundle(),                 //searh engine
+
+            new CursoBundle\CursoBundle(),
+            new UserBundle\UserBundle(),
+            new DocumentBundle\DocumentBundle(),
+            new ForumBundle\ForumBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

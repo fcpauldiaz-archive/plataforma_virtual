@@ -19,7 +19,7 @@ class AsignacionController extends Controller
     /**
      * Don't forget to add this route annotation!
      *
-     * @Route("/{username}/asignar/cursos", name="asignacion")
+     * @Route("/{username}/asignar/cursos/", name="asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * 
      */
@@ -30,28 +30,56 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
-        $returnData = [];
+       
+        $returnData = $this->mostrarCursosAsignados($cursos,$cursosAsignados);
+        $error = 0;
 
+		return $this->render('CursoBundle:Asignacion:asignar.html.twig', 
+        array(
+            'cursos' => $returnData,
+            'query' => [],
+            'error' => $error,
+
+            ));
+    }
+
+    public function mostrarCursosAsignados($cursos,$cursosAsignados)
+    {
+        $returnData = [];
         foreach($cursos as $curso){       
             if (!$cursosAsignados->contains($curso)) {
                 $returnData[] = $curso;
             }
         } 
-        
-		return $this->render('CursoBundle:Asignacion:asignar.html.twig', array('cursos' => $returnData,'cursosAsignados'=>$cursosAsignados));
+        return $returnData;
     }
-     /**
-    * @Route("/sites/search/", name="site_search")
-    * @Method({ "head", "get" })
-    * @Template("CursoBundle:Asignacion:buscar.html.twig")
-    */
-    public function searchQueryAction(Request $request)
-    {
 
+    /**
+     * @Route("/{username}/search/cursos/", name="asignacion_search")
+     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * 
+     */
+    public function searchQueryAction(Request $request, Usuario $usuario)
+    {
+         $em = $this->getDoctrine()->getManager();
+        $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
+        $cursosAsignados = $usuario->getCursos();
         $finder = $this->get('fos_elastica.finder.bookmarks.site');
         $searchTerm = $request->query->get('search');
         $query = $finder->find($searchTerm);
-        return array('query' => $query);
+        $err = 0;
+        if ($searchTerm == ''|| $query == null){
+            $err = 1;
+        }
+       return $this->render('CursoBundle:Asignacion:asignar.html.twig',
+            array(
+                'username' => $usuario->getUsername(),
+                'query' => $query,
+                'cursos'=>$this->mostrarCursosAsignados($cursos,$cursosAsignados), 
+                'error' =>$err,
+                
+                ));
+      
     }
 
     /**

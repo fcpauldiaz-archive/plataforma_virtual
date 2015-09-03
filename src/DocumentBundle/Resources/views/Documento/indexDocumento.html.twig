@@ -33,7 +33,7 @@
                         <a href="{{ path('documento_show', { 'id': document.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('documento_edit', { 'id': document.id }) }}">edit</a>
+                        <a href="{{ path('documento_edit', { 'id': document.id ,'username': app.user.username}) }}">edit</a>
                     </li>
                 </ul>
                 </td>

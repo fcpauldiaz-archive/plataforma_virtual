@@ -26,7 +26,7 @@ class DocumentoController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexDocumentoAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -41,7 +41,7 @@ class DocumentoController extends Controller
      *
      * @Route("/{username}",name="documento_create")
      * @Method("POST")
-     * @Template("DocumentBundle:Documento:new.html.twig")
+     * @Template("DocumentBundle:Documento:new_documento.html.twig")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * 
      */
@@ -96,7 +96,7 @@ class DocumentoController extends Controller
      * @Template()
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function newAction(\UserBundle\Entity\Usuario $usuario)
+    public function newDocumentoAction(\UserBundle\Entity\Usuario $usuario)
     {
         $entity = new Documento();
         $form   = $this->createCreateForm($entity,$usuario);
@@ -114,7 +114,7 @@ class DocumentoController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function showAction($id)
+    public function showDocumentoAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -135,11 +135,12 @@ class DocumentoController extends Controller
     /**
      * Displays a form to edit an existing Documento entity.
      *
-     * @Route("/{id}/edit", name="documento_edit")
+     * @Route("/{username}/{id}/edit", name="documento_edit")
      * @Method("GET")
      * @Template()
+     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function editAction($id)
+    public function editDocumentoAction($id, \UserBundle\Entity\Usuario $usuario)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -149,7 +150,7 @@ class DocumentoController extends Controller
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($entity,$usuario);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -166,14 +167,14 @@ class DocumentoController extends Controller
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Documento $entity)
+    private function createEditForm(Documento $entity,\UserBundle\Entity\Usuario $usuario)
     {
-        $form = $this->createForm(new DocumentoType(), $entity, array(
+        $form = $this->createForm(new DocumentoType($usuario), $entity, array(
             'action' => $this->generateUrl('documento_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -182,9 +183,9 @@ class DocumentoController extends Controller
      *
      * @Route("/{id}", name="documento_update")
      * @Method("PUT")
-     * @Template("DocumentBundle:Documento:edit.html.twig")
+     * @Template("DocumentBundle:Documento:editDocumento.html.twig")
      */
-    public function updateAction(Request $request, $id)
+    public function updateDocumentoAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -248,7 +249,7 @@ class DocumentoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('documento_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Eliminar'))
             ->getForm()
         ;
     }

@@ -1,0 +1,4 @@
+form:
+    label:
+         delete: Desea eliminar el archivo ? 
+download: descargar

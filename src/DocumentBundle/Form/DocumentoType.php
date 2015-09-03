@@ -22,7 +22,7 @@ class DocumentoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('documentName')
+            ->add('documentName',null,['label'=>'Nombre del Documento'])
             ->add('tipoDocumento', 'choice', array(
             'choices'  => array(1 => 'Parcial', 0 => 'Hoja de Trabajo'),
             
@@ -36,7 +36,8 @@ class DocumentoType extends AbstractType
                 'choice_list' => new ChoiceList(
                     array(1, 2, 3,4,5,6,7,8,9,10),
                     array('1', '2', '3','4','5','6','7','8','9','10')
-                )
+                ),
+                'label' => 'Número del documento'
             ))
             ->add('documentFile','vich_file',array('label'=>false))
         ;
