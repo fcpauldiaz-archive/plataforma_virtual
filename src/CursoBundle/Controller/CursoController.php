@@ -52,18 +52,7 @@ class CursoController extends Controller
         $form->handleRequest($request);
 
        
-        $kernel = $this->get('kernel');
-        $application = new Application($kernel);
-        $application->setAutoExit(false);
-
-        $input = new ArrayInput(array(
-           'command' => 'heroku run fos:elastica:populate',
-        ));
-        // You can use NullOutput() if you don't need the output
-        $output = new NullOutput();
-        $application->run($input, $output);
-        
-
+       
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
