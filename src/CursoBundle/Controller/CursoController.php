@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
 use CursoBundle\Form\CursoType;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
 
 /**
  * Curso controller.
@@ -49,7 +50,7 @@ class CursoController extends Controller
         $form->handleRequest($request);
 
        
-         $kernel = $this->get('kernel');
+        $kernel = $this->get('kernel');
         $application = new Application($kernel);
         $application->setAutoExit(false);
 
@@ -60,7 +61,7 @@ class CursoController extends Controller
         $output = new NullOutput();
         $application->run($input, $output);
         
-       
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
