@@ -12,8 +12,6 @@ user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
 
-    
-
 app:
     resource: "@CursoBundle/Controller/"
     type:     annotation
