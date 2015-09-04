@@ -11,7 +11,7 @@
 			{{form_start(form)}}
 
 			<br>
-
+           <h8><strong>Nombre de Usuario</strong></h8>
            <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
@@ -20,7 +20,7 @@
            </div>
 
            <br>
-
+            <h8><strong>Correo Electrónico</strong></h8>
            <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 
@@ -30,7 +30,7 @@
 
 
            <br>
-
+             <h8><strong></strong></h8>
            <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
 
@@ -40,14 +40,30 @@
 
 
            <br>
-
+             <h8><strong>Contraseña Actual</strong></h8>
            <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
           	{{form_row(form.current_password,{'attr': {'class': 'form-control','placeholder':'Contraseña Actual'}})}}
 
            </div>
+           <h8><strong>Contraseña Nueva</strong></h8>
+           <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
+              {{form_row(form.plainPassword.first,{'attr': {'class': 'form-control','placeholder':'No tiene que ser necesariamente la misma utilizada en la UVG'}})}}
+
+            </div>
+
+              <br>
+           <h8><strong>Repetir Contraseña</strong></h8>
+           <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+
+              {{form_row(form.plainPassword.second,{'attr': {'class': 'form-control','placeholder':'Confirmar Contraseña'}})}}
+
+          </div>
+          
 
 
    
