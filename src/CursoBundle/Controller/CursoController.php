@@ -49,15 +49,7 @@ class CursoController extends Controller
         $form->handleRequest($request);
 
        
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
-        }
-
-        $kernel = $this->get('kernel');
+         $kernel = $this->get('kernel');
         $application = new Application($kernel);
         $application->setAutoExit(false);
 
@@ -68,6 +60,16 @@ class CursoController extends Controller
         $output = new NullOutput();
         $application->run($input, $output);
         
+       
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
+        }
+
+       
 
         return array(
             'entity' => $entity,
