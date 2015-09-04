@@ -57,7 +57,7 @@ class CursoController extends Controller
         $application->setAutoExit(false);
 
         $input = new ArrayInput(array(
-           'command' => 'fos:elastica:populate',
+           'command' => 'run fos:elastica:populate',
         ));
         // You can use NullOutput() if you don't need the output
         $output = new NullOutput();
