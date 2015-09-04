@@ -56,8 +56,8 @@ class CursoController extends Controller
             return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
         }
 
-        //actuliazar indices
-        exec("php app/console fos:elastica:populate");
+        //actulizar indices
+        exec("run php app/console fos:elastica:populate");
 
         return array(
             'entity' => $entity,
