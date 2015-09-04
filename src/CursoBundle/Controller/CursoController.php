@@ -65,7 +65,7 @@ class CursoController extends Controller
            'command' => 'fos:elastica:populate',
         ));
         // You can use NullOutput() if you don't need the output
-        $output = new BufferedOutput();
+        $output = new NullOutput();
         $application->run($input, $output);
         
 
