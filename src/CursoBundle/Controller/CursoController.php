@@ -48,6 +48,7 @@ class CursoController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+       
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -56,8 +57,17 @@ class CursoController extends Controller
             return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
         }
 
-        //actulizar indices
-        exec("run php app/console fos:elastica:populate");
+        $kernel = $this->get('kernel');
+        $application = new Application($kernel);
+        $application->setAutoExit(false);
+
+        $input = new ArrayInput(array(
+           'command' => 'fos:elastica:populate',
+        ));
+        // You can use NullOutput() if you don't need the output
+        $output = new BufferedOutput();
+        $application->run($input, $output);
+        
 
         return array(
             'entity' => $entity,
