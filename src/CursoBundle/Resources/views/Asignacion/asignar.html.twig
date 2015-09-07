@@ -38,15 +38,16 @@
 
 				<tr>
 				
-					
+					{% if cu == curso %}
 					<td> 
-						{% if cu == curso %}
+						
 						<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
 							Asignar Curso
 						
 						</a>
-						{% endif %}
+						
 					</td>
+					{% endif %}
 				
 				
 				</tr>
