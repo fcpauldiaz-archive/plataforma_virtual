@@ -33,17 +33,21 @@
 			</thead>
 			<tbody>
 				{% for curso in query %}
+				{% for cu in cursos %}
 				<tr>
 				
 					<td> {{ curso }} </td>
 					<td> 
+						{% if cu.id != curso.id %}
 						<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
 							Asignar Curso
+						{% endif %}
 						</a>
 					</td>
 				
 				
-				</tr>	
+				</tr>
+				{% endfor %}	
 				{% endfor %}
 			</tbody>
 		</table>
