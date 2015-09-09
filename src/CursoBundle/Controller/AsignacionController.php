@@ -13,12 +13,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections;
 
-
+/**
+ * AsignacionController
+ */
 class AsignacionController extends Controller
 {
     /**
-     * Don't forget to add this route annotation!
-     *
+     * Método para mostrar los cursos no asignados  de un usuario
+     * 
      * @Route("/{username}/asignar/cursos/", name="asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * 
@@ -30,7 +32,6 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
-       
         $returnData = $this->mostrarCursosAsignados($cursos,$cursosAsignados);
         $error = 0;
 
@@ -42,7 +43,12 @@ class AsignacionController extends Controller
 
             ));
     }
-
+    /**
+     * Método que verifica que solo los cursos no asignados de un usuario
+     * @param  [Array] $cursos          [Recibe todos los cursos disponibles]
+     * @param  [Array] $cursosAsignados [Recibe los cursos asignados]
+     * @return [Array]                  [Devuelve los cursos no asignados]
+     */
     public function mostrarCursosAsignados($cursos,$cursosAsignados)
     {
         $returnData = [];
@@ -55,22 +61,33 @@ class AsignacionController extends Controller
     }
 
     /**
+     * Método para buscar un curso específico
      * @Route("/{username}/search/cursos/", name="asignacion_search")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * 
      */
     public function searchQueryAction(Request $request, Usuario $usuario)
     {
-         $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
+        //se obtienen todos los cursos
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
+        //se obtienen los cursos asignados 
         $cursosAsignados = $usuario->getCursos();
+        //instancia del buscador
         $finder = $this->get('fos_elastica.finder.bookmarks.site');
+        //término de búsqueda
         $searchTerm = $request->query->get('search');
+        //query representa los cursos asignados (array)
         $query = $finder->find($searchTerm);
         $err = 0;
+
+        //se verifica que el término de búsqueda no haya dado error
+        //y que se haya encontrado algún curso
+        //en otro caso se toma como error
         if ($searchTerm == ''|| $query == null){
             $err = 1;
         }
+
        return $this->render('CursoBundle:Asignacion:asignar.html.twig',
             array(
                 'username' => $usuario->getUsername(),
@@ -83,7 +100,7 @@ class AsignacionController extends Controller
     }
 
     /**
-     * Método para asingar un curso a un usuario
+     * Método para agregar un curso a un usuario de forma lógica (base de datos)
      *
      * @Route("/agregar/curso/{usuario_id}/{curso_id}/", name="add_asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
@@ -116,7 +133,7 @@ class AsignacionController extends Controller
     }
 
     /**
-     * [removeCursoAction description]
+     * [Método para desasignar cursos ]
      * Método para remover curso asignado al usuario
      * @Route("/quitar/curso/{curso_id}/{username}/",name="remove_curso")
      * @ParamConverter()
