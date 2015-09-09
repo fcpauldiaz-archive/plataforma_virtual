@@ -32,28 +32,34 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for curso in query %}
-				<td> {{ curso }} </td>
-				{% for cu in cursos %}
-
 				<tr>
 				
-					{% if cu == curso %}
-					<td> 
+				{% for curso in query %}
+					<td> {{ curso }} </td>
+					{% set errorAsignacion = 0 %}
+					{% for cu in cursos %}
+
+					
+
+					
+						{% if cu == curso %}
+						<td> 
+							
+							<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
+								Asignar Curso
+							
+							</a>
+							
+						</td>
 						
-						<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
-							Asignar Curso
-						
-						</a>
-						
-					</td>
-					{% endif %}
-				
-				
-				</tr>
-				
-				{% endfor %}	
+						{% endif %}
+					
+					
+					{% endfor %}
+
+					
 				{% endfor %}
+			</tr>
 			</tbody>
 		</table>
 		{% endif %}

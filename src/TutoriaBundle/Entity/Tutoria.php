@@ -5,10 +5,12 @@ namespace TutoriaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+
+ * Tutoria
  *
- * @ORM\Table(name = "Tutorias")
- * @ORM\Entity
- * 
+ * @ORM\Table(name="Tutorias")
+ * @ORM\Entity()
+
  */
 class Tutoria
 {
