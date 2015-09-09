@@ -9,7 +9,7 @@
     $container->setParameter('database_password', $db['pass']);
     $container->setParameter('secret', getenv('SECRET'));
     $container->setParameter('locale', 'es');
-    $container->setParameter('mailer_transport', 'gmail');
+    $container->setParameter('mailer_transport', gmail);
     $container->setParameter('mailer_host', null);
-    $container->setParameter('mailer_user', "uvginlearn2015@gmail.com");
-    $container->setParameter('mailer_password', "InLearnUVG2015");
+    $container->setParameter('mailer_user', uvginlearn2015@gmail.com);
+    $container->setParameter('mailer_password', InLearnUVG2015);
