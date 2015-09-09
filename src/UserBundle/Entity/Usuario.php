@@ -43,7 +43,7 @@ class Usuario extends BaseUser
      */
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct();// construye los metodos y atributos de BaseUser
         $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
