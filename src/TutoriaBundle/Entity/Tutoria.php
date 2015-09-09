@@ -1,16 +1,16 @@
 <?php
 
-namespace CursoBundle\Entity;
+namespace TutoriaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Curso
  *
- * @ORM\Table(name="Cursos")
- * @ORM\Entity()
+ * @ORM\Table(name = "Tutorias")
+ * @ORM\Entity
+ * 
  */
-class Curso
+class Tutoria
 {
     /**
      * @var integer
@@ -22,38 +22,17 @@ class Curso
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nombreCurso", type="string", length=50)
+     * @ORM\OneToOne(targetEntity="CursoBundle\Entity\Curso", inversedBy="tutoria")
+     * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
      */
-    private $nombreCurso;
+    private $curso;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="codigoCurso", type="string", length=50)
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="tutoria")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName ="id")
      */
-    private $codigoCurso;
+    private $usuario;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
-     **/
-    private $usuarios;
-
-    /**
-     * [$documento cada curso tiene los documentos asociados]
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="DocumentBundle\Entity\Documento", mappedBy="curso")
-     */
-    private $documentos;
-     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->usuarios = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->documentos = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Get id
@@ -66,120 +45,48 @@ class Curso
     }
 
     /**
-     * Set nombreCurso
+     * Set curso
      *
-     * @param string $nombreCurso
-     * @return Curso
+     * @param \CursoBundle\Entity\Curso $curso
+     * @return Tutoria
      */
-    public function setNombreCurso($nombreCurso)
+    public function setCurso(\CursoBundle\Entity\Curso $curso)
     {
-        $this->nombreCurso = $nombreCurso;
+        $this->curso = $curso;
 
         return $this;
     }
 
     /**
-     * Get nombreCurso
+     * Get curso
      *
-     * @return string 
+     * @return \CursoBundle\Entity\Curso 
      */
-    public function getNombreCurso()
+    public function getCurso()
     {
-        return $this->nombreCurso;
+        return $this->curso;
     }
 
     /**
-     * Set codigoCurso
+     * Set usuario
      *
-     * @param string $codigoCurso
-     * @return Curso
+     * @param \UserBundle\Entity\Usuario $usuario
+     * @return Tutoria
      */
-    public function setCodigoCurso($codigoCurso)
+    public function setUsuario(\UserBundle\Entity\Usuario $usuario)
     {
-        $this->codigoCurso = $codigoCurso;
+        $this->usuario = $usuario;
 
         return $this;
     }
 
     /**
-     * Get codigoCurso
+     * Get usuario
      *
-     * @return string 
+     * @return \UserBundle\Entity\Usuario 
      */
-    public function getCodigoCurso()
+    public function getUsuario()
     {
-        return $this->codigoCurso;
-    }
-   
-
-    /**
-     * Add usuarios
-     *
-     * @param \CursoBundle\Entity\Usuario $usuarios
-     * @return Curso
-     */
-    public function addUsuario(\UserBundle\Entity\Usuario $usuarios)
-    {
-        $this->usuarios[] = $usuarios;
-
-        return $this;
-    }
-
-    /**
-     * Remove usuarios
-     *
-     * @param \CursoBundle\Entity\Usuario $usuarios
-     */
-    public function removeUsuario(\UserBundle\Entity\Usuario $usuarios)
-    {
-        $this->usuarios->removeElement($usuarios);
-    }
-
-    /**
-     * Get usuarios
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getUsuarios()
-    {
-        return $this->usuarios;
-    }
-
-    public function __toString(){
-
-        return $this->nombreCurso;
-    }
-
-    /**
-     * Add documentos
-     *
-     * @param \DocumentBundle\Entity\Documento $documentos
-     * @return Curso
-     */
-    public function addDocumento(\DocumentBundle\Entity\Documento $documentos)
-    {
-        $this->documentos[] = $documentos;
-
-        return $this;
-    }
-
-    /**
-     * Remove documentos
-     *
-     * @param \DocumentBundle\Entity\Documento $documentos
-     */
-    public function removeDocumento(\DocumentBundle\Entity\Documento $documentos)
-    {
-        $this->documentos->removeElement($documentos);
-    }
-
-    /**
-     * Get documentos
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getDocumentos()
-    {
-        return $this->documentos;
+        return $this->usuario;
     }
 }
