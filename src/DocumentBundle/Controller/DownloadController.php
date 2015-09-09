@@ -21,21 +21,19 @@ class DownloadController extends Controller
     /**
      * Listar todos los cursos asignados
      *
-     * @Route("/{username}/", name="parcial_download")
+     * @Route("/hojadetrabajo/", name="hdt_download")
      * @Method("GET")
-     * @Template("DocumentBundle:Documento:download_parcial.html.twig")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * @Template("DocumentBundle:Documento:indexParciales.html.twig")
+     * 
      */
-    public function showCursosParcialAction(Usuario $usuario)
+    public function showCursosHDTAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('DocumentBundle:Documento')->findAll();
 
-        $cursos = $usuario->getCursos();
         return array(
-            'cursos' => $cursos,
-            'entities'=>$entities,
+            'entities' => $entities,
         );
     }
    

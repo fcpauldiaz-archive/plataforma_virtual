@@ -36,9 +36,8 @@ class Curso
     private $codigoCurso;
 
     /**
-     *  Usuarios que tienen los cursos
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="cursos")
-     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     *  Usuarios que tienen
+     * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
      **/
     private $usuarios;
 

@@ -33,8 +33,8 @@ class Usuario extends BaseUser
     private $nombreCompleto;
 
     /**
-     * @ORM\OneToMany(targetEntity="CursoBundle\Entity\Curso", mappedBy="usuario")
-     * 
+     * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuario")
+     * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;
 
@@ -43,7 +43,7 @@ class Usuario extends BaseUser
      */
     public function __construct()
     {
-        parent::__construct();// construye los metodos y atributos de BaseUser
+        parent::__construct();// construye los metodos y atributos de Base
         $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
