@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     /**
+     * Default Index page
      * @Route("/", name="homepage")
      */
     public function indexAction()
@@ -15,13 +16,7 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig');
     }
 
-     /**
-     * @Route("/perfil", name="perfil")
-     */
-    public function lolAction()
-    {
-        return $this->render('base_page.html.twig');
-    }
+   
 
    
 }
