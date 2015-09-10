@@ -1,9 +1,6 @@
 <?php
-
 namespace CursoBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Curso
  *
@@ -20,27 +17,23 @@ class Curso
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="nombreCurso", type="string", length=50)
      */
     private $nombreCurso;
-
     /**
      * @var string
      *
-     * @ORM\Column(name="codigoCurso", type="string", length=50)
+     * @ORM\Column(name="codigoCurso", type="string", length=50,unique = true)
      */
     private $codigoCurso;
-
     /**
      *  Usuarios que tienen
      * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
      **/
     private $usuarios;
-
     /**
      * [$documento cada curso tiene los documentos asociados]
      * @var ArrayCollection
@@ -55,7 +48,6 @@ class Curso
         $this->usuarios = new \Doctrine\Common\Collections\ArrayCollection();
         $this->documentos = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     /**
      * Get id
      *
@@ -65,7 +57,6 @@ class Curso
     {
         return $this->id;
     }
-
     /**
      * Set nombreCurso
      *
@@ -75,10 +66,8 @@ class Curso
     public function setNombreCurso($nombreCurso)
     {
         $this->nombreCurso = $nombreCurso;
-
         return $this;
     }
-
     /**
      * Get nombreCurso
      *
@@ -88,7 +77,6 @@ class Curso
     {
         return $this->nombreCurso;
     }
-
     /**
      * Set codigoCurso
      *
@@ -98,10 +86,8 @@ class Curso
     public function setCodigoCurso($codigoCurso)
     {
         $this->codigoCurso = $codigoCurso;
-
         return $this;
     }
-
     /**
      * Get codigoCurso
      *
@@ -112,7 +98,6 @@ class Curso
         return $this->codigoCurso;
     }
    
-
     /**
      * Add usuarios
      *
@@ -122,10 +107,8 @@ class Curso
     public function addUsuario(\UserBundle\Entity\Usuario $usuarios)
     {
         $this->usuarios[] = $usuarios;
-
         return $this;
     }
-
     /**
      * Remove usuarios
      *
@@ -135,7 +118,6 @@ class Curso
     {
         $this->usuarios->removeElement($usuarios);
     }
-
     /**
      * Get usuarios
      *
@@ -145,12 +127,9 @@ class Curso
     {
         return $this->usuarios;
     }
-
     public function __toString(){
-
         return $this->nombreCurso;
     }
-
     /**
      * Add documentos
      *
@@ -160,10 +139,8 @@ class Curso
     public function addDocumento(\DocumentBundle\Entity\Documento $documentos)
     {
         $this->documentos[] = $documentos;
-
         return $this;
     }
-
     /**
      * Remove documentos
      *
@@ -173,7 +150,6 @@ class Curso
     {
         $this->documentos->removeElement($documentos);
     }
-
     /**
      * Get documentos
      *
