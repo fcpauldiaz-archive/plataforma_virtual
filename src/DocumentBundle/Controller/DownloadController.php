@@ -9,6 +9,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use UserBundle\Entity\Usuario as Usuario;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use FOS\UserBundle\Model\UserInterface;
+use Symfony\Component\Security\Core\Security as Security;
 
 /**
  * Documento controller.
@@ -19,14 +22,57 @@ class DownloadController extends Controller
 {
 
     /**
+     * [showCursosParcialesAction Mostrar los cursos para descargar parciales]
+     * @return [Array] [cursos asignados]
+     * @Route("/cursos/parciales",name="cursos_parciales")
+     * @Method("GET")
+     * @Template("DocumentBundle:Documento:downloadDocumento.html.twig")
+     */
+    public function showCursosParcialesAction(){
+
+        $em = $this->getDoctrine()->getManager();
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) { 
+            throw $this->createAccessDeniedException();
+        }
+        $usuario = $this->getUser();
+
+        $cursos = $usuario->getCursos();
+
+        return ['cursos'=>$cursos,'documento'=>"parcial"];
+    }
+
+    /**
+     * [showCursosHDTAction Mostrar los cursos para descargar hojas de trabajo]
+     * @return [Array] [cursos asignados]
+     * @Route("/cursos/hojasdetrabajo",name="cursos_hdt")
+     * @Method("GET")
+     * @Template("DocumentBundle:Documento:downloadDocumento.html.twig")
+     */
+    public function showCursosHDTAction(){
+
+        $em = $this->getDoctrine()->getManager();
+
+       
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+
+        $usuario = $this->getUser();
+
+        $cursos = $usuario->getCursos();
+
+        return ['cursos'=>$cursos,'documento'=>"hdt"];
+    }
+
+    /**
      * Listar todos los cursos asignados
      *
      * @Route("/hojadetrabajo/", name="hdt_download")
      * @Method("GET")
-     * @Template("DocumentBundle:Documento:indexParciales.html.twig")
+     * @Template("DocumentBundle:Documento:downloadDocumento.html.twig")
      * 
      */
-    public function showCursosHDTAction()
+    public function showCursosAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -37,6 +83,7 @@ class DownloadController extends Controller
         );
     }
    
+
 
    
 

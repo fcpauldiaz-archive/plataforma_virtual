@@ -23,7 +23,7 @@ class AsignacionController extends Controller
      * 
      * @Route("/{username}/asignar/cursos/", name="asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
-     * 
+     * @Template("CursoBundle:Asignacion:asignarAsignacion.html.twig")
      */
     public function asignarAction(Request $request, Usuario $usuario)
     {
@@ -35,13 +35,13 @@ class AsignacionController extends Controller
         $returnData = $this->mostrarCursosAsignados($cursos,$cursosAsignados);
         $error = 0;
 
-		return $this->render('CursoBundle:Asignacion:asignar.html.twig', 
-        array(
+		return  
+         [
             'cursos' => $returnData,
             'query' => [],
             'error' => $error,
 
-            ));
+            ];
     }
     /**
      * Método que verifica que solo los cursos no asignados de un usuario
@@ -88,7 +88,7 @@ class AsignacionController extends Controller
             $err = 1;
         }
 
-       return $this->render('CursoBundle:Asignacion:asignar.html.twig',
+       return $this->render('CursoBundle:Asignacion:asignarAsignacion.html.twig',
             array(
                 'username' => $usuario->getUsername(),
                 'query' => $query,
@@ -129,7 +129,7 @@ class AsignacionController extends Controller
     public function listarAction(Usuario $usuario)
     {
         $em = $this->getDoctrine()->getManager();
-        return $this->render('CursoBundle:Asignacion:listar.html.twig', array('cursosAsignados' => $usuario->getCursos()));
+        return $this->render('CursoBundle:Asignacion:listarAsignacion.html.twig', array('cursosAsignados' => $usuario->getCursos()));
     }
 
     /**
