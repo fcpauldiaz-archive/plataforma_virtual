@@ -12,6 +12,7 @@ use UserBundle\Entity\Usuario;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections;
+use CursoBundle\Form\BuscarType;
 
 
 class AsignacionController extends Controller
@@ -25,6 +26,8 @@ class AsignacionController extends Controller
      */
     public function asignarAction(Request $request, Usuario $usuario)
     {
+        $form = $this->createForm(new BuscarType());
+
         $em = $this->getDoctrine()->getManager();
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
 
@@ -39,7 +42,7 @@ class AsignacionController extends Controller
             'cursos' => $returnData,
             'query' => [],
             'error' => $error,
-
+            'buscarCurso' => $form->createView()
             ));
     }
 

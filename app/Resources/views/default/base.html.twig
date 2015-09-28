@@ -7,7 +7,7 @@
          {% block stylesheets %}{% endblock %}
         
         <!-- Bootstrap Core CSS -->
-        <link href=" {{ asset('bootstrap/css/bootstrap.min.css') }} " rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
 
         <!-- Font Awesome CSS -->
         <link href=" {{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
@@ -21,22 +21,27 @@
         <!-- Custom Fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
+        <link rel="stylesheet" media="screen" href="{{ asset('css/select2.css') }}" />
+        <link rel="stylesheet" media="screen" href="{{ asset('css/select2-bootstrap.css') }}" />
+
          <!-- Template js -->
         <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
-        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/select2/select2.js') }}"></script>
         <script src="{{ asset('js/jquery.appear.js') }}"></script>
         <script src="{{ asset('js/contact_me.js') }}"></script>
         <script src="{{ asset('js/modernizr.custom.js') }}"></script>
         <script src="{{ asset('js/script.js') }}"></script>
         
-    
-
-       
-        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         </head>
         <body>
             {% block body %}{% endblock %}
-            {% block javascripts %}{% endblock %}
+            {% block javascripts %}
+                {# Default classes #}
+                <script>
+                    $('select.select2').select2();
+                </script>
+            {% endblock %}
         </body>
 </html>

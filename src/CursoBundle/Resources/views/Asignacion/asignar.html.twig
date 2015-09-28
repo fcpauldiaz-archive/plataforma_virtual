@@ -14,8 +14,17 @@
                     </span>
                 </div>
             </div>
-   
     </form>
+
+    {{
+        form_start(
+            buscarCurso,
+            {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal' }}
+        )
+    }}
+
+    {{ form_row(buscarCurso.curso) }}
+    {{ form_end(buscarCurso) }}
 
     	{% if query != null and error == 0 %}
 		<h6 class="alert alert-success page-alert" id="alert-1">
