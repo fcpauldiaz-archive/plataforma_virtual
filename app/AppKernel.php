@@ -30,7 +30,6 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Vich\UploaderBundle\VichUploaderBundle(),               //upload engine
-            new FOS\ElasticaBundle\FOSElasticaBundle(),                 //searh engine
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),            //Add select2
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
 
