@@ -9,5 +9,5 @@ easy_admin:
                 fields: ['nombreCompleto','username','email','enabled','lastLogin','roles']
         Cursos:
             class: CursoBundle\Entity\Curso  
-        Comentarios:
-            class: CursoBundle\Entity\Comment
+        Documentos:
+            class: DocumentBundle\Entity\Documento

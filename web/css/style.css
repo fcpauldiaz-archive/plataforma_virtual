@@ -290,7 +290,7 @@ and (max-width : 1199px) {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;
-    color: #888;
+    color: #000000;
     font-weight: 300;
 }
 
@@ -591,13 +591,23 @@ and (max-width : 991px) {
     
 }
 
-
+.stripped {
+    background-color:rgba(0, 109, 204, 1);
+    color: white;
+}
 
 thead th {
     background-color: #006DCC;
     color: white;
 }
 
+
+
+.panel-default>.panel-heading {
+    color: #FFFFFF;
+    background-color: #006DCC;
+    border-color: #ddd;
+}
 .buttonbk{
     background-color: #006DCC;
     color: white;

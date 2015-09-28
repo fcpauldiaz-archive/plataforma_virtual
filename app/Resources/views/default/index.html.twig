@@ -27,19 +27,21 @@
                     <div class="col-md-3">
                         {# ruta para descargar parciales #}
                         <div class="menu-item blue">
-                            <a href="/documento" data-toggle="modal">
+                            <a href="{{path('cursos_parciales')}}" data-toggle="modal">
                                 <i class="fa fa-magic"></i>
                                 <p>Descargar Parciales</p>
                             </a>
                         </div>
                         {# termina ruta para descargar parciales #}
-                        
+
+                        {# empieza ruta par descargar hojas de trabajo#}
                         <div class="menu-item green">
-                            <a href="#portfolio-modal" data-toggle="modal">
+                            <a href="{{path('cursos_hdt')}}" data-toggle="modal">
                                 <i class="fa fa-file-photo-o"></i>
                                 <p>Descargar Hojas de Trabajo</p>
                             </a>
                         </div>
+                        {# termina ruta #}
                         
                         {# espacio para perfil #}
                         <div class="menu-item light-red">

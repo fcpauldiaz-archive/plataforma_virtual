@@ -14,15 +14,17 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections;
 use CursoBundle\Form\BuscarType;
 
-
+/**
+ * AsignacionController
+ */
 class AsignacionController extends Controller
 {
     /**
-     * Don't forget to add this route annotation!
-     *
+     * Método para mostrar los cursos no asignados  de un usuario
+     * 
      * @Route("/{username}/asignar/cursos/", name="asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
-     * 
+     * @Template("CursoBundle:Asignacion:asignarAsignacion.html.twig")
      */
     public function asignarAction(Request $request, Usuario $usuario)
     {
@@ -33,19 +35,28 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
-       
         $returnData = $this->mostrarCursosAsignados($cursos,$cursosAsignados);
         $error = 0;
 
-		return $this->render('CursoBundle:Asignacion:asignar.html.twig', 
-        array(
+		return  
+         [
             'cursos' => $returnData,
             'query' => [],
             'error' => $error,
+<<<<<<< HEAD
             'buscarCurso' => $form->createView()
             ));
-    }
+=======
 
+            ];
+>>>>>>> 9200f8092d7f7d6238eead7c4dcbae47e707fac7
+    }
+    /**
+     * Método que verifica que solo los cursos no asignados de un usuario
+     * @param  [Array] $cursos          [Recibe todos los cursos disponibles]
+     * @param  [Array] $cursosAsignados [Recibe los cursos asignados]
+     * @return [Array]                  [Devuelve los cursos no asignados]
+     */
     public function mostrarCursosAsignados($cursos,$cursosAsignados)
     {
         $returnData = [];
@@ -58,23 +69,34 @@ class AsignacionController extends Controller
     }
 
     /**
+     * Método para buscar un curso específico
      * @Route("/{username}/search/cursos/", name="asignacion_search")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * 
      */
     public function searchQueryAction(Request $request, Usuario $usuario)
     {
-         $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
+        //se obtienen todos los cursos
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
+        //se obtienen los cursos asignados 
         $cursosAsignados = $usuario->getCursos();
+        //instancia del buscador
         $finder = $this->get('fos_elastica.finder.bookmarks.site');
+        //término de búsqueda
         $searchTerm = $request->query->get('search');
+        //query representa los cursos asignados (array)
         $query = $finder->find($searchTerm);
         $err = 0;
+
+        //se verifica que el término de búsqueda no haya dado error
+        //y que se haya encontrado algún curso
+        //en otro caso se toma como error
         if ($searchTerm == ''|| $query == null){
             $err = 1;
         }
-       return $this->render('CursoBundle:Asignacion:asignar.html.twig',
+
+       return $this->render('CursoBundle:Asignacion:asignarAsignacion.html.twig',
             array(
                 'username' => $usuario->getUsername(),
                 'query' => $query,
@@ -86,7 +108,7 @@ class AsignacionController extends Controller
     }
 
     /**
-     * Método para asingar un curso a un usuario
+     * Método para agregar un curso a un usuario de forma lógica (base de datos)
      *
      * @Route("/agregar/curso/{usuario_id}/{curso_id}/", name="add_asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
@@ -115,11 +137,11 @@ class AsignacionController extends Controller
     public function listarAction(Usuario $usuario)
     {
         $em = $this->getDoctrine()->getManager();
-        return $this->render('CursoBundle:Asignacion:listar.html.twig', array('cursosAsignados' => $usuario->getCursos()));
+        return $this->render('CursoBundle:Asignacion:listarAsignacion.html.twig', array('cursosAsignados' => $usuario->getCursos()));
     }
 
     /**
-     * [removeCursoAction description]
+     * [Método para desasignar cursos ]
      * Método para remover curso asignado al usuario
      * @Route("/quitar/curso/{curso_id}/{username}/",name="remove_curso")
      * @ParamConverter()

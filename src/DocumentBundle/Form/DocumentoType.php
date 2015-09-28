@@ -52,7 +52,7 @@ class DocumentoType extends AbstractType
             'data_class' => 'DocumentBundle\Entity\Documento'
         ));
     }
-
+                
     /**
      * @return string
      */

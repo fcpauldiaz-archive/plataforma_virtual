@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new DocumentBundle\DocumentBundle(),
             new ForumBundle\ForumBundle(),
+            new TutoriaBundle\TutoriaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
