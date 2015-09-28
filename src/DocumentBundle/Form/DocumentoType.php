@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 class DocumentoType extends AbstractType
 {
     private $usuario;
+    private $editBoolean = true;
 
     public function __construct(\UserBundle\Entity\Usuario  $user)
     {
@@ -22,7 +23,7 @@ class DocumentoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('documentName',null,['label'=>'Nombre del Documento'])
+          //  ->add('documentName',null,['label'=>'Nombre del Documento'])
             ->add('tipoDocumento', 'choice', array(
             'choices'  => array(1 => 'Parcial', 0 => 'Hoja de Trabajo'),
             
@@ -39,8 +40,13 @@ class DocumentoType extends AbstractType
                 ),
                 'label' => 'Número del documento'
             ))
-            ->add('documentFile','vich_file',array('label'=>false))
-        ;
+            
+           ;
+        if ($this->editBoolean ==true)
+        {
+            $builder->add('documentFile','vich_file',array('label'=>false));
+        }
+            
     }
     
     /**
@@ -64,5 +70,9 @@ class DocumentoType extends AbstractType
     public function getUsuario()
     {
         return $this->usuario;
+    }
+    public function setEditBoolean($param)
+    {
+        $this->editBoolean = $param;
     }
 }

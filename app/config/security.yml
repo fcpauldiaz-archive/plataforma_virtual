@@ -24,10 +24,8 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: IS_AUTHENTICATED_ANONYMOUSLY }
-<<<<<<< HEAD
-=======
         - { path: ^/curso/, role: IS_AUTHENTICATED_ANONYMOUSLY}
->>>>>>> 9200f8092d7f7d6238eead7c4dcbae47e707fac7
+
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER

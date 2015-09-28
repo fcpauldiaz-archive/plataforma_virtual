@@ -22,7 +22,10 @@ class BuscarType extends AbstractType
                 'attr' => [
                     'class' => 'select2',
                 ],
+
             ))
+            ->add('asignar', 'submit')
+
         ;
     }
     

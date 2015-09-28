@@ -39,17 +39,13 @@ class AsignacionController extends Controller
         $error = 0;
 
 		return  
-         [
+        [
             'cursos' => $returnData,
             'query' => [],
             'error' => $error,
-<<<<<<< HEAD
             'buscarCurso' => $form->createView()
-            ));
-=======
+        ];
 
-            ];
->>>>>>> 9200f8092d7f7d6238eead7c4dcbae47e707fac7
     }
     /**
      * Método que verifica que solo los cursos no asignados de un usuario
@@ -76,6 +72,7 @@ class AsignacionController extends Controller
      */
     public function searchQueryAction(Request $request, Usuario $usuario)
     {
+        
         $em = $this->getDoctrine()->getManager();
         //se obtienen todos los cursos
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();

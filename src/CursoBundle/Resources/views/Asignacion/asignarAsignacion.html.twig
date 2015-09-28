@@ -2,28 +2,17 @@
 
 {% block body_content %}
 
-	<form action="{{ path('asignacion_search',{'username':app.user.username})}}" method="get">
- 
- 			<div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="search" name="search" class="form-control input-lg" placeholder="Buscar" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type = "submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-    </form>
-
+	
     {{
         form_start(
             buscarCurso,
-            {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal' }}
+            {'action': path('asignacion', { 'usuario_id': app.user.id}), 'method': 'GET'},
+            {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal'}}
         )
     }}
 
     {{ form_row(buscarCurso.curso) }}
+    {{ form_row(buscarCurso.asignar) }}
     {{ form_end(buscarCurso) }}
 
     	{% if query != null and error == 0 %}

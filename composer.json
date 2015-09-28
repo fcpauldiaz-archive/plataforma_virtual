@@ -20,11 +20,8 @@
                     "type": "file"
                 }
             }
-        },
-        {
-            "type": "vcs",
-            "url": "http://svn.servirsa.int/svn/rest-api-logger-bundle"
         }
+        
     ],
    
     "require": {
