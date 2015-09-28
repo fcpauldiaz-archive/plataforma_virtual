@@ -12,11 +12,14 @@ use CursoBundle\Form\CursoType;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 /**
  * Curso controller.
  *
  * @Route("/curso")
+ * @Security("has_role('ROLE_ADMIN')")
  */
 class CursoController extends Controller
 {

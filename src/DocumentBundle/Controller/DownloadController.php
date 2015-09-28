@@ -38,7 +38,7 @@ class DownloadController extends Controller
 
         $cursos = $usuario->getCursos();
 
-        return ['cursos'=>$cursos,'documento'=>"parcial"];
+        return ['cursos'=>$cursos,'documento'=>1];
     }
 
     /**
@@ -61,7 +61,7 @@ class DownloadController extends Controller
 
         $cursos = $usuario->getCursos();
 
-        return ['cursos'=>$cursos,'documento'=>"hdt"];
+        return ['cursos'=>$cursos,'documento'=>0];
     }
 
     /**
@@ -84,6 +84,33 @@ class DownloadController extends Controller
     }
    
 
+ /**
+     * Finds and displays a Curso entity.
+     *
+     * @Route("/{id}/{tipo}/", name="show_curso")
+     * @Method("GET")
+     * @Template("DocumentBundle:Documento:cursoShow.html.twig")
+     */
+    public function showAction($id,$tipo)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Curso entity.');
+        }
+
+       $repositoryCursos = $this->getDoctrine()->getRepository('CursoBundle:Curso');
+       
+
+
+        return array(
+            'cursos'      => $entity,
+            'tipo' => $tipo,
+            
+        );
+    }
 
    
 

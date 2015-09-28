@@ -38,6 +38,7 @@ class Curso
      * [$documento cada curso tiene los documentos asociados]
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="DocumentBundle\Entity\Documento", mappedBy="curso")
+     * @ORM\OrderBy({"numeroDocumento" = "ASC"})
      */
     private $documentos;
      /**

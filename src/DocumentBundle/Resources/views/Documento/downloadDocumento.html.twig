@@ -2,10 +2,10 @@
 
 {% block body_content -%}
     
-    {% if documento == "parcial" %}
+    {% if documento == 1 %}
         <h1>Cursos para descargar parciales</h1>
     {% else %}
-        <h1>Curosos para descargar hojas de trabajo</h1>
+        <h1>Cursos para descargar hojas de trabajo</h1>
     {% endif %}
 
     <table class="table table-striped table-hover">
@@ -19,9 +19,10 @@
         <tbody>
         {% for curso in cursos %}
             <tr>
+                
+                <td>  <a href="{{ path('show_curso',{'id':curso.id,'tipo':documento})}}"> {{ curso.nombreCurso }} </a> </td> 
+                <td><a href="{{ path('show_curso',{'id':curso.id,'tipo':documento})}}"> {{ curso.codigoCurso }} </a> </td> 
                
-                <td>{{ curso.nombreCurso }}</td>
-                <td>{{ curso.codigoCurso }}</td>
                
             </tr>
         {% endfor %}
