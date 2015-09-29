@@ -38,7 +38,11 @@ class DownloadController extends Controller
 
         $cursos = $usuario->getCursos();
 
-        return ['cursos'=>$cursos,'documento'=>1];
+        return [ 
+
+        'cursos'=>$cursos,'documento'=>1
+
+        ];
     }
 
     /**
@@ -61,7 +65,7 @@ class DownloadController extends Controller
 
         $cursos = $usuario->getCursos();
 
-        return ['cursos'=>$cursos,'documento'=>0];
+        return [ 'cursos'=>$cursos,'documento'=>0 ];
     }
 
     /**
@@ -78,9 +82,9 @@ class DownloadController extends Controller
 
         $entities = $em->getRepository('DocumentBundle:Documento')->findAll();
 
-        return array(
+        return [
             'entities' => $entities,
-        );
+        ];
     }
    
 
@@ -107,7 +111,7 @@ class DownloadController extends Controller
 
         return [
             'cursos'  => $entity,
-            'tipo' => $tipo,
+            'tipo'    => $tipo,
             
         ];
     }

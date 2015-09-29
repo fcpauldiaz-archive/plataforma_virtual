@@ -37,9 +37,9 @@ class CursoController extends Controller
 
         $entities = $em->getRepository('CursoBundle:Curso')->findAll();
 
-        return array(
+        return [
             'entities' => $entities,
-        );
+        ];
     }
     /**
      * Creates a new Curso entity.
@@ -61,15 +61,17 @@ class CursoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('curso_show', array('id' => $entity->getId())));
+            return $this->redirect(
+                $this->generateUrl(
+                    'curso_show', ['id' => $entity->getId()]
+                )
+            );
         }
-
-       
-
-        return array(
+        
+        return [
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ];
     }
 
     /**
@@ -81,12 +83,12 @@ class CursoController extends Controller
      */
     private function createCreateForm(Curso $entity)
     {
-        $form = $this->createForm(new CursoType(), $entity, array(
+        $form = $this->createForm(new CursoType(), $entity, [
             'action' => $this->generateUrl('curso_create'),
             'method' => 'POST',
-        ));
+        ]);
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', ['label' => 'Create']);
 
         return $form;
     }
@@ -103,10 +105,10 @@ class CursoController extends Controller
         $entity = new Curso();
         $form   = $this->createCreateForm($entity);
 
-        return array(
+        return [
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ];
     }
 
     /**
@@ -128,10 +130,10 @@ class CursoController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return [
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
-        );
+        ];
     }
 
     /**
@@ -154,11 +156,11 @@ class CursoController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return [
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ];
     }
 
     /**
@@ -170,12 +172,12 @@ class CursoController extends Controller
     */
     private function createEditForm(Curso $entity)
     {
-        $form = $this->createForm(new CursoType(), $entity, array(
-            'action' => $this->generateUrl('curso_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new CursoType(), $entity, [
+            'action' => $this->generateUrl('curso_update', ['id' => $entity->getId()]),
             'method' => 'PUT',
-        ));
+        ]);
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', ['label' => 'Update']);
 
         return $form;
     }
@@ -203,14 +205,18 @@ class CursoController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('curso_edit', array('id' => $id)));
+            return $this->redirect(
+                $this->generateUrl(
+                    'curso_edit', ['id' => $id]
+                )
+            );
         }
 
-        return array(
+        return [
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ];
     }
     /**
      * Deletes a Curso entity.
@@ -235,7 +241,9 @@ class CursoController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('curso'));
+        return $this->redirect(
+            $this->generateUrl('curso')
+        );
     }
 
     /**
@@ -248,9 +256,9 @@ class CursoController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('curso_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('curso_delete', ['id' => $id]))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', ['label' => 'Delete'])
             ->getForm()
         ;
     }
@@ -276,7 +284,11 @@ class CursoController extends Controller
             $em->persist($entityUsuario);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('curso_show', array('id' => $entityUsuario1->getId())));
+            return $this->redirect(
+                $this->generateUrl('curso_show', 
+                    [ 'id' => $entityUsuario1->getId() ]
+                )
+            );
         
 
     }

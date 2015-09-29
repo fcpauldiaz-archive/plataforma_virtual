@@ -35,9 +35,9 @@ class DocumentoController extends Controller
 
         $entities = $em->getRepository('DocumentBundle:Documento')->findAll();
 
-        return array(
+        return [
             'entities' => $entities,
-        );
+        ];
     }
     /**
      * Creates a new Documento entity.
@@ -54,22 +54,25 @@ class DocumentoController extends Controller
         $form = $this->createCreateForm($entity,$usuario);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ( $form->isValid() ) {
             $em = $this->getDoctrine()->getManager();
             $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('documento_show', array('id' => $entity->getId())));
+            return $this->redirect(
+                $this->generateUrl(
+                    'documento_show', [ 'id' => $entity->getId() ]
+                    ));
         }
 
 
-        return array(
+        return [
             'entity' => $entity,
             'username'=>$usuario->getUserName(),
             'form'   => $form->createView(),
-        );
+        ];
     }
 
     /**
@@ -82,11 +85,11 @@ class DocumentoController extends Controller
     private function createCreateForm(Documento $entity, \UserBundle\Entity\Usuario $usuario)
     {
         $form = $this->createForm(new DocumentoType($usuario), $entity, array(
-            'action' => $this->generateUrl('documento_create',array('username'=>$usuario->getUserName())),
+            'action' => $this->generateUrl('documento_create',['username'=>$usuario->getUserName()]),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Guardar'));
+        $form->add('submit', 'submit', ['label' => 'Guardar']);
 
         return $form;
     }
@@ -104,10 +107,10 @@ class DocumentoController extends Controller
         $entity = new Documento();
         $form   = $this->createCreateForm($entity,$usuario);
 
-        return array(
+        return [
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ];
     }
 
     /**
@@ -129,10 +132,10 @@ class DocumentoController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return [
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
-        );
+        ];
     }
 
     /**
@@ -156,11 +159,11 @@ class DocumentoController extends Controller
         $editForm = $this->createEditForm($entity,$usuario);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return [
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ];
     }
 
     /**
@@ -174,12 +177,12 @@ class DocumentoController extends Controller
     {
         $var = new DocumentoType($usuario);
         $var->setEditBoolean(false);
-        $form = $this->createForm($var, $entity, array(
-            'action' => $this->generateUrl('documento_update', array('id' => $entity->getId())),
+        $form = $this->createForm($var, $entity, [
+            'action' => $this->generateUrl('documento_update', ['id' => $entity->getId()]),
             'method' => 'PUT',
-        ));
+        ]);
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->add('submit', 'submit', ['label' => 'Actualizar']);
 
         return $form;
     }
@@ -207,14 +210,18 @@ class DocumentoController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('documento_edit', array('id' => $id)));
+            return $this->redirect(
+                $this->generateUrl(
+                    'documento_edit', [ 'id' => $id ]
+                )
+            );
         }
 
-        return array(
+        return [
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ];
     }
     /**
      * Deletes a Documento entity.
@@ -239,7 +246,11 @@ class DocumentoController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('documento'));
+        return $this->redirect(
+            $this->generateUrl(
+                'documento'
+            )
+        );
     }
 
     /**
@@ -252,9 +263,9 @@ class DocumentoController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('documento_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('documento_delete', ['id' => $id]))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Eliminar'))
+            ->add('submit', 'submit',[ 'label' => 'Eliminar'])
             ->getForm()
         ;
     }

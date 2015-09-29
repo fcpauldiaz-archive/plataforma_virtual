@@ -20,23 +20,23 @@ class ProfileFormType extends AbstractType
         }
 
         // agregar campos personalizados
-        $builder->add('nombreCompleto',null,array('label' => false))
+        $builder->add('nombreCompleto',null, ['label' => false])
                 ->add('username',null,['label'=>false])
                 ->add('email','email',['label'=>false])
-                ->add('current_password', 'password', array(
+                ->add('current_password', 'password',[ 
                 'label' => false,
                 'translation_domain' => 'FOSUserBundle',
                 'mapped' => false,
                 'constraints' => $constraint,
-                ))
-                ->add('plainPassword', 'repeated', array(
+                ])
+                ->add('plainPassword', 'repeated', [
                 'label'=>false,
                 'type' => 'password',
-                'options' => array('translation_domain' => 'FOSUserBundle'),
-                'first_options' => array('label' => false),
-                'second_options' => array('label' => false),
+                'options' => ['translation_domain' => 'FOSUserBundle'],
+                'first_options' => ['label' => false],
+                'second_options' => ['label' => false],
                 'invalid_message' => 'fos_user.password.mismatch',
-                ))
+                ])
                 ;
 
     }

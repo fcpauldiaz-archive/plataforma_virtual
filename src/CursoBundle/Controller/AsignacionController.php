@@ -72,7 +72,7 @@ class AsignacionController extends Controller
      */
     public function searchQueryAction(Request $request, Usuario $usuario)
     {
-        
+
         $em = $this->getDoctrine()->getManager();
         //se obtienen todos los cursos
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
@@ -120,7 +120,12 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
-        return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+        return $this->redirect(
+            $this->generateUrl(
+                'listar_cursos', 
+                [ 'username' => $usuario->getUsername() ]
+            )
+        );
         
 		
     }
@@ -134,7 +139,11 @@ class AsignacionController extends Controller
     public function listarAction(Usuario $usuario)
     {
         $em = $this->getDoctrine()->getManager();
-        return $this->render('CursoBundle:Asignacion:listarAsignacion.html.twig', array('cursosAsignados' => $usuario->getCursos()));
+        
+        return $this->render(
+            'CursoBundle:Asignacion:listarAsignacion.html.twig',
+            [ 'cursosAsignados' => $usuario->getCursos() ]
+        );
     }
 
     /**
@@ -151,7 +160,13 @@ class AsignacionController extends Controller
         $usuario->removeCurso($curso);
         $em->persist($usuario);
         $em->flush();
-        return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+
+        return $this->redirect(
+            $this->generateUrl(
+                'listar_cursos', 
+                [ 'username' => $usuario->getUsername() ]
+            )
+        );
         
     }
 }
