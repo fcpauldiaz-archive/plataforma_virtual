@@ -146,10 +146,11 @@ class AsignacionController extends Controller
             $em->persist($usuario);
             $em->flush();
 
-            $this->get('braincrafted_bootstrap.flash')->success('Se asigno curso correctamente');
+            $this->get('braincrafted_bootstrap.flash')->success(sprintf('Curso %s asignado correctamente', $curso->getNombreCurso()));
             return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
         }
 
+        $this->get('braincrafted_bootstrap.flash')->alert(sprintf('Curso %s ya estaba asignado', $curso->getNombreCurso()));
         return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
     }
 
