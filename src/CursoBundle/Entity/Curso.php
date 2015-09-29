@@ -160,4 +160,9 @@ class Curso
     {
         return $this->documentos;
     }
+
+    public function getCurso()
+    {
+        return $this;
+    }
 }

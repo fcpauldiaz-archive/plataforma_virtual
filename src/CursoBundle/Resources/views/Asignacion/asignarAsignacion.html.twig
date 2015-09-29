@@ -6,13 +6,12 @@
     {{
         form_start(
             buscarCurso,
-            {'action': path('asignacion', { 'usuario_id': app.user.id}), 'method': 'GET'},
+            {'action': path('asignar_curso_nuevo', { 'usuario_id': app.user.id}), 'method': 'POST'},
             {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal'}}
         )
     }}
 
     {{ form_row(buscarCurso.curso) }}
-    {{ form_row(buscarCurso.asignar) }}
     {{ form_end(buscarCurso) }}
 
     	{% if query != null and error == 0 %}
