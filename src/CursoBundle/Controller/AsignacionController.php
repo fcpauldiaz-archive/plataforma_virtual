@@ -56,7 +56,7 @@ class AsignacionController extends Controller
     public function mostrarCursosAsignados($cursos,$cursosAsignados)
     {
         $returnData = [];
-        foreach($cursos as $curso){       
+        foreach($cursos as $curso){
             if (!$cursosAsignados->contains($curso)) {
                 $returnData[] = $curso;
             }
@@ -120,6 +120,7 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
+
         return $this->redirect(
             $this->generateUrl(
                 'listar_cursos', 
@@ -128,7 +129,40 @@ class AsignacionController extends Controller
         );
         
 		
+
     }
+
+     /**
+     *
+     * @Route("/{usuario_id}/agregar/curso_nuevo", name="asignar_curso_nuevo")
+     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
+     * 
+     */
+    public function asignarCursoAction(Request $request, Usuario $usuario) {
+        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(
+            new BuscarType());
+
+        $form->handleRequest($request);
+
+        $cursos = $usuario->getCursos();
+
+        $data = $form->getData();
+        $curso = $data['curso'];
+
+        if (!$cursos->contains($curso)) {
+            $usuario->addCurso($curso);
+            $em->persist($usuario);
+            $em->flush();
+
+            $this->get('braincrafted_bootstrap.flash')->success(sprintf('Curso %s asignado correctamente', $curso->getNombreCurso()));
+            return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+        }
+
+        $this->get('braincrafted_bootstrap.flash')->alert(sprintf('Curso %s ya estaba asignado', $curso->getNombreCurso()));
+        return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+    }
+
      /**
      * Listar cursos asignados
      *

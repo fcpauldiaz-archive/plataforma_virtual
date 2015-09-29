@@ -21,22 +21,10 @@ class BuscarType extends AbstractType
                 'property' => 'nombreCurso',
                 'attr' => [
                     'class' => 'select2',
+                    'onchange' => 'this.form.submit()'
                 ],
-
             ))
-            ->add('asignar', 'submit')
-
         ;
-    }
-    
-    /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'CursoBundle\Entity\Curso'
-        ));
     }
 
     /**

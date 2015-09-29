@@ -34,8 +34,10 @@
         <script src="{{ asset('js/script.js') }}"></script>
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
         </head>
         <body>
+            {# <div class="container"> #}
             {% block body %}{% endblock %}
             {% block javascripts %}
                 {# Default classes #}
@@ -43,5 +45,6 @@
                     $('select.select2').select2();
                 </script>
             {% endblock %}
+            {# </div> #}
         </body>
 </html>
