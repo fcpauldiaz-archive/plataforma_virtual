@@ -24,7 +24,7 @@ class AsignacionController extends Controller
      * 
      * @Route("/{username}/asignar/cursos/", name="asignacion")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
-     * @Template("CursoBundle:Asignacion:asignarAsignacion.html.twig")
+     * @Template("CursoBundle:Asignacion:crearAsignacion.html.twig")
      */
     public function asignarAction(Request $request, Usuario $usuario)
     {
@@ -53,7 +53,7 @@ class AsignacionController extends Controller
      * @param  [Array] $cursosAsignados [Recibe los cursos asignados]
      * @return [Array]                  [Devuelve los cursos no asignados]
      */
-    public function mostrarCursosAsignados($cursos,$cursosAsignados)
+    public function mostrarCursosAsignados($cursos, $cursosAsignados)
     {
         $returnData = [];
         foreach($cursos as $curso){
@@ -61,6 +61,7 @@ class AsignacionController extends Controller
                 $returnData[] = $curso;
             }
         } 
+
         return $returnData;
     }
 
@@ -94,13 +95,13 @@ class AsignacionController extends Controller
         }
 
        return $this->render('CursoBundle:Asignacion:asignarAsignacion.html.twig',
-            array(
+            [
                 'username' => $usuario->getUsername(),
                 'query' => $query,
-                'cursos'=>$this->mostrarCursosAsignados($cursos,$cursosAsignados), 
+                'cursos'=>$this->mostrarCursosAsignados($cursos, $cursosAsignados), 
                 'error' =>$err,
                 
-                ));
+            ]);
       
     }
 
@@ -160,7 +161,12 @@ class AsignacionController extends Controller
         }
 
         $this->get('braincrafted_bootstrap.flash')->alert(sprintf('Curso %s ya estaba asignado', $curso->getNombreCurso()));
-        return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+        
+        return $this->redirect(
+            $this->generateUrl(
+                'listar_cursos', [ 'username' => $usuario->getUsername() ]
+            )
+        );
     }
 
      /**
