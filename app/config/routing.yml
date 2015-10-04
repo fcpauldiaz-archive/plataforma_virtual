@@ -26,8 +26,8 @@ default:
     type:     annotation
 
 easy_admin_bundle:
-    #resource: "@EasyAdminBundle/Controller/"
-    resource: "@CursoBundle/Controller/AdminController.php"
+    resource: "@EasyAdminBundle/Controller/"
+    #resource: "@CursoBundle/Controller/AdminController.php"
     type:     annotation
     prefix:   /adminEntity
 
