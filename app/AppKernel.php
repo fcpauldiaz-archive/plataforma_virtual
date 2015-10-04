@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new Vich\UploaderBundle\VichUploaderBundle(),               //upload engine
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),            //Add select2
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
 
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),

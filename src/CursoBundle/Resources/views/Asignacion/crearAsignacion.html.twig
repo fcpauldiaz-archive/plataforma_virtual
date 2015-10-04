@@ -2,94 +2,39 @@
 
 {% block body_content %}
 
-	
+	{# formulario del buscador de cursos #}
     {{
         form_start(
             buscarCurso,
             {'action': path('asignar_curso_nuevo', { 'usuario_id': app.user.id}), 'method': 'POST'},
-            {'attr': {'novalidate': 'novalidate', 'class':'form-horizontal'}}
+            {'attr': {'novalidate': 'novalidate', 'class':'form-control'}}
         )
     }}
 
     {{ form_row(buscarCurso.curso) }}
     {{ form_end(buscarCurso) }}
+    {# termina formulario del buscador de cursos #}
 
-    	{% if query != null and error == 0 %}
-		<h6 class="alert alert-success page-alert" id="alert-1">
-	        <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-	        <strong>Éxito!</strong> Curso Encontrado.
-    	</h6>
-		<h1>Resultado Búsqueda</h1>
-		
-		<table class = "table table-striped table-hover">
-			<thead>
-				<tr>
-					<th>Curso</th>
-					<th>Acción</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-				
-				{% for curso in query %}
-					<td> {{ curso }} </td>
-					{% set errorAsignacion = 0 %}
-					{% for cu in cursos %}
-
-					
-
-					
-						{% if cu == curso %}
-						<td> 
-							
-							<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
-								Asignar Curso
-							
-							</a>
-							
-						</td>
-						
-						{% endif %}
-					
-					
-					{% endfor %}
-
-					
-				{% endfor %}
-			</tr>
-			</tbody>
-		</table>
-		{% endif %}
-
-		{% if error == 1 %}
-
-		<h3 class="alert alert-danger page-alert" id="alert-4">
-	        <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-	        <strong>Error!</strong> Curso no encontrado.
-    	</h3>
-		{% endif %}
-
-
+   	{# tabla que muestra todos los cursos disponibles #}
     <h1>Cursos Disponibles</h1>
 	<table class = "table table-striped table-hover">
 		<thead>
 			<tr>
-				<th>Curso</th>
-				<th>Acción</th>
+				<th>Curso		</th>
+				<th>Código Curso</th>
+				<th>Acción		</th>
 			</tr>
 		</thead>
 		<tbody>
 			{% for curso in cursos %}
 			<tr>
-			
 				<td> {{ curso.nombreCurso }} </td>
+				<td> {{ curso.codigoCurso }} </td>
 				<td> 
 					<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
 						Asignar Curso
 					</a>
 				</td>
-			
-			
 			</tr>	
 			{% endfor %}
 		</tbody>

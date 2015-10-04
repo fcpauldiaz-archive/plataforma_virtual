@@ -15,15 +15,16 @@ class BuscarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('curso', 'entity', array(
+            ->add('curso', 'entity', [
                 'empty_value' => 'Seleccionar curso',
                 'class' => 'CursoBundle:Curso',
                 'property' => 'nombreCurso',
+                'label'   => 'Buscador de Cursos',
                 'attr' => [
                     'class' => 'select2',
                     'onchange' => 'this.form.submit()'
                 ],
-            ))
+            ])
         ;
     }
 

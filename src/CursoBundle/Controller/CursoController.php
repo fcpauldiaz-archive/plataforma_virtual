@@ -18,8 +18,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 /**
  * Curso controller.
  *
- * @Route("/curso")
- * @Security("has_role('ROLE_ADMIN')")
+ * @Route("admin/curso")
+ * 
  */
 class CursoController extends Controller
 {

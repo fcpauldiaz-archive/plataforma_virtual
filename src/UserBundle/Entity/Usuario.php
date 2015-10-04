@@ -28,7 +28,7 @@ class Usuario extends BaseUser
      */
     private $nombreCompleto;
     /**
-     * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuario")
+     * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuarios")
      * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;

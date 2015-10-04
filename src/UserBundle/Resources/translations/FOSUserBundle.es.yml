@@ -1,4 +1,4 @@
-# Group
+# Grupos
 group:
     edit:
         submit: Actualizar grupo
@@ -11,7 +11,7 @@ group:
         created: El grupo ha sido creado
         deleted: El grupo ha sido borrado
 
-# Security
+# Seguridad
 "Bad credentials": Nombre de usuario o Contraseña inválido
 
 security:
@@ -21,7 +21,7 @@ security:
         remember_me: Recordar
         submit: Entrar
 
-# Profile
+# Perfil
 profile:
     show:
         username: Nombre de usuario
@@ -31,13 +31,13 @@ profile:
     flash:
         updated: El perfil ha sido actualizado
 
-# Password change
+# Cambio de Contraseña
 change_password:
     submit: Cambiar contraseña
     flash:
         success: La contraseña se ha cambiado con éxito
 
-# Registration
+# Registro de usuarios
 registration:
     check_email: Se ha enviado un email a %email%. Contiene un enlace de activación que debes presionar para activar tu cuenta.
     confirmed: Felicidades %username%, tu cuenta está ahora confirmada.
@@ -55,7 +55,7 @@ registration:
             Atentamente,
             el Equipo.
 
-# Password resetting
+# restablecer contraseña
 resetting:
     password_already_requested: La contraseña para este usuario ya ha sido solicitada dentro de las 24 horas.
     check_email: Un email ha sido enviado a %email%. Contiene un enlace de activación que debes presionar para restablecer tu contraseña.
@@ -77,14 +77,14 @@ resetting:
             Atentamente,
             el Equipo.
 
-# Global strings
+# Strings globales
 layout:
     logout: Salir
     login: Entrar
     register: Registrar
     logged_in_as: Identificado como %username%
 
-# Form field labels
+# labels para los formularios
 form:
     group_name: "Nombre de grupo:"
     username: "Nombre de usuario:"
@@ -97,3 +97,4 @@ form:
 
 Bad credentials.: Contraseña o usuario incorrecto
 User account is disabled.: La cuenta no está confirmada, en caso de que no le llegó un correo comunicarse con dia13203@uvg.edu.gt
+SQLSTATE[HY000] [2002] Connection refused: Base de datos no disponible
