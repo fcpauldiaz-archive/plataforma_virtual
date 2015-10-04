@@ -220,4 +220,9 @@ class Documento
     {
         return $this->curso;
     }
+
+    public function __toString()
+    {
+        return $this->documentName;
+    }
 }

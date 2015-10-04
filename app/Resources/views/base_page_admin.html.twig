@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
 <!-- Bootstrap Core CSS -->
-{#<link href=" {{ asset('bootstrap/css/bootstrap_page.css') }} " rel="stylesheet">#}
+{#<link href=" {{ asset('bootstrap/css/bootstrap_pageAdmin.css') }} " rel="stylesheet">#}
 <link href=" {{ asset('bootstrap/css/seach-box.css') }} " rel="stylesheet">
 <script src="{{ asset('js/alerts.js') }}"></script>
 
@@ -22,10 +22,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="{{ path('homepage') }}">Learn-In Admin</a>
             </div>
-     
+            
+
            {% include 'admin/sidebar_menu.html.twig' %}
+
 
         <div id="page-wrapper">
 
