@@ -2,9 +2,12 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
 #    parameter_name: value
+    kernel.listener.atd.access_denied.class: UserBundle\Listener\AccessDeniedListener
 
 services:
-#    service_name:
-#        class: CursoBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
-
+    kernel.listener.accessDenied:
+         class:  UserBundle\Listener\AccessDeniedListener
+         scope: request
+         arguments: ["@session", "@router", "@request"]
+         tags:
+             - { name: kernel.event_listener, event: kernel.exception, method: onAccessDeniedException }

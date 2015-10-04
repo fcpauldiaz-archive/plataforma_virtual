@@ -632,9 +632,13 @@
 	},
 	"file_history":
 	[
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu/minimal.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/easy_admin/layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/easyadmin/layout.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/routing.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/AdminController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu/minimal.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/cache/dev/assetic/routing.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/Resources/views/default/layout.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/docs/conf.py",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/minimalMenu.css",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
@@ -755,11 +759,7 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Default/index.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Entity/Product.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Curso.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/edit.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Document/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/ProductController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Product/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/ProductType.php"
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/edit.html.twig"
 	],
 	"find":
 	{
@@ -992,6 +992,22 @@
 		"selected_items":
 		[
 			[
+				"rout",
+				"app/config/routing.yml"
+			],
+			[
+				"rou",
+				"app/cache/dev/assetic/routing.yml"
+			],
+			[
+				"minimi",
+				"app/Resources/views/menu/minimal.html.twig"
+			],
+			[
+				"admin",
+				"src/CursoBundle/Controller/AdminController.php"
+			],
+			[
 				"mini",
 				"app/Resources/views/menu/minimal.html.twig"
 			],
@@ -1208,10 +1224,6 @@
 				"src/UserBundle/Entity/Usuario.php"
 			],
 			[
-				"admin",
-				"app/config/admin.yml"
-			],
-			[
 				"secu",
 				"app/config/security.yml"
 			],
@@ -1324,10 +1336,6 @@
 				"src/UserBundle/Resources/views/Curso/new.html.twig"
 			],
 			[
-				"rou",
-				"app/config/routing.yml"
-			],
-			[
 				"registration",
 				"src/UserBundle/Form/Type/RegistrationFormType.php"
 			],
@@ -1412,10 +1420,6 @@
 				"vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/search.html.twig"
 			],
 			[
-				"rout",
-				"app/config/routing.yml"
-			],
-			[
 				"bootstra_p",
 				"web/bootstrap/css/bootstrap_page.css"
 			],
@@ -1498,10 +1502,6 @@
 			[
 				"cursot",
 				"src/UserBundle/Form/Type/CursoType.php"
-			],
-			[
-				"u",
-				"src/UserBundle/Entity/Usuario.php"
 			]
 		],
 		"width": 0.0
