@@ -19,6 +19,8 @@ security:
             logout:       true
             anonymous:    true
             access_denied_url: /
+            #access_denied_handler: kernel.listener.accessDenied
+            #entry_point: kernel.listener.accessDenied
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -27,7 +29,6 @@ security:
         - { path: ^/traducciones/, role: ROLE_ADMIN }
         - { path: ^/adminEntity, role: ROLE_ADMIN }
         - { path: ^/, roles: ROLE_USER }
-     
 
 
 

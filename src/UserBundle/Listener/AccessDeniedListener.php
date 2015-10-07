@@ -2,20 +2,20 @@
 namespace UserBundle\Listener;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent,
     Symfony\Component\Security\Core\Exception\AccessDeniedException,
-    Symfony\Component\HttpFoundation\Request,
+    Symfony\Component\HttpFoundation\RequestStack,
     Symfony\Component\HttpFoundation\RedirectResponse,
     Symfony\Component\HttpFoundation\Session\Session,
-    Symfony\Component\Routing\Router;
+    Symfony\Component\Routing\Router,
+    Symfony\Component\Security\Http\Authorization\AccessDeniedHandlerInterface as AccessInterface;
+
 class AccessDeniedListener
-{
-    protected $_session;
-    protected $_router;
+{ 
     protected $_request;
-    public function __construct(Session $session, Router $router, Request $request)
+    public function __construct(Session $session, Router $router, RequestStack $requestStack)
     {
         $this->_session = $session;
         $this->_router = $router;
-        $this->_request = $request;
+        $this->_request = $requestStack;
     }
     public function onAccessDeniedException(GetResponseForExceptionEvent $event)
     {
@@ -31,6 +31,9 @@ class AccessDeniedListener
             }
     
             $event->setResponse(new RedirectResponse($route));
+             return $this->redirect(
+                $this->generateUrl('homepage')
+            );
         }
     }
 }

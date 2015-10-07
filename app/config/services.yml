@@ -1,13 +1,12 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html
-parameters:
+#parameters:
 #    parameter_name: value
-    kernel.listener.atd.access_denied.class: UserBundle\Listener\AccessDeniedListener
+#    kernel.listener.atd.access_denied.class: UserBundle\Listener\AccessDeniedListener
 
 services:
     kernel.listener.accessDenied:
-         class:  UserBundle\Listener\AccessDeniedListener
-         scope: request
-         arguments: ["@session", "@router", "@request"]
-         tags:
+        class:  UserBundle\Listener\AccessDeniedListener
+        arguments: ["@session","@router", "@request_stack"]
+        tags:
              - { name: kernel.event_listener, event: kernel.exception, method: onAccessDeniedException }
