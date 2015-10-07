@@ -35,9 +35,11 @@
         </head>
         <body>
             {# sub menu para entrar a los sitios administrativos#}
-            {% if is_granted('ROLE_ADMIN') %}
+            {% if app.user.hasRole('ROLE_ADMIN') %}
                 {% include 'menu/minimal.html.twig' %}
+                
             {% endif %} 
+
             
 
             {% block body %}{% endblock %}

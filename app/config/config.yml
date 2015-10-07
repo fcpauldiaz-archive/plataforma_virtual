@@ -47,7 +47,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ "FOSCommentBundle"]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -120,3 +120,11 @@ lexik_translation:
         type:                 all     # resources type to register: "all", "files" or "database"
         managed_locales_only: true    # will only load resources for managed locales
     auto_cache_clean: false     # set to true to make the bundle automatically clear translations cache files
+
+
+fos_comment:
+    db_driver: orm
+    class:
+        model:
+            comment: ForumBundle\Entity\Comentario
+            thread: ForumBundle\Entity\Thread

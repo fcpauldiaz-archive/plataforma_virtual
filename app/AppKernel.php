@@ -28,11 +28,13 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),                         //user bunndle
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(), //admin bundle
             new FOS\RestBundle\FOSRestBundle(),
+            new FOS\CommentBundle\FOSCommentBundle(),                   //forum bundle
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Vich\UploaderBundle\VichUploaderBundle(),               //upload engine
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),            //Add select2
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
+           
 
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),

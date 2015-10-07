@@ -122,4 +122,13 @@ class Usuario extends BaseUser
     {
         return $this->nombreCompleto;
     }
+    
+    public function hasRole($role) 
+    {
+        if(in_array($role, $this->getRoles()))
+        { 
+            return true;
+        }
+        return false;
+    }
 }
