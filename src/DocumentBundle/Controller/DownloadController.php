@@ -110,7 +110,7 @@ class DownloadController extends Controller
 
 
         return [
-            'cursos'  => $entity,
+            'curso'  => $entity,
             'tipo'    => $tipo,
             
         ];

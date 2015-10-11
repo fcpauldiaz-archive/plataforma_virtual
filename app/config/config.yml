@@ -128,3 +128,4 @@ fos_comment:
         model:
             comment: ForumBundle\Entity\Comentario
             thread: ForumBundle\Entity\Thread
+            vote: ForumBundle\Entity\Vote

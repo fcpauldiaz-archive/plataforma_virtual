@@ -11,3 +11,5 @@ easy_admin:
             class: CursoBundle\Entity\Curso  
         Documentos:
             class: DocumentBundle\Entity\Documento
+        Comentarios:
+            class: ForumBundle\Entity\Comentario

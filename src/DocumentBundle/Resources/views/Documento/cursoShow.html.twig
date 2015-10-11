@@ -4,13 +4,13 @@
 {% block body_content -%}
     
     {% if tipo == 1 %}
-         <h1>Parciales {{cursos.nombreCurso}}</h1>
+         <h1>Parciales {{curso.nombreCurso}}</h1>
     {% else %}
-        <h1>Hojas de trabajo {{cursos.nombreCurso}} </h1>
+        <h1>Hojas de trabajo {{curso.nombreCurso}} </h1>
     {% endif %}
     {% set count = 0 %}
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
-    {% for doc in cursos.documentos %}
+    {% for doc in curso.documentos %}
 
         {% if tipo == doc.tipoDocumento %}
 
@@ -47,9 +47,12 @@
                         <td>{{doc.numeroDocumento}}</td>
                 </tbody>
             </table>
+           
           </div>
         </div>
       </div>
+      
+
         {% endif %}
         {% set count = count + 1 %}
     {% endfor %}
@@ -64,6 +67,8 @@
    
     
 </ul>
+{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': curso.id } %}
 
 {% endblock %}
 
+ 

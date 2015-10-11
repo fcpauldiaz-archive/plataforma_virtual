@@ -25,7 +25,10 @@
         <link rel="stylesheet" media="screen" href="{{ asset('css/select2.css') }}" />
         <link rel="stylesheet" media="screen" href="{{ asset('css/select2-bootstrap.css') }}" />
 
-     
+        <!-- CSS -->
+    {% stylesheets '@FOSCommentBundle/Resources/assets/css/comments.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
       
        
        
@@ -35,7 +38,7 @@
         </head>
         <body>
             {# sub menu para entrar a los sitios administrativos#}
-            {% if app.user.hasRole('ROLE_ADMIN') %}
+            {% if app.user and app.user.hasRole('ROLE_ADMIN') %}
                 {% include 'menu/minimal.html.twig' %}
                 
             {% endif %} 
