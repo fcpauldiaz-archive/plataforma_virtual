@@ -62,7 +62,7 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
             return 'Anonymous';
         }
 
-        return $this->getAuthor()->getUsername();
+        return $this->getAuthor()->getNombreCompleto();
     }
 
      /**
