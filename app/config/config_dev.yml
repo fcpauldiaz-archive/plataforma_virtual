@@ -44,6 +44,8 @@ monolog:
 
 assetic:
     use_controller: true
+bazinga_faker:
+    orm: doctrine
 
 #swiftmailer:
 #    delivery_address: me@example.com

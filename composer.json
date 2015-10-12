@@ -26,8 +26,6 @@
    
     "require": {
         "php": ">=5.5.0",
-        "phpunit/phpunit": "4.8",
-        "phpunit/dbunit": ">=1.2",
         "symfony/symfony": "2.7.*",
         "ext-mbstring": "*",
         "doctrine/orm": "~2.2,>=2.2.3,<2.5",
@@ -53,7 +51,10 @@
     },
     
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "willdurand/faker-bundle": "@stable",
+        "phpunit/phpunit": "4.8",
+        "phpunit/dbunit": ">=1.2"
     },
     "scripts": {
         "post-root-package-install": [
