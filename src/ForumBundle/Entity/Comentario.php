@@ -43,7 +43,7 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
      * @ORM\Column(type="integer")
      * @var int
      */
-    protected $contLikes = 0;
+    protected $score = 0;
 
 
     public function setAuthor(UserInterface $author)
@@ -72,7 +72,7 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
      */
     public function setScore($score)
     {
-        $this->contLikes = $score;
+        $this->score = $score;
     }
 
     /**
@@ -82,7 +82,7 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
      */
     public function getScore()
     {
-        return $this->contLikes;
+        return $this->score;
     }
 
     /**
@@ -95,7 +95,7 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
      */
     public function incrementScore($by = 1)
     {
-        $this->contLikes += $by;
+        $this->score += $by;
     }
 
 
