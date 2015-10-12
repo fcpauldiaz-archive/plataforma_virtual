@@ -90,11 +90,6 @@
             "file": "app/config/parameters.yml"
             
         },
-        "heroku": {
-            "compile": [
-                "php app/console assetic:dump"
-            ]
-        }
     }
     
 }
