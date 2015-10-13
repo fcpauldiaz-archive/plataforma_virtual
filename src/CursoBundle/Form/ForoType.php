@@ -26,7 +26,7 @@ class ForoType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Foro'
+            'data_class' => 'ForumBundle\Entity\Foro'
         ));
     }
 

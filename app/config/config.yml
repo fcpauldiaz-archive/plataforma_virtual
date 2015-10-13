@@ -3,6 +3,7 @@ imports:
     - { resource: services.yml }
     - { resource: admin.yml }
     - { resource: fos_user.yml }
+    - { resource: doctrine_extensions.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -47,7 +48,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "FOSCommentBundle"]
+    bundles:        ["FOSCommentBundle"]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -80,6 +81,11 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+
+        filters:
+            softdeleteable:
+                class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                enabled: true
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -129,3 +135,5 @@ fos_comment:
             comment: ForumBundle\Entity\Comentario
             thread: ForumBundle\Entity\Thread
             vote: ForumBundle\Entity\Vote
+
+

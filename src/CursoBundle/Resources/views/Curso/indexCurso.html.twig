@@ -11,6 +11,7 @@
                 <th>Id</th>
                 <th>Nombre Curso</th>
                 <th>Código Curso</th>
+                <th>Estado</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,6 +21,11 @@
                 <td><a href="{{ path('curso_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombreCurso }}</td>
                 <td>{{ entity.codigoCurso }}</td>
+                {% if entity.deletedAt != null %}
+                    <td>Eliminado {{entity.deletedAt | date('d-m-Y H:i:s') }}</td>
+                {% else %}
+                    <td>Activo</td>
+               
                 <td>
                 <ul>
                     <li>
@@ -30,6 +36,7 @@
                     </li>
                 </ul>
                 </td>
+                 {% endif %}
             </tr>
         {% endfor %}
         </tbody>

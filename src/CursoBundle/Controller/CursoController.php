@@ -34,8 +34,10 @@ class CursoController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
+        //$em->getFilters()->disable('softdeleteable');
         $entities = $em->getRepository('CursoBundle:Curso')->findAll();
+
+       
 
         return [
             'entities' => $entities,

@@ -49,7 +49,9 @@ bazinga_faker:
     locale: es
     entities:
         CursoBundle\Entity\Curso:
-            number: 30
+            number: 5
+            custom_formatters:
+                deletedAt:   { method: null }
 
 #swiftmailer:
 #    delivery_address: me@example.com
