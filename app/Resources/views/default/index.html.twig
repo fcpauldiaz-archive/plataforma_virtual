@@ -114,10 +114,12 @@
                        
                         {# ruta para subir documentos #}
                         <div class="menu-item color">
-                            <a href="{{ path('documento_new',{'username':app.user.username})}}" data-toggle="modal">
-                                <i class="fa fa-comment-o"></i>
-                                <p>Subir Documentos</p>
-                            </a>
+                            {% if app.user %}
+                                <a href="{{ path('documento_new',{'username':app.user.username})}}" data-toggle="modal">
+                                    <i class="fa fa-comment-o"></i>
+                                    <p>Subir Documentos</p>
+                                </a>
+                            {% endif %}
                         </div>
                         {# termina ruta para subir documentos #}  
                         {# ruta para el Cursos #}
