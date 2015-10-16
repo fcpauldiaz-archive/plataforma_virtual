@@ -4,13 +4,12 @@ namespace CursoBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class BuscarType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -19,10 +18,10 @@ class BuscarType extends AbstractType
                 'empty_value' => 'Seleccionar curso',
                 'class' => 'CursoBundle:Curso',
                 'property' => 'nombreCurso',
-                'label'   => 'Buscador de Cursos',
+                'label' => 'Buscador de Cursos',
                 'attr' => [
                     'class' => 'select2',
-                    'onchange' => 'this.form.submit()'
+                    'onchange' => 'this.form.submit()',
                 ],
             ])
         ;

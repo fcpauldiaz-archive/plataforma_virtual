@@ -44,14 +44,13 @@ monolog:
 
 assetic:
     use_controller: true
-bazinga_faker:
-    orm: doctrine
-    locale: es
-    entities:
-        CursoBundle\Entity\Curso:
-            number: 5
-            custom_formatters:
-                deletedAt:   { method: null }
+hautelook_alice:
+    db_drivers:
+        orm: ~          # Enable Doctrine ORM if is registered
+    locale: es       # Locale to used for faker; must be a valid Faker locale otherwise will fallback to en_EN
+    seed: 1             # A seed to make sure faker generates data consistently across runs, set to null to disable
+    persist_once: false # Only persist objects once if multiple files are passed
+    loading_limit: 5    # Maximum number of time the loader will try to load the files passed
 
 #swiftmailer:
 #    delivery_address: me@example.com

@@ -9,21 +9,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
 use CursoBundle\Form\CursoType;
-use Symfony\Bundle\FrameworkBundle\Console\Application;
-use Symfony\Component\Console\Input\ArrayInput;
-use Symfony\Component\Console\Output\NullOutput;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
-
 
 /**
  * Curso controller.
  *
  * @Route("admin/curso")
- * 
  */
 class CursoController extends Controller
 {
-
     /**
      * Lists all Curso entities.
      *
@@ -36,8 +29,6 @@ class CursoController extends Controller
         $em = $this->getDoctrine()->getManager();
         //$em->getFilters()->disable('softdeleteable');
         $entities = $em->getRepository('CursoBundle:Curso')->findAll();
-
-       
 
         return [
             'entities' => $entities,
@@ -56,8 +47,6 @@ class CursoController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
-       
-       
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -69,10 +58,10 @@ class CursoController extends Controller
                 )
             );
         }
-        
+
         return [
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ];
     }
 
@@ -105,11 +94,11 @@ class CursoController extends Controller
     public function newAction()
     {
         $entity = new Curso();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return [
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ];
     }
 
@@ -133,7 +122,7 @@ class CursoController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return [
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         ];
     }
@@ -159,19 +148,19 @@ class CursoController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return [
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ];
     }
 
     /**
-    * Creates a form to edit a Curso entity.
-    *
-    * @param Curso $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Curso entity.
+     *
+     * @param Curso $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Curso $entity)
     {
         $form = $this->createForm(new CursoType(), $entity, [
@@ -215,8 +204,8 @@ class CursoController extends Controller
         }
 
         return [
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ];
     }
@@ -270,28 +259,25 @@ class CursoController extends Controller
      * @Route("/{idCurso}/{idUsuario}", name="add_curso")
      * @Method("GET")
      */
-    public function assingCursoAction($idCurso,$idUsuario)
+    public function assingCursoAction($idCurso, $idUsuario)
     {
         $em = $this->getDoctrine()->getManager();
 
         $entityCurso = $em->getRepository('CursoBundle:Curso')->find($idCurso);
         $entityUsuario = $em->getRepository('UserBundle:Usuario')->find($idUsuario);
 
-
         if (!$entityCurso or !$entityUsuario) {
             throw $this->createNotFoundException('Unable to find Curso or Usuario entity.');
         }
 
-            $entityUsuario->addCurso($entityCurso);
-            $em->persist($entityUsuario);
-            $em->flush();
+        $entityUsuario->addCurso($entityCurso);
+        $em->persist($entityUsuario);
+        $em->flush();
 
-            return $this->redirect(
-                $this->generateUrl('curso_show', 
-                    [ 'id' => $entityUsuario1->getId() ]
+        return $this->redirect(
+                $this->generateUrl('curso_show',
+                    ['id' => $entityUsuario1->getId()]
                 )
             );
-        
-
     }
 }

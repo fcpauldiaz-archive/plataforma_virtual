@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class CursoControllerTest extends WebTestCase
 {
-    
     public function testCompleteScenario()
     {
         // Create a new client to browse the application
@@ -15,14 +14,14 @@ class CursoControllerTest extends WebTestCase
 
         // Create a new entry in the database
         $crawler = $client->request('GET', '/admin/curso/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /curso/");
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /curso/');
         //
         $crawler = $client->click($crawler->selectLink('Crear Nuevo Curso')->link());
-        
+
         // Fill in the form and submit it
         $form = $crawler->selectButton('Crear')->form(array(
-            'appbundle_curso[nombreCurso]'  => 'Test',
-            'appbundle_curso[codigoCurso]'  => 'Test2',
+            'appbundle_curso[nombreCurso]' => 'Test',
+            'appbundle_curso[codigoCurso]' => 'Test2',
             // ... other fields to fill
         ));
 
@@ -56,7 +55,7 @@ class CursoControllerTest extends WebTestCase
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
         */
     }
-     /**
+    /**
      * @return Client
      */
     protected function createAuthorizedClient()
@@ -75,13 +74,11 @@ class CursoControllerTest extends WebTestCase
         $loginManager->loginUser($firewallName, $user);
 
         // save the login token into the session and put it in a cookie
-        $container->get('session')->set('_security_' . $firewallName,
+        $container->get('session')->set('_security_'.$firewallName,
             serialize($container->get('security.context')->getToken()));
         $container->get('session')->save();
         $client->getCookieJar()->set(new Cookie($session->getName(), $session->getId()));
 
         return $client;
     }
-
-    
 }

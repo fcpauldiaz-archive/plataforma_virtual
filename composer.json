@@ -54,9 +54,13 @@
     
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
-        "willdurand/faker-bundle": "@stable",
         "phpunit/phpunit": "4.8",
-        "phpunit/dbunit": ">=1.2"
+        "phpunit/dbunit": ">=1.2",
+        "doctrine/doctrine-fixtures-bundle": "@stable",
+        "hautelook/alice-bundle": "@stable"
+
+
+
     },
     "scripts": {
         "post-root-package-install": [

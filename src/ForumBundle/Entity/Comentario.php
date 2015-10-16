@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ForumBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -23,28 +22,30 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
     protected $id;
 
     /**
-     * Thread of this comment
+     * Thread of this comment.
      *
      * @var Thread
      * @ORM\ManyToOne(targetEntity="ForumBundle\Entity\Thread")
      */
     protected $thread;
 
-     /**
-     * Author of the comment
+    /**
+     * Author of the comment.
      *
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario")
+     *
      * @var User
      */
     protected $author;
 
-     /**
-     *  contador de likes
+    /**
+     *  contador de likes.
+     *
      * @ORM\Column(type="integer")
+     *
      * @var int
      */
     protected $score = 0;
-
 
     public function setAuthor(UserInterface $author)
     {
@@ -65,10 +66,10 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
         return $this->getAuthor()->getNombreCompleto();
     }
 
-     /**
+    /**
      * Sets the score of the comment.
      *
-     * @param integer $score
+     * @param int $score
      */
     public function setScore($score)
     {
@@ -78,7 +79,7 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
     /**
      * Returns the current score of the comment.
      *
-     * @return integer
+     * @return int
      */
     public function getScore()
     {
@@ -89,15 +90,12 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
      * Increments the comment score by the provided
      * value.
      *
-     * @param integer value
+     * @param int value
      *
-     * @return integer The new comment score
+     * @return int The new comment score
      */
     public function incrementScore($by = 1)
     {
         $this->score += $by;
     }
-
-
-
 }

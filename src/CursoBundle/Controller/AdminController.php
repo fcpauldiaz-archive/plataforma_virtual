@@ -1,4 +1,5 @@
 <?php
+
 namespace CursoBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -14,14 +15,10 @@ class AdminController extends BaseAdminController
      */
     public function indexAction(Request $request)
     {
-        
-        
 
         // don't forget to add this line to serve the regular backend pages
         return parent::indexAction($request);
     }
-
-   
 
     // ...
 }

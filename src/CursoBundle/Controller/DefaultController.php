@@ -8,8 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     /**
-     * 
-     * Default Index page
+     * Default Index page.
+     *
      * @Route("/", name="homepage")
      */
     public function indexAction()
@@ -17,7 +17,8 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig');
     }
     /**
-     * [adminAction description]
+     * [adminAction description].
+     *
      * @return [type] [description]
      * @ROUTE("/admin", name = "administration")
      */
@@ -25,8 +26,4 @@ class DefaultController extends Controller
     {
         return $this->render('admin/indexAdmin.html.twig');
     }
-
-   
-
-   
 }

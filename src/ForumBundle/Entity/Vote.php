@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\CommentBundle\Entity\Vote as BaseVote;
 use FOS\CommentBundle\Model\SignedVoteInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * @ORM\Entity
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")
@@ -20,7 +21,7 @@ class Vote extends BaseVote implements SignedVoteInterface
     protected $id;
 
     /**
-     * Comment of this vote
+     * Comment of this vote.
      *
      * @var Comment
      * @ORM\ManyToOne(targetEntity="ForumBundle\Entity\Comentario")
@@ -28,15 +29,16 @@ class Vote extends BaseVote implements SignedVoteInterface
     protected $comentario;
 
     /**
-     * Author of the vote
+     * Author of the vote.
      *
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario")
+     *
      * @var User
      */
     protected $voter;
 
     /**
-     * Sets the owner of the vote
+     * Sets the owner of the vote.
      *
      * @param string $user
      */
@@ -46,7 +48,7 @@ class Vote extends BaseVote implements SignedVoteInterface
     }
 
     /**
-     * Gets the owner of the vote
+     * Gets the owner of the vote.
      *
      * @return UserInterface
      */

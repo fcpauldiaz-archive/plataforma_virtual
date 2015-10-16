@@ -22,23 +22,26 @@ class Documento
     private $id;
 
     /**
-     * [$tipoDocumento boolean para saber si es parcial o hoja de trabajo]
-     * @var boolean
-     * true = parcial
-     * false = hoja de trabajo
+     * [$tipoDocumento boolean para saber si es parcial o hoja de trabajo].
+     *
+     * @var bool
+     *           true = parcial
+     *           false = hoja de trabajo
      * @ORM\Column(name="tipoDocumento",type="boolean")
      */
     private $tipoDocumento;
 
     /**
-     * [$numeroDocumento numero de documento de acuerdo al programa]
-     * @var integer
+     * [$numeroDocumento numero de documento de acuerdo al programa].
+     *
+     * @var int
      * @ORM\Column(name="numeroDocumento",type="integer")
      */
     private $numeroDocumento;
 
     /**
-     * [$curso relacion one to many a curso]
+     * [$curso relacion one to many a curso].
+     *
      * @var ArrayCollection
      * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso",inversedBy="documentos")
      * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
@@ -48,7 +51,8 @@ class Documento
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="document", fileNameProperty="documentName")
+     * @Vich\UploadableField(mapping="document", fileNameProperty="documentName",
+     * nullable=true)
      * 
      * @Assert\File(
      * maxSize="16M",
@@ -69,7 +73,7 @@ class Documento
     private $documentName;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime",nullable=true)
      *
      * @var \DateTime
      */
@@ -120,9 +124,9 @@ class Documento
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -130,9 +134,10 @@ class Documento
     }
 
     /**
-     * Set updatedAt
+     * Set updatedAt.
      *
      * @param \DateTime $updatedAt
+     *
      * @return Product
      */
     public function setUpdatedAt($updatedAt)
@@ -143,9 +148,9 @@ class Documento
     }
 
     /**
-     * Get updatedAt
+     * Get updatedAt.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -153,9 +158,10 @@ class Documento
     }
 
     /**
-     * Set tipoDocumento
+     * Set tipoDocumento.
      *
-     * @param boolean $tipoDocumento
+     * @param bool $tipoDocumento
+     *
      * @return Documento
      */
     public function setTipoDocumento($tipoDocumento)
@@ -166,9 +172,9 @@ class Documento
     }
 
     /**
-     * Get tipoDocumento
+     * Get tipoDocumento.
      *
-     * @return boolean 
+     * @return bool
      */
     public function getTipoDocumento()
     {
@@ -176,9 +182,10 @@ class Documento
     }
 
     /**
-     * Set numeroDocumento
+     * Set numeroDocumento.
      *
-     * @param integer $numeroDocumento
+     * @param int $numeroDocumento
+     *
      * @return Documento
      */
     public function setNumeroDocumento($numeroDocumento)
@@ -189,9 +196,9 @@ class Documento
     }
 
     /**
-     * Get numeroDocumento
+     * Get numeroDocumento.
      *
-     * @return integer 
+     * @return int
      */
     public function getNumeroDocumento()
     {
@@ -199,9 +206,10 @@ class Documento
     }
 
     /**
-     * Set curso
+     * Set curso.
      *
      * @param \CursoBundle\Entity\Curso $curso
+     *
      * @return Documento
      */
     public function setCurso(\CursoBundle\Entity\Curso $curso = null)
@@ -212,9 +220,9 @@ class Documento
     }
 
     /**
-     * Get curso
+     * Get curso.
      *
-     * @return \CursoBundle\Entity\Curso 
+     * @return \CursoBundle\Entity\Curso
      */
     public function getCurso()
     {

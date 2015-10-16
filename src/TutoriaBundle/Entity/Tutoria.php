@@ -5,17 +5,15 @@ namespace TutoriaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-
- * Tutoria
+ * Tutoria.
  *
  * @ORM\Table(name="Tutorias")
  * @ORM\Entity()
-
  */
 class Tutoria
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -35,11 +33,10 @@ class Tutoria
      */
     private $usuario;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -47,9 +44,10 @@ class Tutoria
     }
 
     /**
-     * Set curso
+     * Set curso.
      *
      * @param \CursoBundle\Entity\Curso $curso
+     *
      * @return Tutoria
      */
     public function setCurso(\CursoBundle\Entity\Curso $curso)
@@ -60,9 +58,9 @@ class Tutoria
     }
 
     /**
-     * Get curso
+     * Get curso.
      *
-     * @return \CursoBundle\Entity\Curso 
+     * @return \CursoBundle\Entity\Curso
      */
     public function getCurso()
     {
@@ -70,9 +68,10 @@ class Tutoria
     }
 
     /**
-     * Set usuario
+     * Set usuario.
      *
      * @param \UserBundle\Entity\Usuario $usuario
+     *
      * @return Tutoria
      */
     public function setUsuario(\UserBundle\Entity\Usuario $usuario)
@@ -83,9 +82,9 @@ class Tutoria
     }
 
     /**
-     * Get usuario
+     * Get usuario.
      *
-     * @return \UserBundle\Entity\Usuario 
+     * @return \UserBundle\Entity\Usuario
      */
     public function getUsuario()
     {

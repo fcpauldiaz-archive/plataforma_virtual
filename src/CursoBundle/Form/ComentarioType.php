@@ -10,7 +10,7 @@ class ComentarioType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -20,14 +20,14 @@ class ComentarioType extends AbstractType
             ->add('comentario')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ForumBundle\Entity\Comentario'
+            'data_class' => 'ForumBundle\Entity\Comentario',
         ));
     }
 

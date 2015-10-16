@@ -1,9 +1,12 @@
 <?php
+
 namespace CursoBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+
 /**
- * Curso
+ * Curso.
  *
  * @ORM\Table(name="Cursos")
  * @ORM\Entity()
@@ -12,7 +15,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 class Curso
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -23,6 +26,7 @@ class Curso
      * @var string
      *
      * @ORM\Column(name="nombreCurso", type="string", length=50)
+     * @ORM\OrderBy({"nombreCurso" = "ASC"})
      */
     private $nombreCurso;
     /**
@@ -32,12 +36,14 @@ class Curso
      */
     private $codigoCurso;
     /**
-     *  Usuarios que tienen
+     *  Usuarios que tienen.
+     *
      * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
      **/
     private $usuarios;
     /**
-     * [$documento cada curso tiene los documentos asociados]
+     * [$documento cada curso tiene los documentos asociados].
+     *
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="DocumentBundle\Entity\Documento", mappedBy="curso")
      * @ORM\OrderBy({"numeroDocumento" = "ASC"})
@@ -49,8 +55,8 @@ class Curso
      */
     private $deletedAt;
 
-     /**
-     * Constructor
+    /**
+     * Constructor.
      */
     public function __construct()
     {
@@ -58,68 +64,74 @@ class Curso
         $this->documentos = new \Doctrine\Common\Collections\ArrayCollection();
     }
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
         return $this->id;
     }
     /**
-     * Set nombreCurso
+     * Set nombreCurso.
      *
      * @param string $nombreCurso
+     *
      * @return Curso
      */
     public function setNombreCurso($nombreCurso)
     {
         $this->nombreCurso = $nombreCurso;
+
         return $this;
     }
     /**
-     * Get nombreCurso
+     * Get nombreCurso.
      *
-     * @return string 
+     * @return string
      */
     public function getNombreCurso()
     {
         return $this->nombreCurso;
     }
     /**
-     * Set codigoCurso
+     * Set codigoCurso.
      *
      * @param string $codigoCurso
+     *
      * @return Curso
      */
     public function setCodigoCurso($codigoCurso)
     {
         $this->codigoCurso = $codigoCurso;
+
         return $this;
     }
     /**
-     * Get codigoCurso
+     * Get codigoCurso.
      *
-     * @return string 
+     * @return string
      */
     public function getCodigoCurso()
     {
         return $this->codigoCurso;
     }
-   
+
     /**
-     * Add usuarios
+     * Add usuarios.
      *
      * @param \CursoBundle\Entity\Usuario $usuarios
+     *
      * @return Curso
      */
     public function addUsuario(\UserBundle\Entity\Usuario $usuarios)
     {
         $this->usuarios[] = $usuarios;
+
         return $this;
     }
     /**
-     * Remove usuarios
+     * Remove usuarios.
      *
      * @param \CursoBundle\Entity\Usuario $usuarios
      */
@@ -128,30 +140,33 @@ class Curso
         $this->usuarios->removeElement($usuarios);
     }
     /**
-     * Get usuarios
+     * Get usuarios.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUsuarios()
     {
         return $this->usuarios;
     }
-    public function __toString(){
+    public function __toString()
+    {
         return $this->nombreCurso;
     }
     /**
-     * Add documentos
+     * Add documentos.
      *
      * @param \DocumentBundle\Entity\Documento $documentos
+     *
      * @return Curso
      */
     public function addDocumento(\DocumentBundle\Entity\Documento $documentos)
     {
         $this->documentos[] = $documentos;
+
         return $this;
     }
     /**
-     * Remove documentos
+     * Remove documentos.
      *
      * @param \DocumentBundle\Entity\Documento $documentos
      */
@@ -160,9 +175,9 @@ class Curso
         $this->documentos->removeElement($documentos);
     }
     /**
-     * Get documentos
+     * Get documentos.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getDocumentos()
     {
@@ -175,9 +190,10 @@ class Curso
     }
 
     /**
-     * Set deletedAt
+     * Set deletedAt.
      *
      * @param \DateTime $deletedAt
+     *
      * @return Curso
      */
     public function setDeletedAt($deletedAt)
@@ -188,9 +204,9 @@ class Curso
     }
 
     /**
-     * Get deletedAt
+     * Get deletedAt.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDeletedAt()
     {

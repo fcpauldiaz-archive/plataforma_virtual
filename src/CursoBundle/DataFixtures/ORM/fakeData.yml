@@ -1,0 +1,28 @@
+
+CursoBundle\Entity\Curso:
+    # ...
+    curso{2..300}:
+        nombreCurso: <word()>
+        codigoCurso (unique): <word()><current()>
+        usuarios: [@usuario*]
+        
+        # ...
+#documento
+DocumentBundle\Entity\Documento:
+    documento{1..5000}:
+        tipoDocumento: true
+        numeroDocumento: <numberBetween(1,100)>
+        curso: @curso*
+        documentName (unique): <word()><current()>
+
+
+
+
+#usuarios
+UserBundle\Entity\Usuario:
+     usuario{2..100}:
+        nombreCompleto: <word()>
+        username (unique): <username()>
+        email (unique): <email()>
+        password: <word()>
+        enabled: true
