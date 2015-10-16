@@ -15,6 +15,21 @@ Features Custom Registration, Password Resetting, Custom Email Activation,
 Custom Profile, Custom Profile Edition, Standard Login. Powered By
 Bootstrap.
 
+###Bundles Integrated
+
+Administrate Entities [EasyAdminBundle][6].
+Enable tree comments as forum [FOSCommentBundle][7].
+Upload PDF and Word documents [VichUploaderBundle][8].
+Bootstrap 3.3 [Bootstrap][9].
+Translation administration [LexikTranslationBundle][10].
+[Doctrine-Extensions][11].
+Soft delete entities[STOF][12].
+Unit Tests and Functional tests[PHPUnit][13].
+Populate database with fake data[AliceBundle][14].
+Integrate Select2 as entity search[Genemu][15].
+[jQuery][16].
+
+
 ###Instrucciones de instalación local
 
 1. Instalar [Symfony y Composer][4]
@@ -36,3 +51,15 @@ Bootstrap.
 [3]:  https://github.com/FriendsOfSymfony/FOSUserBundle
 [4]:http://symfony.com/doc/current/book/installation.html
 [5]: https://dev.mysql.com/downloads/installer/
+[6]:https://github.com/javiereguiluz/EasyAdminBundle
+[7]:https://github.com/FriendsOfSymfony/FOSCommentBundle
+[8]:https://github.com/dustin10/VichUploaderBundle
+[9]:http://getbootstrap.com
+[10]:https://github.com/lexik/LexikTranslationBundle
+[11]:https://github.com/l3pp4rd/DoctrineExtensions/tree/master/example
+[12]:https://github.com/stof/StofDoctrineExtensionsBundle
+[13]:http://symfony.com/doc/current/book/testing.html
+[14]:https://github.com/hautelook/AliceBundle
+[15]:https://github.com/genemu/GenemuFormBundle
+[16]:https://packagist.org/packages/symfony-bundle/jquery-bundle
+
