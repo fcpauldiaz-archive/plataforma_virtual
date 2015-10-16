@@ -39,20 +39,19 @@ Integrate Select2 as entity search [Genemu][15].
 [jQuery][16].
 
 
-###Instrucciones de instalación local
+###Usage instructions
 
-1. Instalar [Symfony y Composer][4]
-2. Instalar [MySQL][5]
-3. Asegurarse de que se haya instalado PHP
-4. Iniciar el servicio de MySQL
-5. Clonar este repositorio de github
-6. Dirigirse a la carpeta desde la terminal
-7. Actualizar composer con: composer install
-8. Verificar que se haya creado la carpeta vendor
-9. Crear base de datos con: php app/console doctrine:database:create
-10. Crear tablas: Ejecutar php app/console doctrine:schema:update --force
-11. Correr el Servidor: php app/console server:run
-12. Dirigirse hacia localhost:8000 en un explorador web
+1. Install [Symfony y Composer][4]
+2. Install [MySQL][5]
+3. Install PHP
+4. Run MySQL service
+5. Clone this repository
+6. Go to terminal
+7. Run composer install in folder path
+8. Create database: php app/console doctrine:database:create
+9. Create tables:  php app/console doctrine:schema:update --force
+10. Run server: php app/console server:run
+
  
 
 [1]:  http://symfony.com/doc/2.6/book/installation.html
