@@ -18,15 +18,24 @@ Bootstrap.
 ###Bundles Integrated
 
 Administrate Entities [EasyAdminBundle][6].
+
 Enable tree comments as forum [FOSCommentBundle][7].
+
 Upload PDF and Word documents [VichUploaderBundle][8].
+
 Bootstrap 3.3 [Bootstrap][9].
+
 Translation administration [LexikTranslationBundle][10].
 [Doctrine-Extensions][11].
-Soft delete entities[STOF][12].
-Unit Tests and Functional tests[PHPUnit][13].
-Populate database with fake data[AliceBundle][14].
-Integrate Select2 as entity search[Genemu][15].
+
+Soft delete entities [STOF][12].
+
+Unit Tests and Functional tests [PHPUnit][13].
+
+Populate database with fake data [AliceBundle][14].
+
+Integrate Select2 as entity search [Genemu][15].
+
 [jQuery][16].
 
 
