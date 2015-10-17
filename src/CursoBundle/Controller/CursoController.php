@@ -11,7 +11,6 @@ use CursoBundle\Entity\Curso;
 use CursoBundle\Form\CursoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
-
 /**
  * Curso controller.
  *
@@ -114,18 +113,14 @@ class CursoController extends Controller
      */
     public function showAction($curso)
     {
-        //$em = $this->getDoctrine()->getManager();
-
-        //$entity = $em->getRepository('CursoBundle:Curso')->find($slug);
-        $entity = $curso;
-        if (!$entity) {
+        if (!$curso) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
         }
 
         $deleteForm = $this->createDeleteForm($curso->getId());
 
         return [
-            'entity' => $entity,
+            'entity' => $curso,
             'delete_form' => $deleteForm->createView(),
         ];
     }
@@ -140,21 +135,15 @@ class CursoController extends Controller
      */
     public function editAction($curso)
     {
-        //$em = $this->getDoctrine()->getManager();
-
-        //$entity = $em->getRepository('CursoBundle:Curso')->find($slug);
-
-        $entity = $curso;
-
-        if (!$entity) {
+        if (!$curso) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($curso);
         $deleteForm = $this->createDeleteForm($curso->getId());
 
         return [
-            'entity' => $entity,
+            'entity' => $curso,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ];

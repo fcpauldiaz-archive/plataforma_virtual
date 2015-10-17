@@ -31,7 +31,7 @@ class Curso
     private $nombreCurso;
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="codigoCurso", type="string", length=50,unique = true)
      */
     private $codigoCurso;
@@ -55,7 +55,7 @@ class Curso
      */
     private $deletedAt;
 
-     /**
+    /**
      * @Gedmo\Slug(fields={"nombreCurso", "codigoCurso"})
      * @ORM\Column(length=128, unique=true)
      */
@@ -220,9 +220,10 @@ class Curso
     }
 
     /**
-     * Set slug
+     * Set slug.
      *
      * @param string $slug
+     *
      * @return Curso
      */
     public function setSlug($slug)
@@ -233,9 +234,9 @@ class Curso
     }
 
     /**
-     * Get slug
+     * Get slug.
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {

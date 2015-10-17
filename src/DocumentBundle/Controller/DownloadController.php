@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Security\Core\Security as Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * Documento controller.
@@ -84,24 +85,19 @@ class DownloadController extends Controller
     /**
      * Finds and displays a Curso entity.
      *
-     * @Route("/{id}/{tipo}/", name="show_curso")
+     * @Route("/{slug}/{tipo}/", name="show_curso")
      * @Method("GET")
      * @Template("DocumentBundle:Documento:cursoShow.html.twig")
+     * @ParamConverter("curso", class="CursoBundle:Curso",options={"slug" = "slug"})
      */
-    public function showAction($id, $tipo)
+    public function showAction($curso, $tipo)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
-
-        if (!$entity) {
+        if (!$curso) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
         }
 
-        $repositoryCursos = $this->getDoctrine()->getRepository('CursoBundle:Curso');
-
         return [
-            'curso' => $entity,
+            'curso' => $curso,
             'tipo' => $tipo,
 
         ];

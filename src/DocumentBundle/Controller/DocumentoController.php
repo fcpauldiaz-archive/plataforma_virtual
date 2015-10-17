@@ -40,7 +40,7 @@ class DocumentoController extends Controller
      *
      * @Route("/{username}",name="documento_create")
      * @Method("POST")
-     * @Template("DocumentBundle:Documento:new_documento.html.twig")
+     * @Template("DocumentBundle:Documento:newDocumento.html.twig")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
     public function createAction(Request $request, \UserBundle\Entity\Usuario $usuario)
@@ -110,24 +110,21 @@ class DocumentoController extends Controller
     /**
      * Finds and displays a Documento entity.
      *
-     * @Route("/{id}", name="documento_show")
+     * @Route("/{slug}", name="documento_show")
      * @Method("GET")
+     * @ParamConverter("documento", class="DocumentBundle:Documento", options={"slug"="slug"})
      * @Template()
      */
-    public function showDocumentoAction($id)
+    public function showDocumentoAction($documento)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('DocumentBundle:Documento')->find($id);
-
-        if (!$entity) {
+        if (!$documento) {
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+        $deleteForm = $this->createDeleteForm($documento->getId());
 
         return [
-            'entity' => $entity,
+            'entity' => $documento,
             'delete_form' => $deleteForm->createView(),
         ];
     }
@@ -135,26 +132,23 @@ class DocumentoController extends Controller
     /**
      * Displays a form to edit an existing Documento entity.
      *
-     * @Route("/{username}/{id}/edit", name="documento_edit")
+     * @Route("/{username}/{slug}/edit", name="documento_edit")
      * @Method("GET")
      * @Template()
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * @ParamConverter("documento", class="DocumentBundle:Documento", options={"slug"="slug"})
      */
-    public function editDocumentoAction($id, \UserBundle\Entity\Usuario $usuario)
+    public function editDocumentoAction($documento, \UserBundle\Entity\Usuario $usuario)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('DocumentBundle:Documento')->find($id);
-
-        if (!$entity) {
+        if (!$documento) {
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
 
-        $editForm = $this->createEditForm($entity, $usuario);
-        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($documento, $usuario);
+        $deleteForm = $this->createDeleteForm($documento->getId());
 
         return [
-            'entity' => $entity,
+            'entity' => $documento,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ];
