@@ -32,14 +32,12 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
-
         $repositoryCurso = $this->getDoctrine()->getRepository('CursoBundle:Curso');
         $cursosOrdenados = $repositoryCurso->createQueryBuilder('curso')
             ->select('curso')
-            ->orderBy('curso.nombreCurso','ASC')
+            ->orderBy('curso.nombreCurso', 'ASC')
             ->getQuery()
             ->getResult();
-        
 
         $returnData = $this->mostrarCursosAsignados($cursosOrdenados, $cursosAsignados);
         $error = 0;
