@@ -18,7 +18,7 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('curso_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('curso_show', { 'slug': entity.slug }) }}">{{ entity.slug }}</a></td>
                 <td>{{ entity.nombreCurso }}</td>
                 <td>{{ entity.codigoCurso }}</td>
                 {% if entity.deletedAt != null %}
@@ -29,10 +29,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('curso_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('curso_show', { 'slug': entity.slug }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('curso_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('curso_edit', { 'slug': entity.slug }) }}">edit</a>
                     </li>
                 </ul>
                 </td>

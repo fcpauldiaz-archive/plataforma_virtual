@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cursos",
+				"cursosOrdenados"
+			],
+			[
 				"back",
 				"background"
 			],
@@ -53,10 +57,6 @@
 			],
 			[
 				"curs",
-				"cursosAsignados"
-			],
-			[
-				"cursos",
 				"cursosAsignados"
 			],
 			[
@@ -565,7 +565,7 @@
 			"file": "src/CursoBundle/Entity/Curso.php",
 			"settings":
 			{
-				"buffer_size": 4350,
+				"buffer_size": 4809,
 				"line_ending": "Unix"
 			}
 		},
@@ -613,7 +613,7 @@
 			"file": "src/CursoBundle/Controller/CursoController.php",
 			"settings":
 			{
-				"buffer_size": 7686,
+				"buffer_size": 7857,
 				"line_ending": "Unix"
 			}
 		},
@@ -621,7 +621,31 @@
 			"file": "src/CursoBundle/Controller/AsignacionController.php",
 			"settings":
 			{
-				"buffer_size": 7224,
+				"buffer_size": 7210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/doctrine_extensions.yml",
+			"settings":
+			{
+				"buffer_size": 243,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/CursoBundle/Resources/views/Curso/showCurso.html.twig",
+			"settings":
+			{
+				"buffer_size": 821,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/CursoBundle/Resources/views/Curso/indexCurso.html.twig",
+			"settings":
+			{
+				"buffer_size": 1548,
 				"line_ending": "Unix"
 			}
 		},
@@ -737,7 +761,7 @@
 				"Package Control: Advanced Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -754,10 +778,10 @@
 	},
 	"file_history":
 	[
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/AppKernel.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/SymfonyRequirements.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/CH.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Component/Yaml/Tests/Fixtures/YtsDocumentSeparator.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/composer.json",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/CursoController.php",
@@ -889,7 +913,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 			"",
@@ -919,6 +943,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"stof_doctrine_extensions",
 			"modal",
 			"AppBundle\\Tests",
 			"AppBundle",
@@ -1045,8 +1070,7 @@
 			"proveedor",
 			"php",
 			"',",
-			"CANT_J",
-			"10"
+			"CANT_J"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1064,7 +1088,7 @@
 	"groups":
 	[
 		{
-			"selected": 12,
+			"selected": 11,
 			"sheets":
 			[
 				{
@@ -1079,8 +1103,8 @@
 						"selection":
 						[
 							[
-								1854,
-								1875
+								870,
+								877
 							]
 						],
 						"settings":
@@ -1089,8 +1113,8 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 703.0,
+						"translation.x": 3.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1211,15 +1235,15 @@
 					"file": "src/CursoBundle/Entity/Curso.php",
 					"settings":
 					{
-						"buffer_size": 4350,
+						"buffer_size": 4809,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								533,
-								533
+								1336,
+								1336
 							]
 						],
 						"settings":
@@ -1228,7 +1252,7 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 33.0,
+						"translation.x": 3.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1313,7 +1337,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1782.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1377,7 +1401,63 @@
 					"file": "src/CursoBundle/Controller/CursoController.php",
 					"settings":
 					{
-						"buffer_size": 7686,
+						"buffer_size": 7857,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2969,
+								2969
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 117.0,
+						"translation.y": 1905.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/CursoBundle/Controller/AsignacionController.php",
+					"settings":
+					{
+						"buffer_size": 7210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1521,
+								1521
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 408.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/config/doctrine_extensions.yml",
+					"settings":
+					{
+						"buffer_size": 243,
 						"regions":
 						{
 						},
@@ -1390,40 +1470,66 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/YAML/YAML.tmLanguage"
 						},
-						"translation.x": 27.0,
+						"translation.x": 23.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "src/CursoBundle/Controller/AsignacionController.php",
+					"buffer": 14,
+					"file": "src/CursoBundle/Resources/views/Curso/showCurso.html.twig",
 					"settings":
 					{
-						"buffer_size": 7224,
+						"buffer_size": 821,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1352,
-								1352
+								700,
+								700
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 90.0,
-						"translation.y": 485.0,
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/CursoBundle/Resources/views/Curso/indexCurso.html.twig",
+					"settings":
+					{
+						"buffer_size": 1548,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1046,
+								1046
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 670.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1435,7 +1541,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 13,
+					"buffer": 16,
 					"file": "src/DocumentBundle/Entity/Documento.php",
 					"settings":
 					{
@@ -1463,7 +1569,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 17,
 					"file": "src/UserBundle/Entity/Usuario.php",
 					"settings":
 					{
@@ -1485,7 +1591,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 196.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1546,6 +1652,34 @@
 		"selected_items":
 		[
 			[
+				"indexcurs",
+				"src/CursoBundle/Resources/views/Curso/indexCurso.html.twig"
+			],
+			[
+				"showcu",
+				"src/CursoBundle/Resources/views/Curso/showCurso.html.twig"
+			],
+			[
+				"cursocon",
+				"src/CursoBundle/Controller/CursoController.php"
+			],
+			[
+				"config",
+				"app/config/config.yml"
+			],
+			[
+				"doctrine_e",
+				"app/config/doctrine_extensions.yml"
+			],
+			[
+				"curso",
+				"src/CursoBundle/Entity/Curso.php"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
 				"asignacion",
 				"src/CursoBundle/Controller/AsignacionController.php"
 			],
@@ -1558,10 +1692,6 @@
 				"src/CursoBundle/Resources/views/Asignacion/crearAsignacion.html.twig"
 			],
 			[
-				"curso",
-				"src/CursoBundle/Entity/Curso.php"
-			],
-			[
 				"modal_",
 				"app/Resources/views/modal/modal_curso.html.twig"
 			],
@@ -1572,10 +1702,6 @@
 			[
 				"index.html.",
 				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"config",
-				"app/config/config.yml"
 			],
 			[
 				"security",
@@ -1606,16 +1732,8 @@
 				"composer.json"
 			],
 			[
-				"composer",
-				"composer.json"
-			],
-			[
 				"default",
 				"src/CursoBundle/Controller/DefaultController.php"
-			],
-			[
-				"cursocon",
-				"src/CursoBundle/Controller/CursoController.php"
 			],
 			[
 				"config_",
@@ -1632,10 +1750,6 @@
 			[
 				"config.",
 				"app/config/config.yml"
-			],
-			[
-				"doctrine_e",
-				"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/doctrine_extensions.yml"
 			],
 			[
 				"appke",
@@ -2048,14 +2162,6 @@
 			[
 				"profiletype",
 				"src/UserBundle/Form/Type/ProfileFormType.php"
-			],
-			[
-				"usua",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"curso.",
-				"src/CursoBundle/Entity/Curso.php"
 			]
 		],
 		"width": 0.0

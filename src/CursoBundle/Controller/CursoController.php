@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
 use CursoBundle\Form\CursoType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
 
 /**
  * Curso controller.
@@ -105,21 +107,22 @@ class CursoController extends Controller
     /**
      * Finds and displays a Curso entity.
      *
-     * @Route("/{id}", name="curso_show")
+     * @Route("/{slug}", name="curso_show")
      * @Method("GET")
      * @Template("CursoBundle:Curso:showCurso.html.twig")
+     * @ParamConverter("curso", class="CursoBundle:Curso",options={"slug" = "slug"})
      */
-    public function showAction($id)
+    public function showAction($curso)
     {
-        $em = $this->getDoctrine()->getManager();
+        //$em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
-
+        //$entity = $em->getRepository('CursoBundle:Curso')->find($slug);
+        $entity = $curso;
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+        $deleteForm = $this->createDeleteForm($curso->getId());
 
         return [
             'entity' => $entity,
@@ -130,22 +133,25 @@ class CursoController extends Controller
     /**
      * Displays a form to edit an existing Curso entity.
      *
-     * @Route("/{id}/edit", name="curso_edit")
+     * @Route("/{slug}/edit", name="curso_edit")
      * @Method("GET")
      * @Template("CursoBundle:Curso:editCurso.html.twig")
+     * @ParamConverter("curso", class="CursoBundle:Curso",options={"slug" = "slug"})
      */
-    public function editAction($id)
+    public function editAction($curso)
     {
-        $em = $this->getDoctrine()->getManager();
+        //$em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('CursoBundle:Curso')->find($id);
+        //$entity = $em->getRepository('CursoBundle:Curso')->find($slug);
+
+        $entity = $curso;
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
         }
 
         $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $deleteForm = $this->createDeleteForm($curso->getId());
 
         return [
             'entity' => $entity,

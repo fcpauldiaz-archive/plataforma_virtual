@@ -136,4 +136,10 @@ fos_comment:
             thread: ForumBundle\Entity\Thread
             vote: ForumBundle\Entity\Vote
 
+stof_doctrine_extensions:
+    default_locale: es
+    translation_fallback: true
+    orm:
+        default:
+            sluggable: true
 
