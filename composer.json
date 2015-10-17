@@ -43,7 +43,7 @@
         "vich/uploader-bundle": "^0.14.0",
         "jquery/jquery": "1.11.*",
         "braincrafted/bootstrap-bundle": "~2.1",
-        "twbs/bootstrap": "3.0.*",
+        "twbs/bootstrap": "3.*",
         "genemu/form-bundle": "2.2.*",
         "oyejorge/less.php": "~1.5",
         "lexik/translation-bundle": "^2.1",

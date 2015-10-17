@@ -34,7 +34,7 @@ class AppKernel extends Kernel
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),            //Add select2
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
-           
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),//soft delete bundle
 
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),
@@ -42,7 +42,7 @@ class AppKernel extends Kernel
             new ForumBundle\ForumBundle(),
             new TutoriaBundle\TutoriaBundle(),
 
-            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
