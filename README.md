@@ -26,7 +26,8 @@ Upload PDF and Word documents [VichUploaderBundle][8].
 Bootstrap 3.3 [Bootstrap][9].
 
 Translation administration [LexikTranslationBundle][10].
-[Doctrine-Extensions][11].
+
+Urlize specific fields to create unique slug. [Doctrine-Extensions][11].
 
 Soft delete entities [STOF][12].
 
