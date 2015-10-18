@@ -81,7 +81,7 @@ class Documento
     private $updatedAt;
 
     /**
-     * @Gedmo\Slug(fields={"numeroDocumento","documentName"})
+     * @Gedmo\Slug(fields={"numeroDocumento","documentName"},updatable=true)
      * @ORM\Column(type="string",length=128, unique=true)
      */
     private $slug;

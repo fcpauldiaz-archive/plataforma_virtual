@@ -56,7 +56,7 @@ class Curso
     private $deletedAt;
 
     /**
-     * @Gedmo\Slug(fields={"nombreCurso", "codigoCurso"})
+     * @Gedmo\Slug(fields={"nombreCurso", "codigoCurso"},updatable=true)
      * @ORM\Column(length=128, unique=true)
      */
     private $slug;
