@@ -17,7 +17,7 @@ class BuscarType extends AbstractType
             ->add('curso', 'entity', [
                 'empty_value' => 'Seleccionar curso',
                 'class' => 'CursoBundle:Curso',
-                'property' => 'nombreCurso',
+                'property' => 'codigoNombre',
                 'label' => 'Buscador de Cursos',
                 'attr' => [
                     'class' => 'select2',

@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "6a89ce26230c87ce0b20c35958e2c416",
-    "content-hash": "a932fa2494f55c5f7e391d51e967f52a",
     "packages": [
         {
             "name": "antimattr/common-product",

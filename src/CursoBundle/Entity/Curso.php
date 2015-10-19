@@ -242,4 +242,13 @@ class Curso
     {
         return $this->slug;
     }
+
+    public function getCodigoNombre()
+    {
+        return sprintf(
+            '%s - %s',
+            $this->getCodigoCurso(),
+            $this
+        );
+    }
 }
