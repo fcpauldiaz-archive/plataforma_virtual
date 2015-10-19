@@ -55,7 +55,7 @@ class CursoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'curso_show', ['id' => $entity->getId()]
+                    'curso_show', [ 'id' => $entity->getId(),'slug' =>$entity->getSlug() ]
                 )
             );
         }
