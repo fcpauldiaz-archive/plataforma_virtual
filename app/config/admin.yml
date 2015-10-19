@@ -12,7 +12,9 @@ easy_admin:
             edit:
                 fields: ['nombreCompleto','username','email','enabled','lastLogin','password','expiresAt','locked','expired','roles']
         Cursos:
-            class: CursoBundle\Entity\Curso  
+            class: CursoBundle\Entity\Curso 
+            new:
+               fields: ['nombreCurso','codigoCurso'] 
         Documentos:
             class: DocumentBundle\Entity\Documento
         Comentarios:
