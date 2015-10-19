@@ -1,26 +1,23 @@
 
 CursoBundle\Entity\Curso:
     # ...
-    curso{2..300}:
+    curso{2..3000}:
         nombreCurso: <word()>
         codigoCurso (unique): <word()><current()>
         usuarios: [@usuario*]
-        
+        slug (unique): <slug()> 
         # ...
 #documento
 DocumentBundle\Entity\Documento:
-    documento{1..5000}:
+    documento{1..10000}:
         tipoDocumento: true
         numeroDocumento: <numberBetween(1,100)>
         curso: @curso*
         documentName (unique): <word()><current()>
-
-
-
-
+        slug (unique): <slug()>
 #usuarios
 UserBundle\Entity\Usuario:
-     usuario{2..100}:
+     usuario{2..5000}:
         nombreCompleto: <word()>
         username (unique): <username()>
         email (unique): <email()>

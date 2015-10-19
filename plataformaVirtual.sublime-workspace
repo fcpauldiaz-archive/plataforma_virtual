@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/CursoBundle/DataFixtures/ORM/fakeData.yml",
+			"settings":
+			{
+				"buffer_size": 623,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -767,7 +775,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"",
@@ -944,6 +952,34 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/CursoBundle/DataFixtures/ORM/fakeData.yml",
+					"settings":
+					{
+						"buffer_size": 623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -1526,7 +1562,7 @@
 		[
 			[
 				"",
-				"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/ejercicio1.sublime-project"
+				"/Users/usuario/Google Drive/Docs/Web/fcpauldiazBlog/fcpauldiaz.sublime-project"
 			]
 		],
 		"width": 380.0
