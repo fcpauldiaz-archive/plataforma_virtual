@@ -31,7 +31,7 @@
 				<td> {{ curso.nombreCurso }} </td>
 				<td> {{ curso.codigoCurso }} </td>
 				<td> 
-					<a class= "btn btn-default btn-xs btn-warning" disabled="disabled" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
+					<a class= "btn btn-default btn-xs btn-warning"  href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
 						Asignar Curso
 					</a>
 				</td>
