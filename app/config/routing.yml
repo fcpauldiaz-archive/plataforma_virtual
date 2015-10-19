@@ -1,3 +1,8 @@
+contact:
+    resource: "@ContactBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 tutoria:
     resource: "@TutoriaBundle/Controller/"
     type:     annotation
@@ -41,3 +46,6 @@ fos_comment_api:
     prefix: /api
     defaults: { _format: html }
 
+mremi_contact_form:
+    resource: "@MremiContactBundle/Resources/config/routing.xml"
+    #resource: "@ContactBundle/Resources/config/routing.xml"

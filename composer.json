@@ -48,7 +48,9 @@
         "oyejorge/less.php": "~1.5",
         "lexik/translation-bundle": "^2.1",
         "gedmo/doctrine-extensions": "^2.4",
-        "stof/doctrine-extensions-bundle": "^1.2"
+        "stof/doctrine-extensions-bundle": "^1.2",
+        "antimattr/google-bundle": "^2.0",
+        "mremi/contact-bundle": "^1.2"
         
     },
     

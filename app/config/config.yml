@@ -144,3 +144,17 @@ stof_doctrine_extensions:
             sluggable: true
             loggable: true
 
+mremi_contact:
+    store_data:            false
+    form:
+        type:              contact_type
+        name:              contact
+        validation_groups: [Default]
+        subject_provider:  mremi_contact.subject_provider.noop
+
+    email:
+        mailer:            mremi_contact.mailer.twig_swift
+        from:              []
+        to:                
+           - { address: dia13203@uvg.edu.gt, name: "admin" } # Required
+        template:          MremiContactBundle:Contact:email.txt.twig

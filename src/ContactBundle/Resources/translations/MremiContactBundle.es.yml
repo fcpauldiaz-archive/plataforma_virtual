@@ -1,0 +1,19 @@
+mremi_contact:
+    form_page_title: Contacto
+    form_title: Contacto
+    form: 
+        first_name: Nombre/s
+        last_name: Apellido/s
+        email: Correo
+        message: Mensaje
+        subject: Asunto
+        title: Título
+        title_mr: Mr.
+        title_mrs: Mrs.
+        captcha: Código de seguridad
+    form_submit: Enviar
+    email_message_txt: "Hola,\n\nA Un usuario ha llenado el formulario de contacto: \n\nTítulo: %title%\n\n Nombres/s: %firstName%\n\n Apellido/s: %lastName%\n\n Correo: %email%\n\n Mensaje:\n%message%\n\Saludos\n"
+    email_message_html: "Hola,\n<br/>\n<br/\nUn usuario ha llenado el formulario de contacto:\n<br/>\n<br/>\n<strong><em>Título:</em></strong> %title%\n<br/>\n<br/>\n<strong><em> Nombre/s:</em></strong> %firstName%\n<br/>\n<br/>\n<strong><em> Apellido/s:</em></strong> %lastName%\n<br/>\n<br/>\n<strong><em>Correo:</em></strong> %email%\n<br/>\n<br/>\n<strong><em>Mensaje:</em></strong>\n<br/>\n%message%\n<br/>\n<br/>\Saludos\n"
+    confirm_page_title: Confirmación
+    confirm_title: "Gracias %title% %fullName%"
+    confirm_message: El mensaje ha sido enviado exitosamente.
