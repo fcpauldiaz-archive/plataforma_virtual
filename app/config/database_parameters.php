@@ -12,4 +12,4 @@
     $container->setParameter('mailer_host', smtp.sendgrid.net);
     $container->setParameter('mailer_user', 'app40782376');
     $container->setParameter('mailer_password', 'ermxsqfz5173');
-    $container->setParameter('mailer_port', 587);
+    $container->setParameter('mailer_port', 465);
