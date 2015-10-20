@@ -1,14 +1,11 @@
 <?php
 
 namespace UserBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
 //sirve para extender de friendofsymfony
 use FOS\UserBundle\Entity\User as BaseUser;
 //sirve para validar los campos del formulario
 use Symfony\Component\Validator\Constraints as Assert;
-
-
 /**
  * @ORM\Table(name="Usuarios")
  * @ORM\Entity
@@ -24,29 +21,25 @@ class Usuario extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
     
      /**
      * @var string
      * @ORM\Column(name="nombreCompleto", type="string", length=50)
      */
     private $nombreCompleto;
-
     /**
      * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuario")
      * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;
-
      /**
      * Constructor
      */
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct();// construye los metodos y atributos de Base
         $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
     /**
      * Get id
      *
@@ -56,7 +49,6 @@ class Usuario extends BaseUser
     {
         return $this->id;
     }
-
     /**
      * Set nombreCompleto
      *
@@ -66,10 +58,8 @@ class Usuario extends BaseUser
     public function setNombreCompleto($nombreCompleto)
     {
         $this->nombreCompleto = $nombreCompleto;
-
         return $this;
     }
-
     /**
      * Get nombreCompleto
      *
@@ -80,7 +70,6 @@ class Usuario extends BaseUser
         return $this->nombreCompleto;
     }
    
-
     /**
      * Add cursos
      *
@@ -90,10 +79,8 @@ class Usuario extends BaseUser
     public function addCurso(\CursoBundle\Entity\Curso $cursos)
     {
         $this->cursos[] = $cursos;
-
         return $this;
     }
-
     /**
      * Remove cursos
      *
@@ -103,7 +90,6 @@ class Usuario extends BaseUser
     {
         $this->cursos->removeElement($cursos);
     }
-
     /**
      * Get cursos
      *
@@ -113,7 +99,6 @@ class Usuario extends BaseUser
     {
         return $this->cursos;
     }
-
      /**
      * Get expiresAt
      *
@@ -133,7 +118,6 @@ class Usuario extends BaseUser
     {
         return $this->credentialsExpireAt;
     }
-
     public function __toString()
     {
         return $this->nombreCompleto;

@@ -1,0 +1,37 @@
+{% extends 'base_page.html.twig' %}
+
+
+{% block body_content -%}
+    <h1>Curso</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombrecurso</th>
+                <td>{{ entity.nombreCurso }}</td>
+            </tr>
+            <tr>
+                <th>Codigocurso</th>
+                <td>{{ entity.codigoCurso }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('curso') }}">
+            Regresar
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('curso_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

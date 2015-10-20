@@ -12,11 +12,14 @@ use CursoBundle\Form\CursoType;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 /**
  * Curso controller.
  *
  * @Route("/curso")
+ * @Security("has_role('ROLE_ADMIN')")
  */
 class CursoController extends Controller
 {
@@ -26,7 +29,7 @@ class CursoController extends Controller
      *
      * @Route("/", name="curso")
      * @Method("GET")
-     * @Template()
+     * @Template("CursoBundle:Curso:indexCurso.html.twig")
      */
     public function indexAction()
     {
@@ -43,7 +46,7 @@ class CursoController extends Controller
      *
      * @Route("/", name="curso_create")
      * @Method("POST")
-     * @Template("CursoBundle:Curso:new.html.twig")
+     * @Template("CursoBundle:Curso:newCurso.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -93,7 +96,7 @@ class CursoController extends Controller
      *
      * @Route("/new", name="curso_new")
      * @Method("GET")
-     * @Template()
+     * @Template("CursoBundle:Curso:newCurso.html.twig")
      */
     public function newAction()
     {
@@ -111,7 +114,7 @@ class CursoController extends Controller
      *
      * @Route("/{id}", name="curso_show")
      * @Method("GET")
-     * @Template()
+     * @Template("CursoBundle:Curso:showCurso.html.twig")
      */
     public function showAction($id)
     {
@@ -136,7 +139,7 @@ class CursoController extends Controller
      *
      * @Route("/{id}/edit", name="curso_edit")
      * @Method("GET")
-     * @Template()
+     * @Template("CursoBundle:Curso:editCurso.html.twig")
      */
     public function editAction($id)
     {
@@ -181,7 +184,7 @@ class CursoController extends Controller
      *
      * @Route("/{id}", name="curso_update")
      * @Method("PUT")
-     * @Template("CursoBundle:Curso:edit.html.twig")
+     * @Template("CursoBundle:Curso:editCurso.html.twig")
      */
     public function updateAction(Request $request, $id)
     {

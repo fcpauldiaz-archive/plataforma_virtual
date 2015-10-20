@@ -8,6 +8,21 @@
             "SymfonyStandard\\": "app/SymfonyStandard/"
         }
     },
+
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.11.1",
+                "dist": {
+                    "url": "http://code.jquery.com/jquery-1.11.1.js",
+                    "type": "file"
+                }
+            }
+        }
+        
+    ],
    
     "require": {
         "php": ">=5.5.0",
@@ -27,9 +42,11 @@
         "friendsofsymfony/comment-bundle": "^2.0",
         "vich/uploader-bundle": "^0.14.0",
         "friendsofsymfony/elastica-bundle": "^3.1",
-        "braincrafted/bootstrap-bundle": "^2.1",
-        "twbs/bootstrap": "^3.3"
-      
+        "jquery/jquery": "1.11.*",
+        "braincrafted/bootstrap-bundle": "~2.1",
+        "twbs/bootstrap": "3.0.*",
+        "genemu/form-bundle": "2.2.*",
+        "oyejorge/less.php": "~1.5"
     },
     
     "require-dev": {
@@ -67,6 +84,7 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
+            
         }
     }
 }

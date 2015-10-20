@@ -1,0 +1,69 @@
+{% extends 'base_page.html.twig' %}
+
+
+{% block body_content -%}
+    
+    {% if tipo == 1 %}
+         <h1>Parciales {{cursos.nombreCurso}}</h1>
+    {% else %}
+        <h1>Hojas de trabajo {{cursos.nombreCurso}} </h1>
+    {% endif %}
+    {% set count = 0 %}
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" >
+    {% for doc in cursos.documentos %}
+
+        {% if tipo == doc.tipoDocumento %}
+
+         <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading{{count}}">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{count}}" aria-expanded="false" aria-controls="collapse{{count}}">
+             Documento número {{doc.numeroDocumento}}
+            </a>
+          </h4>
+        </div>
+        <div id="collapse{{count}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{count}}">
+          <div class="panel-body">
+
+
+            <table class="table table-striped table-hover">
+
+
+                <tbody>
+                    <tr>
+                        <th>Nombre Documento</th>
+                        <td>{{ doc.documentName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Actualizado</th>
+                        <td>{{ doc.updatedAt |date('d-m-Y H:i:s')}}</td>
+                    </tr>
+                    <tr>
+                        <th>Link</th>
+                        <td><a href="{{ vich_uploader_asset(doc, 'documentFile') }}">Descargar</a></td>
+                    </tr>
+                    <tr>
+                        <th>Subido por</th>
+                        <td>{{doc.numeroDocumento}}</td>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+        {% endif %}
+        {% set count = count + 1 %}
+    {% endfor %}
+</div>
+
+        <ul class="record_actions">
+    <li>
+        <a class="btn btn-warning" href="{{ path('cursos_parciales') }}">
+            Regresar
+        </a>
+    </li>
+   
+    
+</ul>
+
+{% endblock %}
+

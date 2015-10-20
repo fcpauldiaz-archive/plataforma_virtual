@@ -10,11 +10,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use DocumentBundle\Entity\Documento;
 use DocumentBundle\Form\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 /**
  * Documento controller.
  *
  * @Route("/documento")
+ * 
  */
 class DocumentoController extends Controller
 {
@@ -169,7 +172,9 @@ class DocumentoController extends Controller
     */
     private function createEditForm(Documento $entity,\UserBundle\Entity\Usuario $usuario)
     {
-        $form = $this->createForm(new DocumentoType($usuario), $entity, array(
+        $var = new DocumentoType($usuario);
+        $var->setEditBoolean(false);
+        $form = $this->createForm($var, $entity, array(
             'action' => $this->generateUrl('documento_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
