@@ -248,31 +248,4 @@ class CursoController extends Controller
             ->getForm()
         ;
     }
-    /**
-     * adds a Curso entity to Usuario.
-     *
-     * @Route("/{idCurso}/{idUsuario}", name="add_curso")
-     * @Method("GET")
-     */
-    public function assingCursoAction($idCurso, $idUsuario)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entityCurso = $em->getRepository('CursoBundle:Curso')->find($idCurso);
-        $entityUsuario = $em->getRepository('UserBundle:Usuario')->find($idUsuario);
-
-        if (!$entityCurso or !$entityUsuario) {
-            throw $this->createNotFoundException('Unable to find Curso or Usuario entity.');
-        }
-
-        $entityUsuario->addCurso($entityCurso);
-        $em->persist($entityUsuario);
-        $em->flush();
-
-        return $this->redirect(
-                $this->generateUrl('curso_show',
-                    ['id' => $entityUsuario1->getId()]
-                )
-            );
-    }
 }
