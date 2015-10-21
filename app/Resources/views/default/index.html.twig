@@ -133,15 +133,18 @@
 
                         {% include 'modal/modal_curso.html.twig' %}
                         {# termina ruta de Cursos #}
-                       
                         
                         <div class="menu-item light-red">
-                            <a href="/contact" data-toggle="modal">
+
+                            <a href="#" data-toggle="modal" data-target="#modalTutoria">
+
+                           
                                 <i class="fa fa-envelope-o"></i>
-                                <p>Contacto</p>
+                                <p>Tutorías</p>
                             </a>
                         </div>
                         
+                        {% include 'modal/modal_tutoria.html.twig' %}
                     </div>
                 </div>
             </div>

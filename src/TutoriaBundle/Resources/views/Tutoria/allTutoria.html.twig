@@ -1,0 +1,28 @@
+{% extends '::base_page.html.twig' %}
+
+{% block body_content -%}
+    <h1>Otras Tutorías</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Tutor</th>
+                <th>Curso</th>
+                <th>Informacion</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tutoria in entities %}
+        
+        <tr>
+            <td>{{ tutoria.usuario.getEmail()}}</td>
+            <td>{{ tutoria.curso }}</td>
+            <td>{{ tutoria.info }}</td>
+        </tr>
+        
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+    {% endblock %}

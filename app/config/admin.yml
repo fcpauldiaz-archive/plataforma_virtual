@@ -17,5 +17,10 @@ easy_admin:
                fields: ['nombreCurso','codigoCurso'] 
         Documentos:
             class: DocumentBundle\Entity\Documento
+
+        Tutorias:
+            class: TutoriaBundle\Entity\Tutoria
+
         Comentarios:
             class: ForumBundle\Entity\Comentario
+
