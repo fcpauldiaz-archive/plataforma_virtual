@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <th>Actualizado</th>
-                <td>{{ entity.updatedAt|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.updatedAt|date('d-m-Y H:i:s') }}</td>
             </tr>
         </tbody>
     </table>
@@ -27,7 +27,7 @@
         </a>
     </li>
     <li>
-        <a href="{{ path('documento_edit', { 'id': entity.id ,'username':app.user.username}) }}">
+        <a href="{{ path('documento_edit', { 'slug': entity.slug ,'username':app.user.username}) }}">
             Edit
         </a>
     </li>

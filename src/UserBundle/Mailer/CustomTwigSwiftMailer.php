@@ -12,14 +12,12 @@
 namespace UserBundle\Mailer;
 
 use FOS\UserBundle\Model\UserInterface;
-use FOS\UserBundle\Mailer\TwigSwiftMailer as BaseMailer;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use FOS\UserBundle\Mailer\MailerInterface;
 
-
 /**
- * 
- * Form overriden by  @author Pablo diaz <dia13203@uvg.edu.gt>
+ * Form overriden by  @author Pablo diaz <dia13203@uvg.edu.gt>.
+ *
  * @author Christophe Coevoet <stof@notk.org>
  */
 class CustomTwigSwiftMailer implements MailerInterface
@@ -43,7 +41,7 @@ class CustomTwigSwiftMailer implements MailerInterface
         $url = $this->router->generate('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), true);
         $context = array(
             'user' => $user,
-            'confirmationUrl' => $url
+            'confirmationUrl' => $url,
         );
 
         $this->sendMessage($template, $context, $this->parameters['from_email']['confirmation'], $user->getEmail());
@@ -55,7 +53,7 @@ class CustomTwigSwiftMailer implements MailerInterface
         $url = $this->router->generate('fos_user_resetting_reset', array('token' => $user->getConfirmationToken()), true);
         $context = array(
             'user' => $user,
-            'confirmationUrl' => $url
+            'confirmationUrl' => $url,
         );
         $this->sendMessage($template, $context, $this->parameters['from_email']['resetting'], $user->getEmail());
     }
@@ -81,8 +79,7 @@ class CustomTwigSwiftMailer implements MailerInterface
         $subject = $template->renderBlock('subject', $context);
         $textBody = $template->renderBlock('body_text', $context);
         $htmlBody = $template->renderBlock('body_html', $context);
-        
-       
+
         $message
             ->setSubject($subject)
             ->setFrom($fromEmail)

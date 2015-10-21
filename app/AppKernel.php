@@ -28,17 +28,21 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),                         //user bunndle
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(), //admin bundle
             new FOS\RestBundle\FOSRestBundle(),
+            new FOS\CommentBundle\FOSCommentBundle(),                   //forum bundle
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Vich\UploaderBundle\VichUploaderBundle(),               //upload engine
-            new FOS\ElasticaBundle\FOSElasticaBundle(),                 //searh engine
             new Genemu\Bundle\FormBundle\GenemuFormBundle(),            //Add select2
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),//soft delete bundle
+            new Mremi\ContactBundle\MremiContactBundle(),//contact bundle
 
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),
             new DocumentBundle\DocumentBundle(),
             new ForumBundle\ForumBundle(),
             new TutoriaBundle\TutoriaBundle(),
+            new ContactBundle\ContactBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -46,6 +50,10 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
+            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+           // $bundles[] = new h4cc\AliceFixturesBundle\h4ccAliceFixturesBundle();
+
         }
 
         return $bundles;

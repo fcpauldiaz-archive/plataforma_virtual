@@ -1,3 +1,8 @@
+contact:
+    resource: "@ContactBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 tutoria:
     resource: "@TutoriaBundle/Controller/"
     type:     annotation
@@ -26,9 +31,21 @@ default:
     type:     annotation
 
 easy_admin_bundle:
-    #resource: "@EasyAdminBundle/Controller/"
-    resource: "@CursoBundle/Controller/AdminController.php"
+    resource: "@EasyAdminBundle/Controller/"
+    #resource: "@CursoBundle/Controller/AdminController.php"
     type:     annotation
-    prefix:   /admin
+    prefix:   /adminEntity
 
+lexik_translation_edition:
+    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+    prefix:   /traducciones
 
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }
+
+mremi_contact_form:
+    resource: "@MremiContactBundle/Resources/config/routing.xml"
+    #resource: "@ContactBundle/Resources/config/routing.xml"

@@ -18,13 +18,18 @@ security:
                 csrf_provider: security.csrf.token_manager
             logout:       true
             anonymous:    true
+            access_denied_url: /
+            #access_denied_handler: kernel.listener.accessDenied
+            #entry_point: kernel.listener.accessDenied
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/curso/, role: ROLE_ADMIN}
+        - { path: ^/admin, role: ROLE_ADMIN}
+        - { path: ^/traducciones/, role: ROLE_ADMIN }
+        - { path: ^/adminEntity, role: ROLE_ADMIN }
+
 
 
     role_hierarchy:

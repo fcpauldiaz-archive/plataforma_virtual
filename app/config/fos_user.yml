@@ -13,15 +13,15 @@ fos_user:
             template:   UserBundle:Registration:registration.email.twig  
             
             from_email:
-                address:        noreply@elearn.com
-                sender_name:    In- Learn Platform     
+                address:        noreply@learn-in.com
+                sender_name:    Learn-in Platform     
 
     resetting: #password resetting
         token_ttl: 86400
         email:
             from_email:
-                address:        noreply@elearn.com
-                sender_name:    In- Learn Platform
+                address:        noreply@elearn-in.com
+                sender_name:    Learn-in Platform
             template:   UserBundle:Resetting:resetting.email.twig
         form:
             type:               fos_user_resetting

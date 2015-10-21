@@ -1,45 +1,47 @@
 <?php
 
 namespace UserBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 //sirve para extender de friendofsymfony
 use FOS\UserBundle\Entity\User as BaseUser;
+
 //sirve para validar los campos del formulario
-use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Table(name="Usuarios")
  * @ORM\Entity
- * 
- * 
  */
 class Usuario extends BaseUser
 {
     /**
-     * @var integer
+     * @var int
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-    
-     /**
+
+    /**
      * @var string
      * @ORM\Column(name="nombreCompleto", type="string", length=50)
      */
     private $nombreCompleto;
     /**
-     * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuario")
+     * @ORM\ManyToMany(targetEntity="CursoBundle\Entity\Curso", inversedBy="usuarios")
      * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;
+
     
     /**
      * @ORM\OneToMany(targetEntity="TutoriaBundle\Entity\Tutoria", mappedBy="usuario")
      **/
     private $tutorias;
     
+    
      /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -48,48 +50,52 @@ class Usuario extends BaseUser
         $this->tutorias = new \Doctrine\Common\Collections\ArrayCollection();
     }
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
         return $this->id;
     }
     /**
-     * Set nombreCompleto
+     * Set nombreCompleto.
      *
      * @param string $nombreCompleto
+     *
      * @return Usuario
      */
     public function setNombreCompleto($nombreCompleto)
     {
         $this->nombreCompleto = $nombreCompleto;
+
         return $this;
     }
     /**
-     * Get nombreCompleto
+     * Get nombreCompleto.
      *
-     * @return string 
+     * @return string
      */
     public function getNombreCompleto()
     {
         return $this->nombreCompleto;
     }
-   
+
     /**
-     * Add cursos
+     * Add cursos.
      *
      * @param \CursoBundle\Entity\Curso $cursos
+     *
      * @return Usuario
      */
     public function addCurso(\CursoBundle\Entity\Curso $cursos)
     {
         $this->cursos[] = $cursos;
+
         return $this;
     }
     /**
-     * Remove cursos
+     * Remove cursos.
      *
      * @param \CursoBundle\Entity\Curso $cursos
      */
@@ -98,28 +104,28 @@ class Usuario extends BaseUser
         $this->cursos->removeElement($cursos);
     }
     /**
-     * Get cursos
+     * Get cursos.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCursos()
     {
         return $this->cursos;
     }
-     /**
-     * Get expiresAt
+    /**
+     * Get expiresAt.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getExpiresAt()
     {
         return $this->expiresAt;
     }
-    
+
     /**
-     * Get credentials_expire_at
+     * Get credentials_expire_at.
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCredentialsExpireAt()
     {
@@ -129,8 +135,7 @@ class Usuario extends BaseUser
     {
         return $this->nombreCompleto;
     }
-    
-    
+
     
     /**
      * Add tutorias
@@ -163,4 +168,14 @@ class Usuario extends BaseUser
         return $this->tutorias;
     }
     
+
+
+    public function hasRole($role)
+    {
+        if (in_array($role, $this->getRoles())) {
+            return true;
+        }
+
+        return false;
+    }
 }

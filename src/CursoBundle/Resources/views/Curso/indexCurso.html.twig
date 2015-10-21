@@ -1,4 +1,4 @@
-{% extends 'base_page.html.twig' %}
+{% extends 'base_page_admin.html.twig' %}
 
 {% block body_title%} <h1>Listado de Cursos</h1> {% endblock %}
 
@@ -11,25 +11,32 @@
                 <th>Id</th>
                 <th>Nombre Curso</th>
                 <th>Código Curso</th>
+                <th>Estado</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('curso_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('curso_show', { 'slug': entity.slug }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.nombreCurso }}</td>
                 <td>{{ entity.codigoCurso }}</td>
+                {% if entity.deletedAt != null %}
+                    <td>Eliminado {{entity.deletedAt | date('d-m-Y H:i:s') }}</td>
+                {% else %}
+                    <td>Activo</td>
+               
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('curso_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('curso_show', { 'slug': entity.slug }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('curso_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('curso_edit', { 'slug': entity.slug }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
+                 {% endif %}
             </tr>
         {% endfor %}
         </tbody>

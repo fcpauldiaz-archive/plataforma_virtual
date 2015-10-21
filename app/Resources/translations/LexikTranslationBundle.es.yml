@@ -1,0 +1,15 @@
+translations:
+    key: identificador 
+    page_title: Página de inicio
+    show_hide_columns: mostrar/ocultar columnas
+    invalidate_cache: Limpiar caché
+    new_translation: Nueva traducción
+    add_translation: Agregar traducción
+    domain: Dominio
+    back_to_list: Regresar
+    save: Guardar
+    save_add: Guardar y agregar otra traducción
+    toggle_all_columns: Ocultar todas las columnas
+    succesfully_updated: Actualizado exitosamente
+    update_failed: Actualización fallida
+    save_row: guardar fila

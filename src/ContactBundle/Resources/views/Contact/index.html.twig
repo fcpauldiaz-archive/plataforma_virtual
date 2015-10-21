@@ -1,0 +1,148 @@
+{#
+
+This file is part of the Mremi\ContactBundle Symfony bundle.
+
+(c) Rémi Marseille <marseille.remi@gmail.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends "MremiContactBundle::layout.html.twig" %}
+
+{% trans_default_domain 'MremiContactBundle' %}
+
+
+
+{% block title %}{{ 'mremi_contact.form_page_title'|trans }}{% endblock %}
+
+{% block body %}
+   <div class="contact" id="contact-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>Contáctanos</h3>
+                            <p>Learn-In platform</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-md-4">
+                            <div class="footer-contact-info">
+                                <h4>Información de contacto</h4>
+                                <ul>
+                                    <li><strong>E-mail :</strong> uvginlearn2015@gmail.com </li>
+                                    {#<li><strong>Phone :</strong> +</li>
+                                    <li><strong>Mobile :</strong> +8801-45565378</li>#}
+                                    <li><strong>Web :</strong> http://learn-in.herokuapp.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="footer-social text-center">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://github.com/fcpauldiaz/plataforma_virtual"><i class="fa fa-github"></i></a></li>
+                                    {#<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>#}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="footer-contact-info">
+                                <h4>Working Hours</h4>
+                                <ul>
+                                    <li><strong>Lunes-Miércoles :</strong> 9 am to 5 pm</li>
+                                    <li><strong>Jueves-Viernes :</strong> 12 pm to 10 pm</li>
+                                   {# <li><strong>Sat :</strong> 9 am to 3 pm</li>
+                                    <li><strong>Sunday :</strong> Closed</li>#}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div><!--/.row -->
+					{% form_theme form _self %}
+					{% block field_row %}
+					<div class="">
+					   
+					</div>
+					{% endblock field_row %}
+       
+                    <div class="row" style="padding-top: 80px;">
+                        <div class="col-md-12">
+                            
+                                {{ form_start(form, {'action': path('mremi_contact_form'),
+								'attr': {'name':'sentMessage','id':'contactForm'},
+                            }
+
+									
+
+                                ) }}
+                                 <fieldset>
+                                    <legend>{{ 'mremi_contact.form_title'|trans }}</legend>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        
+                                           {{ form_row(form.firstName)}}
+                                         
+                                            <p class="help-block text-danger"></p>
+                                           
+                                        
+                                        
+                                           {{ form_row(form.lastName)}}
+                                           
+                                           
+                                            <p class="help-block text-danger"></p>
+                                       
+                                      
+                                              {{ form_row(form.email)}} 
+                                          
+                                          
+                                            <p class="help-block text-danger"></p>
+                                      
+                                    
+                                       
+                                   
+                                         {{ form_row(form.subject)}}
+
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        
+                                             {{ form_row(form.message)}} 
+                                          
+                                            <p class="help-block text-danger"></p>
+                                        <
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="col-lg-12 text-center">
+                                        <div id="success"></div>
+                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                    </div>
+                                </div>
+                                   </fieldset>
+                            {{ form_row(form._token) }}
+                           {{ form_end(form, {'render_rest': true}) }}
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- End Contact Section -->
+{% endblock %}

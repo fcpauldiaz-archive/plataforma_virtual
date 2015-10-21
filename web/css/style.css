@@ -600,7 +600,9 @@ thead th {
     background-color: #006DCC;
     color: white;
 }
-
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #eeeeea;
+}
 
 
 .panel-default>.panel-heading {

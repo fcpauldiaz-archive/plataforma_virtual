@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"enti",
+				"entity"
+			],
+			[
+				"cursos",
+				"cursosOrdenados"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"cont",
+				"contLikes"
+			],
+			[
+				"Acce",
+				"AccessInterface"
+			],
+			[
+				"acce",
+				"accessDenied"
+			],
+			[
+				"ROLE_",
+				"ROLE_ADMIN"
+			],
+			[
+				"documentN",
+				"getDocumentName"
+			],
+			[
 				"Ro",
 				"ROLE_ADMIN"
 			],
@@ -17,10 +61,6 @@
 			],
 			[
 				"curs",
-				"cursosAsignados"
-			],
-			[
-				"cursos",
 				"cursosAsignados"
 			],
 			[
@@ -86,10 +126,6 @@
 			[
 				"entities",
 				"entities"
-			],
-			[
-				"ROLE_",
-				"ROLE_SUPER_ADMIN"
 			],
 			[
 				"array_p",
@@ -478,47 +514,19 @@
 			[
 				"sub",
 				"subirprimera"
-			],
-			[
-				"conta",
-				"contadorPos"
-			],
-			[
-				"su",
-				"SubirMenu"
-			],
-			[
-				"con",
-				"contadorPos"
-			],
-			[
-				"Se",
-				"SetForeColour"
-			],
-			[
-				"re",
-				"cuadroRelleno"
-			],
-			[
-				"contad",
-				"contadorAncho"
-			],
-			[
-				"di",
-				"dibujarImagen"
-			],
-			[
-				"noE",
-				"noEncender"
-			],
-			[
-				"vocal",
-				"vocalNumero"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "src/CursoBundle/DataFixtures/ORM/fakeData.yml",
+			"settings":
+			{
+				"buffer_size": 623,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -526,6 +534,14 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"PHP Code",
 				"PHP Coding Standards Fixer: Fix this file (PHP Code Beautifier)"
@@ -607,7 +623,7 @@
 				"Package Control: Advanced Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -624,134 +640,134 @@
 	},
 	"file_history":
 	[
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/TutoriaBundle/Entity/Tutoria.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DocumentoController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Security/login.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/translations/FOSUserBundle.es.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/admin.yml",
+		"/Users/usuario/Google Drive/Docs/Web/BootstrapZip/tags.html",
+		"/Users/usuario/Google Drive/Docs/Web/BootstrapZip/tags.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Curso.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Entity/Documento.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/CursoController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/security.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DownloadController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Command/CreateCursoCommand.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Command/CreateUserCommand.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Command/ChangePasswordCommand.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/translations/LexikTranslationBundle.es.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/composer.json",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/AppKernel.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/DataFixtures/ORM/fakeData.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/config.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/autoload.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/autoload.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/composer/autoload_real.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DocumentoController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Entity/Usuario.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/AsignacionController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Asignacion/crearAsignacion.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DownloadController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/downloadDocumento.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Curso/showCurso.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/modal/modal_curso.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config_dev.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/showDocumento.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/indexDocumento.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Curso/indexCurso.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/doctrine_extensions.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/DataFixtures/ORM/AppFixtures.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/security.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Universe.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/editDocumento.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Tests/Controller/DocumentControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/SymfonyRequirements.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/CH.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Component/Yaml/Tests/Fixtures/YtsDocumentSeparator.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/DefaultController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Listener/DoctrineExtensionListener.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/routing.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/cache/dev/assetic/routing.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Entity/Vote.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Entity/Comentario.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/cursoShow.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/admin/indexAdmin.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/routing_dev.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config_prod.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Tests/Controller/DefaultControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Tests/Controller/DefaultControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/TutoriaBundle/Tests/Controller/DefaultControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Tests/Controller/DefaultControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Tests/Controller/ComentarioControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Tests/Controller/DefaultControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Tests/Controller/CursoControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Tests/Controller/ForoControllerTest.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/phpunit.xml.dist",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/README.md",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Form/ForoType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Form/ComentarioType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu/minimal.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/js/35a8e64.js",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/comments.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/Resources/assets/css/comments.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/services.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Entity/Thread.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Listener/AccessDeniedListener.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/Document/Comment.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Entity/Like.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Curso/new.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/minimalMenu.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/services.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/easy_admin/layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/easyadmin/layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/AdminController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/Resources/views/default/layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/docs/conf.py",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/admin/sidebar_menu.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page_admin.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/js/minimalMenu.js",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Form/BuscarType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/admin/admin_base.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/admin/blank-page.html",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap_pageAdmin.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/style.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/Resources/views/form/bootstrap_3_layout.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/indexParciales.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap_page.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap.min.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/bootstrap.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/composer.lock",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/admin/index.html",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Asignacion/listarAsignacion.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/translations/FOSUserBundle.es.yml",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/TutoriaBundle/Controller/DefaultController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/RegistrationFormType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/ProfileFormType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap-theme.css",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/DocumentoType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/newDocumento.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Curso/newCurso.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Curso/editCurso.html.twig",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/TutoriaBundle/Entity/Tutoria.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Security/login.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/translations/DocumentBundle.es.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/layout.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.es.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Controller/DefaultController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/translations/messages.es.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Asignacion/buscarAsignacion.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/indexParciales.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Curso/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/indexDocumento.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Entity/Usuario.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/admin.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/downloadDocumento.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/composer.json",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/database_parameters.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/DefaultController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Asignacion/listar.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Curso.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/parameters.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Asignacion/asignar.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Modelación y Simulación/normal.py",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/fos_user.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/config/services.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config_dev.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/config.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Resources/views/Asignacion/buscar.html.twig",
 		"/Users/usuario/Desktop/HDT6/G6/conjunto.java",
 		"/Users/usuario/Desktop/HDT6/G6/factory.java",
 		"/Users/usuario/Desktop/HDT6/G6/main.java",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/base_page.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Default/index2.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/style.css",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/translations/messages.es.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/editDocumento.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/routing.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/alerts.css",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/DocumentoType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/AppKernel.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/ProfileController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/RegistrationFormType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Form/Type/ProfileFormType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Registration/register_content.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Profile/edit_content.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/js/alerts.js",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/css/seach-box.css",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Command/EventDispatcherDebugCommand.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/showDocumento.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Foro.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Comentario.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.en.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/translations/messages.fr.xlf",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/translations/DocumentBundle.es.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.es.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/index_documento.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Curso/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Group/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/download_parcial.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Entity/Documento.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Controller/DefaultController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Form/CursoType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/show.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Thread.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Comment.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config_prod.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/CursoRepository.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Component/Routing/RouterInterface.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Form/ComentarioType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Form/ForoType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/CursoBundle.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/ForoController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/ComentarioController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/javiereguiluz/easyadmin-bundle/DependencyInjection/EasyAdminExtension.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/services.yml",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/ForoRepository.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/ComentarioRepository.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/AdminController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/documentos/Introducción a la compilación.pdf",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/SymfonyRequirements.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/web/Captura de pantalla 2015-08-29 17.34.52.png",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Default/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Entity/Product.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Curso.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/edit.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Document/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/ProductController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Product/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/ProductType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Curso/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DocumentController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Entity/Document.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/DocumentType.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap_page.css",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/menu.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Product/edit.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Product/show.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Product/new.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Document/show.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Document/index.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Document/edit.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/AsignacionController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/listar.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Thread.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Entity/Comment.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Controller/CursoController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/Controller/ThreadController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/FormFactory/CommentFormFactory.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Component/Form/FormFactory.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Component/Form/ResolvedFormTypeFactory.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/AppBundle/Resources/views/Asignacion/asignar.html.twig",
-		"/Users/usuario/NetBeansProjects/Thomson/GeneracionAutomatas/TXT/AFN.txt",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/search.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Resetting/master-reset.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Registration/email.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/web/bootstrap/css/bootstrap.css",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/modal/modal_perfil.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/modal/modal_curso.html.twig"
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/UserBundle/Resources/views/Default/index2.html.twig"
 	],
 	"find":
 	{
@@ -762,6 +778,14 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"",
+			"web/",
+			"web",
+			"",
+			"/src",
+			"",
+			"src/",
+			"web/",
 			"src/",
 			"src/DocumentBundle",
 			"src/",
@@ -778,9 +802,56 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"Twig_Function_Method",
+			"findBy",
+			"stof_doctrine_extensions",
+			"modal",
+			"AppBundle\\Tests",
+			"AppBundle",
+			"path",
+			"index.html",
+			"php-unit",
+			"background",
+			"color",
+			"autor",
+			"security.exc        \n security.exception_listener.main",
+			".active {",
+			"active {",
+			"active ",
+			"active",
+			"active {",
+			" active ",
+			"active  ",
+			"active",
+			"#006DCC",
+			"table ",
+			"table",
+			"hover",
+			"table-hover",
+			"#006DCC",
+			"table-hover",
+			"{%",
+			"SB",
+			">>>>Head",
+			"<Head",
+			"Head",
+			"head",
+			"array(",
+			"label",
+			"elastica",
+			"Back to the list",
+			"back to list",
+			"HEAD",
+			"head",
+			"panel-default",
+			"th",
+			"stripped",
+			"table",
+			"entity",
+			"class",
 			"listar",
 			"']\n",
 			"href",
@@ -861,54 +932,7 @@
 			"    \n",
 			"entity",
 			"proveedor",
-			"php",
-			"',",
-			"CANT_J",
-			"10",
-			"proveedor",
-			"juguete",
-			"order",
-			"<?",
-			"listTenAction",
-			"entity",
-			"getTipo",
-			"createAction",
-			"array",
-			"group",
-			"Group",
-			"group",
-			"setRoles",
-			"groups",
-			"createForm",
-			"createCreateForm",
-			"        <",
-			"body",
-			"void",
-			"trophy",
-			"cojinete",
-			"   \n",
-			"*****************************************************************************************************************",
-			"platform_user_registration",
-			"platform",
-			"PlatformBundle",
-			"platform",
-			"%}\n",
-			"firewall",
-			"glyphicon",
-			"/>\n",
-			"label",
-			"~\n",
-			"   \n",
-			"edit",
-			"createForm",
-			"/admin/login",
-			"/admin/user/new",
-			"integer",
-			"sabores",
-			"append",
-			"}\n",
-			"User",
-			"guarda"
+			"php"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -925,6 +949,39 @@
 	},
 	"groups":
 	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/CursoBundle/DataFixtures/ORM/fakeData.yml",
+					"settings":
+					{
+						"buffer_size": 623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								407,
+								407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
 		{
 			"sheets":
 			[
@@ -948,11 +1005,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -977,20 +1041,452 @@
 		"selected_items":
 		[
 			[
-				"tutoria",
-				"src/TutoriaBundle/Entity/Tutoria.php"
+				"admin",
+				"app/config/admin.yml"
 			],
 			[
-				"download",
-				"src/DocumentBundle/Controller/DownloadController.php"
+				"documento.",
+				"src/DocumentBundle/Entity/Documento.php"
+			],
+			[
+				"curso",
+				"src/CursoBundle/Entity/Curso.php"
+			],
+			[
+				"cursoc",
+				"src/CursoBundle/Controller/CursoController.php"
+			],
+			[
+				"compo",
+				"composer.json"
+			],
+			[
+				"autoload_re",
+				"vendor/composer/autoload_real.php"
+			],
+			[
+				"auto",
+				"vendor/autoload.php"
+			],
+			[
+				"config.p",
+				"web/config.php"
+			],
+			[
+				"appk",
+				"app/AppKernel.php"
+			],
+			[
+				"appker",
+				"app/AppKernel.php"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
+				"fake",
+				"src/CursoBundle/DataFixtures/ORM/fakeData.yml"
+			],
+			[
+				"documentocon",
+				"src/DocumentBundle/Controller/DocumentoController.php"
+			],
+			[
+				"usuario",
+				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"documento",
+				"src/DocumentBundle/Controller/DocumentoController.php"
+			],
+			[
+				"curso.php",
+				"src/CursoBundle/Entity/Curso.php"
+			],
+			[
+				"cursocon",
+				"src/CursoBundle/Controller/CursoController.php"
+			],
+			[
+				"asigna",
+				"src/CursoBundle/Controller/AsignacionController.php"
+			],
+			[
+				"cursoco",
+				"src/CursoBundle/Controller/CursoController.php"
+			],
+			[
+				"editd",
+				"src/DocumentBundle/Resources/views/Documento/editDocumento.html.twig"
+			],
+			[
+				"showdocu",
+				"src/DocumentBundle/Resources/views/Documento/showDocumento.html.twig"
+			],
+			[
+				"indexdoc",
+				"src/DocumentBundle/Resources/views/Documento/indexDocumento.html.twig"
+			],
+			[
+				"document",
+				"src/DocumentBundle/Entity/Documento.php"
+			],
+			[
+				"documentcontro",
+				"src/DocumentBundle/Controller/DocumentoController.php"
+			],
+			[
+				"documentcon",
+				"src/DocumentBundle/Tests/Controller/DocumentControllerTest.php"
 			],
 			[
 				"config",
 				"app/config/config.yml"
 			],
 			[
+				"indexcurs",
+				"src/CursoBundle/Resources/views/Curso/indexCurso.html.twig"
+			],
+			[
+				"showcu",
+				"src/CursoBundle/Resources/views/Curso/showCurso.html.twig"
+			],
+			[
+				"doctrine_e",
+				"app/config/doctrine_extensions.yml"
+			],
+			[
+				"asignacion",
+				"src/CursoBundle/Controller/AsignacionController.php"
+			],
+			[
+				"cursocont",
+				"src/CursoBundle/Controller/CursoController.php"
+			],
+			[
+				"asignarcion",
+				"src/CursoBundle/Resources/views/Asignacion/crearAsignacion.html.twig"
+			],
+			[
+				"modal_",
+				"app/Resources/views/modal/modal_curso.html.twig"
+			],
+			[
+				"modal.",
+				"app/Resources/views/modal/modal_curso.html.twig"
+			],
+			[
+				"index.html.",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"security",
+				"app/config/security.yml"
+			],
+			[
+				"documen",
+				"src/DocumentBundle/Entity/Documento.php"
+			],
+			[
+				"documents",
+				"vendor/symfony/symfony/src/Symfony/Component/Yaml/Tests/Fixtures/YtsDocumentSeparator.yml"
+			],
+			[
+				"",
+				"composer.json"
+			],
+			[
+				"default",
+				"src/CursoBundle/Controller/DefaultController.php"
+			],
+			[
+				"config_",
+				"app/config/config_dev.yml"
+			],
+			[
+				"doctrine_",
+				"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/doctrine_extensions.yml"
+			],
+			[
+				"menu.",
+				"app/Resources/views/menu.html.twig"
+			],
+			[
+				"config.",
+				"app/config/config.yml"
+			],
+			[
+				"appke",
+				"app/AppKernel.php"
+			],
+			[
+				"config.y",
+				"app/config/config.yml"
+			],
+			[
+				"curso.ph",
+				"src/CursoBundle/Entity/Curso.php"
+			],
+			[
+				"minimal",
+				"app/Resources/views/menu/minimal.html.twig"
+			],
+			[
+				"men",
+				"app/Resources/views/menu.html.twig"
+			],
+			[
+				"com",
+				"composer.json"
+			],
+			[
+				"index.h",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"config_de",
+				"app/config/config_dev.yml"
+			],
+			[
+				"commentario",
+				"src/ForumBundle/Entity/Comentario.php"
+			],
+			[
+				"co",
+				"composer.json"
+			],
+			[
+				"routin",
+				"app/config/routing_dev.yml"
+			],
+			[
+				"routing",
+				"app/config/routing_dev.yml"
+			],
+			[
+				"rou",
+				"app/cache/dev/assetic/routing.yml"
+			],
+			[
+				"base",
+				"app/Resources/views/default/base.html.twig"
+			],
+			[
+				"comp",
+				"composer.json"
+			],
+			[
+				"comenta",
+				"src/ForumBundle/Entity/Comentario.php"
+			],
+			[
+				"comments.css",
+				"vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/Resources/assets/css/comments.css"
+			],
+			[
+				"base_",
+				"app/Resources/views/base_page.html.twig"
+			],
+			[
+				"comentario",
+				"src/ForumBundle/Entity/Comentario.php"
+			],
+			[
+				"comm",
+				"vendor/friendsofsymfony/comment-bundle/FOS/CommentBundle/Document/Comment.php"
+			],
+			[
+				"like",
+				"src/ForumBundle/Entity/Like.php"
+			],
+			[
+				"come",
+				"src/ForumBundle/Entity/Comentario.php"
+			],
+			[
+				"crear",
+				"src/CursoBundle/Resources/views/Asignacion/crearAsignacion.html.twig"
+			],
+			[
+				"comen",
+				"src/ForumBundle/Entity/Comentario.php"
+			],
+			[
+				"usuar",
+				"src/UserBundle/Entity/Usuario.php"
+			],
+			[
+				"coment",
+				"src/ForumBundle/Entity/Comentario.php"
+			],
+			[
+				"threa",
+				"src/ForumBundle/Entity/Thread.php"
+			],
+			[
+				"creara",
+				"src/CursoBundle/Resources/views/Asignacion/crearAsignacion.html.twig"
+			],
+			[
+				"thread.php",
+				"src/ForumBundle/Entity/Thread.php"
+			],
+			[
+				"minimal.",
+				"app/Resources/views/menu/minimal.html.twig"
+			],
+			[
+				"index.html",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"cursonew",
+				"src/UserBundle/Resources/views/Curso/new.html.twig"
+			],
+			[
+				"access",
+				"src/UserBundle/Listener/AccessDeniedListener.php"
+			],
+			[
+				"servi",
+				"app/config/services.yml"
+			],
+			[
+				"services",
+				"src/UserBundle/Resources/config/services.yml"
+			],
+			[
+				"secu",
+				"app/config/security.yml"
+			],
+			[
+				"securi",
+				"app/config/security.yml"
+			],
+			[
+				"rout",
+				"app/config/routing.yml"
+			],
+			[
+				"minimi",
+				"app/Resources/views/menu/minimal.html.twig"
+			],
+			[
+				"mini",
+				"app/Resources/views/menu/minimal.html.twig"
+			],
+			[
+				"con",
+				"docs/conf.py"
+			],
+			[
+				"adminco",
+				"src/CursoBundle/Controller/AdminController.php"
+			],
+			[
+				"base_page",
+				"app/Resources/views/base_page_admin.html.twig"
+			],
+			[
+				"sidebar",
+				"app/Resources/views/admin/sidebar_menu.html.twig"
+			],
+			[
+				"minil",
+				"app/Resources/views/menu/minimal.html.twig"
+			],
+			[
+				"sidebar_",
+				"app/Resources/views/admin/sidebar_menu.html.twig"
+			],
+			[
+				"admin_base",
+				"app/Resources/views/admin/admin_base.html.twig"
+			],
+			[
+				"bootstrap_page",
+				"web/bootstrap/css/bootstrap_page.css"
+			],
+			[
+				"bootstrap.",
+				"web/css/bootstrap.css"
+			],
+			[
+				"bootstrap.css",
+				"web/css/bootstrap.css"
+			],
+			[
+				"bootstrap_pa",
+				"web/bootstrap/css/bootstrap_page.css"
+			],
+			[
+				"style",
+				"web/css/style.css"
+			],
+			[
+				"bootstrap_",
+				"web/bootstrap/css/bootstrap_page.css"
+			],
+			[
+				"indexcurso",
+				"src/CursoBundle/Resources/views/Curso/indexCurso.html.twig"
+			],
+			[
+				"index.html.t",
+				"app/Resources/views/default/index.html.twig"
+			],
+			[
+				"indexad",
+				"app/Resources/views/admin/indexAdmin.html.twig"
+			],
+			[
 				"securit",
 				"app/config/security.yml"
+			],
+			[
+				"confi",
+				"app/config/config.yml"
+			],
+			[
+				"asign",
+				"src/CursoBundle/Controller/AsignacionController.php"
+			],
+			[
+				"compos",
+				"composer.json"
+			],
+			[
+				"newdo",
+				"src/DocumentBundle/Resources/views/Documento/newDocumento.html.twig"
+			],
+			[
+				"bootstrap.min.",
+				"web/bootstrap/css/bootstrap.min.css"
+			],
+			[
+				"boo",
+				"web/bootstrap/css/bootstrap.css"
+			],
+			[
+				"downloadcu",
+				"src/DocumentBundle/Resources/views/Documento/downloadDocumento.html.twig"
+			],
+			[
+				"downloaddo",
+				"src/DocumentBundle/Resources/views/Documento/downloadDocumento.html.twig"
+			],
+			[
+				"donwloaddo",
+				"src/DocumentBundle/Resources/views/Documento/downloadDocumento.html.twig"
+			],
+			[
+				"tutoria",
+				"src/TutoriaBundle/Entity/Tutoria.php"
+			],
+			[
+				"download",
+				"src/DocumentBundle/Controller/DownloadController.php"
 			],
 			[
 				"index.htm.twig",
@@ -1005,32 +1501,12 @@
 				"app/Resources/views/default/index.html.twig"
 			],
 			[
-				"security",
-				"app/config/security.yml"
-			],
-			[
 				"usu",
 				"src/UserBundle/Entity/Usuario.php"
 			],
 			[
-				"curso",
-				"src/CursoBundle/Entity/Curso.php"
-			],
-			[
-				"admin",
-				"app/config/admin.yml"
-			],
-			[
-				"secu",
-				"app/config/security.yml"
-			],
-			[
 				"indexdo",
 				"src/DocumentBundle/Resources/views/Documento/indexDocumento.html.twig"
-			],
-			[
-				"composer",
-				"composer.json"
 			],
 			[
 				"para",
@@ -1039,14 +1515,6 @@
 			[
 				"base_para",
 				"app/config/database_parameters.php"
-			],
-			[
-				"usuario",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"securi",
-				"app/config/security.yml"
 			],
 			[
 				"asignar",
@@ -1059,10 +1527,6 @@
 			[
 				"fos_user",
 				"app/config/fos_user.yml"
-			],
-			[
-				"config_de",
-				"app/config/config_dev.yml"
 			],
 			[
 				"param",
@@ -1087,406 +1551,6 @@
 			[
 				"parame",
 				"app/config/database_parameters.php"
-			],
-			[
-				"base",
-				"app/Resources/views/default/base.html.twig"
-			],
-			[
-				"com",
-				"composer.json"
-			],
-			[
-				"index.html.twig",
-				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"confi",
-				"app/config/config.yml"
-			],
-			[
-				"profile.tw",
-				"src/UserBundle/Resources/views/Profile/edit_content.html.twig"
-			],
-			[
-				"register",
-				"src/UserBundle/Resources/views/Registration/register_content.html.twig"
-			],
-			[
-				"admin.",
-				"app/config/admin.yml"
-			],
-			[
-				"appke",
-				"app/AppKernel.php"
-			],
-			[
-				"routin",
-				"app/config/routing.yml"
-			],
-			[
-				"asign",
-				"src/CursoBundle/Controller/AsignacionController.php"
-			],
-			[
-				"base_",
-				"app/Resources/views/base_page.html.twig"
-			],
-			[
-				"documentty",
-				"src/DocumentBundle/Form/DocumentoType.php"
-			],
-			[
-				"editdocu",
-				"src/DocumentBundle/Resources/views/Documento/editDocumento.html.twig"
-			],
-			[
-				"edidd",
-				"vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Command/EventDispatcherDebugCommand.php"
-			],
-			[
-				"showdo",
-				"src/DocumentBundle/Resources/views/Documento/showDocumento.html.twig"
-			],
-			[
-				"style",
-				"web/css/style.css"
-			],
-			[
-				"editdo",
-				"src/DocumentBundle/Resources/views/Documento/editDocumento.html.twig"
-			],
-			[
-				"appker",
-				"app/AppKernel.php"
-			],
-			[
-				"documentoty",
-				"src/DocumentBundle/Form/DocumentoType.php"
-			],
-			[
-				"indexdocumento.",
-				"src/DocumentBundle/Resources/views/Documento/index_documento.html.twig"
-			],
-			[
-				"new.html.twig",
-				"src/UserBundle/Resources/views/Group/new.html.twig"
-			],
-			[
-				"new.h",
-				"src/UserBundle/Resources/views/Curso/new.html.twig"
-			],
-			[
-				"index.html",
-				"src/DocumentBundle/Resources/views/Documento/index.html.twig"
-			],
-			[
-				"rou",
-				"app/config/routing.yml"
-			],
-			[
-				"appk",
-				"app/AppKernel.php"
-			],
-			[
-				"registration",
-				"src/UserBundle/Form/Type/RegistrationFormType.php"
-			],
-			[
-				"profiletype",
-				"src/UserBundle/Form/Type/ProfileFormType.php"
-			],
-			[
-				"usua",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"curso.",
-				"src/CursoBundle/Entity/Curso.php"
-			],
-			[
-				"compo",
-				"composer.json"
-			],
-			[
-				"docum",
-				"src/DocumentBundle/Controller/DocumentoController.php"
-			],
-			[
-				"index.htm",
-				"src/DocumentBundle/Resources/views/Documento/index.html.twig"
-			],
-			[
-				"config.",
-				"app/config/config.yml"
-			],
-			[
-				"asignacion",
-				"src/CursoBundle/Resources/views/Asignacion/asignar.html.twig"
-			],
-			[
-				"index.ht",
-				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"comm",
-				"src/CursoBundle/Entity/Comment.php"
-			],
-			[
-				"threa",
-				"src/CursoBundle/Entity/Thread.php"
-			],
-			[
-				"documento",
-				"src/DocumentBundle/Controller/DocumentoController.php"
-			],
-			[
-				"show",
-				"src/DocumentBundle/Resources/views/Documento/show.html.twig"
-			],
-			[
-				"new",
-				"src/DocumentBundle/Resources/views/Documento/new.html.twig"
-			],
-			[
-				"documentoc",
-				"src/DocumentBundle/Controller/DocumentoController.php"
-			],
-			[
-				"roui",
-				"vendor/symfony/symfony/src/Symfony/Component/Routing/RouterInterface.php"
-			],
-			[
-				"document",
-				"src/DocumentBundle/Controller/DocumentoController.php"
-			],
-			[
-				"style.",
-				"web/css/style.css"
-			],
-			[
-				"menu",
-				"app/Resources/views/menu.html.twig"
-			],
-			[
-				"bootstrap_p",
-				"web/bootstrap/css/bootstrap_page.css"
-			],
-			[
-				"as",
-				"src/AppBundle/Controller/AsignacionController.php"
-			],
-			[
-				"list",
-				"src/AppBundle/Resources/views/Asignacion/listar.html.twig"
-			],
-			[
-				"sear",
-				"vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Profiler/search.html.twig"
-			],
-			[
-				"rout",
-				"app/config/routing.yml"
-			],
-			[
-				"bootstra_p",
-				"web/bootstrap/css/bootstrap_page.css"
-			],
-			[
-				"men",
-				"app/Resources/views/menu.html.twig"
-			],
-			[
-				"boo",
-				"web/bootstrap/css/bootstrap.css"
-			],
-			[
-				"",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"modal",
-				"app/Resources/views/modal/modal_curso.html.twig"
-			],
-			[
-				"modal_per",
-				"app/Resources/views/modal/modal_perfil.html.twig"
-			],
-			[
-				"lista",
-				"src/AppBundle/Resources/views/Asignacion/listas.html.twgi"
-			],
-			[
-				"asignar.",
-				"src/AppBundle/Resources/views/Asignacion/asignar.html.twig"
-			],
-			[
-				"fos",
-				"app/config/fos_user.yml"
-			],
-			[
-				"asigna",
-				"src/AppBundle/Controller/AsignacionController.php"
-			],
-			[
-				"cursoc",
-				"src/AppBundle/Controller/CursoController.php"
-			],
-			[
-				"index.",
-				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"valid",
-				"src/UserBundle/Resources/config/validation.yml"
-			],
-			[
-				"appkernel",
-				"app/AppKernel.php"
-			],
-			[
-				"usuari",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"fos_",
-				"app/config/fos_user.yml"
-			],
-			[
-				"cursoinde.htmlt",
-				"src/AppBundle/Resources/views/Curso/index.html.twig"
-			],
-			[
-				"routing",
-				"app/config/routing.yml"
-			],
-			[
-				"defaul",
-				"src/UserBundle/Controller/DefaultController.php"
-			],
-			[
-				"inde",
-				"app/Resources/views/default/index.html.twig"
-			],
-			[
-				"new.html",
-				"src/UserBundle/Resources/views/Curso/new.html.twig"
-			],
-			[
-				"default",
-				"src/UserBundle/Controller/DefaultController.php"
-			],
-			[
-				"defa",
-				"src/AppBundle/Controller/DefaultController.php"
-			],
-			[
-				"cursot",
-				"src/UserBundle/Form/Type/CursoType.php"
-			],
-			[
-				"u",
-				"src/UserBundle/Entity/Usuario.php"
-			],
-			[
-				"cursotp",
-				"src/UserBundle/Form/Type/CursoType.php"
-			],
-			[
-				"cursotyp",
-				"src/AppBundle/Form/CursoType.php"
-			],
-			[
-				"cursoty",
-				"src/UserBundle/Form/Type/CursoType.php"
-			],
-			[
-				"def",
-				"src/UserBundle/Controller/DefaultController.php"
-			],
-			[
-				"de",
-				"vendor/doctrine/doctrine-bundle/DependencyInjection/DoctrineExtension.php"
-			],
-			[
-				"cursocon",
-				"src/AppBundle/Controller/CursoController.php"
-			],
-			[
-				"par",
-				"app/config/parameters.yml"
-			],
-			[
-				"layou",
-				"src/UserBundle/Resources/views/layout.html.twig"
-			],
-			[
-				"login.",
-				"src/UserBundle/Resources/views/Security/login.html.twig"
-			],
-			[
-				"layout",
-				"src/UserBundle/Resources/views/layout.html.twig"
-			],
-			[
-				"layot",
-				"src/UserBundle/Resources/views/layout.html.twig"
-			],
-			[
-				"menut",
-				"app/Resources/views/menu.html.twig"
-			],
-			[
-				"layout.h",
-				"src/UserBundle/Resources/views/layout.html.twig"
-			],
-			[
-				"comp",
-				"composer.json"
-			],
-			[
-				"servi",
-				"app/config/services.yml"
-			],
-			[
-				"routi",
-				"app/config/routing.yml"
-			],
-			[
-				"cursocontr",
-				"src/AppBundle/Controller/CursoController.php"
-			],
-			[
-				"admi",
-				"app/config/admin.yml"
-			],
-			[
-				"adminc",
-				"src/AppBundle/Controller/AdminController.php"
-			],
-			[
-				"conf",
-				"app/config/config.yml"
-			],
-			[
-				"admin.yml",
-				"src/UserBundle/Resources/config/admin.yml"
-			],
-			[
-				"user",
-				"vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/User.php"
-			],
-			[
-				"adminu",
-				"src/UserBundle/Admin/AdminUser.php"
-			],
-			[
-				"admin.ym",
-				"src/UserBundle/Resources/config/admin.yml"
-			],
-			[
-				"bootstra",
-				"web/bootstrap/css/bootstrap.css"
 			]
 		],
 		"width": 0.0
@@ -1498,7 +1562,7 @@
 		[
 			[
 				"",
-				"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Ejercicios/cemaco/ejercicio1.sublime-project"
+				"/Users/usuario/Google Drive/Docs/Web/fcpauldiazBlog/fcpauldiaz.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1507,6 +1571,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 193.0,
+	"side_bar_width": 166.0,
 	"status_bar_visible": true
 }

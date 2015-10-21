@@ -21,6 +21,7 @@
                             <h3>{% block body_title %}{% endblock %}</h3>
                             
                         </div>
+                        {% include 'BraincraftedBootstrapBundle::flash.html.twig' %}
                         {% block body_content %}
         				{% endblock body_content %}
                         <br>
@@ -41,6 +42,7 @@
         <!-- End Latest News Section -->
        
 
-        
+        {% block js %}
+        {% endblock js %}
 
 {% endblock body %}

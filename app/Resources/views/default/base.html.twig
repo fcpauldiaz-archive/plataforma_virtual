@@ -11,6 +11,7 @@
 
         <!-- Font Awesome CSS -->
         <link href=" {{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href=" {{ asset('css/minimalMenu.css') }}" rel="stylesheet">
         
         <!-- Custom CSS -->
         <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
@@ -23,25 +24,53 @@
 
         <link rel="stylesheet" media="screen" href="{{ asset('css/select2.css') }}" />
         <link rel="stylesheet" media="screen" href="{{ asset('css/select2-bootstrap.css') }}" />
-
-         <!-- Template js -->
-        <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
-        <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
-        <script src="{{ asset('js/select2/select2.js') }}"></script>
-        <script src="{{ asset('js/jquery.appear.js') }}"></script>
-        <script src="{{ asset('js/contact_me.js') }}"></script>
-        <script src="{{ asset('js/modernizr.custom.js') }}"></script>
-        <script src="{{ asset('js/script.js') }}"></script>
+        <link rel="stylesheet" media="screen" href="{{ asset('css/comments.css') }}" />
+        <!-- CSS -->
+         <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
+      
+       
+       
         
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
         </head>
         <body>
+            {# sub menu para entrar a los sitios administrativos#}
+            {% if app.user and app.user.hasRole('ROLE_ADMIN') %}
+                {% include 'menu/minimal.html.twig' %}
+                
+            {% endif %} 
+
+            
+
             {% block body %}{% endblock %}
+
+
+
+
             {% block javascripts %}
+
+                <!-- Template js -->
+               
+                <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+                <script src="{{ asset('js/select2/select2.js') }}"></script>
+                <script src="{{ asset('js/jquery.appear.js') }}"></script>
+                <script src="{{ asset('js/contact_me.js') }}"></script>
+                <script src="{{ asset('js/modernizr.custom.js') }}"></script>
+                <script src="{{ asset('js/script.js') }}"></script>
                 {# Default classes #}
                 <script>
                     $('select.select2').select2();
                 </script>
+                <script>
+                     $('.navbar-toggler').on('click', function(event) {
+                        event.preventDefault();
+                        $(this).closest('.navbar-minimal').toggleClass('open');
+                    });
+                </script>
+              
             {% endblock %}
+            {# </div> #}
         </body>
+        {% include 'default/analytics.html.twig' %}
 </html>

@@ -10,7 +10,7 @@ class ForoType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -19,14 +19,14 @@ class ForoType extends AbstractType
             ->add('comentarios')
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Foro'
+            'data_class' => 'ForumBundle\Entity\Foro',
         ));
     }
 
