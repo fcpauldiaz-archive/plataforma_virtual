@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use TutoriaBundle\Entity\Tutoria;
 use TutoriaBundle\Form\TutoriaType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Finder\Exception\AccessDeniedException;
+use FOS\UserBundle\Model\UserInterface;
 
 /**
  * Tutoria controller.
@@ -22,15 +24,15 @@ class TutoriaController extends Controller
     /**
      * Lists all Tutoria entities.
      *
-     * @Route("/index/{userid}", name="tutoria")
+     * @Route("/index/{id}", name="tutoria")
      * @Method("GET")
      * @Template()
      */
-    public function indexTutoriaAction($userid)
+    public function indexTutoriaAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $usuario = $em->getRepository('UserBundle:Usuario')->find($userid);
+        $usuario = $em->getRepository('UserBundle:Usuario')->find($id);
         $entities = $usuario->getTutorias();
 
         return array(
@@ -228,9 +230,14 @@ class TutoriaController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Tutoria entity.');
         }
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($entity,$usuario);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
@@ -239,7 +246,7 @@ class TutoriaController extends Controller
             
         }
         
-        return $this->redirect($this->generateUrl('tutoria'));
+        return $this->redirect($this->generateUrl('tutoria',['id'=> $usuario->getId()]));
         
     }
     /**
