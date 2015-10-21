@@ -125,6 +125,8 @@ class AsignacionController extends Controller
 
         $cursosAsignados = $usuario->getCursos();
 
+        $this->get('braincrafted_bootstrap.flash')->success(sprintf('Curso %s asignado correctamente', $curso->getNombreCurso()));
+
         return $this->redirect(
             $this->generateUrl(
                 'listar_cursos',

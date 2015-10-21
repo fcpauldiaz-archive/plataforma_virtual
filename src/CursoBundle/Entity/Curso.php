@@ -36,14 +36,14 @@ class Curso
      */
     private $codigoCurso;
     /**
-     *  Usuarios que tienen.
+     *  Usuarios que asociados al curso.
      *
      * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
      **/
     private $usuarios;
     /**
      * [$documento cada curso tiene los documentos asociados].
-     *
+     * 
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="DocumentBundle\Entity\Documento", mappedBy="curso")
      * @ORM\OrderBy({"numeroDocumento" = "ASC"})
@@ -51,11 +51,14 @@ class Curso
     private $documentos;
 
     /**
+     * Sirve para hacer soft delete de la entidad
      * @ORM\Column(name="deletedAt", type="datetime", nullable=true)
      */
     private $deletedAt;
 
     /**
+     * Sirve para generar URL's a base de nombre curos y codigo curso
+     * De esta forma no se muestra el id en el URL
      * @Gedmo\Slug(fields={"nombreCurso", "codigoCurso"},updatable=true)
      * @ORM\Column(length=128, unique=true)
      */
@@ -211,7 +214,7 @@ class Curso
 
     /**
      * Get deletedAt.
-     *
+     * 
      * @return \DateTime
      */
     public function getDeletedAt()
@@ -242,7 +245,10 @@ class Curso
     {
         return $this->slug;
     }
-
+    /**
+     * El método es llamado para mostrar los dos atributos en el select2.
+     * @return string obtener el nombre y el codigo en un solo método .
+     */
     public function getCodigoNombre()
     {
         return sprintf(
