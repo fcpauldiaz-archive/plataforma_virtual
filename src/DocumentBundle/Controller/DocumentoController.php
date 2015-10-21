@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use DocumentBundle\Entity\Documento;
 use DocumentBundle\Form\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use FOS\UserBundle\Model\UserInterface;
 
 /**
  * Documento controller.
@@ -191,8 +192,15 @@ class DocumentoController extends Controller
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
 
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
+
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
+
+        $editForm = $this->createEditForm($entity,$usuario);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
@@ -200,7 +208,8 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_edit', ['id' => $id]
+                    'documento_edit', ['id' => $id,'username'=> $usuario->getUsername(),
+                    'slug' => $entity->getSlug()]
                 )
             );
         }
