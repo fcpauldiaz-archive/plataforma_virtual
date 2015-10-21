@@ -8,8 +8,7 @@
     $container->setParameter('database_password', $db['pass']);
     $container->setParameter('secret', getenv('SECRET'));
     $container->setParameter('locale', 'es');
-    $container->setParameter('mailer_transport', smtp);
-    $container->setParameter('mailer_host', smtp.sendgrid.net);
-    $container->setParameter('mailer_user', 'app40782376@heroku.com');
-    $container->setParameter('mailer_password', 'ermxsqfz5173');
-    $container->setParameter('mailer_port', 587);
+    $container->setParameter('mailer_transport', gmail);
+    $container->setParameter('mailer_host', null);
+    $container->setParameter('mailer_user', 'fcpauldiaz@gmail.com');
+    $container->setParameter('mailer_password', '1aba5ddiaz12.');
