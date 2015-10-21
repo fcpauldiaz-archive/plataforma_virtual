@@ -1,0 +1,29 @@
+ <!-- Modal para Curso -->
+<div class="modal fade" id="modalTutoria" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Cursos</h4>
+      </div>
+      <div class="modal-body">
+      
+        <a href="{{ path('tutoria_new', { 'username': app.user.username}) }}" class="btn btn-warning">
+            <h1>Crear Tutoría</h1>
+        </a>
+        <br>
+        <br>
+        <br>
+        <a href="{{ path('tutoria', { 'id': app.user.getId()}) }}" class="btn btn-info">
+           <h1>Mis Tutorías</h1>
+        </a>
+        <br>
+        <br>
+        <br>
+        <a href="{{ path('tutoria_all', { 'userid': app.user.getId()}) }}" class="btn btn-info">
+           <h1>Ver Otras Tutorías</h1>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

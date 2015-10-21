@@ -36,26 +36,38 @@ class Curso
      */
     private $codigoCurso;
     /**
-     *  Usuarios que tienen.
+     *  Usuarios que asociados al curso.
      *
      * @ORM\ManyToMany(targetEntity="UserBundle\Entity\Usuario", mappedBy="cursos")
      **/
     private $usuarios;
     /**
      * [$documento cada curso tiene los documentos asociados].
-     *
+     * 
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="DocumentBundle\Entity\Documento", mappedBy="curso")
      * @ORM\OrderBy({"numeroDocumento" = "ASC"})
      */
     private $documentos;
 
+    
     /**
+     * @ORM\OneToMany(targetEntity="TutoriaBundle\Entity\Tutoria", mappedBy="curso")
+     * @ORM\JoinTable(name="tutorias_curso")
+     **/
+    private $tutorias;
+    
+    
+
+    /**
+     * Sirve para hacer soft delete de la entidad
      * @ORM\Column(name="deletedAt", type="datetime", nullable=true)
      */
     private $deletedAt;
 
     /**
+     * Sirve para generar URL's a base de nombre curos y codigo curso
+     * De esta forma no se muestra el id en el URL
      * @Gedmo\Slug(fields={"nombreCurso", "codigoCurso"},updatable=true)
      * @ORM\Column(length=128, unique=true)
      */
@@ -189,6 +201,39 @@ class Curso
     {
         return $this->documentos;
     }
+ 
+    /**
+     * Add tutorias
+     *
+     * @param \TutoriaBundle\Entity\Tutoria $tutorias
+     * @return Usuario
+     */
+    public function addTutoria(\TutoriaBundle\Entity\Tutoria $tutorias)
+    {
+        $this->tutorias[] = $tutorias;
+        return $this;
+    }
+    /**
+     * Remove tutorias
+     *
+     * @param \TutoriaBundle\Entity\Tutoria $tutorias
+     */
+    public function removeTutoria(\TutoriaBundle\Entity\Tutoria $tutorias)
+    {
+        $this->tutorias->removeElement($tutorias);
+    }
+    /**
+     * Get tutorias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTutorias()
+    {
+        return $this->tutorias;
+    }
+    
+
+
 
     public function getCurso()
     {
@@ -211,7 +256,7 @@ class Curso
 
     /**
      * Get deletedAt.
-     *
+     * 
      * @return \DateTime
      */
     public function getDeletedAt()
@@ -242,7 +287,10 @@ class Curso
     {
         return $this->slug;
     }
-
+    /**
+     * El método es llamado para mostrar los dos atributos en el select2.
+     * @return string obtener el nombre y el codigo en un solo método .
+     */
     public function getCodigoNombre()
     {
         return sprintf(
@@ -252,3 +300,4 @@ class Curso
         );
     }
 }
+

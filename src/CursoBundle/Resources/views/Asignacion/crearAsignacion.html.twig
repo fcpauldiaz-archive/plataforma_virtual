@@ -24,6 +24,18 @@
 				<th>Código Curso</th>
 				<th>Acción		</th>
 			</tr>
+			
+			
+			<script type="text/javascript"> //Javascript para asignar curso
+
+  				function dobleClick(e) //
+  				{
+    					
+    					e.preventDefault(); // previene el doble click
+  				}
+
+			</script>
+
 		</thead>
 		<tbody>
 			{% for curso in cursos %}
@@ -31,7 +43,7 @@
 				<td> {{ curso.nombreCurso }} </td>
 				<td> {{ curso.codigoCurso }} </td>
 				<td> 
-					<a class= "btn btn-default btn-xs btn-warning" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
+					<a class= "btn btn-default btn-xs btn-warning"  onclick="this.addEventListener('click', dobleClick, false);" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
 						Asignar Curso
 					</a>
 				</td>

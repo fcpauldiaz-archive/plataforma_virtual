@@ -32,13 +32,22 @@ class Usuario extends BaseUser
      * @ORM\JoinTable(name="cursos_usuario")
      **/
     private $cursos;
+
+    
     /**
+     * @ORM\OneToMany(targetEntity="TutoriaBundle\Entity\Tutoria", mappedBy="usuario")
+     **/
+    private $tutorias;
+    
+    
+     /**
      * Constructor.
      */
     public function __construct()
     {
         parent::__construct();// construye los metodos y atributos de Base
         $this->cursos = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tutorias = new \Doctrine\Common\Collections\ArrayCollection();
     }
     /**
      * Get id.
@@ -126,6 +135,40 @@ class Usuario extends BaseUser
     {
         return $this->nombreCompleto;
     }
+
+    
+    /**
+     * Add tutorias
+     *
+     * @param \TutoriaBundle\Entity\Tutoria $tutorias
+     * @return Usuario
+     */
+    public function addTutoria(\TutoriaBundle\Entity\Tutoria $tutorias)
+    {
+        $this->tutorias[] = $tutorias;
+        $tutorias->setUsuario($this);
+        return $this;
+    }
+    /**
+     * Remove tutorias
+     *
+     * @param \TutoriaBundle\Entity\Tutoria $tutorias
+     */
+    public function removeTutoria(\TutoriaBundle\Entity\Tutoria $tutorias)
+    {
+        $this->tutorias->removeElement($tutorias);
+    }
+    /**
+     * Get tutorias
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTutorias()
+    {
+        return $this->tutorias;
+    }
+    
+
 
     public function hasRole($role)
     {

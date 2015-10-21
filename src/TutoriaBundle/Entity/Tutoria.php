@@ -21,17 +21,26 @@ class Tutoria
      */
     private $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="CursoBundle\Entity\Curso", inversedBy="tutoria")
-     * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
-     */
-    private $curso;
+    
 
     /**
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="tutoria")
-     * @ORM\JoinColumn(name="usuario_id", referencedColumnName ="id")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="tutorias")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName = "id")
      */
     private $usuario;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso", inversedBy="tutorias")
+     * @ORM\JoinColumn(name="curso_id", referencedColumnName = "id")
+     */
+    private $curso;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="string", length = 225, nullable=true)
+     */
+     private $info;
 
     /**
      * Get id.
@@ -43,6 +52,31 @@ class Tutoria
         return $this->id;
     }
 
+    
+
+    /**
+     * Set usuario
+     *
+     * @param \UserBundle\Entity\Usuario $usuario
+     * @return Tutoria
+     */
+    public function setUsuario(\UserBundle\Entity\Usuario $usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return \UserBundle\Entity\Usuario 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+    
     /**
      * Set curso.
      *
@@ -66,28 +100,35 @@ class Tutoria
     {
         return $this->curso;
     }
-
+    
     /**
+
+     * @param string $imageName
+
      * Set usuario.
      *
      * @param \UserBundle\Entity\Usuario $usuario
      *
      * @return Tutoria
+
      */
-    public function setUsuario(\UserBundle\Entity\Usuario $usuario)
+    public function setInfo($newInfo)
     {
-        $this->usuario = $usuario;
-
-        return $this;
+        $this->info = $newInfo;
     }
-
+    
     /**
+
+     * @return string
+
      * Get usuario.
      *
      * @return \UserBundle\Entity\Usuario
+
      */
-    public function getUsuario()
+    public function getInfo()
     {
-        return $this->usuario;
+        return $this->info;
     }
+    
 }
