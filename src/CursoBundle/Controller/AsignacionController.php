@@ -25,6 +25,8 @@ class AsignacionController extends Controller
      */
     public function asignarAction(Request $request, Usuario $usuario)
     {
+        $usuario = $this->get('security.context')->getToken()->getUser();
+        echo ($usuario->getNombreCompleto());
         $form = $this->createForm(new BuscarType());
 
         $em = $this->getDoctrine()->getManager();
