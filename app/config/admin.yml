@@ -11,3 +11,6 @@ easy_admin:
             class: CursoBundle\Entity\Curso  
         Documentos:
             class: DocumentBundle\Entity\Documento
+        Tutorias:
+            class: TutoriaBundle\Entity\Tutoria
+        

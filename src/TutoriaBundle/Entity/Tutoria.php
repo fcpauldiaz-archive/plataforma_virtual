@@ -23,17 +23,26 @@ class Tutoria
      */
     private $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="CursoBundle\Entity\Curso", inversedBy="tutoria")
-     * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
-     */
-    private $curso;
+    
 
     /**
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="tutoria")
-     * @ORM\JoinColumn(name="usuario_id", referencedColumnName ="id")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="tutorias")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName = "id")
      */
     private $usuario;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso", inversedBy="tutorias")
+     * @ORM\JoinColumn(name="curso_id", referencedColumnName = "id")
+     */
+    private $curso;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="info", type="string", length = 225, nullable=true)
+     */
+     private $info;
 
 
     /**
@@ -46,28 +55,7 @@ class Tutoria
         return $this->id;
     }
 
-    /**
-     * Set curso
-     *
-     * @param \CursoBundle\Entity\Curso $curso
-     * @return Tutoria
-     */
-    public function setCurso(\CursoBundle\Entity\Curso $curso)
-    {
-        $this->curso = $curso;
-
-        return $this;
-    }
-
-    /**
-     * Get curso
-     *
-     * @return \CursoBundle\Entity\Curso 
-     */
-    public function getCurso()
-    {
-        return $this->curso;
-    }
+    
 
     /**
      * Set usuario
@@ -91,4 +79,44 @@ class Tutoria
     {
         return $this->usuario;
     }
+    
+    /**
+     * Set curso
+     *
+     * @param \CursoBundle\Entity\Curso $curso
+     * @return Tutoria
+     */
+    public function setCurso(\CursoBundle\Entity\Curso $curso)
+    {
+        $this->curso = $curso;
+
+        return $this;
+    }
+
+    /**
+     * Get curso
+     *
+     * @return \CursoBundle\Entity\Curso 
+     */
+    public function getCurso()
+    {
+        return $this->curso;
+    }
+    
+    /**
+     * @param string $imageName
+     */
+    public function setInfo($newInfo)
+    {
+        $this->info = $newInfo;
+    }
+    
+    /**
+     * @return string
+     */
+    public function getInfo()
+    {
+        return $this->info;
+    }
+    
 }
