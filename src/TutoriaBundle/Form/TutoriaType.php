@@ -22,12 +22,24 @@ class TutoriaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $cursos = $this->getUsuario()->getCursos();//todos los cursos del usuario
+        $tutorias = $this->getUsuario()->getTutorias();//todas las tutorias
+        
+        foreach ($cursos as $cursoKey => $curso){
+            foreach ($tutorias as $tutoriaKey => $tutoria){
+                if ($tutoria->getCurso()->getId() == $curso->getId()){
+                    unset($cursos[$cursoKey]);
+                }
+            }
+        }
+        
+        
         $builder
             ->add('info',null,['label'=>'Informacion Adicional'])
             
             ->add('curso', 'entity', array(
                 'class' => 'CursoBundle:Curso',
-                'choices' => $this->getUsuario()->getCursos(),      
+                'choices' => $cursos,      
             ))
         ;
     }

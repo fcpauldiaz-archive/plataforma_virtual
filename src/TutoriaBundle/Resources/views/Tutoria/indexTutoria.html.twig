@@ -29,7 +29,7 @@
                     <a href="{{ path('tutoria_show', { 'id': tutoria.id }) }}">show</a>
                 </li>
                 <li>
-                    <a href="{{ path('tutoria_edit', { 'id': tutoria.id ,'userid': app.user.getId()}) }}">edit</a>
+                    <a href="{{ path('tutoria_edit', { 'id': tutoria.id }) }}">edit</a>
                 </li>
             </ul>
             </td>
@@ -41,7 +41,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('tutoria_new',{ 'username':app.user.username}) }}">
+            <a href="{{ path('tutoria_new') }}">
                 Create a new entry
             </a>
         </li>

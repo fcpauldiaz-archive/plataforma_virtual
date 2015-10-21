@@ -24,15 +24,18 @@ class TutoriaController extends Controller
     /**
      * Lists all Tutoria entities.
      *
-     * @Route("/index/{id}", name="tutoria")
+     * @Route("/index/", name="tutoria")
      * @Method("GET")
      * @Template()
      */
-    public function indexTutoriaAction($id)
+    public function indexTutoriaAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
 
-        $usuario = $em->getRepository('UserBundle:Usuario')->find($id);
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
+                
         $entities = $usuario->getTutorias();
 
         return array(
@@ -43,15 +46,23 @@ class TutoriaController extends Controller
     /**
      * Lists all Tutoria entities.
      *
-     * @Route("/{userid}/show", name="tutoria_all")
+     * @Route("/show/all", name="tutoria_all")
      * @Method("GET")
      * @Template()
      */
-    public function allTutoriaAction($userid)
+    public function allTutoriaAction()
     {
+        
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
+        
+        
         $em = $this->getDoctrine()->getManager();
         
-        $usuario = $em->getRepository('UserBundle:Usuario')->find($userid);
+        
         $entitiesU = $usuario->getTutorias();
 
 
@@ -126,13 +137,18 @@ class TutoriaController extends Controller
     /**
      * Displays a form to create a new Tutoria entity.
      *
-     * @Route("/new/{username}", name="tutoria_new")
+     * @Route("/new/", name="tutoria_new")
      * @Method("GET")
      * @Template()
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * 
      */
-    public function newTutoriaAction(\UserBundle\Entity\Usuario $usuario)
+    public function newTutoriaAction()
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $entity = new Tutoria();
         $form   = $this->createCreateForm($entity,$usuario);
 
@@ -170,17 +186,23 @@ class TutoriaController extends Controller
     /**
      * Displays a form to edit an existing Tutoria entity.
      *
-     * @Route("/{userid}/{id}/edit", name="tutoria_edit")
+     * @Route("/user/{id}/edit", name="tutoria_edit")
      * @Method("GET")
      * @Template()
      * 
      */
-    public function editTutoriaAction($id, $userid)
+    public function editTutoriaAction($id)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
+        
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('TutoriaBundle:Tutoria')->find($id);
-        $usuario = $em->getRepository('UserBundle:Usuario')->find($userid);
+        
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Tutoria entity.');
