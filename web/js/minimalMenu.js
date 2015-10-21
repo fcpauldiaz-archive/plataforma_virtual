@@ -1,6 +1,1 @@
-$(function () {
-    $('.navbar-toggler').on('click', function(event) {
-        event.preventDefault();
-        $(this).closest('.navbar-minimal').toggleClass('open');
-    })
-});
+$(function(){$(".navbar-toggler").on("click",function(n){n.preventDefault(),$(this).closest(".navbar-minimal").toggleClass("open")})});

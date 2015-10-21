@@ -1,17 +1,1 @@
-var $ = jQuery.noConflict();
-
-
-
-// Progress Bar
-
-$(document).ready(function ($) {
-    "use strict";
-    
-    $('.skill-shortcode').appear(function () {
-        $('.progress').each(function () {
-            $('.progress-bar').css('width',  function () { return ($(this).attr('data-percentage') + '%')});
-        });
-    }, {accY: -100});
-        
-        
-});
+var $=jQuery.noConflict();$(document).ready(function(t){"use strict";t(".skill-shortcode").appear(function(){t(".progress").each(function(){t(".progress-bar").css("width",function(){return t(this).attr("data-percentage")+"%"})})},{accY:-100})});

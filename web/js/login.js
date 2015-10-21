@@ -1,10 +1,1 @@
-$(document).ready(function() {
-  $('#olvidado').click(function(e) {
-    e.preventDefault();
-    $('div#form-olvidado').toggle('500');
-  });
-  $('#acceso').click(function(e) {
-    e.preventDefault();
-    $('div#form-olvidado').toggle('500');
-  });
-});
+$(document).ready(function(){$("#olvidado").click(function(o){o.preventDefault(),$("div#form-olvidado").toggle("500")}),$("#acceso").click(function(o){o.preventDefault(),$("div#form-olvidado").toggle("500")})});
