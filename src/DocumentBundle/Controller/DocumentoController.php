@@ -59,7 +59,7 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_show', ['id' => $entity->getId()]
+                    'documento_show', ['id' => $entity->getId(), 'slug' => $entity->getSlug() ]
                     ));
         }
 
@@ -127,6 +127,7 @@ class DocumentoController extends Controller
         return [
             'entity' => $documento,
             'delete_form' => $deleteForm->createView(),
+
         ];
     }
 
