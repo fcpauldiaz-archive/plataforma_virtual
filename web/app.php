@@ -26,5 +26,6 @@ $kernel->loadClassCache();
 //Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
+$response->setVary('Accept-Encoding');
 $response->send();
 $kernel->terminate($request, $response);
