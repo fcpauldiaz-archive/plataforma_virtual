@@ -1,1 +1,126 @@
-!function(e){"use strict";var t='[data-addfield="collection"]',i='[data-removefield="collection"]',d=function(i){e(i).on("click",t,this.addField)},o=function(t){e(t).on("click",i,this.removeField)};d.prototype.addField=function(t){var i=e(this),d=i.attr("data-collection"),o=i.attr("data-prototype-name");t&&t.preventDefault();for(var n=e("#"+d),a=n.find("> ul"),l=a.find("> li").size(),r=n.attr("data-prototype"),c=r.match(/id="(.*?)"/),f=new RegExp(o,"g");e("#"+c[1].replace(f,l)).size()>0;)l++;r=r.replace(f,l),r=r.replace(/__id__/g,c[1].replace(f,l));var p=e("<li></li>").html(r);p.appendTo(a),i.trigger("bc-collection-field-added")},o.prototype.removeField=function(t){var i=e(this);i.attr("data-field");t&&t.preventDefault(),i.trigger("bc-collection-field-removed");i.closest("li").remove()};var n=e.fn.addField,a=e.fn.removeField;e.fn.addField=function(t){return this.each(function(){var i=e(this),o=i.data("addfield");o||i.data("addfield",o=new d(this)),"string"==typeof t&&o[t].call(i)})},e.fn.removeField=function(t){return this.each(function(){var i=e(this),d=i.data("removefield");d||i.data("removefield",d=new o(this)),"string"==typeof t&&d[t].call(i)})},e.fn.addField.Constructor=d,e.fn.removeField.Constructor=o,e.fn.addField.noConflict=function(){return e.fn.addField=n,this},e.fn.removeField.noConflict=function(){return e.fn.removeField=a,this},e(document).on("click.addfield.data-api",t,d.prototype.addField),e(document).on("click.removefield.data-api",i,o.prototype.removeField)}(window.jQuery);
+/* ==========================================================
+ * bc-bootstrap-collection.js
+ * http://bootstrap.braincrafted.com
+ * ==========================================================
+ * Copyright 2013 Florian Eckerstorfer
+ *
+ * ========================================================== */
+
+
+!function ($) {
+
+    "use strict"; // jshint ;_;
+
+    /* COLLECTION CLASS DEFINITION
+     * ====================== */
+
+    var addField = '[data-addfield="collection"]',
+        removeField = '[data-removefield="collection"]',
+        CollectionAdd = function (el) {
+            $(el).on('click', addField, this.addField);
+        },
+        CollectionRemove = function (el) {
+            $(el).on('click', removeField, this.removeField);
+        }
+    ;
+
+    CollectionAdd.prototype.addField = function (e) {
+        var $this = $(this),
+            selector = $this.attr('data-collection'),
+            prototypeName = $this.attr('data-prototype-name')
+        ;
+
+        e && e.preventDefault();
+
+        var collection = $('#'+selector),
+            list = collection.find('> ul'),
+            count = list.find('> li').size()
+        ;
+
+        var newWidget = collection.attr('data-prototype');
+
+        // Check if an element with this ID already exists.
+        // If it does, increase the count by one and try again
+        var newName = newWidget.match(/id="(.*?)"/);
+        var re = new RegExp(prototypeName, "g");
+        while ($('#' + newName[1].replace(re, count)).size() > 0) {
+            count++;
+        }
+        newWidget = newWidget.replace(re, count);
+        newWidget = newWidget.replace(/__id__/g, newName[1].replace(re, count));
+        var newLi = $('<li></li>').html(newWidget);
+        newLi.appendTo(list);
+        $this.trigger('bc-collection-field-added');
+    };
+
+    CollectionRemove.prototype.removeField = function (e) {
+        var $this = $(this),
+            selector = $this.attr('data-field')
+        ;
+
+        e && e.preventDefault();
+
+        $this.trigger('bc-collection-field-removed');
+        var listElement = $this.closest('li').remove();
+    }
+
+
+    /* COLLECTION PLUGIN DEFINITION
+     * ======================= */
+
+    var oldAdd = $.fn.addField;
+    var oldRemove = $.fn.removeField;
+
+    $.fn.addField = function (option) {
+        return this.each(function () {
+            var $this = $(this),
+                data = $this.data('addfield')
+            ;
+            if (!data) {
+                $this.data('addfield', (data = new CollectionAdd(this)));
+            }
+            if (typeof option == 'string') {
+                data[option].call($this);
+            }
+        });
+    };
+
+    $.fn.removeField = function (option) {
+        return this.each(function() {
+            var $this = $(this),
+                data = $this.data('removefield')
+            ;
+            if (!data) {
+                $this.data('removefield', (data = new CollectionRemove(this)));
+            }
+            if (typeof option == 'string') {
+                data[option].call($this);
+            }
+        });
+    };
+
+    $.fn.addField.Constructor = CollectionAdd;
+    $.fn.removeField.Constructor = CollectionRemove;
+
+
+    /* COLLECTION NO CONFLICT
+     * ================= */
+
+    $.fn.addField.noConflict = function () {
+        $.fn.addField = oldAdd;
+        return this;
+    }
+    $.fn.removeField.noConflict = function () {
+        $.fn.removeField = oldRemove;
+        return this;
+    }
+
+
+    /* COLLECTION DATA-API
+     * ============== */
+
+    $(document).on('click.addfield.data-api', addField, CollectionAdd.prototype.addField);
+    $(document).on('click.removefield.data-api', removeField, CollectionRemove.prototype.removeField);
+
+ }(window.jQuery);
+ 

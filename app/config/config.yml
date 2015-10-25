@@ -4,6 +4,8 @@ imports:
     - { resource: admin.yml }
     - { resource: fos_user.yml }
     - { resource: doctrine_extensions.yml }
+    - { resource: lexik_translations.yml }
+    - { resource: vich_uploader.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -22,7 +24,8 @@ framework:
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
-        #assets_version: SomeVersionScheme
+        #assets_version: v
+        #assets_version_format: "%%s?v=%%s"
     default_locale:  "%locale%"
     trusted_hosts:   ~
     trusted_proxies: ~
@@ -49,12 +52,16 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:        ["FOSCommentBundle"]
+    #node: /usr/bin/nodejs
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
         lessphp:
             file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
             apply_to: "\.less$"
+        uglifycss:
+            bin: %kernel.root_dir%/../app/Resources/node_modules/.bin/uglifycss
+
         #closure:
         #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
         #yui_css:
@@ -99,34 +106,9 @@ braincrafted_bootstrap:
     less_filter: lessphp
     jquery_path: %kernel.root_dir%/../web/js/jquery-2.1.1.min.js
 
-vich_uploader:
-    db_driver: orm
-    mappings:
-        document:
-            uri_prefix:         /docs
-            upload_destination: %kernel.root_dir%/../web/docs
-            inject_on_load:     false
-            delete_on_update:   true
-            delete_on_remove:   true
 
 genemu_form:
     select2: ~
-lexik_translation:
-    fallback_locale: es     # (required) default locale to use
-    managed_locales: [es]    # (required) locales that the bundle have to manage
-    base_layout:     "LexikTranslationBundle::layout.html.twig" # layout used with the translation edition template
-    use_yml_tree:    false    # if "true" we will print a nice tree in the yml source files. It is a little slower.
-    grid_input_type: text     # define field type used in the grid (text|textarea)
-    grid_toggle_similar: false  # if "true", on the grid if a locale colunm is shown/hidden then similar locales columns will be shown/hidden too.
-                                    # so if the col "en" is shown/hidden all "en_XX" cols will be shown/hidden too. Not in the reverse order ("en_XX" clicked, no impact on "en")
-    storage:
-        type: orm                    # where to store translations: "orm", "mongodb" or "propel"
-                                     # When using propel, this can be used to specify the propel connection name
-    resources_registration:
-        type:                 all     # resources type to register: "all", "files" or "database"
-        managed_locales_only: true    # will only load resources for managed locales
-    auto_cache_clean: false     # set to true to make the bundle automatically clear translations cache files
-
 
 fos_comment:
     db_driver: orm

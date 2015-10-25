@@ -2,30 +2,33 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Learn-In!{% endblock %}</title>
+        <title>{% block title  %}Learn-In!{% endblock %}</title>
     
-         {% block stylesheets %}{% endblock %}
+         {% block stylesheets  %}{% endblock %}
+    
+        {% stylesheets
         
-        <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" media="screen" href="{{ asset('bootstrap/css/bootstrap.css') }}" />
-
-        <!-- Font Awesome CSS -->
-        <link href=" {{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-        <link href=" {{ asset('css/minimalMenu.css') }}" rel="stylesheet">
+        'bootstrap/css/bootstrap.css'   
+        'css/font-awesome.min.css'
+        'css/minimalMenu.css'
+        'css/animate.css'
+        'css/style.css'
+        'css/select2.css'
+        'css/comments.css'
+        'css/select2-bootstrap.css'
+        'css/lobster.css'
         
-        <!-- Custom CSS -->
-        <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-
-        <!-- Custom CSS -->
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-        <!-- Custom Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-
-        <link rel="stylesheet" media="screen" href="{{ asset('css/select2.css') }}" />
-        <link rel="stylesheet" media="screen" href="{{ asset('css/select2-bootstrap.css') }}" />
-        <link rel="stylesheet" media="screen" href="{{ asset('css/comments.css') }}" />
-        <!-- CSS -->
+        
+        
+        filter='cssrewrite'
+        filter='?uglifycss'
+        output='css/compiled/app.css'
+        %}<link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+        
+       
+       
+        
          <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
       
        
