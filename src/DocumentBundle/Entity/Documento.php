@@ -67,7 +67,7 @@ class Documento
     private $documentFile;
 
     /**
-     * @ORM\Column(type="string", length=255,unique=false)
+     * @ORM\Column(type="string", length=255, unique=false)
      *
      * @var string
      */

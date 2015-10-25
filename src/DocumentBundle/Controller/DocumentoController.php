@@ -59,7 +59,7 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_show', ['id' => $entity->getId(), 'slug' => $entity->getSlug() ]
+                    'documento_show', ['id' => $entity->getId(), 'slug' => $entity->getSlug()]
                     ));
         }
 
@@ -195,13 +195,12 @@ class DocumentoController extends Controller
 
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
 
-        $editForm = $this->createEditForm($entity,$usuario);
+        $editForm = $this->createEditForm($entity, $usuario);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
@@ -209,8 +208,8 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_edit', ['id' => $id,'username'=> $usuario->getUsername(),
-                    'slug' => $entity->getSlug()]
+                    'documento_edit', ['id' => $id, 'username' => $usuario->getUsername(),
+                    'slug' => $entity->getSlug(), ]
                 )
             );
         }

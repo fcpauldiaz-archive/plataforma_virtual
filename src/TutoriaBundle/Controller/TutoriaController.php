@@ -20,7 +20,6 @@ use FOS\UserBundle\Model\UserInterface;
  */
 class TutoriaController extends Controller
 {
-
     /**
      * Lists all Tutoria entities.
      *
@@ -32,17 +31,16 @@ class TutoriaController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
-                
+
         $entities = $usuario->getTutorias();
 
         return array(
             'entities' => $entities,
         );
     }
-    
+
     /**
      * Lists all Tutoria entities.
      *
@@ -52,36 +50,29 @@ class TutoriaController extends Controller
      */
     public function allTutoriaAction()
     {
-        
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
-        
-        
+
         $em = $this->getDoctrine()->getManager();
-        
-        
+
         $entitiesU = $usuario->getTutorias();
 
-
         $entities = $em->getRepository('TutoriaBundle:Tutoria')->findAll();
-        
-        foreach ($entitiesU as $entityKey => $entity){
-            foreach ($entities as $elementKey => $element){
-                if ($entity->getId() == $element->getId()){
+
+        foreach ($entitiesU as $entityKey => $entity) {
+            foreach ($entities as $elementKey => $element) {
+                if ($entity->getId() == $element->getId()) {
                     unset($entities[$elementKey]);
                 }
             }
         }
-        
-        
-        
-        return 
-            $this -> render('TutoriaBundle:Tutoria:allTutoria.html.twig', array('entities' => $entities));        
+
+        return
+            $this->render('TutoriaBundle:Tutoria:allTutoria.html.twig', array('entities' => $entities));
     }
-    
+
     /**
      * Creates new Tutoria entity.
      *
@@ -89,13 +80,12 @@ class TutoriaController extends Controller
      * @Method("POST")
      * @Template("TutoriaBundle:Tutoria:new_tutoria.html.twig")
      * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
-     * 
      */
-    public function createAction(Request $request,\UserBundle\Entity\Usuario $usuario)
+    public function createAction(Request $request, \UserBundle\Entity\Usuario $usuario)
     {
         $entity = new Tutoria();
         $entity->setUsuario($usuario);
-        $form = $this->createCreateForm($entity,$usuario);
+        $form = $this->createCreateForm($entity, $usuario);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -106,11 +96,10 @@ class TutoriaController extends Controller
             return $this->redirect($this->generateUrl('tutoria_show', array('id' => $entity->getId())));
         }
 
-
         return array(
             'entity' => $entity,
-            'username'=>$usuario->getUserName(),
-            'form'   => $form->createView(),
+            'username' => $usuario->getUserName(),
+            'form' => $form->createView(),
         );
     }
 
@@ -125,7 +114,7 @@ class TutoriaController extends Controller
     {
         $form = $this->createForm(new TutoriaType($usuario), $entity, array(
             'action' => $this->generateUrl('tutoria_create',
-            array('username'=>$usuario->getUserName())),
+            array('username' => $usuario->getUserName())),
             'method' => 'POST',
         ));
 
@@ -140,21 +129,19 @@ class TutoriaController extends Controller
      * @Route("/new/", name="tutoria_new")
      * @Method("GET")
      * @Template()
-     * 
      */
     public function newTutoriaAction()
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $entity = new Tutoria();
-        $form   = $this->createCreateForm($entity,$usuario);
+        $form = $this->createCreateForm($entity, $usuario);
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         );
     }
 
@@ -178,7 +165,7 @@ class TutoriaController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -189,43 +176,40 @@ class TutoriaController extends Controller
      * @Route("/user/{id}/edit", name="tutoria_edit")
      * @Method("GET")
      * @Template()
-     * 
      */
     public function editTutoriaAction($id)
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
-        
+
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('TutoriaBundle:Tutoria')->find($id);
-        
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Tutoria entity.');
         }
 
-        $editForm = $this->createEditForm($entity,$usuario);
+        $editForm = $this->createEditForm($entity, $usuario);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
 
     /**
-    * Creates a form to edit a tutoria entity.
-    *
-    * @param Tutoria $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
-    private function createEditForm(Tutoria $entity,\UserBundle\Entity\Usuario $usuario)
+     * Creates a form to edit a tutoria entity.
+     *
+     * @param Tutoria $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createEditForm(Tutoria $entity, \UserBundle\Entity\Usuario $usuario)
     {
         $form = $this->createForm(new TutoriaType($usuario), $entity, array(
             'action' => $this->generateUrl('tutoria_update', array('id' => $entity->getId())),
@@ -254,22 +238,18 @@ class TutoriaController extends Controller
         }
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity,$usuario);
+        $editForm = $this->createEditForm($entity, $usuario);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
-
-            
         }
-        
-        return $this->redirect($this->generateUrl('tutoria',['id'=> $usuario->getId()]));
-        
+
+        return $this->redirect($this->generateUrl('tutoria', ['id' => $usuario->getId()]));
     }
     /**
      * Deletes a Tutoria entity.
@@ -296,8 +276,6 @@ class TutoriaController extends Controller
 
         return $this->redirect($this->generateUrl('tutoria'));
     }
-    
-    
 
     /**
      * Creates a form to delete a Tutoria entity by id.
