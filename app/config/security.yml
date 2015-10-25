@@ -25,10 +25,10 @@ security:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/, roles: ROLE_USER }
-        - { path: ^/admin, role: ROLE_ADMIN}
-        - { path: ^/traducciones/, role: ROLE_ADMIN }
-        - { path: ^/adminEntity, role: ROLE_ADMIN }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, role: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/traducciones/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/adminEntity, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
 
 
