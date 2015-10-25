@@ -53,7 +53,8 @@ assetic:
     use_controller: false
     bundles:        ["FOSCommentBundle"]
     #node: /app/.heroku/node/bin
-    node: %kernel.root_dir%/../.heroku/node/bin
+    #node: %kernel.root_dir%/../.heroku/node/bin
+    node: ~
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
