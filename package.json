@@ -1,9 +1,10 @@
 {
-  "name": "my-node-app",
-  "version": "1.2.3",
-  "scripts": {
-    "preinstall": "echo here it comes!",
-    "postinstall": "echo there it goes!",
-    "start": "node index.js"
-  }
+    "name": "myApp",
+    "engines": {
+        "node": "0.12.x"
+    },
+    "dependencies": {
+        "uglifycss": "*",
+        "uglify-js": "*"
+    }
 }
