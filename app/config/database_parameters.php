@@ -12,4 +12,5 @@
     $container->setParameter('mailer_host', smtp.sendgrid.net);
     $container->setParameter('mailer_user', getenv('USERNAME_SENGRID'));
     $container->setParameter('mailer_password', getenv('PASSWORD_SENDGRID'));
-    $container->setParameter('mailer_port', 587);
+    $container->setParameter('mailer_port', 465);
+    $container->setParameter('mailer_port', 'ssl');
