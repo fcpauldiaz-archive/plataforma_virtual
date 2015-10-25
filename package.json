@@ -4,7 +4,6 @@
   "scripts": {
     "preinstall": "echo here it comes!",
     "postinstall": "echo there it goes!",
-    "start": "node index.js",
-    
+    "start": "node index.js"
   }
 }
