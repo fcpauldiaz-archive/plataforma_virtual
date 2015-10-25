@@ -11,7 +11,6 @@ class DefaultController extends Controller
 {
     /**
      * Default Index page.
-     * @Cache(vary={"Accept-Encoding"},expires="tomorrow")
      * 
      * @Route("/", name="homepage")
      */
