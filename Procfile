@@ -1,1 +1,1 @@
-web: bin/heroku-php-apache2 web/ node
+web: bin/heroku-php-apache2 web/
