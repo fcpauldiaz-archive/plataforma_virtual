@@ -10,7 +10,7 @@
     $container->setParameter('locale', 'es');
     $container->setParameter('mailer_transport', smtp);
     $container->setParameter('mailer_host', smtp.sendgrid.net);
-    $container->setParameter('mailer_user', getenv('USERNAME_SENGRID'));
-    $container->setParameter('mailer_password', getenv('PASSWORD_SENDGRID'));
-    $container->setParameter('mailer_port', 465);
-    $container->setParameter('mailer_port', 'ssl');
+    $container->setParameter('mailer_user','fcpauldiaz');
+    $container->setParameter('mailer_password', '1aba5ddiaz12.');
+    $container->setParameter('mailer_port', 25);
+    $container->setParameter('mailer_port', 'tls');
