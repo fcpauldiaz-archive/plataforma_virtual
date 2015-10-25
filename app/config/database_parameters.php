@@ -10,6 +10,6 @@
     $container->setParameter('locale', 'es');
     $container->setParameter('mailer_transport', smtp);
     $container->setParameter('mailer_host', smtp.sendgrid.net);
-    $container->setParameter('mailer_user', 'app40782376@heroku.com');
-    $container->setParameter('mailer_password', 'ermxsqfz5173');
+    $container->setParameter('mailer_user', getenv('SENDGRID_USERNAME'));
+    $container->setParameter('mailer_password', getenv('SENDGRID_PASSWORD'));
     $container->setParameter('mailer_port', 587);
