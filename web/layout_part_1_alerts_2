@@ -1,0 +1,17 @@
+/* Not necessary for page alerts */
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css');
+
+button {
+    margin-bottom: 3px;
+}
+
+
+/* REQUIRED */
+.page-alerts {
+    margin-bottom: 20px;
+}
+
+.page-alerts .page-alert {
+    border-radius: 0;
+    margin-bottom: 0;
+}
