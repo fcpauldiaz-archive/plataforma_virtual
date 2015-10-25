@@ -103,7 +103,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     port:      "%mailer_port%"
-    encryption:"%mailer_ecryption%"
+    encryption:"%mailer_encryption%"
     spool:     { type: memory }
 
 braincrafted_bootstrap:
