@@ -53,15 +53,15 @@ assetic:
     bundles:        ["FOSCommentBundle"]
     #node: /app/.heroku/node/bin
     #node: %kernel.root_dir%/../.heroku/node/bin
-    #node: ~
+    node: ~
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
         lessphp:
             file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
             apply_to: "\.less$"
-        #uglifycss:
-            #bin: %kernel.root_dir%/../app/Resources/node_modules/.bin/uglifycss
+        uglifycss:
+            bin: %kernel.root_dir%/../app/Resources/node_modules/.bin/uglifycss
 
 # Doctrine Configuration
 doctrine:
