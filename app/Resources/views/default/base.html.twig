@@ -6,7 +6,8 @@
     
          {% block stylesheets  %}{% endblock %}
        
-        {% stylesheets
+        {% stylesheets  
+        'css/lobster.css'
         'bootstrap/css/bootstrap.css'   
         'css/font-awesome.min.css'
         'css/minimalMenu.css'
@@ -15,8 +16,6 @@
         'css/select2.css'
         'css/comments.css'
         'css/select2-bootstrap.css'
-        'css/lobster.css'
-        
         
         
         filter='cssrewrite'
@@ -26,8 +25,7 @@
         {% endstylesheets %}
         
         
-        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-        <link href="{{ asset('css/lobster.css')}}" rel='stylesheet' type='text/css'>
+       
         
        
         
