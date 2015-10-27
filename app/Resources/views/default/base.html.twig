@@ -6,11 +6,7 @@
     
          {% block stylesheets  %}{% endblock %}
        
-        {% if app.environment == 'prod' %}
-
-        {% include 'defaut/stylesh.html.twig' %}
-  
-        {% else %}
+       
    
         {% stylesheets  
         'css/style.css'
@@ -42,7 +38,7 @@
         {% endstylesheets %}
         
         
-       {% endif %}
+     
 
         
        
