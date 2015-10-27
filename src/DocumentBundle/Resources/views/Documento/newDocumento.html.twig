@@ -16,10 +16,10 @@
 		    {{ form_row(form.numeroDocumento) }}
 		    {{ form_row(form.documentFile) }}
 		   <br>
-		   {{ form_row(form.submit, {'attr':{'class':'btn buttonbk'}})}}
-		{{ form_end(form) }}
+           {{ form_row(form.submit, {'attr':{'class':'btn buttonbk'}})}}
+           {{ form_end(form) }}
 
-
+           <a href="#" data-toggle="modal" data-target="#modalDocumento" class = "btn btn-success">Guardar</a>
         <ul class="record_actions">
     <li>
         <a href="{{ path('documento') }}">
@@ -27,4 +27,46 @@
         </a>
     </li>
 </ul>
+
+<div class="modal fade" id="modalDocumento" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Confirm Submit
+            </div>
+            <div class="modal-body">
+                Seguro de los datos del documento?
+
+                <!-- We display the details entered by the user here -->
+                <table class="table">
+                    <tr>
+                        <th>Last Name</th>
+                        <td id="t_doc"></td>
+                    </tr>
+                    <tr>
+                        <th>First Name</th>
+                        <td id="curso"></td>
+                    </tr>
+                </table>
+
+            </div>
+
+  <div class="modal-footer">
+            
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+$('#submitBtn').click(function() {
+     $('#lname').html($('#lastname').val());
+     $('#fname').html($('#firstname').val());
+});
+
+$('#submit').click(function(){
+    alert('submitting');
+    $('#formfield').submit();
+});
+</script>
 {% endblock %}
