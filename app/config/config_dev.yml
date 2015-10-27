@@ -43,21 +43,7 @@ monolog:
         #    level:  info
 
 assetic:
-    debug:          "%kernel.debug%"
-    use_controller: true
-    bundles:        ["FOSCommentBundle"]
-    #node: /app/.heroku/node/bin
-    #node: %kernel.root_dir%/../.heroku/node/bin
-    #node: ~
-    #java: /usr/bin/java
-    filters:
-        cssrewrite: ~
-        lessphp:
-            file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
-            apply_to: "\.less$"
-        #uglifycss:
-        #    bin: %kernel.root_dir%/../app/Resources/node_modules/.bin/uglifycss
-
+   use_controller: true
 hautelook_alice:
     db_drivers:
         orm: ~          # Enable Doctrine ORM if is registered
