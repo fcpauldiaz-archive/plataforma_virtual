@@ -4,12 +4,14 @@ namespace CursoBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+
 
 class DefaultController extends Controller
 {
     /**
      * Default Index page.
-     *
+     * 
      * @Route("/", name="homepage")
      */
     public function indexAction()

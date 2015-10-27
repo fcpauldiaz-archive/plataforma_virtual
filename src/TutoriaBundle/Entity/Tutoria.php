@@ -21,25 +21,23 @@ class Tutoria
      */
     private $id;
 
-    
-
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario", inversedBy="tutorias")
      * @ORM\JoinColumn(name="usuario_id", referencedColumnName = "id")
      */
     private $usuario;
-    
+
     /**
      * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso", inversedBy="tutorias")
      * @ORM\JoinColumn(name="curso_id", referencedColumnName = "id")
      */
     private $curso;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="info", type="string", length = 225, nullable=true)
-     */
+
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="info", type="string", length = 225, nullable=true)
+      */
      private $info;
 
     /**
@@ -52,12 +50,11 @@ class Tutoria
         return $this->id;
     }
 
-    
-
     /**
-     * Set usuario
+     * Set usuario.
      *
      * @param \UserBundle\Entity\Usuario $usuario
+     *
      * @return Tutoria
      */
     public function setUsuario(\UserBundle\Entity\Usuario $usuario)
@@ -68,15 +65,15 @@ class Tutoria
     }
 
     /**
-     * Get usuario
+     * Get usuario.
      *
-     * @return \UserBundle\Entity\Usuario 
+     * @return \UserBundle\Entity\Usuario
      */
     public function getUsuario()
     {
         return $this->usuario;
     }
-    
+
     /**
      * Set curso.
      *
@@ -100,35 +97,28 @@ class Tutoria
     {
         return $this->curso;
     }
-    
+
     /**
-
      * @param string $imageName
-
+     
      * Set usuario.
-     *
      * @param \UserBundle\Entity\Usuario $usuario
      *
      * @return Tutoria
-
      */
     public function setInfo($newInfo)
     {
         $this->info = $newInfo;
     }
-    
+
     /**
-
      * @return string
-
+     
      * Get usuario.
-     *
      * @return \UserBundle\Entity\Usuario
-
      */
     public function getInfo()
     {
         return $this->info;
     }
-    
 }

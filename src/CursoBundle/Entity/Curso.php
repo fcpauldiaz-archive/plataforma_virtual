@@ -50,24 +50,23 @@ class Curso
      */
     private $documentos;
 
-    
     /**
      * @ORM\OneToMany(targetEntity="TutoriaBundle\Entity\Tutoria", mappedBy="curso")
      * @ORM\JoinTable(name="tutorias_curso")
      **/
     private $tutorias;
-    
-    
 
     /**
-     * Sirve para hacer soft delete de la entidad
+     * Sirve para hacer soft delete de la entidad.
+     *
      * @ORM\Column(name="deletedAt", type="datetime", nullable=true)
      */
     private $deletedAt;
 
     /**
      * Sirve para generar URL's a base de nombre curos y codigo curso
-     * De esta forma no se muestra el id en el URL
+     * De esta forma no se muestra el id en el URL.
+     *
      * @Gedmo\Slug(fields={"nombreCurso", "codigoCurso"},updatable=true)
      * @ORM\Column(length=128, unique=true)
      */
@@ -201,20 +200,22 @@ class Curso
     {
         return $this->documentos;
     }
- 
+
     /**
-     * Add tutorias
+     * Add tutorias.
      *
      * @param \TutoriaBundle\Entity\Tutoria $tutorias
+     *
      * @return Usuario
      */
     public function addTutoria(\TutoriaBundle\Entity\Tutoria $tutorias)
     {
         $this->tutorias[] = $tutorias;
+
         return $this;
     }
     /**
-     * Remove tutorias
+     * Remove tutorias.
      *
      * @param \TutoriaBundle\Entity\Tutoria $tutorias
      */
@@ -223,17 +224,14 @@ class Curso
         $this->tutorias->removeElement($tutorias);
     }
     /**
-     * Get tutorias
+     * Get tutorias.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTutorias()
     {
         return $this->tutorias;
     }
-    
-
-
 
     public function getCurso()
     {
@@ -289,6 +287,7 @@ class Curso
     }
     /**
      * El método es llamado para mostrar los dos atributos en el select2.
+     *
      * @return string obtener el nombre y el codigo en un solo método .
      */
     public function getCodigoNombre()
@@ -300,4 +299,3 @@ class Curso
         );
     }
 }
-
