@@ -44,6 +44,7 @@ monolog:
 
 assetic:
     use_controller: true
+
 hautelook_alice:
     db_drivers:
         orm: ~          # Enable Doctrine ORM if is registered

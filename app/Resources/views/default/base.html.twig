@@ -6,12 +6,18 @@
     
          {% block stylesheets  %}{% endblock %}
        
-         {% stylesheets  
+        {% if app.environment == 'prod' %}
+
+        {% include 'defaut/stylesh.html.twig' %}
+  
+        {% else %}
+   
+        {% stylesheets  
         'css/style.css'
         
         
         filter='cssrewrite'
-        
+      
         output='css/compiled/app2.css'
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
@@ -29,14 +35,15 @@
         
         
         filter='cssrewrite'
-        
+      
         output='css/compiled/app.css'
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         
         
-       
+       {% endif %}
+
         
        
         
@@ -61,7 +68,7 @@
 
 
 
-
+            
             {% block javascripts %}
 
                 <!-- Template js -->
