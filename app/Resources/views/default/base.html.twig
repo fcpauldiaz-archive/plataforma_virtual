@@ -7,16 +7,9 @@
          {% block stylesheets  %}{% endblock %}
        
         
-        {% stylesheets  
-        'css/lobster.css'
-        
-        filter='cssrewrite'
-        filter='uglifycss'
-        output='css/compiled/app2.css'
-        %}<link rel="stylesheet" href="{{ asset_url }}" />
-        {% endstylesheets %}
 
         {% stylesheets  
+        'css/lobster.css'
         'bootstrap/css/bootstrap.css'   
         'css/font-awesome.min.css'
         'css/minimalMenu.css'
@@ -30,6 +23,7 @@
         filter='cssrewrite'
         filter='uglifycss'
         output='css/compiled/app.css'
+        debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         
