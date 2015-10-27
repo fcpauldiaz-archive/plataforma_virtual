@@ -1,0 +1,33 @@
+{% extends '::base_page.html.twig' %}
+
+{% block body_content -%}
+    
+   
+    <h1>Foros por Curso</h1>
+    
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nombre Curso</th>
+                <th>Código Curso</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for curso in cursos %}
+            <tr>
+                
+                <td>  <a href="{{ path('show_curso',{'slug':curso.slug,'tipo':documento})}}"> {{ curso.nombreCurso }} </a> </td> 
+                <td><a href="{{ path('show_curso',{'slug':curso.slug,'tipo':documento})}}"> {{ curso.codigoCurso }} </a> </td> 
+               
+               
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <h4>¿No aparece el curso que buscabas?</h4>
+    <a class= "btn btn-default btn-sm btn-warning" href="{{ path('asignacion', {'username': app.user.username}) }}">
+        <h4> Asígnate el curso aquí</h4>
+    </a>
+    {% endblock %}
