@@ -6,7 +6,16 @@
     
          {% block stylesheets  %}{% endblock %}
        
+         {% stylesheets  
+        'css/style.css'
         
+        
+        filter='cssrewrite'
+        filter='uglifycss'
+        output='css/compiled/app2.css'
+        debug=false
+        %}<link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
 
         {% stylesheets  
         'css/lobster.css'
@@ -14,7 +23,6 @@
         'css/font-awesome.min.css'
         'css/minimalMenu.css'
         'css/animate.css'
-        'css/style.css'
         'css/select2.css'
         'css/comments.css'
         'css/select2-bootstrap.css'
