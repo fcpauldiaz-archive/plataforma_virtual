@@ -6,7 +6,7 @@
     
          {% block stylesheets  %}{% endblock %}
        
-        {{app.environment}}
+        
    
         {% stylesheets  
         'css/style.css'
@@ -88,6 +88,7 @@
               
             {% endblock %}
             {# </div> #}
+            <p>{{app.enfironment}}</p>
         </body>
         {% include 'default/analytics.html.twig' %}
 </html>
