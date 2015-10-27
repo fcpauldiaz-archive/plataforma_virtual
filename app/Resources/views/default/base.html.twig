@@ -6,7 +6,11 @@
     
          {% block stylesheets  %}{% endblock %}
        
-        
+        {% if app.environment == '' %}
+
+        {% include 'defaut/stylesh.html.twig' %}
+  
+        {% else %}
    
         {% stylesheets  
         'css/style.css'
@@ -38,7 +42,7 @@
         {% endstylesheets %}
         
         
-     
+       {% endif %}
 
         
        
@@ -88,7 +92,6 @@
               
             {% endblock %}
             {# </div> #}
-            <p>{{app.enfironment}}</p>
         </body>
         {% include 'default/analytics.html.twig' %}
 </html>
