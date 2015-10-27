@@ -2,33 +2,41 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-          <meta name="detectify-verification"
-          content="688e50cb6b3e82d418cd9f44ee37bb0e" />
         <title>{% block title  %}Learn-In!{% endblock %}</title>
     
          {% block stylesheets  %}{% endblock %}
        
-        {% stylesheets
+         {% stylesheets  
+        'css/style.css'
+        
+        
+        filter='cssrewrite'
+        filter='uglifycss'
+        output='css/compiled/app2.css'
+        debug=false
+        %}<link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        {% stylesheets  
+        'css/lobster.css'
         'bootstrap/css/bootstrap.css'   
         'css/font-awesome.min.css'
         'css/minimalMenu.css'
         'css/animate.css'
-        'css/style.css'
         'css/select2.css'
         'css/comments.css'
         'css/select2-bootstrap.css'
-        'css/lobster.css'
-        
         
         
         filter='cssrewrite'
         filter='uglifycss'
         output='css/compiled/app.css'
+        debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
         
         
-        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+       
         
        
         
