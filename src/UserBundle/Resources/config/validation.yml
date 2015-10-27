@@ -5,3 +5,8 @@ UserBundle\Entity\Usuario:
                 pattern: "/[a-z\'0-9]+([._-][a-z\'0-9]+)*@([uvg]+[.]+[edu]+[.]+[gt]+)/"
                 message: "El dominio del correo tiene que ser de la UVG"
                 groups: [EmailDomainValidation]
+
+DocumentBundle\Entity\Documento:
+    properties:
+        curso:
+            - NotNull: ~
