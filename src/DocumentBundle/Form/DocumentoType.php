@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
+use Symfony\Component\Validator\Constraints\NotNull;
 
 class DocumentoType extends AbstractType
 {
@@ -25,8 +26,10 @@ class DocumentoType extends AbstractType
         $builder
           //  ->add('documentName',null,['label'=>'Nombre del Documento'])
             ->add('tipoDocumento', 'choice', array(
-            'choices' => array(1 => 'Parcial', 0 => 'Hoja de Trabajo'),
-
+                'choices' => array(1 => 'Parcial', 0 => 'Hoja de Trabajo'),
+                'constraints' => array(
+                    new NotNull(),
+                )
             ))
             ->add('curso', 'entity', array(
                 'class' => 'CursoBundle:Curso',
