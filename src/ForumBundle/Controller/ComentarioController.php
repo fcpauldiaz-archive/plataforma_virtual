@@ -25,6 +25,6 @@ class ComentarioController extends Controller
             ->setParameter('curso',$curso)
             ->getQuery()
             ->getResult();
-        return this->render('ForumBundle:listar',['curso'=>$curso, 'comentario'=>$comentarios]);   
+        return $this->render('ForumBundle:listar',['curso'=>$curso, 'comentario'=>$comentarios]);   
     }
 }
