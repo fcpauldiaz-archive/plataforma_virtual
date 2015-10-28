@@ -7,13 +7,12 @@
          {% block stylesheets  %}{% endblock %}
        
        
-
+        {% if app.environment == 'dev' %}
         {% stylesheets  
         'css/style.css'
         
-        
         filter='cssrewrite'
-      
+       
         output='css/compiled/app2.css'
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
@@ -31,13 +30,17 @@
         
         
         filter='cssrewrite'
-      
+       
         output='css/compiled/app.css'
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
        
-  
+        {% else %}
+    
+        {% include 'default/stylesh.html.twig' %}
+            
+        {% endif %}
         
         
        
