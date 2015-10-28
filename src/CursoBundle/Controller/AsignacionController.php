@@ -10,6 +10,7 @@ use CursoBundle\Entity\Curso;
 use UserBundle\Entity\Usuario;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use CursoBundle\Form\BuscarType;
+use FOS\UserBundle\Model\UserInterface;
 
 /**
  * AsignacionController.

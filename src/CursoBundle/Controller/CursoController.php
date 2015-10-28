@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
 use CursoBundle\Form\CursoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-
+use FOS\UserBundle\Model\UserInterface;
 /**
  * Curso controller.
  *
