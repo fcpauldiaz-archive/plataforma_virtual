@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/foro/")
@@ -25,6 +26,6 @@ class ComentarioController extends Controller
             ->setParameter('curso',$curso)
             ->getQuery()
             ->getResult();
-        return this->render('ForumBundle:listar',['curso'=>$curso, 'comentario'=>$comentarios]);   
+        return $this->render('ForumBundle:listar',['curso'=>$curso, 'comentario'=>$comentarios]);   
     }
 }
