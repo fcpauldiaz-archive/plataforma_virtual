@@ -70,7 +70,6 @@ class DocumentoController extends Controller
 
         return [
             'entity' => $entity,
-            'username' => $usuario->getUserName(),
             'form' => $form->createView(),
         ];
     }
@@ -85,11 +84,11 @@ class DocumentoController extends Controller
     private function createCreateForm(Documento $entity, \UserBundle\Entity\Usuario $usuario)
     {
         $form = $this->createForm(new DocumentoType($usuario), $entity, array(
-            'action' => $this->generateUrl('documento_create', ['username' => $usuario->getUserName()]),
+            'action' => $this->generateUrl('documento_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', ['label' => 'Guardar']);
+        $form->add('submit', 'submit', ['label' => 'Aceptar y Guardar']);
 
         return $form;
     }
@@ -221,7 +220,7 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_edit', ['id' => $id, 'username' => $usuario->getUsername(),
+                    'documento_edit', ['id' => $id, 
                     'slug' => $entity->getSlug(), ]
                 )
             );

@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
-                                    <a href="#service-modal" data-toggle="modal">
+                                    <a href="{{ path('list_cursos_foro') }}" data-toggle="modal">
                                         <i class="fa fa-area-chart"></i>
                                         <p>Foro</p>
                                     </a>
@@ -115,7 +115,7 @@
                         {# ruta para subir documentos #}
                         <div class="menu-item color">
                             {% if app.user %}
-                                <a href="{{ path('documento_new',{'username':app.user.username})}}" data-toggle="modal">
+                                <a href="{{ path('documento_new')}}" data-toggle="modal">
                                     <i class="fa fa-comment-o"></i>
                                     <p>Subir Documentos</p>
                                 </a>

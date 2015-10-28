@@ -30,16 +30,12 @@ class DocumentoType extends AbstractType
                 'constraints' => array(
                     new NotNull(),
                 ),
-                'attr' => [
-                    'id' => 't_doc'
-                ]
+               
             ))
             ->add('curso', 'entity', array(
                 'class' => 'CursoBundle:Curso',
                 'choices' => $this->getUsuario()->getCursos(),
-                'attr' => [
-                    'id' => 'curso'
-                ]
+               
 
             ))
             ->add('numeroDocumento', 'choice', array(

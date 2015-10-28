@@ -1,0 +1,11 @@
+{% extends '::base_page.html.twig' %}
+
+{% block body_content -%}
+    
+   
+    <h1>Foros por Curso</h1>
+    
+    {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': curso.id } %}
+
+    
+{% endblock %}
