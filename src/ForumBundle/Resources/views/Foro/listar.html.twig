@@ -1,0 +1,25 @@
+{% extends '::base_page.html.twig' %}
+
+{% block body_content -%}
+    <h1>Foro de {{curso.nombreCurso}}</h1>
+	<table class = "table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Autor</th>
+				<th>Contenido</th>
+				<th>Fecha</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for curso in cursosAsignados %}
+			<tr>
+			
+				<td> {{ comentario.author.nombre }} </td>
+				<td> {{ comentario.body }} </td>
+				<td> {{ comentario.created_at }} </td>
+			</tr>	
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

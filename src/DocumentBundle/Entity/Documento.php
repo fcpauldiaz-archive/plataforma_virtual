@@ -32,6 +32,7 @@ class Documento
      */
     private $tipoDocumento;
 
+
     /**
      * [$numeroDocumento numero de documento de acuerdo al programa].
      *
@@ -39,6 +40,14 @@ class Documento
      * @ORM\Column(name="numeroDocumento",type="integer")
      */
     private $numeroDocumento;
+
+    /**
+     * [$Usuario relacion one to one a documento].
+     *
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Usuario")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     */
+    private $usuario;
 
     /**
      * [$curso relacion one to many a curso].
@@ -210,6 +219,29 @@ class Documento
     public function getNumeroDocumento()
     {
         return $this->numeroDocumento;
+    }
+
+    /* Get numeroDocumento.
+     *
+     * @return usuario
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set usuario.
+     *
+     * @param \UserBundle\Entity\Usuario $usuario
+     *
+     * @return documento
+     */
+    public function setUsuario(\UserBundle\Entity\Usuario $usuario = null)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
     }
 
     /**

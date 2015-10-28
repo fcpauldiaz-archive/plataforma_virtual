@@ -47,6 +47,7 @@ class DocumentoController extends Controller
     public function createAction(Request $request, \UserBundle\Entity\Usuario $usuario)
     {
         $entity = new Documento();
+        $entity->setUsuario($usuario);
         $form = $this->createCreateForm($entity, $usuario);
         $form->handleRequest($request);
 
