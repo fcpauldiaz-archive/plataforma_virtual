@@ -76,13 +76,17 @@ class TutoriaController extends Controller
     /**
      * Creates new Tutoria entity.
      *
-     * @Route("/{username}",name="tutoria_create")
+     * @Route("/",name="tutoria_create")
      * @Method("POST")
      * @Template("TutoriaBundle:Tutoria:new_tutoria.html.twig")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function createAction(Request $request, \UserBundle\Entity\Usuario $usuario)
+    public function createAction(Request $request)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $entity = new Tutoria();
         $entity->setUsuario($usuario);
         $form = $this->createCreateForm($entity, $usuario);

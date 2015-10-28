@@ -16,7 +16,7 @@
 			
 				<td> {{ curso.nombreCurso }} </td>
 				<td> 
-					<a class= "btn btn-default btn-xs btn-danger" href="{{ path('remove_curso', { 'curso_id':curso.id, 'username': app.user.username}) }}">
+					<a class= "btn btn-default btn-xs btn-danger" href="{{ path('remove_curso', { 'curso_id':curso.id}) }}">
 						Quitar Curso
 					</a>
 				</td>
@@ -26,7 +26,7 @@
 		</tbody>
 	</table>
 
-	<a class= "btn btn-default btn-sm btn-warning" href="{{ path('asignacion', {'username': app.user.username}) }}">
+	<a class= "btn btn-default btn-sm btn-warning" href="{{ path('asignacion') }}">
 		<h4>Asignar nuevo Curso</h4>
 	</a>
 

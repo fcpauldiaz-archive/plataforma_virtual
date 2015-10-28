@@ -19,13 +19,16 @@ class AsignacionController extends Controller
     /**
      * Método para mostrar los cursos no asignados  de un usuario.
      * 
-     * @Route("/{username}/asignar/cursos/", name="asignacion")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * @Route("/asignar/cursos/", name="asignacion")
      * @Template("CursoBundle:Asignacion:crearAsignacion.html.twig")
      */
-    public function asignarAction(Request $request, Usuario $usuario)
+    public function asignarAction(Request $request)
     {
-        $usuario = $this->get('security.context')->getToken()->getUser();
+       $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         echo ($usuario->getNombreCompleto());
         $form = $this->createForm(new BuscarType());
 
@@ -75,11 +78,15 @@ class AsignacionController extends Controller
     /**
      * Método para buscar un curso específico.
      *
-     * @Route("/{username}/search/cursos/", name="asignacion_search")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * @Route("/search/cursos/", name="asignacion_search")
      */
-    public function searchQueryAction(Request $request, Usuario $usuario)
+    public function searchQueryAction(Request $request)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $em = $this->getDoctrine()->getManager();
         //se obtienen todos los cursos
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
@@ -113,12 +120,16 @@ class AsignacionController extends Controller
     /**
      * Método para agregar un curso a un usuario de forma lógica (base de datos).
      *
-     * @Route("/agregar/curso/{usuario_id}/{curso_id}/", name="add_asignacion")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
+     * @Route("/agregar/curso/{curso_id}/", name="add_asignacion")
      * @ParamConverter("curso", class="CursoBundle:Curso", options={"id"="curso_id"})
      */
-    public function agregarCursoAction(Curso $curso, Usuario $usuario)
+    public function agregarCursoAction(Curso $curso)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $em = $this->getDoctrine()->getManager();
         $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
         $usuario->addCurso($curso);
@@ -138,11 +149,15 @@ class AsignacionController extends Controller
     }
 
     /**
-     * @Route("/{usuario_id}/agregar/curso_nuevo", name="asignar_curso_nuevo")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"id"="usuario_id"})
+     * @Route("/agregar/curso_nuevo", name="asignar_curso_nuevo")
      */
-    public function asignarCursoAction(Request $request, Usuario $usuario)
+    public function asignarCursoAction(Request $request)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $em = $this->getDoctrine()->getManager();
         $form = $this->createForm(
             new BuscarType());
@@ -176,11 +191,15 @@ class AsignacionController extends Controller
     /**
      * Listar cursos asignados.
      *
-     * @Route("/{username}/listar/cursos", name="listar_cursos")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
+     * @Route("/listar/cursos", name="listar_cursos")
      */
-    public function listarAction(Usuario $usuario)
+    public function listarAction()
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $em = $this->getDoctrine()->getManager();
 
         return $this->render(
@@ -193,13 +212,17 @@ class AsignacionController extends Controller
      * [Método para desasignar cursos ]
      * Método para remover curso asignado al usuario.
      *
-     * @Route("/quitar/curso/{curso_id}/{username}/",name="remove_curso")
+     * @Route("/quitar/curso/{curso_id}/",name="remove_curso")
      * @ParamConverter()
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * @ParamConverter("curso", class="CursoBundle:Curso", options={"id"="curso_id"})
      *      */
-    public function removeCursoAction(Curso $curso, Usuario $usuario)
+    public function removeCursoAction(Curso $curso)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $em = $this->getDoctrine()->getManager();
         $usuario->removeCurso($curso);
         $em->persist($usuario);

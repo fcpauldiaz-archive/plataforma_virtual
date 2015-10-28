@@ -39,13 +39,17 @@ class DocumentoController extends Controller
     /**
      * Creates a new Documento entity.
      *
-     * @Route("/{username}",name="documento_create")
+     * @Route("/",name="documento_create")
      * @Method("POST")
      * @Template("DocumentBundle:Documento:newDocumento.html.twig")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function createAction(Request $request, \UserBundle\Entity\Usuario $usuario)
+    public function createAction(Request $request)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $entity = new Documento();
         $entity->setUsuario($usuario);
         $form = $this->createCreateForm($entity, $usuario);
@@ -93,13 +97,17 @@ class DocumentoController extends Controller
     /**
      * Displays a form to create a new Documento entity.
      *
-     * @Route("/new/{username}", name="documento_new")
+     * @Route("/new/", name="documento_new")
      * @Method("GET")
      * @Template()
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function newDocumentoAction(\UserBundle\Entity\Usuario $usuario)
+    public function newDocumentoAction()
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $entity = new Documento();
         $form = $this->createCreateForm($entity, $usuario);
 
@@ -135,14 +143,18 @@ class DocumentoController extends Controller
     /**
      * Displays a form to edit an existing Documento entity.
      *
-     * @Route("/{username}/{slug}/edit", name="documento_edit")
+     * @Route("/{slug}/edit", name="documento_edit")
      * @Method("GET")
      * @Template()
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * @ParamConverter("documento", class="DocumentBundle:Documento", options={"slug"="slug"})
      */
-    public function editDocumentoAction($documento, \UserBundle\Entity\Usuario $usuario)
+    public function editDocumentoAction($documento)
     {
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         if (!$documento) {
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
