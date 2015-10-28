@@ -6,12 +6,7 @@
     
          {% block stylesheets  %}{% endblock %}
        
-        {% if app.environment == '' %}
-
-        {% include 'defaut/stylesh.html.twig' %}
-  
-        {% else %}
-   
+        {% if app.environment == 'dev' %}
         {% stylesheets  
         'css/style.css'
         
@@ -40,9 +35,14 @@
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
+       
+  
+        {% else %}
+   
+
+        {% include 'defaut/stylesh.html.twig' %}
         
-        
-       {% endif %}
+        {% endif %}
 
         
        
