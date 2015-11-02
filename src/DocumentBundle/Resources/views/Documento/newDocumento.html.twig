@@ -14,8 +14,8 @@
 		    {{ form_row(form.tipoDocumento) }}
 		    {{ form_row(form.curso) }}
 		    {{ form_row(form.numeroDocumento) }}
-		    {{ form_row(form.documentFile) }}
-		   <br>
+        {{ form_row(form.documentFile) }}
+		 
           
 
            <a type = "button" data-toggle="modal" id="submitBtn" data-target="#modalDocumento" class="btn btn-lg buttonbk" style="font-size:20px">Guardar</a>
@@ -73,5 +73,10 @@
 </div>
 
 <script src="{{ asset('js/reloadDataForm.js') }}"></script>
-
+ <script src="{{ asset('js/upload.js') }}"></script>
+ <script>
+$(":file").filestyle({buttonBefore: true,buttonName: "btn-primary",
+  placeholder: "Aquí aparecerá el nombre del archivo seleccionado",
+  buttonText: "Seleccionar documento"});
+ </script>
 {% endblock %}

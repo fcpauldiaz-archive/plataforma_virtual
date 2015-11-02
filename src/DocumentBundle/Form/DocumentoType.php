@@ -30,12 +30,11 @@ class DocumentoType extends AbstractType
                 'constraints' => array(
                     new NotNull(),
                 ),
-               
+
             ))
             ->add('curso', 'entity', array(
                 'class' => 'CursoBundle:Curso',
                 'choices' => $this->getUsuario()->getCursos(),
-               
 
             ))
             ->add('numeroDocumento', 'choice', array(
@@ -48,7 +47,9 @@ class DocumentoType extends AbstractType
 
            ;
         if ($this->editBoolean == true) {
-            $builder->add('documentFile', 'vich_file', array('label' => false));
+            $builder->add('documentFile', 'vich_file', array('label' => false,
+                'attr' => ['class' => 'filestyle', 'data-buttonBefore' => true],
+                ));
         }
     }
 
