@@ -40,6 +40,7 @@ class Documento
      */
     private $numeroDocumento;
 
+  
     /**
      * [$curso relacion one to many a curso].
      *
@@ -67,7 +68,7 @@ class Documento
     private $documentFile;
 
     /**
-     * @ORM\Column(type="string", length=255,unique=true)
+     * @ORM\Column(type="string", length=255, unique=false)
      *
      * @var string
      */
@@ -81,10 +82,23 @@ class Documento
     private $updatedAt;
 
     /**
-     * @Gedmo\Slug(fields={"numeroDocumento","documentName"})
+     * @Gedmo\Slug(fields={"numeroDocumento","documentName"},updatable=true)
      * @ORM\Column(type="string",length=128, unique=true)
      */
     private $slug;
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     */
+    private $usuario;
+
+    public function __construct()
+    {
+       
+       
+    }
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -95,6 +109,7 @@ class Documento
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      */
+    
     public function setDocumentFile(File $file = null)
     {
         $this->documentFile = $file;
@@ -212,6 +227,29 @@ class Documento
         return $this->numeroDocumento;
     }
 
+    /* Get numeroDocumento.
+     *
+     * @return usuario
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set usuario.
+     *
+     * @param \UserBundle\Entity\Usuario $usuario
+     *
+     * @return documento
+     */
+    public function setUsuario(\UserBundle\Entity\Usuario $usuario = null)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
     /**
      * Set curso.
      *
@@ -236,8 +274,34 @@ class Documento
         return $this->curso;
     }
 
+    /**
+     * Set slug.
+     *
+     * @param string $slug
+     *
+     * @return Documento
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
     public function __toString()
     {
         return $this->documentName;
     }
+
+  
 }

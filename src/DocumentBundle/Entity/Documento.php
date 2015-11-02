@@ -32,7 +32,6 @@ class Documento
      */
     private $tipoDocumento;
 
-
     /**
      * [$numeroDocumento numero de documento de acuerdo al programa].
      *
@@ -40,14 +39,6 @@ class Documento
      * @ORM\Column(name="numeroDocumento",type="integer")
      */
     private $numeroDocumento;
-
-    /**
-     * [$Usuario relacion one to one a documento].
-     *
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Usuario")
-     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
-     */
-    private $usuario;
 
     /**
      * [$curso relacion one to many a curso].
@@ -94,6 +85,16 @@ class Documento
      * @ORM\Column(type="string",length=128, unique=true)
      */
     private $slug;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Usuario")
+     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     */
+    private $usuario;
+
+    public function __construct()
+    {
+    }
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance

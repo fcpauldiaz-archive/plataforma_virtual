@@ -47,7 +47,6 @@ class DocumentoController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $entity = new Documento();
@@ -57,14 +56,34 @@ class DocumentoController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
             $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
+
             $em->persist($entity);
+
+            /*
+             * El siguiente query sirve para revisar si hay algún documento
+             * con el mismo nombre asociado en el mismo curso.
+             */
+            $duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
+                'curso' => $entity->getCurso(),
+                'documentName' => $entity->getDocumentName(),
+                ]);
+
+            if (!empty($duplicados)) {
+                $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
+
+                return [
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                ];
+            }
             $em->flush();
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_show', ['id' => $entity->getId(), 'slug' => $entity->getSlug()]
+                    'documento_show', ['slug' => $entity->getSlug()]
                     ));
         }
 
@@ -104,7 +123,6 @@ class DocumentoController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $entity = new Documento();
@@ -151,7 +169,6 @@ class DocumentoController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         if (!$documento) {
@@ -220,7 +237,7 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_edit', ['id' => $id, 
+                    'documento_edit', ['id' => $id,
                     'slug' => $entity->getSlug(), ]
                 )
             );

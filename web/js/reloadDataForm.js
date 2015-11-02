@@ -8,7 +8,7 @@ $('#submitBtn').click(function() {
 
 
     $('#curso').html($('#documentbundle_documento_curso option:selected').text())
-    $('#numero').html($('#documentbundle_documento_numeroDocumento').val())
+    $('#numero').html($('#documentbundle_documento_numeroDocumento option:selected').text())
     $('#nombre').html($('#documentbundle_documento_documentFile_file').val().split('\\').pop())
   
   
