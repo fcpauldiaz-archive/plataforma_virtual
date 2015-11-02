@@ -26,13 +26,13 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('documento_new') }}">
-            Regresar
+        <a class="btn btn-default" href="{{ path('documento_new') }}">
+            Subir otro documento
         </a>
     </li>
     <li>
-        <a href="{{ path('documento_edit', { 'slug': entity.slug }) }}">
-            Edit
+        <a class="btn btn btn-default" href="{{ path('documento_edit', { 'slug': entity.slug }) }}">
+           Editar
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>
