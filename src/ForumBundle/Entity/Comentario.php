@@ -47,7 +47,6 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
      */
     protected $score = 0;
 
-   
     /**
      * Set curso.
      *

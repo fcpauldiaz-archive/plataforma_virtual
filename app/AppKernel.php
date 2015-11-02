@@ -36,7 +36,7 @@ class AppKernel extends Kernel
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),//soft delete bundle
             new Mremi\ContactBundle\MremiContactBundle(),//contact bundle
-
+            
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),
             new DocumentBundle\DocumentBundle(),

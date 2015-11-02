@@ -51,6 +51,7 @@
         "stof/doctrine-extensions-bundle": "^1.2",
         "mremi/contact-bundle": "^1.2"
         
+        
     },
     
     "require-dev": {

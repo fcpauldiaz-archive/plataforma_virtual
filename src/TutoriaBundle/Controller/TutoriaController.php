@@ -9,7 +9,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use TutoriaBundle\Entity\Tutoria;
 use TutoriaBundle\Form\TutoriaType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 
@@ -84,7 +83,6 @@ class TutoriaController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $entity = new Tutoria();
