@@ -39,6 +39,8 @@ Integrate Select2 as entity search [Genemu][15].
 
 [jQuery][16].
 
+[Bootstrap input style.][17]
+
 
 ###Usage instructions
 
@@ -71,4 +73,5 @@ Integrate Select2 as entity search [Genemu][15].
 [14]:https://github.com/hautelook/AliceBundle
 [15]:https://github.com/genemu/GenemuFormBundle
 [16]:https://packagist.org/packages/symfony-bundle/jquery-bundle
+[17]:http://markusslima.github.io/bootstrap-filestyle/
 
