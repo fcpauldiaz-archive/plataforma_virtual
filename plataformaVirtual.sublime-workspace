@@ -632,6 +632,11 @@
 	},
 	"file_history":
 	[
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/DocumentoType.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DocumentoController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/AsignacionController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DownloadController.php",
+		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/CursoController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Entity/Curso.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Entity/Comentario.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/base.html.twig",
@@ -646,13 +651,8 @@
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/config/config.yml",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/downloadDocumento.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Controller/ComentarioController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/CursoController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DownloadController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Controller/DocumentoController.php",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Form/DocumentoType.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/DefaultController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Resources/views/Foro/listarCursosForo.html.twig",
-		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/CursoBundle/Controller/AsignacionController.php",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/ForumBundle/Resources/views/Foro/listar.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/app/Resources/views/default/index.html.twig",
 		"/Users/usuario/Dropbox/UVG/6º semestre/Ingenieria de Software/Proyecto/plataforma_virtual/src/DocumentBundle/Resources/views/Documento/newDocumento.html.twig",
@@ -998,6 +998,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"cursocon",
+				"src/CursoBundle/Controller/CursoController.php"
+			],
+			[
+				"downloadcont",
+				"src/DocumentBundle/Controller/DownloadController.php"
+			],
+			[
+				"asignacio",
+				"src/CursoBundle/Controller/AsignacionController.php"
+			],
+			[
+				"documentocont",
+				"src/DocumentBundle/Controller/DocumentoController.php"
+			],
 			[
 				"curso.",
 				"src/CursoBundle/Entity/Curso.php"
@@ -1443,10 +1459,6 @@
 				"src/CursoBundle/Entity/Curso.php"
 			],
 			[
-				"cursocon",
-				"src/CursoBundle/Controller/CursoController.php"
-			],
-			[
 				"asigna",
 				"src/CursoBundle/Controller/AsignacionController.php"
 			],
@@ -1497,18 +1509,6 @@
 			[
 				"menu.",
 				"app/Resources/views/menu.html.twig"
-			],
-			[
-				"config.",
-				"app/config/config.yml"
-			],
-			[
-				"config.y",
-				"app/config/config.yml"
-			],
-			[
-				"curso.ph",
-				"src/CursoBundle/Entity/Curso.php"
 			]
 		],
 		"width": 0.0

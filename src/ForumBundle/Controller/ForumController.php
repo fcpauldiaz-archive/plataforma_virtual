@@ -19,7 +19,6 @@ class ForumController extends Controller
      * @Route("/cursos",name="list_cursos_foro")
      * @Method("GET")
      * @Template("ForumBundle:Foro:listarCursosForo.html.twig")
-     * 
      */
     public function listarCursosForo()
     {
@@ -41,11 +40,11 @@ class ForumController extends Controller
      * @Route("/{slug}",name="curso_foro") 
      * @ParamConverter("curso", class="CursoBundle:Curso", options={"slug"="slug"})
      * @Template("ForumBundle:Foro:cursoForo.html.twig")
+     *
      * @return [type] [description]
      */
     public function cursoForoAction(Curso $curso)
     {
-        return [ 'curso' => $curso ];
+        return ['curso' => $curso];
     }
-
 }

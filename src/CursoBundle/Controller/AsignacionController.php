@@ -25,12 +25,11 @@ class AsignacionController extends Controller
      */
     public function asignarAction(Request $request)
     {
-       $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
-        echo ($usuario->getNombreCompleto());
+
         $form = $this->createForm(new BuscarType());
 
         $em = $this->getDoctrine()->getManager();
@@ -85,7 +84,6 @@ class AsignacionController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $em = $this->getDoctrine()->getManager();
@@ -128,7 +126,6 @@ class AsignacionController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $em = $this->getDoctrine()->getManager();
@@ -156,7 +153,6 @@ class AsignacionController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $em = $this->getDoctrine()->getManager();
@@ -198,7 +194,6 @@ class AsignacionController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $em = $this->getDoctrine()->getManager();
@@ -221,7 +216,6 @@ class AsignacionController extends Controller
     {
         $usuario = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
-
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $em = $this->getDoctrine()->getManager();
