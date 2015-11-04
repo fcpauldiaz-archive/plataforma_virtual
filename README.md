@@ -1,6 +1,6 @@
 Learn-In Platform
 ==================
-![Heroku](https://heroku-badge.herokuapp.com/?app=learn-in)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=learn-in)](http://learn-in.herokuapp.com)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcpauldiaz/plataforma_virtual/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 A Symfony project created on June 16, 2015, 3:20 am.
