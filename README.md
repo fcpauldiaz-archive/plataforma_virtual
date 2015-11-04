@@ -75,3 +75,7 @@ Integrate Select2 as entity search [Genemu][15].
 [16]:https://packagist.org/packages/symfony-bundle/jquery-bundle
 [17]:http://markusslima.github.io/bootstrap-filestyle/
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcpauldiaz/plataforma_virtual/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
