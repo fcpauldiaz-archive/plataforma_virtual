@@ -2,6 +2,9 @@ Learn-In Platform
 ==================
 [![Heroku](https://heroku-badge.herokuapp.com/?app=learn-in)](http://learn-in.herokuapp.com)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcpauldiaz/plataforma_virtual/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Symfony](http://img.shields.io/badge/Symfony2-2.7.5-blue.svg)](http://syfmony.com)
+![PHP](http://img.shields.io/badge/Buildpack-PHP-lightgrey.svg)
+[![NodeJS](http://img.shields.io/badge/Buildpack-NodeJS-lightgrey.svg)](http://nodejs.com)
 
 A Symfony project created on June 16, 2015, 3:20 am.
 
