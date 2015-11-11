@@ -1,1 +1,0 @@
-var $=jQuery.noConflict();$(document).ready(function(t){"use strict";t(".skill-shortcode").appear(function(){t(".progress").each(function(){t(".progress-bar").css("width",function(){return t(this).attr("data-percentage")+"%"})})},{accY:-100})});
