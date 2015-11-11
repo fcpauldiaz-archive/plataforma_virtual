@@ -1,5 +1,6 @@
 Learn-In Platform
 ==================
+[![Build Status](https://travis-ci.org/fcpauldiaz/plataforma_virtual.svg)](https://travis-ci.org/fcpauldiaz/plataforma_virtual)
 [![Heroku](https://heroku-badge.herokuapp.com/?app=learn-in)](http://learn-in.herokuapp.com)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcpauldiaz/plataforma_virtual/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Symfony](http://img.shields.io/badge/Symfony2-2.7.6-blue.svg)](http://syfmony.com)
