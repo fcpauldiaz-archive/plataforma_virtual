@@ -1,10 +1,12 @@
-
+language: php
 
 env:
   - SYMFONY_VERSION=2.7.6
   - SYMFONY_VERSION=dev-master
 
 before_script:
+
+script:
 
 matrix:
   allow_failures:
