@@ -8,9 +8,9 @@ env:
   - SYMFONY_VERSION=dev-master
 
 script:
-   - phpunit -c app/
+   - bin/phpunit -c app
 
 matrix:
   allow_failures:
     - env: SYMFONY_VERSION=dev-master
-    - script: phpunit
+    - script: bin/phpunit -c app
