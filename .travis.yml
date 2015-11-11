@@ -9,7 +9,6 @@ env:
   - SYMFONY_VERSION=dev-master
 
 before_script:
-  - composer install
 
 matrix:
   allow_failures:
