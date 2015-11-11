@@ -64,20 +64,26 @@
 
             {% block body %}{% endblock %}
 
-
+          
 
             
            
 
                 <!-- Template js -->
-               
-                <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
-                <script src="{{ asset('js/select2/select2.js') }}"></script>
-                <script src="{{ asset('js/jquery.appear.js') }}"></script>
-                <script src="{{ asset('js/contact_me.js') }}"></script>
-                <script src="{{ asset('js/modernizr.custom.js') }}"></script>
-                <script src="{{ asset('js/script.js') }}"></script>
-                              {# Default classes #}
+                {% javascripts 
+                'bootstrap/js/bootstrap.js'
+                'js/select2/select2.js'
+                'js/jquery.appear.js'
+                'js/contact_me.js'
+                'js/modernizr.custom.js'
+                'js/script.js'
+
+                filter='cssrewrite'
+                output='js/compiled/javascripts.js'
+                
+                %}<script src="{{ asset_url }}"></script>
+                {% endjavascripts %}
+                              
                 <script>
                     $('select.select2').select2();
                 </script>

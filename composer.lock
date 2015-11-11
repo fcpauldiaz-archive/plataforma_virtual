@@ -1235,16 +1235,16 @@
         },
         {
             "name": "javiereguiluz/easyadmin-bundle",
-            "version": "v1.8.0",
+            "version": "v1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/javiereguiluz/EasyAdminBundle.git",
-                "reference": "c4845cd9d9cf0906bdb4c800212d70aaa06ce172"
+                "reference": "92a54f713f235b13415ff7f03a86d80ec406dd6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/javiereguiluz/EasyAdminBundle/zipball/c4845cd9d9cf0906bdb4c800212d70aaa06ce172",
-                "reference": "c4845cd9d9cf0906bdb4c800212d70aaa06ce172",
+                "url": "https://api.github.com/repos/javiereguiluz/EasyAdminBundle/zipball/92a54f713f235b13415ff7f03a86d80ec406dd6a",
+                "reference": "92a54f713f235b13415ff7f03a86d80ec406dd6a",
                 "shasum": ""
             },
             "require": {
@@ -1307,7 +1307,7 @@
                 "backend",
                 "generator"
             ],
-            "time": "2015-11-08 20:17:16"
+            "time": "2015-11-09 08:54:02"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -3260,16 +3260,16 @@
         },
         {
             "name": "hautelook/alice-bundle",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hautelook/AliceBundle.git",
-                "reference": "02854162638d3d61ac3e0aa32b58175fd7eb59f4"
+                "reference": "c4d97c842dc11a5c7bc588d2cd5d9d4bd6ffa821"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/02854162638d3d61ac3e0aa32b58175fd7eb59f4",
-                "reference": "02854162638d3d61ac3e0aa32b58175fd7eb59f4",
+                "url": "https://api.github.com/repos/hautelook/AliceBundle/zipball/c4d97c842dc11a5c7bc588d2cd5d9d4bd6ffa821",
+                "reference": "c4d97c842dc11a5c7bc588d2cd5d9d4bd6ffa821",
                 "shasum": ""
             },
             "require": {
@@ -3334,7 +3334,7 @@
                 "orm",
                 "symfony"
             ],
-            "time": "2015-09-30 12:49:23"
+            "time": "2015-10-29 20:57:57"
         },
         {
             "name": "nelmio/alice",
