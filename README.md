@@ -6,6 +6,7 @@ Learn-In Platform
 [![Symfony](http://img.shields.io/badge/Symfony2-2.7.6-blue.svg)](http://syfmony.com)
 ![PHP](http://img.shields.io/badge/Buildpack-PHP-lightgrey.svg)
 [![NodeJS](http://img.shields.io/badge/Buildpack-NodeJS-lightgrey.svg)](http://nodejs.com)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a036cef0-9f40-4f2c-8903-efe518dd4dc4/big.png)](https://insight.sensiolabs.com/projects/a036cef0-9f40-4f2c-8903-efe518dd4dc4)
 
 A Symfony project created on June 16, 2015, 3:20 am.
 
