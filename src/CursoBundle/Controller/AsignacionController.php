@@ -14,6 +14,8 @@ use FOS\UserBundle\Model\UserInterface;
 
 /**
  * AsignacionController.
+ *
+ * @author  Pablo Díaz fcpauldiaz@me.com
  */
 class AsignacionController extends Controller
 {
@@ -25,7 +27,7 @@ class AsignacionController extends Controller
      */
     public function asignarAction(Request $request)
     {
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
@@ -82,7 +84,7 @@ class AsignacionController extends Controller
      */
     public function searchQueryAction(Request $request)
     {
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
@@ -124,7 +126,7 @@ class AsignacionController extends Controller
      */
     public function agregarCursoAction(Curso $curso)
     {
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
@@ -151,7 +153,7 @@ class AsignacionController extends Controller
      */
     public function asignarCursoAction(Request $request)
     {
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
@@ -173,7 +175,7 @@ class AsignacionController extends Controller
 
             $this->get('braincrafted_bootstrap.flash')->success(sprintf('Curso %s asignado correctamente', $curso->getNombreCurso()));
 
-            return $this->redirect($this->generateUrl('listar_cursos', array('username' => $usuario->getUsername())));
+            return $this->redirect($this->generateUrl('listar_cursos', ['username' => $usuario->getUsername()]));
         }
 
         $this->get('braincrafted_bootstrap.flash')->alert(sprintf('Curso %s ya estaba asignado', $curso->getNombreCurso()));
@@ -192,7 +194,7 @@ class AsignacionController extends Controller
      */
     public function listarAction()
     {
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
@@ -214,7 +216,7 @@ class AsignacionController extends Controller
      *      */
     public function removeCursoAction(Curso $curso)
     {
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }

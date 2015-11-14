@@ -5,7 +5,7 @@ namespace ContactBundle\Form\Type;
 use Mremi\ContactBundle\Model\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Contact type class.
@@ -39,19 +39,19 @@ class ContactType extends AbstractType
                 'attr' => ['placeholder' => 'mremi_contact.form.message'],
                 ]);
 
-        //$builder->add('save', 'submit', array('label' => 'mremi_contact.form_submit'));
+        //$builder->add('save', 'submit', ['label' => 'mremi_contact.form_submit' ]);
     }
 
     /**
-     * {@inheritdoc}
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
 
             'intention' => 'contact',
             'translation_domain' => 'MremiContactBundle',
-        ));
+        ]);
     }
 
     public function getName()

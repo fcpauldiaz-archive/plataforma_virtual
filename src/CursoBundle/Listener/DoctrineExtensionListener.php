@@ -20,11 +20,11 @@ class DoctrineExtensionListener implements ContainerAwareInterface
     public function onKernelRequest(GetResponseEvent $event)
     {
         $doctrine = $this->container->get('doctrine');
-        $doctrine->getEntityManager()->getConfiguration()->addFilter(
+        $this->getDoctrine()->getManager()->getConfiguration()->addFilter(
             'soft-deleteable',
             'Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter'
         );
-        $em = $doctrine->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $em->getFilters()->enable('soft-deleteable');
     }
 }

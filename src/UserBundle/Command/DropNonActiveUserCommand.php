@@ -46,7 +46,6 @@ class DropNonActiveUserCommand extends ContainerAwareCommand
         foreach ($usuarios as $usuario) {
             //si no ha sido confirmado esta variable es NULL
             if (is_null($usuario->getConfirmationToken())) {
-                
                 $um->deleteUser($usuario);//eliminar Usuario
 
                 $UsuariosEliminados = $UsuariosEliminados.' '.$usuario->getUsername().'\n';

@@ -4,13 +4,14 @@ namespace TutoriaBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use UserBundle\Entity\Usuario as Usuario;
 
 class TutoriaType extends AbstractType
 {
     private $usuario;
 
-    public function __construct(\UserBundle\Entity\Usuario  $user)
+    public function __construct(Usuario $user)
     {
         $this->usuario = $user;
     }
@@ -35,21 +36,21 @@ class TutoriaType extends AbstractType
         $builder
             ->add('info', null, ['label' => 'Informacion Adicional'])
 
-            ->add('curso', 'entity', array(
+            ->add('curso', 'entity', [
                 'class' => 'CursoBundle:Curso',
                 'choices' => $cursos,
-            ))
+            ])
         ;
     }
 
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'TutoriaBundle\Entity\Tutoria',
-        ));
+        ]);
     }
 
     /**
