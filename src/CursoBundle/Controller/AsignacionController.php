@@ -35,7 +35,7 @@ class AsignacionController extends Controller
         $form = $this->createForm(new BuscarType());
 
         $em = $this->getDoctrine()->getManager();
-        $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
+       
 
         $cursosAsignados = $usuario->getCursos();
 

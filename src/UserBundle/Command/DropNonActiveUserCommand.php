@@ -5,7 +5,6 @@ namespace UserBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use UserBundle\Entity\Usuario;
 use Symfony\Component\Console\Helper\ProgressBar;
 
 class DropNonActiveUserCommand extends ContainerAwareCommand

@@ -2,7 +2,6 @@
 
 namespace ContactBundle\Form\Type;
 
-use Mremi\ContactBundle\Model\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
