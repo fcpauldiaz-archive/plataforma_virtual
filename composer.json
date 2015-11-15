@@ -1,5 +1,6 @@
 {
-    "name": "Pablo/plataforma_virtual",
+    "name": "pablo/plataforma_virtual",
+    "description":"Project oriented to be a learning platform for Universidad del Valle de Guatemala ",
     "license": "proprietary",
     "type": "project",
     "autoload": {

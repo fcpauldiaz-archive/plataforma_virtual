@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
-use UserBundle\Entity\Usuario;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use CursoBundle\Form\BuscarType;
 use FOS\UserBundle\Model\UserInterface;
@@ -65,7 +64,7 @@ class AsignacionController extends Controller
      *
      * @return [Array] [Devuelve los cursos no asignados]
      */
-    public function mostrarCursosAsignados($cursos, $cursosAsignados)
+    public function mostrarCursosAsignadosAction($cursos, $cursosAsignados)
     {
         $returnData = [];
         foreach ($cursos as $curso) {
@@ -104,7 +103,7 @@ class AsignacionController extends Controller
         //se verifica que el término de búsqueda no haya dado error
         //y que se haya encontrado algún curso
         //en otro caso se toma como error
-        if ($searchTerm == '' || $query == null) {
+        if ($searchTerm === '' || $query === null) {
             $err = 1;
         }
 

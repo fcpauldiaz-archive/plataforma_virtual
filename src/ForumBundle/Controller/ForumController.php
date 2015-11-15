@@ -19,7 +19,7 @@ class ForumController extends Controller
      * @Method("GET")
      * @Template("ForumBundle:Foro:listarCursosForo.html.twig")
      */
-    public function listarCursosForo()
+    public function listarCursosForoAction()
     {
         $em = $this->getDoctrine()->getManager();
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
