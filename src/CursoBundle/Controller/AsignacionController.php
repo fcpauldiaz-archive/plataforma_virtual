@@ -43,7 +43,7 @@ class AsignacionController extends Controller
             ->getQuery()
             ->getResult();
 
-        $returnData = $this->mostrarCursosAsignados($cursosOrdenados, $cursosAsignados);
+        $returnData = $this->mostrarCursosAsignadosAction($cursosOrdenados, $cursosAsignados);
         $error = 0;
 
         return

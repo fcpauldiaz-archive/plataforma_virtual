@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 use Symfony\Component\Validator\Constraints\NotNull;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 use UserBundle\Entity\Usuario;
 
 class DocumentoType extends AbstractType
@@ -39,7 +40,7 @@ class DocumentoType extends AbstractType
 
             ])
             ->add('numeroDocumento', 'choice', [
-                'choice_list' => new ArrayChoiceList(
+                'choice_list' => new ChoiceList(
                     [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                     ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
                 ),
