@@ -33,9 +33,7 @@ class AsignacionController extends Controller
 
         $form = $this->createForm(new BuscarType());
 
-        $em = $this->getDoctrine()->getManager();
-       
-
+        
         $cursosAsignados = $usuario->getCursos();
 
         $repositoryCurso = $this->getDoctrine()->getRepository('CursoBundle:Curso');
@@ -130,12 +128,12 @@ class AsignacionController extends Controller
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
         $em = $this->getDoctrine()->getManager();
-        $cursos = $em->getRepository('CursoBundle:Curso')->findAll();
+       
         $usuario->addCurso($curso);
         $em->persist($usuario);
         $em->flush();
 
-        $cursosAsignados = $usuario->getCursos();
+        
 
         $this->get('braincrafted_bootstrap.flash')->success(sprintf('Curso %s asignado correctamente', $curso->getNombreCurso()));
 
@@ -197,7 +195,7 @@ class AsignacionController extends Controller
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
-        $em = $this->getDoctrine()->getManager();
+        
 
         return $this->render(
             'CursoBundle:Asignacion:listarAsignacion.html.twig',

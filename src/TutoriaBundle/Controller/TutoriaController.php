@@ -248,7 +248,7 @@ class TutoriaController extends Controller
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+        
         $editForm = $this->createEditForm($entity, $usuario);
         $editForm->handleRequest($request);
 

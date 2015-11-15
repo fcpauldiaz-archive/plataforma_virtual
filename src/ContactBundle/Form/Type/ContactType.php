@@ -38,7 +38,7 @@ class ContactType extends AbstractType
                 'attr' => ['placeholder' => 'mremi_contact.form.message'],
                 ]);
 
-        //$builder->add('save', 'submit', ['label' => 'mremi_contact.form_submit' ]);
+       
     }
 
     /**

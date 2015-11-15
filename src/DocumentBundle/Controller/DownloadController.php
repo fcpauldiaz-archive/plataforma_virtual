@@ -25,7 +25,7 @@ class DownloadController extends Controller
      */
     public function showCursosParcialesAction()
     {
-        $em = $this->getDoctrine()->getManager();
+       
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             throw $this->createAccessDeniedException();
         }
@@ -50,7 +50,7 @@ class DownloadController extends Controller
      */
     public function showCursosHDTAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        
 
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             throw $this->createAccessDeniedException();

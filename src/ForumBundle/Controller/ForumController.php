@@ -21,7 +21,7 @@ class ForumController extends Controller
      */
     public function listarCursosForoAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        
         if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             throw $this->createAccessDeniedException();
         }
