@@ -17,3 +17,4 @@ mremi_contact:
     confirm_page_title: Confirmación
     confirm_title: "Gracias %title% %fullName%"
     confirm_message: El mensaje ha sido enviado exitosamente.
+    

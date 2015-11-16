@@ -48,7 +48,7 @@ class DocumentoType extends AbstractType
             ])
 
            ;
-        if ($this->editBoolean == true) {
+        if ($this->editBoolean === true) {
             $builder->add('documentFile', 'vich_file', ['label' => false,
                 'attr' => ['class' => 'filestyle', 'data-buttonBefore' => true],
                 ]);
