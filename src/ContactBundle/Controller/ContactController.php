@@ -65,7 +65,7 @@ class ContactController extends Controller
     /**
      * @return [type] [description]
      */
-    public function createCreateForm(Contact $entity)
+    public function createCreateFormAction(Contact $entity)
     {
         $form = $this->createForm(new ContactType(), $entity, [
             'action' => $this->generateUrl('send_email'),
@@ -89,7 +89,7 @@ class ContactController extends Controller
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
 
-        $form = $this->createCreateForm(new Contact());
+        $form = $this->createCreateFormAction(new Contact());
 
         return [
             'form' => $form->createView(),

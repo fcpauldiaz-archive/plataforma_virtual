@@ -1,6 +1,6 @@
 <?php
 
-namespace TutoriaBundle\Form;
+namespace TutoriaBundle\Type\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
