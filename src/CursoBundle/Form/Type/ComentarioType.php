@@ -1,12 +1,12 @@
 <?php
 
-namespace CursoBundle\Form;
+namespace CursoBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ForoType extends AbstractType
+class ComentarioType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,8 +15,9 @@ class ForoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('curso')
-            ->add('comentarios')
+            ->add('usuario')
+            ->add('foro')
+            ->add('comentario')
         ;
     }
 
@@ -26,7 +27,7 @@ class ForoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => 'ForumBundle\Entity\Foro',
+            'data_class' => 'ForumBundle\Entity\Comentario',
         ]);
     }
 
@@ -35,6 +36,6 @@ class ForoType extends AbstractType
      */
     public function getName()
     {
-        return 'appbundle_foro';
+        return 'appbundle_comentario';
     }
 }

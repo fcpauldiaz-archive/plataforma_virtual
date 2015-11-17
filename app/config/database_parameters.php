@@ -10,5 +10,5 @@
     $container->setParameter('locale', 'es');
     $container->setParameter('mailer_transport', gmail);
     $container->setParameter('mailer_host', null);
-    $container->setParameter('mailer_user', getenv('USER'));
-    $container->setParameter('mailer_password', getenv('PASSWORD'));
+    $container->setParameter('mailer_user', getenv('USERNAME_SENGRID'));
+    $container->setParameter('mailer_password', getenv('PASSWORD_SENGRID'));

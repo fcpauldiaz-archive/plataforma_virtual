@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
-use CursoBundle\Form\CursoType;
+use CursoBundle\Form\Type\CursoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**

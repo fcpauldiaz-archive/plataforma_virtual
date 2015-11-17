@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use DocumentBundle\Entity\Documento;
-use DocumentBundle\Form\DocumentoType;
+use DocumentBundle\Form\Type\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;

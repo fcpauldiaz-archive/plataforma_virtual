@@ -1,11 +1,10 @@
 <?php
 
-namespace DocumentBundle\Form;
+namespace DocumentBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 use UserBundle\Entity\Usuario;

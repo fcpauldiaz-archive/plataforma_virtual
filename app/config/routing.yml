@@ -45,7 +45,3 @@ fos_comment_api:
     resource: "@FOSCommentBundle/Resources/config/routing.yml"
     prefix: /api
     defaults: { _format: html }
-
-mremi_contact_form:
-    resource: "@MremiContactBundle/Resources/config/routing.xml"
-    #resource: "@ContactBundle/Resources/config/routing.xml"
