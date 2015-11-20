@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'default/base.html.twig' %}
 <html>
     <head>
         <meta charset="{{ _charset }}" />
@@ -10,7 +11,9 @@
         <div>
             Esto es vergonzoso, estamos trabajando en arreglarlo lo antes posible. 
         </div>
-        
+        <a class= "btn btn-default btn-xs btn-warning"  href="{{ path('homepage' }}">
+                        Regresar
+        </a>
     </body>
 
 </html>
