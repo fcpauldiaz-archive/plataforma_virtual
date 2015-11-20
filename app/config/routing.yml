@@ -1,3 +1,7 @@
+report:
+    resource: "@ReportBundle/Resources/config/routing.php"
+    prefix:   /
+
 contact:
     resource: "@ContactBundle/Controller/"
     type:     annotation

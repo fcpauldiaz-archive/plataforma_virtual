@@ -43,6 +43,7 @@ class AppKernel extends Kernel
             new ForumBundle\ForumBundle(),
             new TutoriaBundle\TutoriaBundle(),
             new ContactBundle\ContactBundle(),
+            new ReportBundle\ReportBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
