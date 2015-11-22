@@ -40,7 +40,7 @@ class TutoriaType extends AbstractType
                 'class' => 'CursoBundle:Curso',
                 'choices' => $cursos,
             ])
-            ->add('rating','rating',array('stars'=>4))
+            ->add('rating','rating',array('stars'=>5))
         ;
     }
 

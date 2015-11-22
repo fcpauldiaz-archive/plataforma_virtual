@@ -131,7 +131,7 @@ class Tutoria
     
     public function setRating($newRating)
     {
-        $this->rating = newRating;
+        $this->rating = $newRating;
     }
     
     public function getRating()
