@@ -2,10 +2,17 @@
 
 namespace ReportBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class ReportController extends Controller
 {
+    /**
+     * @Route("/admin", name = "administration")
+     * @Template("admin/indexAdmin.html.twig")
+     *
+     */
     public function getTotalParciales()
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
@@ -15,7 +22,8 @@ class DefaultController extends Controller
             ->getQuery()
             ->getResult();
 
-        return (int) count($parciales);
+           return ['cantParciales' => (int) count($parciales)];
+    
     }
 
     public function getTotalHojasTrabajo()
