@@ -39,6 +39,13 @@ class Tutoria
       * @ORM\Column(name="info", type="string", length = 225, nullable=true)
       */
      private $info;
+     
+     /**
+      * @var int
+      *
+      * @ORM\Column(name="rating", type="integer")
+      */     
+     private $rating=0;
 
     /**
      * Get id.
@@ -115,10 +122,21 @@ class Tutoria
      * @return string
      
      * Get usuario.
-     * @return \UserBundle\Entity\Usuario
+     * @return String
      */
     public function getInfo()
     {
         return $this->info;
     }
+    
+    public function setRating($newRating)
+    {
+        $this->rating = newRating;
+    }
+    
+    public function getRating()
+    {
+        return $this->rating;
+    }
+    
 }

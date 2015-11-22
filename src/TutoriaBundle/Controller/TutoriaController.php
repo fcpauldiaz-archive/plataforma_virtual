@@ -61,13 +61,13 @@ class TutoriaController extends Controller
 
         $entities = $em->getRepository('TutoriaBundle:Tutoria')->findAll();
 
-        foreach ($entitiesU as $entityKey => $entity) {
+        /**foreach ($entitiesU as $entityKey => $entity) {
             foreach ($entities as $elementKey => $element) {
                 if ($entity->getId() == $element->getId()) {
                     unset($entities[$elementKey]);
                 }
             }
-        }
+        }*/
 
         return
             $this->render('TutoriaBundle:Tutoria:allTutoria.html.twig', ['entities' => $entities]);
