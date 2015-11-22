@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use TutoriaBundle\Entity\Tutoria;
-use TutoriaBundle\Form\TutoriaType;
+use TutoriaBundle\Form\Type\TutoriaType;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
