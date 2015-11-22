@@ -8,7 +8,7 @@
 
             <div class="panel-body" >
 
-                <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="form-group">
                 	
 
 
@@ -59,8 +59,18 @@
                       	{{form_row(form.plainPassword.second,{'attr': {'class': 'form-control','placeholder':'Confirmar Contraseña'}})}}
 
                     </div>
+                     <br>
+                     <h8 style= "color:black"><strong>Acepto los términos de uso</strong></h8>
+                     <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
+
+                        {{form_row(form.terminos,{'attr':{'class': 'checkbox'}})}}
+
+                    </div>
                                                                                        
                     <br>
+                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal">Términos de Uso</button>
+                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal2">Política de Privacidad</button>
                     <div class="form-group">
                         <!-- Button -->
                         <div class="col-sm-12 controls">
@@ -68,7 +78,7 @@
                         </div>
                        
                     </div>
-
+                
                
 				{{form_end(form)}}
 
@@ -79,6 +89,44 @@
         </div>  
     
       </div>
-
+      
+        <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div style = "color:black;text-align: justify;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h1 class="modal-title">Política de privacidad</h1>
+          </div>
+          <div class="modal-body">
+            {% include 'terminosycondiciones/politica_privacidad.html.twig' %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div style = "color:black;text-align: justify;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h1 class="modal-title">Términos de Uso ("Términos")</h1>
+          </div>
+          <div class="modal-body">
+            {% include 'terminosycondiciones/terminos_uso.html.twig' %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   

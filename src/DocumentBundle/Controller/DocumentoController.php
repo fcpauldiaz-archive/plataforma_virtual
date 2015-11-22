@@ -8,9 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use DocumentBundle\Entity\Documento;
-use DocumentBundle\Form\DocumentoType;
+use DocumentBundle\Form\Type\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\UserBundle\Model\UserInterface;
+use UserBundle\Entity\Usuario;
 
 /**
  * Documento controller.
@@ -39,13 +40,16 @@ class DocumentoController extends Controller
     /**
      * Creates a new Documento entity.
      *
-     * @Route("/{username}",name="documento_create")
+     * @Route("/",name="documento_create")
      * @Method("POST")
      * @Template("DocumentBundle:Documento:newDocumento.html.twig")
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function createAction(Request $request, \UserBundle\Entity\Usuario $usuario)
+    public function createAction(Request $request)
     {
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $entity = new Documento();
         $entity->setUsuario($usuario);
         $form = $this->createCreateForm($entity, $usuario);
@@ -53,20 +57,39 @@ class DocumentoController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $helper = $this->container->get('vich_uploader.templating.helper.uploader_helper');
+
+            $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
+
             $em->persist($entity);
+
+            /*
+             * El siguiente query sirve para revisar si hay algún documento
+             * con el mismo nombre asociado en el mismo curso.
+             */
+            $duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
+                'curso' => $entity->getCurso(),
+                'documentName' => $entity->getDocumentName(),
+                ]);
+
+            if (!empty($duplicados)) {
+                $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
+
+                return [
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                ];
+            }
             $em->flush();
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_show', ['id' => $entity->getId(), 'slug' => $entity->getSlug()]
+                    'documento_show', ['slug' => $entity->getSlug()]
                     ));
         }
 
         return [
             'entity' => $entity,
-            'username' => $usuario->getUserName(),
             'form' => $form->createView(),
         ];
     }
@@ -78,14 +101,14 @@ class DocumentoController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Documento $entity, \UserBundle\Entity\Usuario $usuario)
+    private function createCreateForm(Documento $entity, Usuario $usuario)
     {
-        $form = $this->createForm(new DocumentoType($usuario), $entity, array(
-            'action' => $this->generateUrl('documento_create', ['username' => $usuario->getUserName()]),
+        $form = $this->createForm(new DocumentoType($usuario), $entity, [
+            'action' => $this->generateUrl('documento_create'),
             'method' => 'POST',
-        ));
+        ]);
 
-        $form->add('submit', 'submit', ['label' => 'Guardar']);
+        $form->add('submit', 'submit', ['label' => 'Aceptar y Guardar']);
 
         return $form;
     }
@@ -93,13 +116,16 @@ class DocumentoController extends Controller
     /**
      * Displays a form to create a new Documento entity.
      *
-     * @Route("/new/{username}", name="documento_new")
+     * @Route("/new/", name="documento_new")
      * @Method("GET")
      * @Template()
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      */
-    public function newDocumentoAction(\UserBundle\Entity\Usuario $usuario)
+    public function newDocumentoAction()
     {
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         $entity = new Documento();
         $form = $this->createCreateForm($entity, $usuario);
 
@@ -135,14 +161,17 @@ class DocumentoController extends Controller
     /**
      * Displays a form to edit an existing Documento entity.
      *
-     * @Route("/{username}/{slug}/edit", name="documento_edit")
+     * @Route("/{slug}/edit", name="documento_edit")
      * @Method("GET")
      * @Template()
-     * @ParamConverter("usuario", class="UserBundle:Usuario", options={"username"="username"})
      * @ParamConverter("documento", class="DocumentBundle:Documento", options={"slug"="slug"})
      */
-    public function editDocumentoAction($documento, \UserBundle\Entity\Usuario $usuario)
+    public function editDocumentoAction($documento)
     {
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
+        if (!is_object($usuario) || !$usuario instanceof UserInterface) {
+            throw new AccessDeniedException('El usuario no tiene acceso.');
+        }
         if (!$documento) {
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
@@ -194,7 +223,7 @@ class DocumentoController extends Controller
             throw $this->createNotFoundException('Unable to find Documento entity.');
         }
 
-        $usuario = $this->container->get('security.context')->getToken()->getUser();
+        $usuario = $this->get('security.token_storage')->getToken()->getUser();
         if (!is_object($usuario) || !$usuario instanceof UserInterface) {
             throw new AccessDeniedException('El usuario no tiene acceso.');
         }
@@ -209,8 +238,10 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_edit', ['id' => $id, 'username' => $usuario->getUsername(),
-                    'slug' => $entity->getSlug(), ]
+                    'documento_edit', [
+                        'id' => $id,
+                        'slug' => $entity->getSlug(),
+                    ]
                 )
             );
         }
@@ -245,9 +276,9 @@ class DocumentoController extends Controller
         }
 
         return $this->redirect(
-            $this->generateUrl(
-                'documento'
-            )
+                $this->generateUrl(
+                    'documento'
+                )
         );
     }
 

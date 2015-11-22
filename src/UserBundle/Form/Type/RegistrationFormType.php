@@ -4,7 +4,7 @@ namespace UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class RegistrationFormType extends AbstractType
 {
@@ -26,13 +26,20 @@ class RegistrationFormType extends AbstractType
                 'first_options' => ['label' => false],
                 'second_options' => ['label' => false],
                 'invalid_message' => 'fos_user.password.mismatch',
-            ]);
+            ])
+            ->add('terminos','checkbox',['label' => false,
+                'required' => true,
+                'mapped' => false
+                ])
+
+            ;
+
     }
 
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
             'validation' => ['registration'],

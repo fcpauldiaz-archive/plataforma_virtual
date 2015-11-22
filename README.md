@@ -1,5 +1,12 @@
 Learn-In Platform
 ==================
+[![Build Status](https://travis-ci.org/fcpauldiaz/plataforma_virtual.svg)](https://travis-ci.org/fcpauldiaz/plataforma_virtual)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=learn-in)](http://learn-in.herokuapp.com)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcpauldiaz/plataforma_virtual/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Symfony](http://img.shields.io/badge/Symfony2-2.7.6-blue.svg)](http://syfmony.com)
+![PHP](http://img.shields.io/badge/Buildpack-PHP-lightgrey.svg)
+[![NodeJS](http://img.shields.io/badge/Buildpack-NodeJS-lightgrey.svg)](http://nodejs.com)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/a036cef0-9f40-4f2c-8903-efe518dd4dc4/big.png)](https://insight.sensiolabs.com/projects/a036cef0-9f40-4f2c-8903-efe518dd4dc4)
 
 A Symfony project created on June 16, 2015, 3:20 am.
 
@@ -39,6 +46,8 @@ Integrate Select2 as entity search [Genemu][15].
 
 [jQuery][16].
 
+[Bootstrap input style.][17]
+
 
 ###Usage instructions
 
@@ -71,4 +80,8 @@ Integrate Select2 as entity search [Genemu][15].
 [14]:https://github.com/hautelook/AliceBundle
 [15]:https://github.com/genemu/GenemuFormBundle
 [16]:https://packagist.org/packages/symfony-bundle/jquery-bundle
+[17]:http://markusslima.github.io/bootstrap-filestyle/
+
+
+
 

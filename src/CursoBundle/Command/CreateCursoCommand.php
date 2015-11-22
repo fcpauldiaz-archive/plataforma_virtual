@@ -15,10 +15,10 @@ class CreateCursoCommand extends ContainerAwareCommand
         $this
             ->setName('curso:create')
             ->setDescription('Create a user.')
-            ->setDefinition(array(
+            ->setDefinition([
                 new InputArgument('nombre', InputArgument::REQUIRED, 'Nombre curso'),
                 new InputArgument('codigo', InputArgument::REQUIRED, 'Código curso'),
-            ))
+            ])
 
         ;
     }

@@ -6,7 +6,7 @@
     {{
         form_start(
             buscarCurso,
-            {'action': path('asignar_curso_nuevo', { 'usuario_id': app.user.id}), 'method': 'POST'},
+            {'action': path('asignar_curso_nuevo'), 'method': 'POST'},
             {'attr': {'novalidate': 'novalidate', 'class':'form-control'}}
         )
     }}
@@ -43,7 +43,7 @@
 				<td> {{ curso.nombreCurso }} </td>
 				<td> {{ curso.codigoCurso }} </td>
 				<td> 
-					<a class= "btn btn-default btn-xs btn-warning"  onclick="this.addEventListener('click', dobleClick, false);" href="{{ path('add_asignacion', { 'usuario_id': app.user.id , 'curso_id':curso.id}) }}">
+					<a class= "btn btn-default btn-xs btn-warning"  onclick="this.addEventListener('click', dobleClick, false);" href="{{ path('add_asignacion', {'curso_id':curso.id}) }}">
 						Asignar Curso
 					</a>
 				</td>

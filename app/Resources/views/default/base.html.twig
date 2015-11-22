@@ -7,37 +7,40 @@
          {% block stylesheets  %}{% endblock %}
        
        
-
+        {% if app.environment == 'dev' %}
         {% stylesheets  
         'css/style.css'
         
-        
         filter='cssrewrite'
-      
+       
         output='css/compiled/app2.css'
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
 
-        {% stylesheets  
-        'css/lobster.css'
-        'bootstrap/css/bootstrap.css'   
+        {% stylesheets 
+        'bootstrap/css/bootstrap.css'
         'css/font-awesome.min.css'
+        'css/animate.css'  
+        'css/lobster.css'
         'css/minimalMenu.css'
-        'css/animate.css'
         'css/select2.css'
         'css/comments.css'
         'css/select2-bootstrap.css'
         
         
         filter='cssrewrite'
-      
+       
         output='css/compiled/app.css'
         debug=false
         %}<link rel="stylesheet" href="{{ asset_url }}" />
         {% endstylesheets %}
        
-  
+        {% else %}
+    
+        {% include 'default/stylesh.html.twig' %}
+            
+        {% endif %}
         
         
        
@@ -61,20 +64,26 @@
 
             {% block body %}{% endblock %}
 
-
+          
 
             
-            {% block javascripts %}
+           
 
                 <!-- Template js -->
-               
-                <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
-                <script src="{{ asset('js/select2/select2.js') }}"></script>
-                <script src="{{ asset('js/jquery.appear.js') }}"></script>
-                <script src="{{ asset('js/contact_me.js') }}"></script>
-                <script src="{{ asset('js/modernizr.custom.js') }}"></script>
-                <script src="{{ asset('js/script.js') }}"></script>
-                {# Default classes #}
+                {% javascripts 
+                'bootstrap/js/bootstrap.js'
+                'js/select2/select2.js'
+                'js/jquery.appear.js'
+                'js/contact_me.js'
+                'js/modernizr.custom.js'
+                'js/script.js'
+
+                
+                output='js/compile/javascripts.js'
+                
+                %}<script src="{{ asset_url }}"></script>
+                {% endjavascripts %}
+                              
                 <script>
                     $('select.select2').select2();
                 </script>
@@ -84,8 +93,9 @@
                         $(this).closest('.navbar-minimal').toggleClass('open');
                     });
                 </script>
-              
-            {% endblock %}
+               
+            {% block javascripts %}{% endblock %}
+            
             {# </div> #}
         </body>
         {% include 'default/analytics.html.twig' %}

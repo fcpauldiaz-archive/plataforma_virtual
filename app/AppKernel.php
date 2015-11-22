@@ -35,14 +35,15 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),//soft delete bundle
-            new Mremi\ContactBundle\MremiContactBundle(),//contact bundle
-
+            //new Mremi\ContactBundle\MremiContactBundle(),//contact bundle
+            
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),
             new DocumentBundle\DocumentBundle(),
             new ForumBundle\ForumBundle(),
             new TutoriaBundle\TutoriaBundle(),
             new ContactBundle\ContactBundle(),
+            new ReportBundle\ReportBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -52,8 +53,7 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Hautelook\AliceBundle\HautelookAliceBundle();
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
-           // $bundles[] = new h4cc\AliceFixturesBundle\h4ccAliceFixturesBundle();
-
+          
         }
 
         return $bundles;

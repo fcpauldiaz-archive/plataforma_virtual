@@ -18,8 +18,8 @@
         {% for curso in cursos %}
             <tr>
                 
-                <td>  <a href="{{ path('show_curso',{'slug':curso.slug,'tipo':documento})}}"> {{ curso.nombreCurso }} </a> </td> 
-                <td><a href="{{ path('show_curso',{'slug':curso.slug,'tipo':documento})}}"> {{ curso.codigoCurso }} </a> </td> 
+                <td>  <a href="{{ path('show_curso',{'slug':curso.slug })}}"> {{ curso.nombreCurso }} </a> </td> 
+                <td><a href="{{ path('show_curso',{'slug':curso.slug })}}"> {{ curso.codigoCurso }} </a> </td> 
                
                
             </tr>

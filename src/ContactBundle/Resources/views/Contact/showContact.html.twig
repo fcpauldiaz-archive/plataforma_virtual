@@ -1,15 +1,5 @@
-{#
+{% extends 'default/base.html.twig' %}
 
-This file is part of the Mremi\ContactBundle Symfony bundle.
-
-(c) Rémi Marseille <marseille.remi@gmail.com>
-
-For the full copyright and license information, please view the LICENSE
-file that was distributed with this source code.
-
-#}
-
-{% extends "MremiContactBundle::layout.html.twig" %}
 
 {% trans_default_domain 'MremiContactBundle' %}
 
@@ -62,7 +52,7 @@ file that was distributed with this source code.
                         
                         <div class="col-md-4">
                             <div class="footer-contact-info">
-                                <h4>Working Hours</h4>
+                                <h4>Horario de Atención</h4>
                                 <ul>
                                     <li><strong>Lunes-Miércoles :</strong> 9 am to 5 pm</li>
                                     <li><strong>Jueves-Viernes :</strong> 12 pm to 10 pm</li>
@@ -83,32 +73,22 @@ file that was distributed with this source code.
                     <div class="row" style="padding-top: 80px;">
                         <div class="col-md-12">
                             
-                                {{ form_start(form, {'action': path('mremi_contact_form'),
-								'attr': {'name':'sentMessage','id':'contactForm'},
-                            }
-
-									
-
-                                ) }}
+                                {{ form_start(form)}}
                                  <fieldset>
                                     <legend>{{ 'mremi_contact.form_title'|trans }}</legend>
 
                                 <div class="row">
                                     <div class="col-md-6">
                                         
-                                           {{ form_row(form.firstName)}}
+                                           {{ form_row(form.nombreCompleto, {'attr': {'value': nombreUsuario}})}}
                                          
                                             <p class="help-block text-danger"></p>
                                            
                                         
                                         
-                                           {{ form_row(form.lastName)}}
-                                           
-                                           
-                                            <p class="help-block text-danger"></p>
-                                       
+                                          
                                       
-                                              {{ form_row(form.email)}} 
+                                              {{ form_row(form.correo, {'attr': {'value': correoUsuario}})}} 
                                           
                                           
                                             <p class="help-block text-danger"></p>
@@ -116,14 +96,14 @@ file that was distributed with this source code.
                                     
                                        
                                    
-                                         {{ form_row(form.subject)}}
+                                         {{ form_row(form.asunto)}}
 
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     
                                     <div class="col-md-6">
                                         
-                                             {{ form_row(form.message)}} 
+                                             {{ form_row(form.mensaje)}} 
                                           
                                             <p class="help-block text-danger"></p>
                                         <
@@ -131,7 +111,7 @@ file that was distributed with this source code.
                                     <div class="clearfix"></div>
                                     <div class="col-lg-12 text-center">
                                         <div id="success"></div>
-                                        <button type="submit" class="btn btn-primary">Send Message</button>
+                                        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
                                     </div>
                                 </div>
                                    </fieldset>

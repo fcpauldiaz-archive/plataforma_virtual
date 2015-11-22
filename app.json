@@ -1,0 +1,26 @@
+{
+  "name":"plataforma_virtual",
+  "description":"Production",
+  "scripts":{},
+  "env":{
+    "PASSWORD_SENGRID":{
+      "required":true
+    },
+    "SBT_OPTS":{
+      "required":true
+    },
+    "SYMFONY_ENV":{
+      "required":true
+    },
+    "USERNAME_SENGRID":{
+      "required":true
+    }
+  },
+  "addons":[
+    "cleardb",
+    "iron_cache",
+    "keen",
+    "scheduler",
+    "sendgrid"
+  ]
+}

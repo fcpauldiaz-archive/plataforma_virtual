@@ -2,7 +2,7 @@
  /* BODY BACKGROUND IMAGE DOESNT ALWAYS REACH THE BOTTOM OF THE BROWSER*/
 body {
 	background-color: rgb(100, 100, 100);
-	background-image: url(http://s3.amazonaws.com/sitebuilderreport-assets/media/files/000/000/440/original/Old.jpg?1387493955);
+	/*background-image: url(http://s3.amazonaws.com/sitebuilderreport-assets/media/files/000/000/440/original/Old.jpg?1387493955);*/
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;

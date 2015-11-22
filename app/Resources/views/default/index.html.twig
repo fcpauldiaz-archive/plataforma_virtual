@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="menu-item color responsive">
-                                    <a href="#service-modal" data-toggle="modal">
+                                    <a href="{{ path('list_cursos_foro') }}" data-toggle="modal">
                                         <i class="fa fa-area-chart"></i>
                                         <p>Foro</p>
                                     </a>
@@ -98,7 +98,7 @@
                             
                             <div class="col-md-6">
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="/contact" data-toggle="modal">
+                                    <a href="{{path('contact')}}" data-toggle="modal">
                                         <i class="fa fa-envelope-o"></i>
                                         <p>Contacto</p>
                                     </a>
@@ -115,7 +115,7 @@
                         {# ruta para subir documentos #}
                         <div class="menu-item color">
                             {% if app.user %}
-                                <a href="{{ path('documento_new',{'username':app.user.username})}}" data-toggle="modal">
+                                <a href="{{ path('documento_new')}}" data-toggle="modal">
                                     <i class="fa fa-comment-o"></i>
                                     <p>Subir Documentos</p>
                                 </a>
@@ -156,8 +156,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div>Elaborado por estudiantes para estudiantes UVG.<a href="#" target="_blank"></a></div>
-                            <p>Powered by bootstrap under MIT License. </p>
+                            <div>Elaborado por estudiantes UVG para estudiantes UVG.
+                            <p><a href="https://github.com/fcpauldiaz/plataforma_virtual" target="_blank">Promovemos el código abierto.</a></p></div>
+                            <p>Powered by <a href="http://getbootstrap.com" target="_blank">Bootstrap</a> under <a href="https://github.com/fcpauldiaz/plataforma_virtual/blob/master/LICENSE.md" target="_blank">MIT License</a>. </p>
                         </div>
                     </div>
                 </div>

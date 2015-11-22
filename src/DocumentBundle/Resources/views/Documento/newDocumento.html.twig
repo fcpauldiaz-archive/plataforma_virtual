@@ -1,7 +1,7 @@
 {% extends '::base_page.html.twig' %}
 
 {% block body_content -%}
-    <h1>Documento creation</h1>
+    <h1>Subir Documentos</h1>
 
     	
 
@@ -14,59 +14,69 @@
 		    {{ form_row(form.tipoDocumento) }}
 		    {{ form_row(form.curso) }}
 		    {{ form_row(form.numeroDocumento) }}
-		    {{ form_row(form.documentFile) }}
-		   <br>
-           {{ form_row(form.submit, {'attr':{'class':'btn buttonbk'}})}}
-           {{ form_end(form) }}
+        {{ form_row(form.documentFile) }}
+		 
+          
 
-           <a href="#" data-toggle="modal" data-target="#modalDocumento" class = "btn btn-success">Guardar</a>
+           <a type = "button" data-toggle="modal" id="submitBtn" data-target="#modalDocumento" class="btn btn-lg buttonbk" style="font-size:20px">Guardar</a>
+           <br>
+           <br>
         <ul class="record_actions">
     <li>
-        <a href="{{ path('documento') }}">
+        <a href="{{ path('documento') }}" class="btn btn-warning">
             Regresar
         </a>
     </li>
 </ul>
 
-<div class="modal fade" id="modalDocumento" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                Confirm Submit
-            </div>
-            <div class="modal-body">
-                Seguro de los datos del documento?
+<div class="modal fade" id="modalDocumento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h2>Confirmar Envío</h2>
+      </div>
+      <div class="modal-body">
+                
 
                 <!-- We display the details entered by the user here -->
                 <table class="table">
                     <tr>
-                        <th>Last Name</th>
-                        <td id="t_doc"></td>
+                        <th>Tipo Documento</th>
+                        <td id="tipo"></td>
                     </tr>
                     <tr>
-                        <th>First Name</th>
+                        <th>Curso</th>
                         <td id="curso"></td>
+
+                    </tr>
+                    <tr>
+                        <th>Número Documento</th>
+                        <td id="numero"></td>
+                        
+                    </tr>
+                     <tr>
+                        <th>Nombre del Documento</th>
+                        <td id="nombre"></td>
+                        
                     </tr>
                 </table>
 
             </div>
 
-  <div class="modal-footer">
-            
+    <div class="modal-footer">
+    <strong><p align="left">Al enviar este archivo acepto todos los Términos y Condiciones.</p></strong>
+           {{ form_row(form.submit, {'attr':{'class':'btn btn-block buttonbk '}})}}
+           {{ form_end(form) }}
         </div>
     </div>
 </div>
 
-
-<script type="text/javascript">
-$('#submitBtn').click(function() {
-     $('#lname').html($('#lastname').val());
-     $('#fname').html($('#firstname').val());
-});
-
-$('#submit').click(function(){
-    alert('submitting');
-    $('#formfield').submit();
-});
-</script>
+<script src="{{ asset('js/reloadDataForm.js') }}"></script>
+ <script src="{{ asset('js/upload.js') }}"></script>
+ <script>
+$(":file").filestyle({buttonBefore: true,buttonName: "btn-primary",
+  placeholder: "Aquí aparecerá el nombre del archivo seleccionado",
+  buttonText: "Seleccionar documento"});
+ </script>
 {% endblock %}

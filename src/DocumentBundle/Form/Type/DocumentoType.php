@@ -1,19 +1,20 @@
 <?php
 
-namespace DocumentBundle\Form;
+namespace DocumentBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotNull;
+use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
+use UserBundle\Entity\Usuario;
 
 class DocumentoType extends AbstractType
 {
     private $usuario;
     private $editBoolean = true;
 
-    public function __construct(\UserBundle\Entity\Usuario  $user)
+    public function __construct(Usuario  $user)
     {
         $this->usuario = $user;
     }
@@ -25,45 +26,42 @@ class DocumentoType extends AbstractType
     {
         $builder
           //  ->add('documentName',null,['label'=>'Nombre del Documento'])
-            ->add('tipoDocumento', 'choice', array(
-                'choices' => array(1 => 'Parcial', 0 => 'Hoja de Trabajo'),
-                'constraints' => array(
+            ->add('tipoDocumento', 'choice', [
+                'choices' => [1 => 'Parcial', 0 => 'Hoja de Trabajo'],
+                'constraints' => [
                     new NotNull(),
-                ),
-                'attr' => [
-                    'id' => 't_doc'
-                ]
-            ))
-            ->add('curso', 'entity', array(
+                ],
+
+            ])
+            ->add('curso', 'entity', [
                 'class' => 'CursoBundle:Curso',
                 'choices' => $this->getUsuario()->getCursos(),
-                'attr' => [
-                    'id' => 'curso'
-                ]
 
-            ))
-            ->add('numeroDocumento', 'choice', array(
+            ])
+            ->add('numeroDocumento', 'choice', [
                 'choice_list' => new ChoiceList(
-                    array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
-                    array('1', '2', '3', '4', '5', '6', '7', '8', '9', '10')
+                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
                 ),
                 'label' => 'Número del documento',
-            ))
+            ])
 
            ;
-        if ($this->editBoolean == true) {
-            $builder->add('documentFile', 'vich_file', array('label' => false));
+        if ($this->editBoolean === true) {
+            $builder->add('documentFile', 'vich_file', ['label' => false,
+                'attr' => ['class' => 'filestyle', 'data-buttonBefore' => true],
+                ]);
         }
     }
 
     /**
-     * @param OptionsResolverInterface $resolver
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'DocumentBundle\Entity\Documento',
-        ));
+        ]);
     }
 
     /**
@@ -73,11 +71,16 @@ class DocumentoType extends AbstractType
     {
         return 'documentbundle_documento';
     }
-
+    /**
+     * @return Usuario
+     */
     public function getUsuario()
     {
         return $this->usuario;
     }
+    /**
+     * @param bool
+     */
     public function setEditBoolean($param)
     {
         $this->editBoolean = $param;

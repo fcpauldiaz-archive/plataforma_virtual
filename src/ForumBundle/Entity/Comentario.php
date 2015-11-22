@@ -48,14 +48,6 @@ class Comentario extends BaseComment implements SignedCommentInterface,  Votable
     protected $score = 0;
 
     /**
-     * [$Comentario relacion one to one a curso].
-     *
-     * @ORM\ManyToOne(targetEntity="CursoBundle\Entity\Curso")
-     * @ORM\JoinColumn(name="curso_id", referencedColumnName="id")
-     */
-    private $curso;
-
-    /**
      * Set curso.
      *
      * @param \CursoBundle\Entity\Curso $curso

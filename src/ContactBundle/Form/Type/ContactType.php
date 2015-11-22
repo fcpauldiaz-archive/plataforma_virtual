@@ -2,10 +2,9 @@
 
 namespace ContactBundle\Form\Type;
 
-use Mremi\ContactBundle\Model\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Contact type class.
@@ -20,38 +19,29 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'hidden', [
-                  'data' => 'mr',
-            ])
-            ->add('firstName', 'text',  ['label' => 'mremi_contact.form.first_name',
+
+            ->add('nombreCompleto', 'text',  ['label' => 'mremi_contact.form.first_name',
                 'attr' => ['placeholder' => 'mremi_contact.form.first_name'],
                 ])
-            ->add('lastName',  'text',  ['label' => 'mremi_contact.form.last_name',
-                'attr' => ['placeholder' => 'mremi_contact.form.last_name'],
-                ])
-            ->add('email',     'email', ['label' => 'mremi_contact.form.email',
+            ->add('correo',     'email', ['label' => 'mremi_contact.form.email',
                 'attr' => ['placeholder' => 'mremi_contact.form.email'],
                 ])
-            ->add('subject', 'text', ['label' => 'mremi_contact.form.subject',
-                'attr' => ['placeholder' => 'mremi_contact.form.subject'],
+            ->add('asunto', 'text', ['label' => 'mremi_contact.form.subject',
+                'attr' => ['placeholder' => 'Asunto'],
                 ])
-            ->add('message', 'textarea', ['label' => 'mremi_contact.form.message',
-                'attr' => ['placeholder' => 'mremi_contact.form.message'],
+            ->add('mensaje', 'textarea', ['label' => 'mremi_contact.form.message',
+                'attr' => ['placeholder' => 'Mensaje'],
                 ]);
-
-        //$builder->add('save', 'submit', array('label' => 'mremi_contact.form_submit'));
     }
 
     /**
-     * {@inheritdoc}
+     * @param OptionsResolver $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-
-            'intention' => 'contact',
-            'translation_domain' => 'MremiContactBundle',
-        ));
+        'data_class' => 'ContactBundle\Entity\Contact',
+    ));
     }
 
     public function getName()

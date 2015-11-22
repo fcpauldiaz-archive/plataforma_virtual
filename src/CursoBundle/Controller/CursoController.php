@@ -8,12 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
-use CursoBundle\Form\CursoType;
+use CursoBundle\Form\Type\CursoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * Curso controller.
  *
+ * @author fcpauldiaz fcpauldiaz@me.com
  * @Route("admin/curso")
  */
 class CursoController extends Controller
@@ -55,7 +56,10 @@ class CursoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'curso_show', ['id' => $entity->getId(), 'slug' => $entity->getSlug()]
+                    'curso_show', [
+                        'id' => $entity->getId(),
+                        'slug' => $entity->getSlug(),
+                    ]
                 )
             );
         }
