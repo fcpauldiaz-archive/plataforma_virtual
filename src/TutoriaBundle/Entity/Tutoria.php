@@ -41,11 +41,19 @@ class Tutoria
      private $info;
      
      /**
+      * @var float
+      *
+      * @ORM\Column(name="rating", type="float")
+      */     
+     private $rating=0.0;
+     
+     /**
       * @var int
       *
-      * @ORM\Column(name="rating", type="integer")
+      * @ORM\Column(name="votes", type="integer")
       */     
-     private $rating=0;
+     private $votes=0;
+     
 
     /**
      * Get id.
@@ -88,12 +96,19 @@ class Tutoria
      *
      * @return Tutoria
      */
-    public function setCurso(\CursoBundle\Entity\Curso $curso)
+    public function setCurso(\CursoBundle\Entity\Curso $curso )
     {
-        $this->curso = $curso;
+        if ($curso !== null){
+
+            $this->curso = $curso;
+        }
+        
+        
 
         return $this;
     }
+
+    
 
     /**
      * Get curso.
@@ -131,12 +146,25 @@ class Tutoria
     
     public function setRating($newRating)
     {
-        $this->rating = $newRating;
+        $var = $this->rating*$this->votes;
+        $var = $var +$newRating;
+        $this->votes = $this->votes +1;
+        $this->rating = $var/$this->votes;
     }
     
     public function getRating()
     {
         return $this->rating;
+    }
+    
+    public function setVotes($newVotes)
+    {
+        $this->votes = $newVotes;
+    }
+    
+    public function getVotes()
+    {
+        return $this->votes;        
     }
     
 }

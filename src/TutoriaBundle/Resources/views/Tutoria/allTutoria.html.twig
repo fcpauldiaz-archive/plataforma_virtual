@@ -13,6 +13,7 @@
                 <th>Curso</th>
                 <th>Informacion</th>
                 <th>Rating</th>
+                <th>Vote</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,13 @@
             <td>{{ tutoria.curso }}</td>
             <td>{{ tutoria.info }}</td>
             <td>{{ tutoria.rating | rating }}</td>
+            <td>
+            <ul>
+                <li>
+                    <a href="{{ path('tutoria_vote', { 'id': tutoria.id }) }}">Vote</a>
+                </li>
+            </ul>
+            </td>
         </tr>
         
         {% endfor %}
