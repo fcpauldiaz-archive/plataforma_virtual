@@ -8,6 +8,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ReportController extends Controller
 {
+    public function getEstadisticasAction()
+    {
+        $totalParciales = $this->getTotalParciales();
+        $totalHDT = $this->getTotalHojasTrabajo();
+        $totalTutorias = $this->getTotalTutorias();
+        $cursoTopDocs = $this->getCursoMasDocs();
+        $cursoTopTutorias = $this->getCursoMasTutorias();
+
+        return $this->render(
+            'getEstadisticas.html.twig',
+            [
+                't_parciales' => $totalParciales,
+                't_hojasTrabajo' => $totalHDT,
+                't_tutorias' => $totalTutorias,
+                'cursot_docs' => $cursoTopDocs,
+                'cursot_tutorias' => $cursoTopTutorias
+            ]
+        );
+    }
+
     /**
      * @Route("/admin", name = "administration")
      * @Template("admin/indexAdmin.html.twig")
