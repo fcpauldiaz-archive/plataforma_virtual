@@ -128,7 +128,7 @@ class ReportController extends Controller
 
         foreach ($usuarios as $usuario) {
             $cantidadDocumentos = $this->getCantidadDocsByUsuario($usuario);
-            if ($cantidadDocumentos > $cantidadDocs && !$usuario->isGranted('ROLE_ADMIN')) {
+            if ($cantidadDocumentos > $cantidadDocs && !$usuario->hasRole('ROLE_ADMIN')) {
                 $usuarioConMasDocs = $usuario;
                 $cantidadDocs = $cantidadDocumentos;
             }
