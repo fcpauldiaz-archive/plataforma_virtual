@@ -20,6 +20,8 @@ class ReportController extends Controller
         $cursoTopDocs = $this->getCursoMasDocs();
         $cursoTopTutorias = $this->getCursoMasTutorias();
         $usuario = $this->getUsuarioMasDocs();
+        $cantidadCursos = $this->getCursosTotal();
+        $cantidadUsuarios = $this->getUsuariosTotal();
 
         return $this->render(
             'admin/indexAdmin.html.twig',
@@ -29,7 +31,9 @@ class ReportController extends Controller
                 't_tutorias' => $totalTutorias,
                 'cursot_docs' => $cursoTopDocs,
                 'cursot_tutorias' => $cursoTopTutorias,
-                'usuario' => $usuario
+                'usuario' => $usuario,
+                't_cursos' => $cantidadCursos,
+                't_usuarios'=> $cantidadUsuarios
             ]
         );
     }
@@ -173,5 +177,28 @@ class ReportController extends Controller
             ->getSingleScalarResult();
 
         return (int) $cantDocumentos;
+    }
+
+    public function getCursosTotal()
+    {
+        $cursoRepository = $this->getDoctrine()->getRepository('CursoBundle:Curso');
+
+        $cursos = $cursoRepository->findAll();
+        
+       
+        return (int) count($cursos);
+           
+        
+    }
+     public function getUsuariosTotal()
+    {
+        $cursoRepository = $this->getDoctrine()->getRepository('UserBundle:Usuario');
+
+        $usuarios = $cursoRepository->findAll();
+        
+
+        return (int) count($usuarios);
+           
+        
     }
 }
