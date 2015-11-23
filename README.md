@@ -62,7 +62,9 @@ Integrate Select2 as entity search [Genemu][15].
 9. Create tables:  php app/console doctrine:schema:update --force
 10. Run server: php app/console server:run
 
+ ###Contributions
  
+ All contributions are welcome, use the issues to report bugs and pull requests to solve bugs.
 
 [1]:  http://symfony.com/doc/2.6/book/installation.html
 [2]:  https://github.com/fcpauldiaz/plataforma_virtual/tree/master/src/UserBundle
