@@ -39,7 +39,7 @@ class ReportController extends Controller
     }
 
    
-    public function getTotalParciales()
+    private function getTotalParciales()
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $parciales = $repository->createQueryBuilder('doc')
@@ -52,7 +52,7 @@ class ReportController extends Controller
            return  (int) $parciales;
     }
 
-    public function getTotalHojasTrabajo()
+    private function getTotalHojasTrabajo()
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $hdt = $repository->createQueryBuilder('doc')
@@ -66,7 +66,7 @@ class ReportController extends Controller
         return (int) $hdt;
     }
 
-    public function getTotalTutorias()
+    private function getTotalTutorias()
     {
         $repository = $this->getDoctrine()->getRepository('TutoriaBundle:Tutoria');
         $tutorias = $repository->findAll();
@@ -74,7 +74,7 @@ class ReportController extends Controller
         return (int) count($tutorias);
     }
 
-    public function getCursoMasDocs()
+    private function getCursoMasDocs()
     {
         $cursoRepository = $this->getDoctrine()->getRepository('CursoBundle:Curso');
 
@@ -96,7 +96,7 @@ class ReportController extends Controller
         ];
     }
 
-    public function getCursoMasTutorias()
+    private function getCursoMasTutorias()
     {
         $cursoRepository = $this->getDoctrine()->getRepository('CursoBundle:Curso');
 
@@ -118,7 +118,7 @@ class ReportController extends Controller
         ];
     }
 
-    public function getUsuarioMasDocs()
+    private function getUsuarioMasDocs()
     {
         $repository = $this->getDoctrine()->getRepository('UserBundle:Usuario');
 
@@ -137,7 +137,7 @@ class ReportController extends Controller
         return $usuarioConMasDocs;
     }
 
-    public function getCantidadDocsByCurso($curso)
+    private function getCantidadDocsByCurso($curso)
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $cantDocumentos = $repository
@@ -151,7 +151,7 @@ class ReportController extends Controller
         return (int) $cantDocumentos;
     }
 
-    public function getCantidadTutoriasByCurso($curso)
+    private function getCantidadTutoriasByCurso($curso)
     {
         $repository = $this->getDoctrine()->getRepository('TutoriaBundle:Tutoria');
         $cantTutorias = $repository
@@ -165,7 +165,7 @@ class ReportController extends Controller
         return (int) $cantTutorias;
     }
 
-    public function getCantidadDocsByUsuario($usuario)
+    private function getCantidadDocsByUsuario($usuario)
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $cantDocumentos = $repository
@@ -179,7 +179,7 @@ class ReportController extends Controller
         return (int) $cantDocumentos;
     }
 
-    public function getCursosTotal()
+    private function getCursosTotal()
     {
         $cursoRepository = $this->getDoctrine()->getRepository('CursoBundle:Curso');
 
@@ -190,7 +190,7 @@ class ReportController extends Controller
            
         
     }
-     public function getUsuariosTotal()
+    private function getUsuariosTotal()
     {
         $cursoRepository = $this->getDoctrine()->getRepository('UserBundle:Usuario');
 
