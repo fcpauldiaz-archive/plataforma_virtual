@@ -37,25 +37,27 @@ class ReportController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $parciales = $repository->createQueryBuilder('doc')
+            ->select('COUNT(doc)')
             ->where('doc.tipoDocumento =: tipoDocumento')
-            ->setParameter('tipoDocumento', 1)
+            ->setParameter('tipoDocumento', true)
             ->getQuery()
-            ->getResult();
+            ->getSingleScalarResult();
 
-           return ['cantParciales' => (int) count($parciales)];
-    
+           return (int) $parciales;
+
     }
 
     public function getTotalHojasTrabajo()
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $hdt = $repository->createQueryBuilder('doc')
+            ->select('COUNT(doc)')
             ->where('doc.tipoDocumento =: tipoDocumento')
-            ->setParameter('tipoDocumento', 0)
+            ->setParameter('tipoDocumento', false)
             ->getQuery()
-            ->getResult();
+            ->getSingleScalarResult();
 
-        return (int) count($hdt);
+        return (int) $hdt;
     }
 
     public function getTotalTutorias()
