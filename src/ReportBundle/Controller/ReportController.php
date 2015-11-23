@@ -7,7 +7,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ReportController extends Controller
-{
+{  
+    /**
+     * @Route("/admin", name = "administration")
+     * @return [type] [description]
+     */
     public function getEstadisticasAction()
     {
         $totalParciales = $this->getTotalParciales();
@@ -17,7 +21,7 @@ class ReportController extends Controller
         $cursoTopTutorias = $this->getCursoMasTutorias();
 
         return $this->render(
-            'getEstadisticas.html.twig',
+            'admin/indexAdmin.html.twig',
             [
                 't_parciales' => $totalParciales,
                 't_hojasTrabajo' => $totalHDT,
@@ -28,22 +32,21 @@ class ReportController extends Controller
         );
     }
 
-    /**
-     * @Route("/admin", name = "administration")
-     * @Template("admin/indexAdmin.html.twig")
-     *
-     */
+   
     public function getTotalParciales()
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $parciales = $repository->createQueryBuilder('doc')
             ->select('COUNT(doc)')
-            ->where('doc.tipoDocumento =: tipoDocumento')
+            ->where('doc.tipoDocumento = :tipoDocumento')
             ->setParameter('tipoDocumento', true)
             ->getQuery()
             ->getSingleScalarResult();
 
-           return (int) $parciales;
+           //return (int) $parciales;
+
+           return  (int) count($parciales);
+    
 
     }
 
@@ -51,8 +54,9 @@ class ReportController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
         $hdt = $repository->createQueryBuilder('doc')
+
             ->select('COUNT(doc)')
-            ->where('doc.tipoDocumento =: tipoDocumento')
+            ->where('doc.tipoDocumento = :tipoDocumento')
             ->setParameter('tipoDocumento', false)
             ->getQuery()
             ->getSingleScalarResult();
@@ -107,7 +111,7 @@ class ReportController extends Controller
         }
 
         return [
-            'curso' => $cursoConMasDocs,
+            'curso' => $cursoConMasTutorias,
             'cantidadTutorias' => $cantidadDocs
         ];
     }
