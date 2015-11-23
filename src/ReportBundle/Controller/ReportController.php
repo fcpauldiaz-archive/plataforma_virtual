@@ -19,6 +19,7 @@ class ReportController extends Controller
         $totalTutorias = $this->getTotalTutorias();
         $cursoTopDocs = $this->getCursoMasDocs();
         $cursoTopTutorias = $this->getCursoMasTutorias();
+        $usuario = $this->getUsuarioMasDocs();
 
         return $this->render(
             'admin/indexAdmin.html.twig',
@@ -27,7 +28,8 @@ class ReportController extends Controller
                 't_hojasTrabajo' => $totalHDT,
                 't_tutorias' => $totalTutorias,
                 'cursot_docs' => $cursoTopDocs,
-                'cursot_tutorias' => $cursoTopTutorias
+                'cursot_tutorias' => $cursoTopTutorias,
+                'usuario' => $usuario
             ]
         );
     }
@@ -43,11 +45,7 @@ class ReportController extends Controller
             ->getQuery()
             ->getSingleScalarResult();
 
-           //return (int) $parciales;
-
-           return  (int) count($parciales);
-    
-
+           return  (int) $parciales;
     }
 
     public function getTotalHojasTrabajo()
@@ -118,7 +116,21 @@ class ReportController extends Controller
 
     public function getUsuarioMasDocs()
     {
+        $repository = $this->getDoctrine()->getRepository('UserBundle:Usuario');
 
+        $usuarios = $repository->findAll();
+        $usuarioConMasDocs = null;
+        $cantidadDocs = 0;
+
+        foreach ($usuarios as $usuario) {
+            $cantidadDocumentos = $this->getCantidadDocsByUsuario($usuario);
+            if ($cantidadDocumentos > $cantidadDocs) {
+                $usuarioConMasDocs = $usuario;
+                $cantidadDocs = $cantidadDocumentos;
+            }
+        }
+
+        return $usuarioConMasDocs;
     }
 
     public function getCantidadDocsByCurso($curso)
@@ -147,5 +159,19 @@ class ReportController extends Controller
             ->getSingleScalarResult();
 
         return (int) $cantTutorias;
+    }
+
+    public function getCantidadDocsByUsuario($usuario)
+    {
+        $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
+        $cantDocumentos = $repository
+            ->createQueryBuilder('doc')
+            ->select('COUNT(doc)')
+            ->where('doc.usuario = :usuario')
+            ->setParameter('usuario', $usuario)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return (int) $cantDocumentos;
     }
 }
