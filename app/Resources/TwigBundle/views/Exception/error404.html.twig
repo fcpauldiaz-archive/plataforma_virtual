@@ -1,19 +1,22 @@
-<!DOCTYPE html>
+
 {% extends 'default/base.html.twig' %}
-<html>
-    <head>
-        <meta charset="{{ _charset }}" />
-        <title>An Error Occurred: {{ status_text }}</title>
-    </head>
-    <body>
+
+    
+      
+        {% block title  %}An Error Occurred: {{ status_text }}{% endblock %}
+       
+  
+    {% block body %}
+
         <h1>A ocurrido un error</h1>
         <img src="http://i.imgur.com/s85Xa.png" />
         <div>
             Esto es vergonzoso, estamos trabajando en arreglarlo lo antes posible. 
         </div>
-        <a class= "btn btn-default btn-xs btn-warning"  href="{{ path('base_page' }}">
-                        Regresar
-        </a>
-    </body>
 
-</html>
+        <a class= "btn btn-default btn-lg btn-warning"  href="{{ path('homepage') }}">
+            Regresar
+        </a>
+    {% endblock %}
+
+

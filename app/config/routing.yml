@@ -12,6 +12,11 @@ tutoria:
     type:     annotation
     prefix:   /
 
+reporte:
+    resource: "@ReportBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 forum:
     resource: "@ForumBundle/Controller/"
     type:     annotation

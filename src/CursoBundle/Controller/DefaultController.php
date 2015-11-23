@@ -16,14 +16,5 @@ class DefaultController extends Controller
     {
         return $this->render('default/index.html.twig');
     }
-    /**
-     * [adminAction description].
-     *
-     * @return [type] [description]
-     * @ROUTE("/admin", name = "administration")
-     */
-    public function adminAction()
-    {
-        return $this->render('admin/indexAdmin.html.twig');
-    }
+
 }
