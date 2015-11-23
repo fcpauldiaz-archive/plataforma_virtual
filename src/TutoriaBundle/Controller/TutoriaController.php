@@ -61,15 +61,20 @@ class TutoriaController extends Controller
 
         $entitiesU = $usuario->getTutorias();
 
-        $entities = $em->getRepository('TutoriaBundle:Tutoria')->findAll();
+        $entities;
+        foreach ($usuario->getCursos() as $cursoKey => $curso){
+            foreach ($curso->getTutorias() as $tutoriaKey => $tutoria){
+                $entities[] = $tutoria;
+            }
+        }
 
-        /**foreach ($entitiesU as $entityKey => $entity) {
+        foreach ($entitiesU as $entityKey => $entity) {
             foreach ($entities as $elementKey => $element) {
                 if ($entity->getId() == $element->getId()) {
                     unset($entities[$elementKey]);
                 }
             }
-        }*/
+        }
         
         
 
