@@ -1,10 +1,10 @@
-{% extends 'default/base.html.twig' %}
+{% extends 'base_page.html.twig' %}
       
     {% block title  %}An Error Occurred: {{ status_text }}{% endblock %}
   
     {% block body %}
         <div style="text-align:center">
-            <h4 style="border-bottom: 1px solid #c5c5c5; color: #ffffff ">A ocurrido un error</h4>
+            <h1>A ocurrido un error</h1>
             <h2>El servidor retorno: "{{ status_code }} {{ status_text }}".</h2>
             <img src="http://telkomgaming.co.za/wp-content/uploads/2014/08/error-500.jpg" />
               Ocurrio un error interno, lamentamos los incovenientes, estamos trabajando para arreglarlo.
