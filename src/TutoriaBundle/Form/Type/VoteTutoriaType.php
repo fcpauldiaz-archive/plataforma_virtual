@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use UserBundle\Entity\Usuario as Usuario;
 
-class TutoriaType extends AbstractType
+class VoteTutoriaType extends AbstractType
 {
     private $usuario;
 
@@ -22,27 +22,8 @@ class TutoriaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $cursos = $this->getUsuario()->getCursos();//todos los cursos del usuario
-        $tutorias = $this->getUsuario()->getTutorias();//todas las tutorias
-
-        foreach ($cursos as $cursoKey => $curso) {
-            foreach ($tutorias as $tutoriaKey => $tutoria) {
-                if ($tutoria->getCurso()!= null){
-                    if ($tutoria->getCurso()->getId() == $curso->getId()) {
-                    unset($cursos[$cursoKey]);
-                    }
-                }
-            }
-        }
-
-        $builder
-            ->add('info', null, ['label' => 'Informacion Adicional'])
-
-            ->add('curso', 'entity', [
-                'class' => 'CursoBundle:Curso',
-                'choices' => $cursos,
-            ])
-           
+        
+        $builder->add('rating','rating',array('stars'=>5))
         ;
     }
 

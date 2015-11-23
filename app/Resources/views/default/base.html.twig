@@ -4,7 +4,17 @@
         <meta charset="UTF-8" />
         <title>{% block title  %}Learn-In!{% endblock %}</title>
     
-         {% block stylesheets  %}{% endblock %}
+      {% stylesheets
+      'bundles/starrating/css/rating.css'
+      filter="cssrewrite" %}
+      <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
+      {% endstylesheets %}
+      
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      {% javascripts
+    '@StarRatingBundle/Resources/public/js/rating.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
        
        
         {% if app.environment == 'dev' %}

@@ -8,10 +8,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use TutoriaBundle\Entity\Tutoria;
-use TutoriaBundle\Form\TutoriaType;
+use TutoriaBundle\Form\Type\TutoriaType;
+use TutoriaBundle\Form\Type\VoteTutoriaType;
 use Symfony\Component\Finder\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
+
 
 /**
  * Tutoria controller.
@@ -59,7 +61,12 @@ class TutoriaController extends Controller
 
         $entitiesU = $usuario->getTutorias();
 
-        $entities = $em->getRepository('TutoriaBundle:Tutoria')->findAll();
+        $entities;
+        foreach ($usuario->getCursos() as $cursoKey => $curso){
+            foreach ($curso->getTutorias() as $tutoriaKey => $tutoria){
+                $entities[] = $tutoria;
+            }
+        }
 
         foreach ($entitiesU as $entityKey => $entity) {
             foreach ($entities as $elementKey => $element) {
@@ -68,6 +75,8 @@ class TutoriaController extends Controller
                 }
             }
         }
+        
+        
 
         return
             $this->render('TutoriaBundle:Tutoria:allTutoria.html.twig', ['entities' => $entities]);
@@ -197,10 +206,14 @@ class TutoriaController extends Controller
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Tutoria entity.');
+        
         }
+        
+        
 
-        $editForm = $this->createEditForm($entity, $usuario);
         $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($entity, $usuario);
+        
 
         return [
             'entity' => $entity,
@@ -302,5 +315,90 @@ class TutoriaController extends Controller
             ->add('submit', 'submit', ['label' => 'Eliminar'])
             ->getForm()
         ;
+    }
+    
+    /**
+     * Displays a form to vote for an existing Tutoria entity.
+     *
+     * @Route("/user/{id}/vote", name="tutoria_vote")
+     * @Method("GET")
+     * @Template()
+     */
+    public function voteTutoriaAction($id)
+    {
+        
+
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('TutoriaBundle:Tutoria')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Tutoria entity.');
+        }
+
+        $usuario = $entity->getUsuario();
+        $editForm = $this->createVoteForm($entity, $usuario);
+
+        return [
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
+        ];
+    }
+    
+    
+     /**
+     * Creates a form to vote for a tutoria entity.
+     *
+     * @param Tutoria $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createVoteForm(Tutoria $entity, \UserBundle\Entity\Usuario $usuario)
+    {
+        $form = $this->createForm(new VoteTutoriaType($usuario), $entity, [
+            'action' => $this->generateUrl('tutoria_vote_update', ['id' => $entity->getId()]),
+            'method' => 'PUT',
+        ]);
+
+        $form->add('submit', 'submit', ['label' => 'Votar']);
+
+        return $form;
+    }
+    
+    /**
+     * Edits an existing Tutoria entity.
+     *
+     * @Route("vote/{id}", name="tutoria_vote_update")
+     * @Method("PUT")
+     * @Template("TutoriaBundle:Tutoria:voteTutoria.html.twig")
+     */
+    public function updateVoteTutoriaAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('TutoriaBundle:Tutoria')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Tutoria entity.');
+        }
+        
+        $usuario = $entity->getUsuario();
+        
+
+
+        $editForm = $this->createVoteForm($entity, $usuario);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isValid()) {
+            $em->flush();
+        }
+        
+        
+
+        return $this->redirect(
+            $this->generateUrl(
+                'tutoria_all'
+                )
+            );
     }
 }

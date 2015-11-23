@@ -17,6 +17,14 @@
                 <th>Curso</th>
                 <td>{{ entity.curso }}</td>
             </tr>
+            <tr>
+                <th>Rating</th>
+                <td>{{ entity.rating | rating }}</td>
+            </tr>
+            <tr>
+                <th>Votos</th>
+                <td>{{ entity.getVotes() }}</td>
+            </tr>
             
         </tbody>
     </table>
@@ -27,11 +35,7 @@
             Back to the list
         </a>
     </li>
-    <li>
-        <a href="{{ path('tutoria_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
+    
     <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

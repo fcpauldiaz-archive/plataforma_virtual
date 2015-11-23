@@ -44,6 +44,8 @@ class AppKernel extends Kernel
             new TutoriaBundle\TutoriaBundle(),
             new ContactBundle\ContactBundle(),
             new ReportBundle\ReportBundle(),
+            
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

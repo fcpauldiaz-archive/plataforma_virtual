@@ -10,6 +10,7 @@
                 <th>Tutor</th>
                 <th>Curso</th>
                 <th>Informacion</th>
+                <th>Rating</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
             <td>{{ tutoria.usuario.getEmail()}}</td>
             <td>{{ tutoria.curso }}</td>
             <td>{{ tutoria.info }}</td>
+            <td>{{ tutoria.rating|rating }}</td>
                             
 
             <td>
@@ -28,9 +30,7 @@
                 <li>
                     <a href="{{ path('tutoria_show', { 'id': tutoria.id }) }}">show</a>
                 </li>
-                <li>
-                    <a href="{{ path('tutoria_edit', { 'id': tutoria.id }) }}">edit</a>
-                </li>
+                
             </ul>
             </td>
         </tr>
