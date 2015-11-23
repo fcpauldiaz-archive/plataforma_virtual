@@ -24,7 +24,7 @@ class ContactController extends Controller
     public function enviarCorreoAction(Request $request)
     {
         $entity = new Contact();
-        $form = $this->createCreateForm($entity);
+        $form = $this->createCreateFormAction($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
