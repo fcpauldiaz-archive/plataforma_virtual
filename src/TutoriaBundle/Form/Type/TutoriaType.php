@@ -27,7 +27,7 @@ class TutoriaType extends AbstractType
 
         foreach ($cursos as $cursoKey => $curso) {
             foreach ($tutorias as $tutoriaKey => $tutoria) {
-                if ($tutoria->getCurso()!= null){
+                if ($tutoria->getCurso()!== null){
                     if ($tutoria->getCurso()->getId() == $curso->getId()) {
                     unset($cursos[$cursoKey]);
                     }
