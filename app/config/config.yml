@@ -135,5 +135,5 @@ oneup_flysystem:
 
     filesystems:
         file_fs:
-            adapter:    product_adapter
+            adapter:    acme.flysystem_adapter
             mount:      file_fs
