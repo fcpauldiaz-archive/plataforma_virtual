@@ -35,8 +35,8 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),//translation bundle
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),//soft delete bundle
-            //new Mremi\ContactBundle\MremiContactBundle(),//contact bundle
-             new Oneup\FlysystemBundle\OneupFlysystemBundle(),
+           
+            new Oneup\FlysystemBundle\OneupFlysystemBundle(),
             
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),

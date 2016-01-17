@@ -22,11 +22,6 @@ forum:
     type:     annotation
     prefix:   /
 
-document:
-    resource: "@DocumentBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
@@ -38,6 +33,11 @@ app:
 default:
     resource: "@UserBundle/Controller/"
     type:     annotation
+
+document:
+    resource: "@DocumentBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/"

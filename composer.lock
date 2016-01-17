@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a9a883885af17f84c1ea4dd0198d61d",
-    "content-hash": "347d9f9a7295f4091d23c5a79ab3afe5",
+    "hash": "787d7d395ffaacf36ef3e5e2921ab4cc",
+    "content-hash": "7bd5768b7a6485af78fdba99a2a657e9",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -1594,16 +1594,16 @@
         },
         {
             "name": "javiereguiluz/easyadmin-bundle",
-            "version": "v1.11.0",
+            "version": "v1.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/javiereguiluz/EasyAdminBundle.git",
-                "reference": "4f75fc1ddea2f0ab682f2e496ba20e5a5f351b13"
+                "reference": "e8f1f6058d2716c142ec9c5754612145341706ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/javiereguiluz/EasyAdminBundle/zipball/4f75fc1ddea2f0ab682f2e496ba20e5a5f351b13",
-                "reference": "4f75fc1ddea2f0ab682f2e496ba20e5a5f351b13",
+                "url": "https://api.github.com/repos/javiereguiluz/EasyAdminBundle/zipball/e8f1f6058d2716c142ec9c5754612145341706ef",
+                "reference": "e8f1f6058d2716c142ec9c5754612145341706ef",
                 "shasum": ""
             },
             "require": {
@@ -1622,15 +1622,13 @@
                 "symfony/framework-bundle": "~2.3|~3.0",
                 "symfony/http-foundation": "~2.3|~3.0",
                 "symfony/http-kernel": "~2.3|~3.0",
-                "symfony/property-access": "~2.3|~3.0",
-                "symfony/twig-bridge": "^2.3.4|~3.0",
+                "symfony/twig-bridge": "^2.3.4",
                 "twig/extensions": "~1.0",
                 "twig/twig": "~1.14,>=1.14.2|~2.0"
             },
             "require-dev": {
                 "doctrine/doctrine-fixtures-bundle": "~2.2",
                 "phpunit/phpunit": "~4.4",
-                "psr/log": "~1.0",
                 "symfony/browser-kit": "~2.3|~3.0",
                 "symfony/console": "~2.3|~3.0",
                 "symfony/css-selector": "~2.3|~3.0",
@@ -1669,7 +1667,7 @@
                 "backend",
                 "generator"
             ],
-            "time": "2016-01-17 16:32:32"
+            "time": "2015-11-29 16:06:54"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -2573,54 +2571,6 @@
             "time": "2014-10-06 10:57:25"
         },
         {
-            "name": "paragonie/random_compat",
-            "version": "1.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
-                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
-            },
-            "suggest": {
-                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "lib/random.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Paragon Initiative Enterprises",
-                    "email": "security@paragonie.com",
-                    "homepage": "https://paragonie.com"
-                }
-            ],
-            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
-            "keywords": [
-                "csprng",
-                "pseudorandom",
-                "random"
-            ],
-            "time": "2016-01-06 13:31:20"
-        },
-        {
             "name": "phpcollection/phpcollection",
             "version": "0.4.0",
             "source": {
@@ -3268,24 +3218,23 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.7.9",
+            "version": "v2.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "d3646cc6875c214d211001e0673ec9e91b5f2da7"
+                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/d3646cc6875c214d211001e0673ec9e91b5f2da7",
-                "reference": "d3646cc6875c214d211001e0673ec9e91b5f2da7",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/66b2e9662c44d478b69e48278aa54079a006eb42",
+                "reference": "66b2e9662c44d478b69e48278aa54079a006eb42",
                 "shasum": ""
             },
             "require": {
                 "doctrine/common": "~2.4",
-                "paragonie/random_compat": "~1.0",
                 "php": ">=5.3.9",
                 "psr/log": "~1.0",
-                "twig/twig": "~1.23|~2.0"
+                "twig/twig": "~1.20|~2.0"
             },
             "replace": {
                 "symfony/asset": "self.version",
@@ -3365,9 +3314,6 @@
                 ],
                 "files": [
                     "src/Symfony/Component/Intl/Resources/stubs/functions.php"
-                ],
-                "exclude-from-classmap": [
-                    "**/Tests/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3389,7 +3335,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-01-14 10:41:56"
+            "time": "2015-10-27 19:07:24"
         },
         {
             "name": "twbs/bootstrap",
