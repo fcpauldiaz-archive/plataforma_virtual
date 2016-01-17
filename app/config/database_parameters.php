@@ -12,6 +12,3 @@
     $container->setParameter('mailer_host', null);
     $container->setParameter('mailer_user', getenv('USERNAME_SENGRID'));
     $container->setParameter('mailer_password', getenv('PASSWORD_SENGRID'));
-    $container->setParameter('key',getenv('AWS_ACCESS_KEY_ID'));
-    $container->setParameter('secret',getenv('AWS_SECRET_ACCESS_KEY'));
-
