@@ -1,9 +1,10 @@
 vich_uploader:
     db_driver: orm
+    storage:   flysystem
     mappings:
         document:
             uri_prefix:         /docs
-            upload_destination: %kernel.root_dir%/../web/docs
+            upload_destination: file_fs
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true

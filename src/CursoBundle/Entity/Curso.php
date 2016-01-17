@@ -35,6 +35,7 @@ class Curso
      * @ORM\Column(name="codigoCurso", type="string", length=50,unique = true)
      */
     private $codigoCurso;
+    
     /**
      *  Usuarios que asociados al curso.
      *

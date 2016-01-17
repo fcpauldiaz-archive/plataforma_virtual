@@ -12,8 +12,9 @@ use DocumentBundle\Form\Type\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
-/**
+/**;
  * Documento controller.
  *
  * @Route("/documento")
