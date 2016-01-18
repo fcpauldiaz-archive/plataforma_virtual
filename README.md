@@ -48,6 +48,13 @@ Integrate Select2 as entity search [Genemu][15].
 
 [Bootstrap input style.][17]
 
+[Star Rating Bundle.][18]
+
+Amazon [SDK for AWS3.][19]
+
+[Guafrette Bundle][20] to use [Gaufrette][21] as a layer to AWS3.
+
+Gaufrette help [documentation][21]
 
 ###Usage instructions
 
@@ -83,6 +90,11 @@ Integrate Select2 as entity search [Genemu][15].
 [15]:https://github.com/genemu/GenemuFormBundle
 [16]:https://packagist.org/packages/symfony-bundle/jquery-bundle
 [17]:http://markusslima.github.io/bootstrap-filestyle/
+[18]:https://github.com/blackknight467/StarRatingBundle
+[19]:https://github.com/aws/aws-sdk-php
+[20]:https://github.com/KnpLabs/KnpGaufretteBundle
+[21]:https://github.com/KnpLabs/Gaufrette
+[22]:https://github.com/KnpLabs/Gaufrette/issues/369
 
 
 
