@@ -130,6 +130,8 @@ class Documento
     public function setDocumentName($docName)
     {
         $this->documentName = $docName;
+        //arreglo para que los documentos sean únicos y no se sobreescriban en AMWS
+        $this->documentName = $this->id.'-'.$this->documentName;
     }
 
     /**
