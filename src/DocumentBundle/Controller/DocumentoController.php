@@ -86,11 +86,6 @@ class DocumentoController extends Controller
 
             
 
-            $filesystem = $this->container->get('knp_gaufrette.filesystem_map')->get('archivos');
-        
-
-            $filesystem->write($entity->getDocumentName(), $entity->getDocumentFile());
-
             return $this->redirect(
                 $this->generateUrl(
                     'documento_show', ['slug' => $entity->getSlug()]
