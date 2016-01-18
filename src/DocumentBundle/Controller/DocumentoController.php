@@ -12,12 +12,9 @@ use DocumentBundle\Form\Type\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
-use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use Aws\S3\S3Client;
-use League\Flysystem\AwsS3v3\AwsS3Adapter;
-use League\Flysystem\Filesystem;
+use Gaufrette\File;
 
-/**;
+/**
  * Documento controller.
  *
  * @Route("/documento")
@@ -64,8 +61,7 @@ class DocumentoController extends Controller
 
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
-           
-            
+
             $em->persist($entity);
 
 
@@ -88,15 +84,23 @@ class DocumentoController extends Controller
             }
             $em->flush();
 
+            
+
+            $filesystem = $this->container->get('knp_gaufrette.filesystem_map')->get('archivos');
+        
+
+            $filesystem->write($entity->getDocumentName(), $entity->getDocumentFile());
+
             return $this->redirect(
                 $this->generateUrl(
                     'documento_show', ['slug' => $entity->getSlug()]
                     ));
         }
 
-
-
-        return  $form->getErrors(true);
+        return [
+            'entity' => $entity,
+            'form' => $form->createView(),
+        ];
     }
 
     /**

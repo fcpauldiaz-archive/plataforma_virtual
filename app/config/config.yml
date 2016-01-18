@@ -121,21 +121,20 @@ stof_doctrine_extensions:
         default:
             sluggable: true
             loggable: true
+knp_gaufrette:
+    stream_wrapper: ~
 
-oneup_flysystem:
     adapters:
-        acme.flysystem_adapter:
-            awss3v3:
-                client: acme.s3_client
-                bucket: plataformavirtual
-                prefix: ~
-
         product_adapter:
             local:
                 directory: %kernel.root_dir%/../web/docs
+        foo:
+            aws_s3:
+                service_id: 'acme.aws_s3.client'
+                bucket_name: 'plataformavirtual'
+                options:
+                    directory: 'parcialesyhdt'
 
     filesystems:
-        file_fs:
-            adapter:    acme.flysystem_adapter
-            mount:      file_fs
-            alias: acme_filesystem
+        archivos:
+            adapter:    foo
