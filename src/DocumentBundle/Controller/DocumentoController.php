@@ -84,6 +84,14 @@ class DocumentoController extends Controller
             }
             $em->flush();
 
+            //modificar el nombre del documento para que sea único
+            $modificar = $em->getRepository('DocumentBundle:Documento')->find($entity->getId());
+            $modificar->createUniqueDocumentName();
+            $em->persist($modificar);
+            $em->flush();
+
+
+
             
 
             return $this->redirect(

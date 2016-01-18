@@ -129,9 +129,20 @@ class Documento
      */
     public function setDocumentName($docName)
     {
-        $this->documentName = $docName;
+        $this->documentName = $docName;      
+    }
+
+    /**
+     * Crear nombre único .
+     * @return void
+     */
+    public function createUniqueDocumentName()
+    {
         //arreglo para que los documentos sean únicos y no se sobreescriban en AMWS
-        $this->documentName = $this->id.'-'.$this->documentName;
+        $this->setDocumentName(
+            $this->getId().'-'.$this->getDocumentName()
+            )
+        ;
     }
 
     /**
