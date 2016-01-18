@@ -52,7 +52,7 @@ Integrate Select2 as entity search [Genemu][15].
 
 Amazon [SDK for AWS3.][19]
 
-[Guafrette Bundle][20] to use [Gaufrette][21] as a layer to AWS3.
+[Guafrette Bundle][20] to use [Gaufrette][21] as a storage layer to AWS3.
 
 Gaufrette help [documentation][22]
 
