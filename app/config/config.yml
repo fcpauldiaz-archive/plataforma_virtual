@@ -129,6 +129,7 @@ oneup_flysystem:
                 client: acme.s3_client
                 bucket: plataformavirtual
                 prefix: ~
+
         product_adapter:
             local:
                 directory: %kernel.root_dir%/../web/docs
@@ -137,3 +138,4 @@ oneup_flysystem:
         file_fs:
             adapter:    acme.flysystem_adapter
             mount:      file_fs
+            alias: acme_filesystem

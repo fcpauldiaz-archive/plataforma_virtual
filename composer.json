@@ -53,7 +53,8 @@
         "blackknight467/star-rating-bundle": "1.*",
         "aws/aws-sdk-php": "~3.0",
         "oneup/flysystem-bundle": "^1.2",
-        "league/flysystem-aws-s3-v3": "^1.0"       
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "league/flysystem": "^1.0"       
         
         
     },

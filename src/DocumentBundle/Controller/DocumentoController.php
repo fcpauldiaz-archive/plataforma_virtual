@@ -65,19 +65,8 @@ class DocumentoController extends Controller
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
 
-            $filesystem = $container->get('oneup_flysystem.acme_filesystem');
-            $client = S3Client::factory([
-                    'credentials' => [
-                        'key'    => 'AKIAJZHCZEHRMYUKDZKQ',
-                        'secret' => 'jau/zfpKzEofMSyTxsXf/r6gpZJNLNImPrjv3CPV',
-                    ],
-                    'region' => 'your-region',
-                    'version' => 'latest|version',
-                ]);
-
-            $adapter = new AwsS3Adapter($client, 'plataformavirtual');
-            $filesystem = new Filesystem($adapter);
-            $filesystem->write('/'.$form['documentFile'], 'contents');
+            $filesystem = $container->get('acme_filesystem');
+            $filesystem->write('/', $form['documentFile']);
             
             $em->persist($entity);
 
