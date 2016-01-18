@@ -64,11 +64,7 @@ class DocumentoController extends Controller
 
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
-            $file = $entity->getDocumentFile();
-            $filesystem = $container->get('acme_filesystem');
-            $stream = fopen($file->getRealPath(), 'r+');
-            $filesystem->writeStream('/'.$file->getClientOriginalName(), $stream);
-            fclose($stream);
+           
             
             $em->persist($entity);
 
@@ -98,10 +94,9 @@ class DocumentoController extends Controller
                     ));
         }
 
-        return [
-            'entity' => $entity,
-            'form' => $form->createView(),
-        ];
+
+
+        return  $form->getErrors(true);
     }
 
     /**
