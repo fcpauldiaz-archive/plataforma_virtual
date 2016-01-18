@@ -13,9 +13,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-//use Aws\S3\S3Client;
-//use League\Flysystem\AwsS3v3\AwsS3Adapter;
-//use League\Flysystem\Filesystem;
+use Aws\S3\S3Client;
+use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use League\Flysystem\Filesystem;
 
 /**;
  * Documento controller.
@@ -65,20 +65,20 @@ class DocumentoController extends Controller
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
 
-           /* $filesystem = $container->get('oneup_flysystem.acme_filesystem');
+            $filesystem = $container->get('oneup_flysystem.acme_filesystem');
             $client = S3Client::factory([
                     'credentials' => [
-                        'key'    => 'your-key',
-                        'secret' => 'your-secret',
+                        'key'    => 'AKIAJZHCZEHRMYUKDZKQ',
+                        'secret' => 'jau/zfpKzEofMSyTxsXf/r6gpZJNLNImPrjv3CPV',
                     ],
                     'region' => 'your-region',
                     'version' => 'latest|version',
                 ]);
 
-            $adapter = new AwsS3Adapter($client, 'your-bucket-name', 'optional-prefix');
+            $adapter = new AwsS3Adapter($client, 'plataformavirtual');
             $filesystem = new Filesystem($adapter);
-            $filesystem->write('/', 'contents');
-            */
+            $filesystem->write('/'.$form['documentFile'], 'contents');
+            
             $em->persist($entity);
 
 
