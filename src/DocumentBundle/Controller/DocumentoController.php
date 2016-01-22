@@ -62,8 +62,6 @@ class DocumentoController extends Controller
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
 
-            $em->persist($entity);
-
 
             /*
              * El siguiente query sirve para revisar si hay algún documento
@@ -82,13 +80,14 @@ class DocumentoController extends Controller
                     'form' => $form->createView(),
                 ];
             }
+            $em->persist($entity);
             $em->flush();
 
             //modificar el nombre del documento para que sea único
-            $modificar = $em->getRepository('DocumentBundle:Documento')->find($entity->getId());
+            /*$modificar = $em->getRepository('DocumentBundle:Documento')->find($entity->getId());
             $modificar->createUniqueDocumentName();
             $em->persist($modificar);
-            $em->flush();
+            $em->flush();*/
 
 
 

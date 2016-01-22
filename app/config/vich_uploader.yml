@@ -5,6 +5,9 @@ vich_uploader:
         document:
             uri_prefix:         https://s3.amazonaws.com/plataformavirtual/parcialesyhdt
             upload_destination: archivos
+            namer:
+                service: vich_uploader.namer_property
+                options: { property: 'slug'} # supposing that the object contains a "slug" attribute or a "getSlug" method
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true

@@ -146,11 +146,13 @@ class Documento
     }
 
     /**
+     * modificar get para quitar el id del nombre del documento
      * @return string
      */
     public function getDocumentName()
     {
-        return $this->documentName;
+        $returnNombre = $this->documentName;
+        return substr($returnNombre,strpos('-')+1,$returnNombe);
     }
 
     /**

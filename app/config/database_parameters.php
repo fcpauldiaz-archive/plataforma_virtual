@@ -1,11 +1,11 @@
 <?php
-    $db = parse_url(getenv('CLEARDB_DATABASE_URL'));
+    //$db = parse_url(getenv('CLEARDB_DATABASE_URL'));
     $container->setParameter('database_driver', 'pdo_mysql');
-    $container->setParameter('database_host', $db['host']);
-    $container->setParameter('database_port', $db['port']);
-    $container->setParameter('database_name', substr($db["path"], 1));
-    $container->setParameter('database_user', $db['user']);
-    $container->setParameter('database_password', $db['pass']);
+    $container->setParameter('database_host', 'db4free.net');
+    $container->setParameter('database_port', 3306);
+    $container->setParameter('database_name', 'virtualPlatform');
+    $container->setParameter('database_user', 'fcpauldiaz');
+    $container->setParameter('database_password', getenv('MYSQL_PASSWORD'));
     $container->setParameter('secret', getenv('SECRET'));
     $container->setParameter('locale', 'es');
     $container->setParameter('mailer_transport', gmail);
