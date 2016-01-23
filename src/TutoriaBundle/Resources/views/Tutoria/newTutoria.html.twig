@@ -11,7 +11,10 @@
 			    {{ form_errors(form) }}
 			</div>
 			{% endif %}
+			{{ form_row(form.lugar)}}
+			{{ form_row(form.horario)}}
 		    {{ form_row(form.info) }}
+		    {{ form_row(form.tipoServicio)}}
 		    {{ form_row(form.curso) }}
 			
 		   <br>
@@ -19,9 +22,4 @@
 		{{ form_end(form) }}
 
 
-        <ul class="record_actions">
-    
-        
-    </li>
-</ul>
 {% endblock %}

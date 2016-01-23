@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Curso.
  *
- * @ORM\Table(name="Cursos")
+ * @ORM\Table(name="cursos")
  * @ORM\Entity()
  * @Gedmo\SoftDeleteable(fieldName="deletedAt")
  */

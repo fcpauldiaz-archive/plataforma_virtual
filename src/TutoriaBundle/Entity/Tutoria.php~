@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Tutoria.
  *
- * @ORM\Table(name="tutorias")
+ * @ORM\Table(name="Tutorias")
  * @ORM\Entity()
  */
 class Tutoria
@@ -54,8 +54,6 @@ class Tutoria
      /**
       * @var boolean
       * @ORM\Column(name="tipoServicio",type="boolean",nullable=true)
-      * True = cobrado
-      * False = gratuito
       */
      private $tipoServicio;
      
@@ -186,82 +184,4 @@ class Tutoria
         return $this->votes;        
     }
     
-
-    /**
-     * Set lugar
-     *
-     * @param string $lugar
-     * @return Tutoria
-     */
-    public function setLugar($lugar)
-    {
-        $this->lugar = $lugar;
-
-        return $this;
-    }
-
-    /**
-     * Get lugar
-     *
-     * @return string 
-     */
-    public function getLugar()
-    {
-        return $this->lugar;
-    }
-
-    /**
-     * Set horario
-     *
-     * @param string $horario
-     * @return Tutoria
-     */
-    public function setHorario($horario)
-    {
-        $this->horario = $horario;
-
-        return $this;
-    }
-
-    /**
-     * Get horario
-     *
-     * @return string 
-     */
-    public function getHorario()
-    {
-        return $this->horario;
-    }
-
-    /**
-     * Set tipoServicio
-     *
-     * @param boolean $tipoServicio
-     * @return Tutoria
-     */
-    public function setTipoServicio($tipoServicio)
-    {
-        $this->tipoServicio = $tipoServicio;
-
-        return $this;
-    }
-
-    /**
-     * Get tipoServicio
-     *
-     * @return boolean 
-     */
-    public function getTipoServicio()
-    {
-        return $this->tipoServicio;
-    }
-
-    public function __toString()
-    {
-        return sprintf('%s %s %s',
-            $this->curso,
-            $this->lugar,
-            $this->horario
-            );
-    }
 }

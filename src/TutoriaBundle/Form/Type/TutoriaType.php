@@ -36,11 +36,39 @@ class TutoriaType extends AbstractType
         }
 
         $builder
-            ->add('info', null, ['label' => 'Informacion Adicional'])
+            ->add('lugar',null, [
+                'label' => 'Lugar',
+                 'attr' =>[
+                    'placeholder' => 'Lugar'
+                ]
+            ])
+            ->add('horario',null, [
+                'label' => 'Horario',
+                'attr' => [
+                    'placeholder' => 'Aquí puede ingresar el horario disponible'
+                ]
+            ])
+            ->add('info', null, [
+                'label' => 'Informacion Adicional',
+                'attr' => [
+                    'placeholder' => 'Aquí se puede ingresar cualquier información adicional'
+                ]
+            ])
+            ->add('tipoServicio','choice',[
+                'choices' => [
+                        'Cobrado'=> true,
+                        'Gratuito'=> false
+                    ],
+                'choices_as_values'=>true    
+
+                ])
 
             ->add('curso', 'entity', [
                 'class' => 'CursoBundle:Curso',
                 'choices' => $cursos,
+                'attr' => [
+                        'class'=>'select2'
+                    ]
             ])
            
         ;

@@ -11,9 +11,12 @@
             <tr>
                 <th>Tutor</th>
                 <th>Curso</th>
-                <th>Informacion</th>
+                <th>Lugar</th>
+                <th>Horario</th>
+                <th>Información Adicional</th>
+                <th>Tipo de Servicio</th>
                 <th>Rating</th>
-                <th>Vote</th>
+                <th>Votar</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +25,9 @@
         <tr>
             <td>{{ tutoria.usuario.getEmail()}}</td>
             <td>{{ tutoria.curso }}</td>
+            <td>{{ tutoria.lugar }}</td>
+            <td>{{ tutoria.horario }}</td>
+            <td>{{ tutoria.tipoServicio }}</td>
             <td>{{ tutoria.info }}</td>
             <td>{{ tutoria.rating | rating }}</td>
             <td>

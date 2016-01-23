@@ -11,7 +11,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\Entity
  * @Vich\Uploadable
- * @ORM\Table(name="Documentos")
+ * @ORM\Table(name="documentos")
  */
 class Documento
 {
