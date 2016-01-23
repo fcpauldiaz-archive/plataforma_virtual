@@ -152,7 +152,8 @@ class Documento
     public function getDocumentName()
     {
         $returnNombre = $this->documentName;
-        return substr($returnNombre,strpos('-')+1,$returnNombe);
+        //return substr($returnNombre,strpos($returnNombre,'-')+1,$returnNombre);
+        return $returnNombre;
     }
 
     /**

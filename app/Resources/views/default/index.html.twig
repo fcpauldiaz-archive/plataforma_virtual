@@ -27,21 +27,14 @@
                     <div class="col-md-3">
                         {# ruta para descargar parciales #}
                         <div class="menu-item blue">
-                            <a href="{{path('cursos_parciales')}}" data-toggle="modal">
-                                <i class="fa fa-magic"></i>
-                                <p>Descargar Parciales</p>
+                            <a href="#" data-toggle="modal" data-target="#modalDocumento">
+                                <i class="fa fa-cloud-download "></i>
+                                <p>Descargar Documentos</p>
                             </a>
                         </div>
+                        {% include 'modal/modal_documento.html.twig' %}
                         {# termina ruta para descargar parciales #}
 
-                        {# empieza ruta par descargar hojas de trabajo#}
-                        <div class="menu-item green">
-                            <a href="{{path('cursos_hdt')}}" data-toggle="modal">
-                                <i class="fa fa-file-photo-o"></i>
-                                <p>Descargar Hojas de Trabajo</p>
-                            </a>
-                        </div>
-                        {# termina ruta #}
                         
                         {# espacio para perfil #}
                         <div class="menu-item light-red">
@@ -53,6 +46,13 @@
                         
                         {% include 'modal/modal_perfil.html.twig' %}
                         {# termina ruta perfil #}
+
+                         <div class="menu-item green">
+                            <a href="{{path('list_cursos_foro')}}" data-toggle="modal">
+                                <i class="fa fa-comments-o"></i>
+                                <p>Foros</p>
+                            </a>
+                        </div>
                         
                     </div>
                     
@@ -71,7 +71,7 @@
                                 <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                        <img src="{{ asset('images/index/IMG_INDEX3.png') }}" width="304" height="236" class="img-responsive" alt="">
+                                        <img id="example" title="My tooltip content" src="{{ asset('images/index/IMG_INDEX3.png') }}" width="304" height="236" class="img-responsive" alt="">
                                     </div>
                                     <div class="item">
                                         <img src="{{ asset('images/index/IMG_HEADER.png') }}"  height="236!important" alt="">
@@ -88,23 +88,24 @@
                         
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="menu-item color responsive">
-                                    <a href="{{ path('list_cursos_foro') }}" data-toggle="modal">
-                                        <i class="fa fa-area-chart"></i>
-                                        <p>Foro</p>
+                                <div class="menu-item red responsive">
+                                    <a href="">
+                                        <i class="fa fa-thumbs-up"></i>
+                                        <p>Empty</p>
                                     </a>
                                 </div>
                             </div>
                             
                             <div class="col-md-6">
+                             
                                 <div class="menu-item light-orange responsive-2">
-                                    <a href="{{path('contact')}}" data-toggle="modal">
+                                    <a href="{{path('contact')}}" data-toggle="modal tooltip">
                                         <i class="fa fa-envelope-o"></i>
                                         <p>Contacto</p>
                                     </a>
                                 </div>
+                           
                             </div>
-                            
                         </div>
                         
                     </div>
@@ -116,7 +117,7 @@
                         <div class="menu-item color">
                             {% if app.user %}
                                 <a href="{{ path('documento_new')}}" data-toggle="modal">
-                                    <i class="fa fa-comment-o"></i>
+                                    <i class="fa fa-cloud-upload"></i>
                                     <p>Subir Documentos</p>
                                 </a>
                             {% endif %}

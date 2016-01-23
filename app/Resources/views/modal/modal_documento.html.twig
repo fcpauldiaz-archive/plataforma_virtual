@@ -1,5 +1,5 @@
- <!-- Modal para Curso -->
-<div class="modal fade" id="modalCursos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <!-- Modal para Descargar documento -->
+<div class="modal fade" id="modalDocumento" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,16 +8,16 @@
       </div>
       <div class="modal-body">
       {% if app.user %}
-          <a href="{{ path('asignacion') }}" class="btn btn-warning">
-              <h1 style="color: white ">Asignar Nuevo Curso</h1>
+          <a href="{{ path('cursos_parciales') }}" class="btn btn-warning">
+              <h1 style="color: white ">Descargar Parciales</h1>
           </a>
       {% endif %}
         <br>
         <br>
         <br>
         {% if app.user %}
-          <a href="{{ path('listar_cursos') }}" class="btn btn-info">
-             <h1 style="color: white "> Ver Cursos Asignados</h1>
+          <a href="{{ path('cursos_hdt') }}" class="btn btn-danger">
+             <h1 style="color: white ">Descargar Hojas de Trabajo</h1>
           </a>
         {% endif %}
       </div>

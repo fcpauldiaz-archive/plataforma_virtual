@@ -36,6 +36,8 @@ class DocumentoType extends AbstractType
             ->add('curso', 'entity', [
                 'class' => 'CursoBundle:Curso',
                 'choices' => $this->getUsuario()->getCursos(),
+                'empty_value' => 'Seleccione el curso del documento',
+                    
 
             ])
             ->add('numeroDocumento', 'choice', [

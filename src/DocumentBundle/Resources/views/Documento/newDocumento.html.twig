@@ -13,6 +13,8 @@
 			{% endif %}
 		    {{ form_row(form.tipoDocumento) }}
 		    {{ form_row(form.curso) }}
+
+        <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="El número del documento según el programa del curso"></i>
 		    {{ form_row(form.numeroDocumento) }}
         {{ form_row(form.documentFile) }}
 		 
@@ -23,8 +25,8 @@
            <br>
         <ul class="record_actions">
     <li>
-        <a href="{{ path('documento') }}" class="btn btn-warning">
-            Regresar
+        <a href="{{ path('asignacion') }}" class="btn btn-warning">
+            ¿No aparece el curso que estabas buscando? 
         </a>
     </li>
 </ul>
@@ -60,18 +62,25 @@
                         <td id="nombre"></td>
                         
                     </tr>
+
                 </table>
 
             </div>
 
+
     <div class="modal-footer">
+    <strong><p align="left">Esta plataforma no promueve el plagio.</p></strong>
     <strong><p align="left">Al enviar este archivo acepto todos los Términos y Condiciones.</p></strong>
            {{ form_row(form.submit, {'attr':{'class':'btn btn-block buttonbk '}})}}
            {{ form_end(form) }}
         </div>
     </div>
 </div>
-
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 <script src="{{ asset('js/reloadDataForm.js') }}"></script>
  <script src="{{ asset('js/upload.js') }}"></script>
  <script>
