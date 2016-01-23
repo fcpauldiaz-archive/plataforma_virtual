@@ -5,7 +5,7 @@ vich_uploader:
         document:
             uri_prefix:         https://s3.amazonaws.com/plataformavirtual/parcialesyhdt
             upload_destination: archivos
-            namer:              vich_uploader.namer_uniqid
+            namer:              vich_uploader.namer_origname
             inject_on_load:     false
             delete_on_update:   true
             delete_on_remove:   true
