@@ -3,7 +3,7 @@
     $container->setParameter('database_driver', 'pdo_mysql');
     $container->setParameter('database_host', 'db4free.net');
     $container->setParameter('database_port', 3306);
-    $container->setParameter('database_name', 'virtualPlatform');
+    $container->setParameter('database_name', 'virtualplatform');
     $container->setParameter('database_user', 'fcpauldiaz');
     $container->setParameter('database_password', getenv('MYSQL_PASSWORD'));
     $container->setParameter('secret', getenv('SECRET'));
