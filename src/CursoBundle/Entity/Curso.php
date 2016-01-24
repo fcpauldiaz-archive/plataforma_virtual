@@ -25,7 +25,7 @@ class Curso
     /**
      * @var string
      *
-     * @ORM\Column(name="nombreCurso", type="string", length=50)
+     * @ORM\Column(name="nombreCurso", type="string", length=255)
      * @ORM\OrderBy({"nombreCurso" = "ASC"})
      */
     private $nombreCurso;
