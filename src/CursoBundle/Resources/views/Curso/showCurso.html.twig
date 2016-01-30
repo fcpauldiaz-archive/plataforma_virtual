@@ -4,18 +4,18 @@
 {% block body_content -%}
     <h1>Curso</h1>
 
-    <table class="record_properties">
+    <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Nombrecurso</th>
+                <th>Nombre del Curso</th>
                 <td>{{ entity.nombreCurso }}</td>
             </tr>
             <tr>
-                <th>Codigocurso</th>
+                <th>Código Curso</th>
                 <td>{{ entity.codigoCurso }}</td>
             </tr>
         </tbody>
@@ -23,15 +23,17 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('curso') }}">
-            Regresar
+        <a class="btn btn-info href"="{{ path('curso_new') }}">
+            Crear otro curso
         </a>
     </li>
+    <br>
     <li>
-        <a href="{{ path('curso_edit', { 'slug': entity.slug }) }}">
-            Edit
+        <a class="btn btn-warning" href="{{ path('curso_edit', { 'slug': entity.slug }) }}">
+            Editar
         </a>
     </li>
+    <br>
     <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

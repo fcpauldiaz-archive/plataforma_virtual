@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use FOS\UserBundle\Mailer\MailerInterface;
 
 /**
- * Form overriden by  @author Pablo diaz <dia13203@uvg.edu.gt>.
+ * Form overriden by  @author Pablo diaz <fcpauldiaz@gmail.com>.
  *
  * @author Christophe Coevoet <stof@notk.org>
  */

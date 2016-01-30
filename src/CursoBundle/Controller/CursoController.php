@@ -212,7 +212,7 @@ class CursoController extends Controller
      * Deletes a Curso entity.
      *
      * @Route("/{id}", name="curso_delete")
-     * @Method("DELETE")
+     * @Method("Delete")
      */
     public function deleteAction(Request $request, $id)
     {
@@ -247,7 +247,7 @@ class CursoController extends Controller
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('curso_delete', ['id' => $id]))
-            ->setMethod('DELETE')
+            ->setMethod('Delete')
             ->add('submit', 'submit', ['label' => 'Delete'])
             ->getForm()
         ;

@@ -12,7 +12,7 @@ use FOS\UserBundle\Model\UserInterface;
 use ContactBundle\Form\Type\ContactType;
 
 /**
- * @author  fcpauldiaz fcpauldiaz@icloud.com
+ * @author  fcpauldiaz <fcpauldiaz@gmail.com>
  * @Route("/contact")
  */
 class ContactController extends Controller
