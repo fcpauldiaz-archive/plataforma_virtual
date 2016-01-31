@@ -146,7 +146,6 @@ class Documento
     }
 
     /**
-     * modificar get para quitar el id del nombre del documento
      * @return string
      */
     public function getDocumentName()
@@ -154,6 +153,15 @@ class Documento
         $returnNombre = $this->documentName;
         //return substr($returnNombre,strpos($returnNombre,'-')+1,$returnNombre);
         return $returnNombre;
+    }
+    /**
+     * modificar get para quitar el id del nombre del documento
+     * @return string
+     */
+    public function getDocumentFixedName()
+    {
+        $nombre = $this->documentName;
+        return substr($nombre,strrpos($nombre,'_')+1,strlen($nombre));
     }
 
     /**

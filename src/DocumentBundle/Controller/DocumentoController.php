@@ -68,21 +68,20 @@ class DocumentoController extends Controller
              * con el mismo nombre asociado en el mismo curso.
              */
             
-            $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
-                    'curso' => $entity->getCurso()
+            $duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
+                    'curso' => $entity->getCurso(),
+                    'documentName' => $entity->getDocumentFixedName(),
                 ]);
-            $nombre_real_parametro = $this->deleteUniquePrefixNamer($entity->getDocumentName());
-            foreach($pre_duplicados as $pre_duplicado){
-                $nombre_real = $this->deleteUniquePrefixNamer($pre_duplicado->getDocumentName());
-                if ($nombre_real == $nombre_real_parametro){
-                    $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
+          
+            if (!is_empty($duplicados)){
+                $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
 
-                    return [
-                        'entity' => $entity,
-                        'form' => $form->createView(),
-                    ];
-                }
+                return [
+                    'entity' => $entity,
+                    'form' => $form->createView(),
+                ];
             }
+            
 
           
             $em->persist($entity);
@@ -92,7 +91,7 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_show', ['slug' => $entity->getSlug(),'name'=>$nombre_real_parametro]
+                    'documento_show', ['slug' => $entity->getSlug()]
                     ));
         }
 
@@ -307,7 +306,4 @@ class DocumentoController extends Controller
         ;
     }
 
-    private function deleteUniquePrefixNamer($nombre){
-       return substr($nombre,strrpos($nombre,'_')+1,strlen($nombre));
-    }
 }
