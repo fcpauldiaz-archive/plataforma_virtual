@@ -69,7 +69,7 @@ class DocumentoController extends Controller
              */
             $duplicados=[];
             $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findAll();
-            $nombre_real_parametro = $this->deleteUniquePrefixNamer($entity->getDocumentName());
+            $nombre_real_parametro = $entity->getDocumentName();
             foreach($pre_duplicados as $pre_duplicado){
                 $nombre_real = $this->deleteUniquePrefixNamer($pre_duplicado->getDocumentName());
                 if ($pre_duplicado->getCurso()==$entity->getCurso() &&
