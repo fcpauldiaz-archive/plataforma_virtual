@@ -67,26 +67,24 @@ class DocumentoController extends Controller
              * El siguiente query sirve para revisar si hay algún documento
              * con el mismo nombre asociado en el mismo curso.
              */
-            $duplicados=[];
-            $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findAll();
+            
+            $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
+                    'curso' => $entity->getCurso()
+                ]);
             $nombre_real_parametro = $entity->getDocumentName();
             foreach($pre_duplicados as $pre_duplicado){
                 $nombre_real = $this->deleteUniquePrefixNamer($pre_duplicado->getDocumentName());
-                if ($pre_duplicado->getCurso()==$entity->getCurso() &&
-                    $nombre_real == $nombre_real_parametro
-                    ){
-                    $duplicados[]= $pre_duplicado;
+                if ($nombre_real == $nombre_real_parametro){
+                    $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
+
+                    return [
+                        'entity' => $entity,
+                        'form' => $form->createView(),
+                    ];
                 }
             }
 
-            if (!empty($duplicados)) {
-                $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
-
-                return [
-                    'entity' => $entity,
-                    'form' => $form->createView(),
-                ];
-            }
+          
             $em->persist($entity);
             $em->flush();
 
@@ -102,7 +100,7 @@ class DocumentoController extends Controller
 
             return $this->redirect(
                 $this->generateUrl(
-                    'documento_show', ['slug' => $entity->getSlug()]
+                    'documento_show', ['slug' => $entity->getSlug(),'name'=>$nombre_real_parametro]
                     ));
         }
 
