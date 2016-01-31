@@ -67,10 +67,17 @@ class DocumentoController extends Controller
              * El siguiente query sirve para revisar si hay algún documento
              * con el mismo nombre asociado en el mismo curso.
              */
-            $duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
-                'curso' => $entity->getCurso(),
-                'documentName' => $entity->getDocumentName(),
-                ]);
+            $duplicados=[];
+            $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findAll();
+            $nombre_real_parametro = $this->deleteUniquePrefixNamer($entity->getDocumentName());
+            foreach($pre_duplicados as $pre_duplicado){
+                $nombre_real = $this->deleteUniquePrefixNamer($pre_duplicado->getDocumentName());
+                if ($pre_duplicado->getCurso()==$entity->getCurso() &&
+                    $nombre_real == $nombre_real_parametro
+                    ){
+                    $duplicados[]= $pre_duplicado;
+                }
+            }
 
             if (!empty($duplicados)) {
                 $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
@@ -308,5 +315,9 @@ class DocumentoController extends Controller
             ->add('submit', 'submit', ['label' => 'Eliminar'])
             ->getForm()
         ;
+    }
+
+    private function deleteUniquePrefixNamer($nombre){
+       return substr($nombre,strrpos($nombre,'_')+1,strlen($nombre));
     }
 }
