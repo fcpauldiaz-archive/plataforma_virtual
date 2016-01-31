@@ -71,7 +71,7 @@ class DocumentoController extends Controller
             $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
                     'curso' => $entity->getCurso()
                 ]);
-            $nombre_real_parametro = $entity->getDocumentName();
+            $nombre_real_parametro = $this->deleteUniquePrefixNamer($entity->getDocumentName());
             foreach($pre_duplicados as $pre_duplicado){
                 $nombre_real = $this->deleteUniquePrefixNamer($pre_duplicado->getDocumentName());
                 if ($nombre_real == $nombre_real_parametro){
@@ -87,14 +87,6 @@ class DocumentoController extends Controller
           
             $em->persist($entity);
             $em->flush();
-
-            //modificar el nombre del documento para que sea único
-            /*$modificar = $em->getRepository('DocumentBundle:Documento')->find($entity->getId());
-            $modificar->createUniqueDocumentName();
-            $em->persist($modificar);
-            $em->flush();*/
-
-
 
             
 
@@ -154,7 +146,7 @@ class DocumentoController extends Controller
     /**
      * Finds and displays a Documento entity.
      *
-     * @Route("/{slug}", name="documento_show")
+     * @Route("/{slug}/{name}", name="documento_show")
      * @Method("GET")
      * @ParamConverter("documento", class="DocumentBundle:Documento", options={"slug"="slug"})
      * @Template()
