@@ -17,7 +17,12 @@
         <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title="El número del documento según el programa del curso"></i>
 		    {{ form_row(form.numeroDocumento) }}
         {{ form_row(form.documentFile) }}
-		 
+		    <br>
+        {% if duplicado is not null %}
+          <a class="btn btn-danger btn-lg" target="_blank" href="{{ vich_uploader_asset(duplicado, 'documentFile') }}">Ver el documento duplicado</a>
+          <br>
+        {% endif %}
+        <br>
           
 
            <a type = "button" data-toggle="modal" id="submitBtn" data-target="#modalDocumento" class="btn btn-lg buttonbk" style="font-size:20px">Guardar</a>

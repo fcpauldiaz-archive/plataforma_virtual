@@ -1,12 +1,6 @@
 $('#submitBtn').click(function() {
-    if ($('documentbundle_documento_tipoDocumento').val()==1){
-        $('#tipo').html('Parcial')
-    }
-    else{
-         $('#tipo').html('Hoja de Trabajo')
-    }
-
-
+  
+    $('#tipo').html($('#documentbundle_documento_tipoDocumento option:selected').text())
     $('#curso').html($('#documentbundle_documento_curso option:selected').text())
     $('#numero').html($('#documentbundle_documento_numeroDocumento option:selected').text())
     $('#nombre').html($('#documentbundle_documento_documentFile_file').val().split('\\').pop())

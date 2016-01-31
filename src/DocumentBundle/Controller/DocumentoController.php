@@ -55,6 +55,30 @@ class DocumentoController extends Controller
         $entity->setUsuario($usuario);
         $form = $this->createCreateForm($entity, $usuario);
         $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        $namer = $entity->getDocumentFixedName();
+      
+        $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
+                    'curso' => $entity->getCurso()
+        ]);
+
+       
+       foreach($pre_duplicados as $duplicado){
+            if ($duplicado->getDocumentFixedName()==$form['documentFile']->getData()->getClientOriginalName()){
+                
+                       
+            $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
+
+            return [
+                'duplicado' => $duplicado,
+                'form' => $form->createView(),
+
+            ];
+        
+            }
+        }
+
+           
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -62,28 +86,6 @@ class DocumentoController extends Controller
             $helper = $this->get('vich_uploader.templating.helper.uploader_helper');
             $path = $helper->asset($entity, 'documentFile');
 
-
-            /*
-             * El siguiente query sirve para revisar si hay algún documento
-             * con el mismo nombre asociado en el mismo curso.
-             */
-            
-            $duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
-                    'curso' => $entity->getCurso(),
-                    'documentName' => $entity->getDocumentFixedName(),
-                ]);
-          
-            if (!is_empty($duplicados)){
-                $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
-
-                return [
-                    'entity' => $entity,
-                    'form' => $form->createView(),
-                ];
-            }
-            
-
-          
             $em->persist($entity);
             $em->flush();
 
@@ -145,7 +147,7 @@ class DocumentoController extends Controller
     /**
      * Finds and displays a Documento entity.
      *
-     * @Route("/{slug}/{name}", name="documento_show")
+     * @Route("/{slug}", name="documento_show")
      * @Method("GET")
      * @ParamConverter("documento", class="DocumentBundle:Documento", options={"slug"="slug"})
      * @Template()
