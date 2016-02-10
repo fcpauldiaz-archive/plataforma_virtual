@@ -36,7 +36,7 @@ class ContactController extends Controller
             $message = \Swift_Message::newInstance()
 
               ->setFrom([$varCorreo => $varNombre])
-              ->setTo('dia13203@uvg.edu.gt')
+              ->setTo('soporte@newtonlabs.com.gt')
               ->setSubject($varAsunto)
               ->setBody(
                 $this->renderView(

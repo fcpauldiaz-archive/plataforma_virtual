@@ -5,10 +5,11 @@
         <title>{% block title  %}Learn-In!{% endblock %}</title>
     
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
-      
+       <link rel="stylesheet" href="{{ asset('css/jquery.dataTables.min.css')}}">
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     
       <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
        
        
         {% if app.environment == 'dev' %}
@@ -85,8 +86,16 @@
                 
                 %}<script src="{{ asset_url }}"></script>
                 {% endjavascripts %}
+                 <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
                  <script type="text/javascript">
                      $('select').select2();
+                </script>
+                <script>
+                    $('table').dataTable( {
+                            "language": {
+                                "url": "{{ asset('json/Spanish.json')}}"
+                            }
+                        } );
                 </script>
                 <script>
                      $('.navbar-toggler').on('click', function(event) {

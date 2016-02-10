@@ -11,11 +11,12 @@
 			    {{ form_errors(form) }}
 			</div>
 			{% endif %}
+			{{ form_row(form.curso) }}
 			{{ form_row(form.lugar)}}
 			{{ form_row(form.horario)}}
 		    {{ form_row(form.info) }}
 		    {{ form_row(form.tipoServicio)}}
-		    {{ form_row(form.curso) }}
+		    
 			
 		   <br>
 		   {{ form_row(form.submit, {'attr':{'class':'btn buttonbk'}})}}

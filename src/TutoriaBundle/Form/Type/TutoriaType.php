@@ -36,6 +36,15 @@ class TutoriaType extends AbstractType
         }
 
         $builder
+         //es más intuitivo que esté el curso de primero en el formulario
+          ->add('curso', 'entity', [
+                'label' => 'curso_label' ,
+                'class' => 'CursoBundle:Curso',
+                'choices' => $cursos,
+                'attr' => [
+                        'class'=>'select2'
+                    ]
+            ])
             ->add('lugar',null, [
                 'label' => 'Lugar',
                  'attr' =>[
@@ -50,6 +59,7 @@ class TutoriaType extends AbstractType
             ])
             ->add('info', null, [
                 'label' => 'Informacion Adicional',
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'Aquí se puede ingresar cualquier información adicional'
                 ]
@@ -62,14 +72,6 @@ class TutoriaType extends AbstractType
                 'choices_as_values'=>true    
 
                 ])
-
-            ->add('curso', 'entity', [
-                'class' => 'CursoBundle:Curso',
-                'choices' => $cursos,
-                'attr' => [
-                        'class'=>'select2'
-                    ]
-            ])
            
         ;
     }
@@ -81,6 +83,7 @@ class TutoriaType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => 'TutoriaBundle\Entity\Tutoria',
+            'translation_domain' => 'TutoriaBundle',
         ]);
     }
 

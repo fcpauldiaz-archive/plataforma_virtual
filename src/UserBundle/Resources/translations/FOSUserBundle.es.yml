@@ -96,5 +96,5 @@ form:
     new_password_confirmation: "Repita la contraseña:"
 
 Bad credentials.: Contraseña o usuario incorrecto
-User account is disabled.: La cuenta no está confirmada, en caso de que no le llegó un correo comunicarse con dia13203@uvg.edu.gt
+User account is disabled.: La cuenta no está confirmada, en caso de que no le llegó un correo comunicarse con soporte@newtonlabs.com.gt
 SQLSTATE[HY000] [2002] Connection refused: Base de datos no disponible

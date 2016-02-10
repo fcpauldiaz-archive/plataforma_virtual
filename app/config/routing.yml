@@ -1,3 +1,18 @@
+curso_curso_api:
+    resource: "@CursoBundle/Controller/CursoRESTController.php"
+    type:   rest
+    prefix:   /api
+
+tutoria_tutoria_api:
+    resource: "@TutoriaBundle/Controller/TutoriaRESTController.php"
+    type:   rest
+    prefix:   /api
+
+app_article_api:
+    resource: "@AppBundle/Controller/ArticleRESTController.php"
+    type:   rest
+    prefix:   /api
+
 report:
     resource: "@ReportBundle/Resources/config/routing.php"
     prefix:   /
@@ -21,6 +36,11 @@ forum:
     resource: "@ForumBundle/Controller/"
     type:     annotation
     prefix:   /
+
+mvms_api:
+    type:     rest
+    prefix:   /api
+    resource: "@AppBundle/Resources/config/api-routing.yml"
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
@@ -54,3 +74,6 @@ fos_comment_api:
     resource: "@FOSCommentBundle/Resources/config/routing.yml"
     prefix: /api
     defaults: { _format: html }
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

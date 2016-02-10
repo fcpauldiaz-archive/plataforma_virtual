@@ -11,13 +11,15 @@ use CursoBundle\Entity\Curso;
 use CursoBundle\Form\Type\CursoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
+use FOS\RestBundle\Controller\FOSRestController;
+
 /**
  * Curso controller.
  *
  * @author fcpauldiaz fcpauldiaz@me.com
  * @Route("admin/curso")
  */
-class CursoController extends Controller
+class CursoController extends FOSRestController
 {
     /**
      * Lists all Curso entities.
