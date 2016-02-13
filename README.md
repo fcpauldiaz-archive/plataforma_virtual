@@ -1,6 +1,6 @@
 Learn-In Platform
 ==================
-[![Build Status](https://travis-ci.org/Newton-Labs/plataforma_virtual.svg?branch=master)](https://travis-ci.org/Newton-Labs/plataforma_virtual
+[![Build Status](https://travis-ci.org/Newton-Labs/plataforma_virtual.svg?branch=master)](https://travis-ci.org/Newton-Labs/plataforma_virtual)
 ![Heroku](http://heroku-badge.herokuapp.com/?app=learn-in&style=flat)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/fcpauldiaz/plataforma_virtual/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Symfony](http://img.shields.io/badge/Symfony2-2.7.9-blue.svg)](http://syfmony.com)
