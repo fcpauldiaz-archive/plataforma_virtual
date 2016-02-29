@@ -59,7 +59,7 @@ class Documento
      * maxSize="16M",
      * mimeTypes = {"application/pdf", "application/x-pdf","application/msword",
      *    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-     *    "text/plain","text/rtf"},
+     *    "text/plain","text/*", "text/txt"},
      * mimeTypesMessage = "Por favor solo subir archivos PDF o Word ",
      * )
      * 
