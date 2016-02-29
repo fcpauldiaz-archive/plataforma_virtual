@@ -104,7 +104,7 @@ class DownloadController extends Controller
     /**
      * Finds and displays a Curso entity.
      *
-     * @Route("download/{slug}/", name="show_curso")
+     * @Route("/{slug}/", name="show_curso")
      * @Method("GET")
      * @Template("DocumentBundle:Documento:cursoShow.html.twig")
      * @ParamConverter("curso", class="CursoBundle:Curso",options={"slug" = "slug"})
