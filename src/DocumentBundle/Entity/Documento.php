@@ -25,9 +25,7 @@ class Documento
     /**
      * [$tipoDocumento boolean para saber si es parcial o hoja de trabajo].
      *
-     * @var bool
-     *           true = parcial
-     *           false = hoja de trabajo
+     * @var  string 
      * @ORM\Column(name="tipoDocumento",type="string", length=100)
      */
     private $tipoDocumento;
@@ -320,6 +318,6 @@ class Documento
 
     public function __toString()
     {
-        return $this->documentName;
+        return $this->getDocumentFixedName();
     }
 }
