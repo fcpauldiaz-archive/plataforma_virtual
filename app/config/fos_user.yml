@@ -3,14 +3,14 @@ fos_user:
     firewall_name: main
     user_class: UserBundle\Entity\Usuario
     service: #custom email sender
-        mailer: fos_user.mailer.default
+        mailer: fos_mail.custom_mailer
     registration: #user registration
         form:
             type:  user_registration #custom user registration service
             validation_groups:  [EmailDomainValidation,Default,Registration]
         confirmation:
             enabled:    true # change to true for required email confirmation
-            template:   UserBundle:Registration:email.txt.twig  
+            template:   UserBundle:Registration:registration.email.twig  
             
             from_email:
                 address:        noreply@newtonlabs.com.gt
@@ -22,7 +22,7 @@ fos_user:
             from_email:
                 address:        noreply@newtonlabs.com.gt
                 sender_name:    Learn-in Platform
-            template:   UserBundle:Resetting:resetting.email.txt.twig
+            template:   UserBundle:Resetting:resetting.email.twig
         form:
             type:               fos_user_resetting
             
