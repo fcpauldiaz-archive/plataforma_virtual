@@ -151,7 +151,7 @@ class Documento
     {
         $returnNombre = $this->documentName;
         //return substr($returnNombre,strpos($returnNombre,'-')+1,$returnNombre);
-        return $returnNombre;
+        return $this->getDocumentName();
     }
     /**
      * modificar get para quitar el id del nombre del documento
