@@ -2,7 +2,7 @@
 
 {% block fos_user_content %}  
 {% if error %}
-    <div><p style="color: #ffffff "> {{ error|trans({}, 'FOSUserBundle') }}</p></div>
+    <div><p style="color: #ffffff ">  {{ error.messageKey|trans(error.messageData, 'security') }}</p></div>
 {% endif %}
 
     

@@ -8,7 +8,7 @@
     $container->setParameter('database_password', getenv('MYSQL_PASSWORD'));
     $container->setParameter('secret', getenv('SECRET'));
     $container->setParameter('locale', 'es');
-    $container->setParameter('mailer_transport', gmail);
-    $container->setParameter('mailer_host', null);
-    $container->setParameter('mailer_user', getenv('EMAIL_USER'));
-    $container->setParameter('mailer_password', getenv('EMAIL_PASSWORD'));
+    $container->setParameter('mailer_transport', getenv('EMAIL_TRANSPORT'));
+    $container->setParameter('mailer_host', getenv('AWS_EMAIL_HOST'));
+    $container->setParameter('mailer_user', getenv('AWS_EMAIL_USERNAME'));
+    $container->setParameter('mailer_password', getenv('AWS_EMAIL_PASSWORD'));
