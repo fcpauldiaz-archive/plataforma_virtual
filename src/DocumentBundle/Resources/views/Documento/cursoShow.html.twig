@@ -14,7 +14,7 @@
         <div class="panel-heading" role="tab" id="heading{{count}}">
           <h4 class="panel-title">
             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{count}}" aria-expanded="false" aria-controls="collapse{{count}}">
-             Documento número {{doc.numeroDocumento}} {{doc.documentName}}  Tipo: {{doc.tipoDocumento}}
+             Documento número {{doc.numeroDocumento}} {{doc.documentFixedName}}  Tipo: {{doc.tipoDocumento}}
             </a>
           </h4>
         </div>
@@ -28,7 +28,7 @@
                 <tbody>
                     <tr>
                         <th>Nombre Documento</th>
-                        <td>{{ doc.documentName }}</td>
+                        <td>{{ doc.documentFixedName }}</td>
                     </tr>
                     <tr>
                         <th>Actualizado</th>
