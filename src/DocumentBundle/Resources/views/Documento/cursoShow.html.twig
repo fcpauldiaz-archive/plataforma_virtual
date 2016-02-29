@@ -14,7 +14,7 @@
         <div class="panel-heading" role="tab" id="heading{{count}}">
           <h4 class="panel-title">
             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{count}}" aria-expanded="false" aria-controls="collapse{{count}}">
-             Documento número {{doc.numeroDocumento}} {{doc.documentName}} {{doc.tipoDocumento}}
+             Documento número {{doc.numeroDocumento}} {{doc.documentName}}  Tipo: {{doc.tipoDocumento}}
             </a>
           </h4>
         </div>
@@ -41,6 +41,12 @@
                     <tr>
                         <th>Subido por</th>
                         <td>{{doc.usuario}}</td>
+                    </tr>
+                     <tr>
+                        <th>Tipo Documento</th>
+                        <td>{{ doc.tipoDocumento }}</td>
+                    </tr>
+
                 </tbody>
             </table>
            
