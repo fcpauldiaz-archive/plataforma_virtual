@@ -28,7 +28,7 @@ class Documento
      * @var bool
      *           true = parcial
      *           false = hoja de trabajo
-     * @ORM\Column(name="tipoDocumento",type="boolean")
+     * @ORM\Column(name="tipoDocumento",type="string", length="100")
      */
     private $tipoDocumento;
 

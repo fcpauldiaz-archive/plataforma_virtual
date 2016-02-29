@@ -27,7 +27,7 @@ class DocumentoType extends AbstractType
         $builder
           //  ->add('documentName',null,['label'=>'Nombre del Documento'])
             ->add('tipoDocumento', 'choice', [
-                'choices' => [1 => 'Parcial', 0 => 'Hoja de Trabajo',3 => 'Otro'],
+                'choices' => ['Parcial' => 'Parcial', 'Hoja de Trabajo' => 'Hoja de Trabajo','Otro' => 'Otro'],
                 'constraints' => [
                     new NotNull(),
                 ],
