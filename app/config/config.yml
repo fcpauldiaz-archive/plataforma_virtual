@@ -11,8 +11,6 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
    locale: es
-   mailer_port: 587
-   mailer_encryption: tls
 framework:
     esi:             ~
     translator:      { fallbacks: ["%locale%"] }
@@ -98,8 +96,6 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
-    port:       "%mailer_port%"
-    encryption: "%mailer_encryption%"
     spool:     { type: memory }
 
 braincrafted_bootstrap:
