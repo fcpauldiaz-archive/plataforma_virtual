@@ -141,6 +141,7 @@ class DocumentoController extends Controller
         return [
             'entity' => $entity,
             'form' => $form->createView(),
+            'duplicado' => null,
         ];
     }
 

@@ -38,6 +38,29 @@ class DownloadController extends Controller
 
         ];
     }
+    /**
+     * [showCursosParcialesAction Mostrar los cursos para descargar parciales].
+     *
+     * @return [Array] [cursos asignados]
+     * @Route("/cursos/download",name="cursos_download")
+     * @Method("GET")
+     * @Template("DocumentBundle:Documento:downloadDocumento.html.twig")
+     */
+    public function showCursosUserAction()
+    {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        $usuario = $this->getUser();
+
+        $cursos = $usuario->getCursos();
+
+        return [
+
+        'cursos' => $cursos
+
+        ];
+    }
 
     /**
      * [showCursosHDTAction Mostrar los cursos para descargar hojas de trabajo].
@@ -81,12 +104,12 @@ class DownloadController extends Controller
     /**
      * Finds and displays a Curso entity.
      *
-     * @Route("/{slug}/{tipo}/", name="show_curso")
+     * @Route("download/{slug}/", name="show_curso")
      * @Method("GET")
      * @Template("DocumentBundle:Documento:cursoShow.html.twig")
      * @ParamConverter("curso", class="CursoBundle:Curso",options={"slug" = "slug"})
      */
-    public function showAction($curso, $tipo)
+    public function showAction($curso)
     {
         if (!$curso) {
             throw $this->createNotFoundException('Unable to find Curso entity.');
@@ -94,8 +117,6 @@ class DownloadController extends Controller
 
         return [
             'curso' => $curso,
-            'tipo' => $tipo,
-
         ];
     }
 }

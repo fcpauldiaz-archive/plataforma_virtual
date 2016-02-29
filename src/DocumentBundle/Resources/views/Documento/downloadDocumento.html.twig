@@ -1,12 +1,11 @@
 {% extends '::base_page.html.twig' %}
 
 {% block body_content -%}
-    
-    {% if documento == 1 %}
-        <h1>Cursos para descargar parciales</h1>
-    {% else %}
-        <h1>Cursos para descargar hojas de trabajo</h1>
-    {% endif %}
+   
+ 
+   
+    <h1>Cursos para descargar material</h1>
+   
 
     <table class="table table-striped table-hover">
         <thead>
@@ -20,8 +19,8 @@
         {% for curso in cursos %}
             <tr>
                 
-                <td>  <a href="{{ path('show_curso',{'slug':curso.slug,'tipo':documento})}}"> {{ curso.nombreCurso }} </a> </td> 
-                <td><a href="{{ path('show_curso',{'slug':curso.slug,'tipo':documento})}}"> {{ curso.codigoCurso }} </a> </td> 
+                <td>  <a href="{{ path('show_curso',{'slug':curso.slug})}}"> {{ curso.nombreCurso }} </a> </td> 
+                <td><a href="{{ path('show_curso',{'slug':curso.slug})}}"> {{ curso.codigoCurso }} </a> </td> 
                
                
             </tr>
