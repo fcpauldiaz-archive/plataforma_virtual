@@ -12,86 +12,75 @@
 namespace UserBundle\Mailer;
 
 use FOS\UserBundle\Model\UserInterface;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use FOS\UserBundle\Mailer\MailerInterface;
 
 /**
- * Form overriden by  @author Pablo diaz <fcpauldiaz@gmail.com>.
- *
- * @author Christophe Coevoet <stof@notk.org>
+ * @author Thibault Duplessis <thibault.duplessis@gmail.com>
  */
 class CustomTwigSwiftMailer implements MailerInterface
 {
     protected $mailer;
     protected $router;
-    protected $twig;
+    protected $templating;
     protected $parameters;
 
-    public function __construct(\Swift_Mailer $mailer, UrlGeneratorInterface $router, \Twig_Environment $twig, array $parameters)
+    public function __construct($mailer, UrlGeneratorInterface  $router, EngineInterface $templating, array $parameters)
     {
         $this->mailer = $mailer;
         $this->router = $router;
-        $this->twig = $twig;
+        $this->templating = $templating;
         $this->parameters = $parameters;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function sendConfirmationEmailMessage(UserInterface $user)
     {
-        $template = $this->parameters['template']['confirmation'];
-        $url = $this->router->generate('fos_user_registration_confirm', ['token' => $user->getConfirmationToken()], true);
-        $context = [
+        $template = $this->parameters['confirmation.template'];
+        $url = $this->router->generate('fos_user_registration_confirm', array('token' => $user->getConfirmationToken()), UrlGeneratorInterface::ABSOLUTE_URL);
+        $rendered = $this->templating->render($template, array(
             'user' => $user,
-            'confirmationUrl' => $url,
-        ];
-
-        $this->sendMessage($template, $context, $this->parameters['from_email']['confirmation'], $user->getEmail());
-    }
-
-    public function sendResettingEmailMessage(UserInterface $user)
-    {
-        $template = $this->parameters['template']['resetting'];
-        $url = $this->router->generate('fos_user_resetting_reset', ['token' => $user->getConfirmationToken()], true);
-        $context = [
-            'user' => $user,
-            'confirmationUrl' => $url,
-        ];
-        $this->sendMessage($template, $context, $this->parameters['from_email']['resetting'], $user->getEmail());
+            'confirmationUrl' =>  $url
+        ));
+        $this->sendEmailMessage($rendered, $this->parameters['from_email']['confirmation'], $user->getEmail());
     }
 
     /**
-     * @param string $templateName
-     * @param array  $context
+     * {@inheritdoc}
+     */
+    public function sendResettingEmailMessage(UserInterface $user)
+    {
+        $template = $this->parameters['resetting.template'];
+        $url = $this->router->generate('fos_user_resetting_reset', array('token' => $user->getConfirmationToken()), UrlGeneratorInterface::ABSOLUTE_URL);
+        $rendered = $this->templating->render($template, array(
+            'user' => $user,
+            'confirmationUrl' => $url
+        ));
+        $this->sendEmailMessage($rendered, $this->parameters['from_email']['resetting'], $user->getEmail());
+    }
+
+    /**
+     * @param string $renderedTemplate
      * @param string $fromEmail
      * @param string $toEmail
      */
-    protected function sendMessage($templateName, $context, $fromEmail, $toEmail)
+    protected function sendEmailMessage($renderedTemplate, $fromEmail, $toEmail)
     {
-        //new instance
-        $message = \Swift_Message::newInstance();
-        $context = $this->twig->mergeGlobals($context);//merge context
-        $template = $this->twig->loadTemplate($templateName);
-        //espacio para agregar imágenes
-        $context['image_src'] = $message->embed(\Swift_Image::fromPath('images/email_header.png'));//attach image 1
-        $context['fb_image'] = $message->embed(\Swift_Image::fromPath('images/fb.gif'));//attach image 2
-        $context['tw_image'] = $message->embed(\Swift_Image::fromPath('images/tw.gif'));//attach image 3
-        $context['right_image'] = $message->embed(\Swift_Image::fromPath('images/right.gif'));//attach image 4
-        $context['left_image'] = $message->embed(\Swift_Image::fromPath('images/left.gif'));//attach image 5
-        $subject = $template->renderBlock('subject', $context);
-        $textBody = $template->renderBlock('body_text', $context);
-        $htmlBody = $template->renderBlock('body_html', $context);
+        // Render the email, use the first line as the subject, and the rest as the body
+        $renderedLines = explode("\n", trim($renderedTemplate));
+        $subject = $renderedLines[0];
+        $body = implode("\n", array_slice($renderedLines, 1));
 
-        $message
+        $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setFrom($fromEmail)
-            ->setTo($toEmail);
-
-        if (!empty($htmlBody)) {
-            $message->setBody($htmlBody, 'text/html')
-                ->addPart($textBody, 'text/plain');
-        } else {
-            $message->setBody($textBody);
-        }
+            ->setTo($toEmail)
+            ->setBody($body);
 
         $this->mailer->send($message);
+
+        
     }
 }
