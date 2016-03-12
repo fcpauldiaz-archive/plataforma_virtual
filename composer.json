@@ -3,6 +3,7 @@
     "description":"Project oriented to be a learning platform for Universidad del Valle de Guatemala ",
     "license": "proprietary",
     "type": "project",
+    "secure-http":"false",
     "autoload": {
         "psr-4": {
             "": "src/",
