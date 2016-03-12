@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1f9be2a119fc155e3c7c4b6c23c531d",
-    "content-hash": "6aca7b4916fe4b352e770751ecc28878",
+    "hash": "b1783bd124bc25f0914ee144399ad636",
+    "content-hash": "e71b07a9966d9b66964af2e30718eb75",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2085,17 +2085,6 @@
                 "xml"
             ],
             "time": "2015-11-10 12:26:42"
-        },
-        {
-            "name": "jquery/jquery",
-            "version": "1.11.1",
-            "dist": {
-                "type": "file",
-                "url": "http://code.jquery.com/jquery-1.11.1.js",
-                "reference": null,
-                "shasum": null
-            },
-            "type": "library"
         },
         {
             "name": "knplabs/gaufrette",

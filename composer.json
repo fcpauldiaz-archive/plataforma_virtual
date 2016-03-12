@@ -43,7 +43,6 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "friendsofsymfony/comment-bundle": "^2.0",
         "vich/uploader-bundle": "dev-master",
-        "jquery/jquery": "1.11.*",
         "braincrafted/bootstrap-bundle": "^2.1.2",
         "twbs/bootstrap": "3.*",
         "genemu/form-bundle": "2.2.*",
