@@ -7,8 +7,10 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use CursoBundle\Entity\Curso;
+
 /**
  * Comando para crear un curso.
+ *
  * @author fcpauldiaz soporte@newtonlabs.com.gt
  */
 class CreateCursoCommand extends ContainerAwareCommand

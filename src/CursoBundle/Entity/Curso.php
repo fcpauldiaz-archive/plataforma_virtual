@@ -10,7 +10,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
  *
  * @ORM\Table(name="cursos")
  * @ORM\Entity()
- * 
  */
 class Curso
 {
@@ -35,7 +34,7 @@ class Curso
      * @ORM\Column(name="codigoCurso", type="string", length=50,unique = true)
      */
     private $codigoCurso;
-    
+
     /**
      *  Usuarios que asociados al curso.
      *

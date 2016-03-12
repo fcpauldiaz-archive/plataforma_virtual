@@ -27,11 +27,10 @@ class Article
      * @var string
      *
      * @ORM\Column(type="string")
-   
      */
     protected $body;
     /**
-     * We'll see later why $title and $body are put by default to ''
+     * We'll see later why $title and $body are put by default to ''.
      */
     public function __construct($title = '', $body = '')
     {
@@ -53,6 +52,7 @@ class Article
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
     /**
@@ -70,15 +70,17 @@ class Article
     public function setBody($body)
     {
         $this->body = $body;
+
         return $this;
     }
     /**
      * TODO: we should use a factory-like method instead of letting in the wild
-     * a method that can change the id
+     * a method that can change the id.
      */
     public function setId($id)
     {
         $this->id = $id;
+
         return $this;
     }
     public function getId()

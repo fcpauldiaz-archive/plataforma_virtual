@@ -25,7 +25,7 @@ class Documento
     /**
      * [$tipoDocumento boolean para saber si es parcial o hoja de trabajo].
      *
-     * @var  string 
+     * @var string
      * @ORM\Column(name="tipoDocumento",type="string", length=100)
      */
     private $tipoDocumento;
@@ -128,12 +128,11 @@ class Documento
      */
     public function setDocumentName($docName)
     {
-        $this->documentName = $docName;      
+        $this->documentName = $docName;
     }
 
     /**
      * Crear nombre único .
-     * @return void
      */
     public function createUniqueDocumentName()
     {
@@ -154,13 +153,15 @@ class Documento
         return $returnNombre;
     }
     /**
-     * modificar get para quitar el id del nombre del documento
+     * modificar get para quitar el id del nombre del documento.
+     *
      * @return string
      */
     public function getDocumentFixedName()
     {
         $nombre = $this->documentName;
-        return substr($nombre,strrpos($nombre,'_')+1,strlen($nombre));
+
+        return substr($nombre, strrpos($nombre, '_') + 1, strlen($nombre));
     }
 
     /**

@@ -52,27 +52,26 @@ class Tutoria
      private $info;
 
      /**
-      * @var boolean
+      * @var bool
       * @ORM\Column(name="tipoServicio",type="boolean",nullable=true)
       * True = cobrado
       * False = gratuito
       */
      private $tipoServicio;
-     
+
      /**
       * @var float
       *
       * @ORM\Column(name="rating", type="float")
-      */     
-     private $rating=0.0;
-     
+      */
+     private $rating = 0.0;
+
      /**
       * @var int
       *
       * @ORM\Column(name="votes", type="integer")
-      */     
-     private $votes=0;
-     
+      */
+     private $votes = 0;
 
     /**
      * Get id.
@@ -115,19 +114,14 @@ class Tutoria
      *
      * @return Tutoria
      */
-    public function setCurso(\CursoBundle\Entity\Curso $curso )
+    public function setCurso(\CursoBundle\Entity\Curso $curso)
     {
-        if ($curso !== null){
-
+        if ($curso !== null) {
             $this->curso = $curso;
         }
-        
-        
 
         return $this;
     }
-
-    
 
     /**
      * Get curso.
@@ -162,35 +156,35 @@ class Tutoria
     {
         return $this->info;
     }
-    
+
     public function setRating($newRating)
     {
-        $var = $this->rating*$this->votes;
-        $var = $var +$newRating;
-        $this->votes = $this->votes +1;
-        $this->rating = $var/$this->votes;
+        $var = $this->rating * $this->votes;
+        $var = $var + $newRating;
+        $this->votes = $this->votes + 1;
+        $this->rating = $var / $this->votes;
     }
-    
+
     public function getRating()
     {
         return $this->rating;
     }
-    
+
     public function setVotes($newVotes)
     {
         $this->votes = $newVotes;
     }
-    
+
     public function getVotes()
     {
-        return $this->votes;        
+        return $this->votes;
     }
-    
 
     /**
-     * Set lugar
+     * Set lugar.
      *
      * @param string $lugar
+     *
      * @return Tutoria
      */
     public function setLugar($lugar)
@@ -201,9 +195,9 @@ class Tutoria
     }
 
     /**
-     * Get lugar
+     * Get lugar.
      *
-     * @return string 
+     * @return string
      */
     public function getLugar()
     {
@@ -211,9 +205,10 @@ class Tutoria
     }
 
     /**
-     * Set horario
+     * Set horario.
      *
      * @param string $horario
+     *
      * @return Tutoria
      */
     public function setHorario($horario)
@@ -224,9 +219,9 @@ class Tutoria
     }
 
     /**
-     * Get horario
+     * Get horario.
      *
-     * @return string 
+     * @return string
      */
     public function getHorario()
     {
@@ -234,9 +229,10 @@ class Tutoria
     }
 
     /**
-     * Set tipoServicio
+     * Set tipoServicio.
      *
-     * @param boolean $tipoServicio
+     * @param bool $tipoServicio
+     *
      * @return Tutoria
      */
     public function setTipoServicio($tipoServicio)
@@ -247,9 +243,9 @@ class Tutoria
     }
 
     /**
-     * Get tipoServicio
+     * Get tipoServicio.
      *
-     * @return boolean 
+     * @return bool
      */
     public function getTipoServicio()
     {

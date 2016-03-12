@@ -4,34 +4,30 @@ namespace CursoBundle\Controller;
 
 use CursoBundle\Entity\Curso;
 use CursoBundle\Form\CursoType;
-
 use FOS\RestBundle\Controller\Annotations\QueryParam;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View as FOSView;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
 use Voryx\RESTGeneratorBundle\Controller\VoryxController;
 
 /**
  * Curso controller.
+ *
  * @RouteResource("Curso")
  */
 class CursoRESTController extends VoryxController
 {
     /**
-     * Get a Curso entity
+     * Get a Curso entity.
      *
      * @View(serializerEnableMaxDepthChecks=true)
      *
      * @return Response
-     *
      */
     public function getAction(Curso $entity)
     {
@@ -78,12 +74,11 @@ class CursoRESTController extends VoryxController
      * @param Request $request
      *
      * @return Response
-     *
      */
     public function postAction(Request $request)
     {
         $entity = new Curso();
-        $form = $this->createForm(new CursoType(), $entity, array("method" => $request->getMethod()));
+        $form = $this->createForm(new CursoType(), $entity, array('method' => $request->getMethod()));
         $this->removeExtraFields($request, $form);
         $form->handleRequest($request);
 
@@ -112,7 +107,7 @@ class CursoRESTController extends VoryxController
         try {
             $em = $this->getDoctrine()->getManager();
             $request->setMethod('PATCH'); //Treat all PUTs as PATCH
-            $form = $this->createForm(new CursoType(), $entity, array("method" => $request->getMethod()));
+            $form = $this->createForm(new CursoType(), $entity, array('method' => $request->getMethod()));
             $this->removeExtraFields($request, $form);
             $form->handleRequest($request);
             if ($form->isValid()) {
@@ -135,7 +130,7 @@ class CursoRESTController extends VoryxController
      * @param $entity
      *
      * @return Response
-*/
+     */
     public function patchAction(Request $request, Curso $entity)
     {
         return $this->putAction($request, $entity);
@@ -147,6 +142,7 @@ class CursoRESTController extends VoryxController
      *
      * @param Request $request
      * @param $entity
+     *
      * @internal param $id
      *
      * @return Response
@@ -158,7 +154,7 @@ class CursoRESTController extends VoryxController
             $em->remove($entity);
             $em->flush();
 
-            return null;
+            return;
         } catch (\Exception $e) {
             return FOSView::create($e->getMessage(), Codes::HTTP_INTERNAL_SERVER_ERROR);
         }

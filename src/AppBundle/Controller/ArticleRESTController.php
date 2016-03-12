@@ -4,16 +4,13 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
 use AppBundle\Form\ArticleType;
-
 use FOS\RestBundle\Controller\Annotations\QueryParam;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View as FOSView;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
@@ -21,17 +18,18 @@ use Voryx\RESTGeneratorBundle\Controller\VoryxController;
 
 /**
  * Article controller.
+ *
  * @RouteResource("Article")
  */
 class ArticleRESTController extends VoryxController
 {
     /**
-     * Get a Article entity
+     * Get a Article entity.
+     *
      * @ApiDoc()
      * @View(serializerEnableMaxDepthChecks=true)
      *
      * @return Response
-     *
      */
     public function getAction(Article $entity)
     {
@@ -39,6 +37,7 @@ class ArticleRESTController extends VoryxController
     }
     /**
      * Get all Article entities.
+     *
      * @ApiDoc()
      * @View(serializerEnableMaxDepthChecks=true)
      *
@@ -75,15 +74,15 @@ class ArticleRESTController extends VoryxController
      *
      * @View(statusCode=201, serializerEnableMaxDepthChecks=true)
      * @ApiDoc()
+     *
      * @param Request $request
      *
      * @return Response
-     *
      */
     public function postAction(Request $request)
     {
         $entity = new Article();
-        $form = $this->createForm(new ArticleType(), $entity, array("method" => $request->getMethod()));
+        $form = $this->createForm(new ArticleType(), $entity, array('method' => $request->getMethod()));
         $this->removeExtraFields($request, $form);
         $form->handleRequest($request);
 
@@ -102,6 +101,7 @@ class ArticleRESTController extends VoryxController
      *
      * @View(serializerEnableMaxDepthChecks=true)
      * @ApiDoc()
+     *
      * @param Request $request
      * @param $entity
      *
@@ -112,7 +112,7 @@ class ArticleRESTController extends VoryxController
         try {
             $em = $this->getDoctrine()->getManager();
             $request->setMethod('PATCH'); //Treat all PUTs as PATCH
-            $form = $this->createForm(new ArticleType(), $entity, array("method" => $request->getMethod()));
+            $form = $this->createForm(new ArticleType(), $entity, array('method' => $request->getMethod()));
             $this->removeExtraFields($request, $form);
             $form->handleRequest($request);
             if ($form->isValid()) {
@@ -131,22 +131,25 @@ class ArticleRESTController extends VoryxController
      *
      * @View(serializerEnableMaxDepthChecks=true)
      * @ApiDoc()
+     *
      * @param Request $request
      * @param $entity
      *
      * @return Response
-*/
+     */
     public function patchAction(Request $request, Article $entity)
     {
         return $this->putAction($request, $entity);
     }
     /**
      * Delete a Article entity.
+     *
      * @ApiDoc()
      * @View(statusCode=204)
      *
      * @param Request $request
      * @param $entity
+     *
      * @internal param $id
      *
      * @return Response
@@ -158,7 +161,7 @@ class ArticleRESTController extends VoryxController
             $em->remove($entity);
             $em->flush();
 
-            return null;
+            return;
         } catch (\Exception $e) {
             return FOSView::create($e->getMessage(), Codes::HTTP_INTERNAL_SERVER_ERROR);
         }

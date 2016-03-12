@@ -27,7 +27,7 @@ class DocumentoType extends AbstractType
         $builder
           //  ->add('documentName',null,['label'=>'Nombre del Documento'])
             ->add('tipoDocumento', 'choice', [
-                'choices' => ['Parcial' => 'Parcial', 'Hoja de Trabajo' => 'Hoja de Trabajo','Otro' => 'Otro'],
+                'choices' => ['Parcial' => 'Parcial', 'Hoja de Trabajo' => 'Hoja de Trabajo', 'Otro' => 'Otro'],
                 'constraints' => [
                     new NotNull(),
                 ],
@@ -37,7 +37,6 @@ class DocumentoType extends AbstractType
                 'class' => 'CursoBundle:Curso',
                 'choices' => $this->getUsuario()->getCursos(),
                 'empty_value' => 'Seleccione el curso del documento',
-                    
 
             ])
             ->add('numeroDocumento', 'choice', [

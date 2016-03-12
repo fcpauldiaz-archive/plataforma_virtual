@@ -4,35 +4,33 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response; 
+use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\FOSRestController;
 use AppBundle\Form\ArticleType;
 use AppBundle\Entity\Article;
 use FOS\RestBundle\View\View;
 
 class DefaultController  extends FOSRestController
-
 {
     /**
-     * Note: here the name is important
-     * get => the action is restricted to GET HTTP method
-     * Article => (without s) generate /articles/SOMETHING
-     * Action => standard things for symfony for a controller method which
-     *           generate an output
-     *
-     * it generates so the route GET .../articles/{id}
-     */
-   /**
+       * Note: here the name is important
+       * get => the action is restricted to GET HTTP method
+       * Article => (without s) generate /articles/SOMETHING
+       * Action => standard things for symfony for a controller method which
+       *           generate an output.
+       *
+       * it generates so the route GET .../articles/{id}
+       */
+      /**
        * ....
+       *
        * @return Article
        */
       public function getArticleAction($id)
       {
-            $article = new Article("title $id", "body $id");
-  
+          $article = new Article("title $id", "body $id");
+
           $manager = $this->getDoctrine()->getManager();
           // persist ONLY add the object to the list of object to
           // save
@@ -41,10 +39,10 @@ class DefaultController  extends FOSRestController
           // to make it possible to save a lot of object in only one flush
           // (which is a LOT faster than flushing one by one
           $manager->flush();
-  
+
           return $article;
-      }   
-       /**
+      }
+    /**
      *
      */
     public function postArticlesAction(Request $request)
@@ -66,8 +64,8 @@ class DefaultController  extends FOSRestController
         // returning the default 200
         return new View($article, Response::HTTP_CREATED);
     }
-     /**
-     * fill $article with the json send in request and validates it
+    /**
+     * fill $article with the json send in request and validates it.
      *
      * returns an array of errors (empty if everything is ok)
      *
@@ -80,7 +78,7 @@ class DefaultController  extends FOSRestController
             new ArticleType(),
             $article,
             array(
-                'method' => $request->getMethod()
+                'method' => $request->getMethod(),
             )
         );
         // this method is the one that will use the value in the POST
@@ -90,6 +88,7 @@ class DefaultController  extends FOSRestController
         // because the json generated
         // is much readable than the one by serializing $form->getErrors()
         $errors = $this->get('validator')->validate($article);
+
         return $errors;
     }
     private function persistAndFlush(Article $article)
@@ -98,6 +97,4 @@ class DefaultController  extends FOSRestController
         $manager->persist($article);
         $manager->flush();
     }
-
-
 }

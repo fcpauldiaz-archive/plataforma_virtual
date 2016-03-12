@@ -57,7 +57,7 @@ class DownloadController extends Controller
 
         return [
 
-        'cursos' => $cursos
+        'cursos' => $cursos,
 
         ];
     }

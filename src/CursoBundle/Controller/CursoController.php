@@ -10,7 +10,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use CursoBundle\Entity\Curso;
 use CursoBundle\Form\Type\CursoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-
 use FOS\RestBundle\Controller\FOSRestController;
 
 /**
@@ -199,7 +198,7 @@ class CursoController extends FOSRestController
 
             return $this->redirect(
                 $this->generateUrl(
-                    'curso_edit', ['id' => $id,'slug' => $entity ->getSlug()]
+                    'curso_edit', ['id' => $id, 'slug' => $entity->getSlug()]
                 )
             );
         }

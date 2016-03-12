@@ -8,7 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class CursoControllerTest extends WebTestCase
 {
     /**
-     * This method tests the UI of crear curso
+     * This method tests the UI of crear curso.
+     *
      * @author  pablo diaz <fcpauldiaz@gmail.com>
      */
     public function testCreateCurso()
@@ -19,26 +20,24 @@ class CursoControllerTest extends WebTestCase
         // Create a new entry in the database
         $crawler = $client->request('GET', '/admin/curso/');
         $this->assertEquals(200, $client->getResponse()->getStatusCode(), 'Unexpected HTTP status code for GET /curso/');
-        
+
         $crawler = $client->click($crawler->selectLink('Crear Nuevo Curso')->link());
-        
+
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
             'appbundle_curso[nombreCurso]' => 'Test',
             'appbundle_curso[codigoCurso]' => 'Test4',
             // ... other fields to fill
         ));
-        
+
         $client->submit($form);
 
-       
         $this->assertTrue($client->getResponse()->isRedirect());
         $crawler = $client->followRedirect();
 
-
         // Check data in the show view
         $this->assertGreaterThan(0, $crawler->filter('td:contains("Test")')->count(), 'Missing element td:contains("Test")');
-        
+
         // Edit the entity
         $crawler = $client->click($crawler->selectLink('Editar')->link());
 
@@ -62,20 +61,21 @@ class CursoControllerTest extends WebTestCase
         // Check the entity has been delete on the list
         $this->assertNotRegExp('/Foo/', $client->getResponse()->getContent());
         var_dump($client->getResponse()->getContent());
-        
     }
     /**
      * Close doctrine connections to avoid having a 'too many connections'
      * message when running many tests
      * Sirve para eliminar la entidad de prueba creada.
      */
-    public function tearDown(){
+    public function tearDown()
+    {
         //$this->getContainer()->get('doctrine')->getConnection()->close();
         parent::tearDown();
     }
 
     /**
-     * Este método sirve para autenticar el cliente y poder utilizar la aplicación como un usuario
+     * Este método sirve para autenticar el cliente y poder utilizar la aplicación como un usuario.
+     *
      * @return Client
      */
     protected function createAuthorizedClient()

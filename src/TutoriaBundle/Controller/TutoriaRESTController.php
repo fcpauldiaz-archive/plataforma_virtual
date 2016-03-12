@@ -4,16 +4,13 @@ namespace TutoriaBundle\Controller;
 
 use TutoriaBundle\Entity\Tutoria;
 use TutoriaBundle\Form\TutoriaType;
-
 use FOS\RestBundle\Controller\Annotations\QueryParam;
 use FOS\RestBundle\Controller\Annotations\RouteResource;
 use FOS\RestBundle\Controller\Annotations\View;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View as FOSView;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
@@ -21,17 +18,18 @@ use Voryx\RESTGeneratorBundle\Controller\VoryxController;
 
 /**
  * Tutoria controller.
+ *
  * @RouteResource("Tutoria")
  */
 class TutoriaRESTController extends VoryxController
 {
     /**
-     * Get a Tutoria entity
+     * Get a Tutoria entity.
+     *
      * @ApiDoc()
      * @View(serializerEnableMaxDepthChecks=true)
      *
      * @return Response
-     *
      */
     public function getAction(Tutoria $entity)
     {
@@ -73,18 +71,18 @@ class TutoriaRESTController extends VoryxController
     }
     /**
      * Create a Tutoria entity.
+     *
      * @ApiDoc()
      * @View(statusCode=201, serializerEnableMaxDepthChecks=true)
      *
      * @param Request $request
      *
      * @return Response
-     *
      */
     public function postAction(Request $request)
     {
         $entity = new Tutoria();
-        $form = $this->createForm(new TutoriaType(), $entity, array("method" => $request->getMethod()));
+        $form = $this->createForm(new TutoriaType(), $entity, array('method' => $request->getMethod()));
         $this->removeExtraFields($request, $form);
         $form->handleRequest($request);
 
@@ -100,6 +98,7 @@ class TutoriaRESTController extends VoryxController
     }
     /**
      * Update a Tutoria entity.
+     *
      * @ApiDoc()
      * @View(serializerEnableMaxDepthChecks=true)
      *
@@ -113,7 +112,7 @@ class TutoriaRESTController extends VoryxController
         try {
             $em = $this->getDoctrine()->getManager();
             $request->setMethod('PATCH'); //Treat all PUTs as PATCH
-            $form = $this->createForm(new TutoriaType(), $entity, array("method" => $request->getMethod()));
+            $form = $this->createForm(new TutoriaType(), $entity, array('method' => $request->getMethod()));
             $this->removeExtraFields($request, $form);
             $form->handleRequest($request);
             if ($form->isValid()) {
@@ -129,6 +128,7 @@ class TutoriaRESTController extends VoryxController
     }
     /**
      * Partial Update to a Tutoria entity.
+     *
      * @ApiDoc()
      * @View(serializerEnableMaxDepthChecks=true)
      *
@@ -136,18 +136,20 @@ class TutoriaRESTController extends VoryxController
      * @param $entity
      *
      * @return Response
-*/
+     */
     public function patchAction(Request $request, Tutoria $entity)
     {
         return $this->putAction($request, $entity);
     }
     /**
      * Delete a Tutoria entity.
+     *
      * @ApiDoc()
      * @View(statusCode=204)
      *
      * @param Request $request
      * @param $entity
+     *
      * @internal param $id
      *
      * @return Response
@@ -159,7 +161,7 @@ class TutoriaRESTController extends VoryxController
             $em->remove($entity);
             $em->flush();
 
-            return null;
+            return;
         } catch (\Exception $e) {
             return FOSView::create($e->getMessage(), Codes::HTTP_INTERNAL_SERVER_ERROR);
         }

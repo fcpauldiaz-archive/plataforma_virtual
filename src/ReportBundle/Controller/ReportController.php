@@ -3,13 +3,13 @@
 namespace ReportBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ReportController extends Controller
-{  
+{
     /**
      * @Route("/admin", name = "administration")
+     *
      * @return [type] [description]
      */
     public function getEstadisticasAction()
@@ -33,12 +33,11 @@ class ReportController extends Controller
                 'cursot_tutorias' => $cursoTopTutorias,
                 'usuario' => $usuario,
                 't_cursos' => $cantidadCursos,
-                't_usuarios'=> $cantidadUsuarios
+                't_usuarios' => $cantidadUsuarios,
             ]
         );
     }
 
-   
     private function getTotalParciales()
     {
         $repository = $this->getDoctrine()->getRepository('DocumentBundle:Documento');
@@ -49,7 +48,7 @@ class ReportController extends Controller
             ->getQuery()
             ->getSingleScalarResult();
 
-           return  (int) $parciales;
+        return  (int) $parciales;
     }
 
     private function getTotalHojasTrabajo()
@@ -92,7 +91,7 @@ class ReportController extends Controller
 
         return [
             'curso' => $cursoConMasDocs,
-            'cantidadDocs' => $cantidadDocs
+            'cantidadDocs' => $cantidadDocs,
         ];
     }
 
@@ -114,7 +113,7 @@ class ReportController extends Controller
 
         return [
             'curso' => $cursoConMasTutorias,
-            'cantidadTutorias' => $cantidadDocs
+            'cantidadTutorias' => $cantidadDocs,
         ];
     }
 
@@ -184,21 +183,15 @@ class ReportController extends Controller
         $cursoRepository = $this->getDoctrine()->getRepository('CursoBundle:Curso');
 
         $cursos = $cursoRepository->findAll();
-        
-       
+
         return (int) count($cursos);
-           
-        
     }
     private function getUsuariosTotal()
     {
         $cursoRepository = $this->getDoctrine()->getRepository('UserBundle:Usuario');
 
         $usuarios = $cursoRepository->findAll();
-        
 
         return (int) count($usuarios);
-           
-        
     }
 }

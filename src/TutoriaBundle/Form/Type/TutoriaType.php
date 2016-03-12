@@ -27,9 +27,9 @@ class TutoriaType extends AbstractType
 
         foreach ($cursos as $cursoKey => $curso) {
             foreach ($tutorias as $tutoriaKey => $tutoria) {
-                if ($tutoria->getCurso()!== null){
+                if ($tutoria->getCurso() !== null) {
                     if ($tutoria->getCurso()->getId() == $curso->getId()) {
-                    unset($cursos[$cursoKey]);
+                        unset($cursos[$cursoKey]);
                     }
                 }
             }
@@ -38,41 +38,41 @@ class TutoriaType extends AbstractType
         $builder
          //es más intuitivo que esté el curso de primero en el formulario
           ->add('curso', 'entity', [
-                'label' => 'curso_label' ,
+                'label' => 'curso_label',
                 'class' => 'CursoBundle:Curso',
                 'choices' => $cursos,
                 'attr' => [
-                        'class'=>'select2'
-                    ]
+                        'class' => 'select2',
+                    ],
             ])
-            ->add('lugar',null, [
+            ->add('lugar', null, [
                 'label' => 'Lugar',
-                 'attr' =>[
-                    'placeholder' => 'Lugar'
-                ]
+                 'attr' => [
+                    'placeholder' => 'Lugar',
+                ],
             ])
-            ->add('horario',null, [
+            ->add('horario', null, [
                 'label' => 'Horario',
                 'attr' => [
-                    'placeholder' => 'Aquí puede ingresar el horario disponible'
-                ]
+                    'placeholder' => 'Aquí puede ingresar el horario disponible',
+                ],
             ])
             ->add('info', null, [
                 'label' => 'Informacion Adicional',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Aquí se puede ingresar cualquier información adicional'
-                ]
+                    'placeholder' => 'Aquí se puede ingresar cualquier información adicional',
+                ],
             ])
-            ->add('tipoServicio','choice',[
+            ->add('tipoServicio', 'choice', [
                 'choices' => [
-                        'Cobrado'=> true,
-                        'Gratuito'=> false
+                        'Cobrado' => true,
+                        'Gratuito' => false,
                     ],
-                'choices_as_values'=>true    
+                'choices_as_values' => true,
 
                 ])
-           
+
         ;
     }
 

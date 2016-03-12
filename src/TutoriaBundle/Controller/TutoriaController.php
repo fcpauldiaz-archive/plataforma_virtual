@@ -14,7 +14,6 @@ use Symfony\Component\Finder\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
 
-
 /**
  * Tutoria controller.
  *
@@ -64,8 +63,8 @@ class TutoriaController extends Controller
         //$entities = $em->getRepository('TutoriaBundle:Tutoria')->findlAll();
 
         $entities;
-        foreach ($usuario->getCursos() as $cursoKey => $curso){
-            foreach ($curso->getTutorias() as $tutoriaKey => $tutoria){
+        foreach ($usuario->getCursos() as $cursoKey => $curso) {
+            foreach ($curso->getTutorias() as $tutoriaKey => $tutoria) {
                 $entities[] = $tutoria;
             }
         }
@@ -77,8 +76,6 @@ class TutoriaController extends Controller
                 }
             }
         }
-        
-        
 
         return
             $this->render('TutoriaBundle:Tutoria:allTutoria.html.twig', ['entities' => $entities]);
@@ -208,14 +205,10 @@ class TutoriaController extends Controller
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Tutoria entity.');
-        
         }
-        
-        
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity, $usuario);
-        
 
         return [
             'entity' => $entity,
@@ -318,7 +311,7 @@ class TutoriaController extends Controller
             ->getForm()
         ;
     }
-    
+
     /**
      * Displays a form to vote for an existing Tutoria entity.
      *
@@ -328,8 +321,6 @@ class TutoriaController extends Controller
      */
     public function voteTutoriaAction($id)
     {
-        
-
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('TutoriaBundle:Tutoria')->find($id);
@@ -346,9 +337,8 @@ class TutoriaController extends Controller
             'edit_form' => $editForm->createView(),
         ];
     }
-    
-    
-     /**
+
+    /**
      * Creates a form to vote for a tutoria entity.
      *
      * @param Tutoria $entity The entity
@@ -366,7 +356,7 @@ class TutoriaController extends Controller
 
         return $form;
     }
-    
+
     /**
      * Edits an existing Tutoria entity.
      *
@@ -383,10 +373,8 @@ class TutoriaController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Tutoria entity.');
         }
-        
-        $usuario = $entity->getUsuario();
-        
 
+        $usuario = $entity->getUsuario();
 
         $editForm = $this->createVoteForm($entity, $usuario);
         $editForm->handleRequest($request);
@@ -394,8 +382,6 @@ class TutoriaController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
         }
-        
-        
 
         return $this->redirect(
             $this->generateUrl(

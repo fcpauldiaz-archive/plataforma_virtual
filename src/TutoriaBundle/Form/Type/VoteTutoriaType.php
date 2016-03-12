@@ -22,8 +22,7 @@ class VoteTutoriaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        
-        $builder->add('rating','rating',array('stars'=>5))
+        $builder->add('rating', 'rating', array('stars' => 5))
         ;
     }
 

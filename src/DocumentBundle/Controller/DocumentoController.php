@@ -12,7 +12,6 @@ use DocumentBundle\Form\Type\DocumentoType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Usuario;
-use Gaufrette\File;
 
 /**
  * Documento controller.
@@ -57,28 +56,22 @@ class DocumentoController extends Controller
         $form->handleRequest($request);
         $em = $this->getDoctrine()->getManager();
         $namer = $entity->getDocumentFixedName();
-      
+
         $pre_duplicados = $em->getRepository('DocumentBundle:Documento')->findBy([
-                    'curso' => $entity->getCurso()
+                    'curso' => $entity->getCurso(),
         ]);
 
-       
-       foreach($pre_duplicados as $duplicado){
-            if ($duplicado->getDocumentFixedName()==$form['documentFile']->getData()->getClientOriginalName()){
-                
-                       
-            $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
+        foreach ($pre_duplicados as $duplicado) {
+            if ($duplicado->getDocumentFixedName() == $form['documentFile']->getData()->getClientOriginalName()) {
+                $this->get('braincrafted_bootstrap.flash')->error(sprintf('El nombre del documento ya existe en el curso'));
 
-            return [
+                return [
                 'duplicado' => $duplicado,
                 'form' => $form->createView(),
 
             ];
-        
             }
         }
-
-           
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -89,7 +82,22 @@ class DocumentoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            
+            //Usuarios asignados al curso actualmente
+            $usuarios = $form['curso']->getData()->getUsuarios();
+
+            $cantidadUsuarios = count($usuarios);
+
+            foreach ($usuarios as $user) {
+                //los args son el correo de la persona que subió el archivo
+                //los correos de los usuarios asignados al curso, incluyendo al creador del curso.
+                $this->sendEmail(
+                    $user,
+                    $this->getUser(),
+                    'Se han subido el siguiente documento al curso '.$form['curso']->getData()->getNombreCurso(),
+                    [$form['documentFile']->getData()->getClientOriginalName()]
+                );
+            }
+            $this->get('braincrafted_bootstrap.flash')->success(sprintf('Se ha enviado exitosamente el correo a %s estudiantes', $cantidadUsuarios));
 
             return $this->redirect(
                 $this->generateUrl(
@@ -309,4 +317,54 @@ class DocumentoController extends Controller
         ;
     }
 
+    /**
+     * Función para enviar un correo.
+     *
+     * @param Usuario $enviado_a   Nombre de la persona a la que se le envía el correo
+     * @param Usuario $enviado_por Nombre de la persona que es enviado por
+     * @param string  $mensaje     Mensaje
+     * @param Array   $archivos    Array de string con el nombre de los documentos subidos
+     */
+    private function sendEmail(Usuario $enviado_a, Usuario $enviado_por, string $mensaje, array $archivos)
+    {
+
+        //new instance
+         $context = [
+
+        ];
+        $fromEmail = 'no-responder@newtonlabs.com.gt';
+
+        $message = \Swift_Message::newInstance();
+
+        //espacio para agregar imágenes
+        $img_src = $message->embed(\Swift_Image::fromPath('images/email_header.png'));//attach image 1
+        $fb_image = $message->embed(\Swift_Image::fromPath('images/fb.gif'));//attach image 2
+        $tw_image = $message->embed(\Swift_Image::fromPath('images/tw.gif'));//attach image 3
+        $right_image = $message->embed(\Swift_Image::fromPath('images/right.gif'));//attach image 4
+        $left_image = $message->embed(\Swift_Image::fromPath('images/left.gif'));//attach image 5
+
+        $subject = 'Se ha subido un nuevo documento a Learn-IN UVG';
+
+        $message
+            ->setSubject($subject)
+            ->setFrom([$fromEmail => 'Learn-In'])
+            ->setTo($enviado_a->getEmail())
+            ->setReplyTo($enviado_por->getEmail())
+            ->setBody($this->renderView('DocumentBundle:Documento:emailDocumento.html.twig', [
+                'image_src' => $img_src,
+                'fb_image' => $fb_image,
+                'tw_image' => $tw_image,
+                'right_image' => $right_image,
+                'left_image' => $left_image,
+                'enviado_a' => $enviado_a,
+                'enviado_por' => $enviado_por,
+                'mensaje' => $mensaje,
+                'archivos' => $archivos,
+                ]), 'text/html')
+            ->setContentType('text/html')
+
+        ;
+
+        $this->get('mailer')->send($message);
+    }
 }
