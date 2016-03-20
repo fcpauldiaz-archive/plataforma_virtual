@@ -90,12 +90,13 @@ doctrine:
                 class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
                 enabled: true
 
+cspoo_swiftmailer_mailgun:
+    key: "%api_email_key%"
+    domain: "mailgun.newtonlabs.com.gt"
+
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
+    transport: "mailgun"
     spool:     { type: memory }
 
 braincrafted_bootstrap:

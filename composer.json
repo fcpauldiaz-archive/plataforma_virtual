@@ -58,7 +58,8 @@
         "voryx/restgeneratorbundle": "^0.3.0",
         "nelmio/api-doc-bundle": "^2.11",
         "dunglas/api-bundle": "^1.0",
-        "nelmio/cors-bundle": "^1.4"
+        "nelmio/cors-bundle": "^1.4",
+        "cspoo/swiftmailer-mailgun-bundle": "dev-master"
         
         
     },

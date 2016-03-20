@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new Voryx\RESTGeneratorBundle\VoryxRESTGeneratorBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
+            new cspoo\Swiftmailer\MailgunBundle\cspooSwiftmailerMailgunBundle(),
             
             new CursoBundle\CursoBundle(),
             new UserBundle\UserBundle(),

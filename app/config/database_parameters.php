@@ -12,3 +12,4 @@
     $container->setParameter('mailer_host', null);
     $container->setParameter('mailer_user', getenv('EMAIL_USER'));
     $container->setParameter('mailer_password', getenv('EMAIL_PASSWORD'));
+    $container->setParameter('api_email_key',getenv('API_EMAIL'));
