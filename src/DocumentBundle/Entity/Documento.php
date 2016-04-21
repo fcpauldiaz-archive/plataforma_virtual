@@ -55,10 +55,16 @@ class Documento
      * 
      * @Assert\File(
      * maxSize="16M",
-     * mimeTypes = {"application/pdf", "application/x-pdf","application/msword",
+     * mimeTypes = {
+     *    "application/pdf", 
+     *    "application/x-pdf","application/msword",
      *    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-     *    "text/plain","text/*", "text/txt"},
-     * mimeTypesMessage = "Por favor solo subir archivos PDF o Word ",
+     *    "text/plain",
+     *    "text/*", 
+     *    "text/txt",
+     *    "image/*",
+     *    },
+     * mimeTypesMessage = "Por favor solo subir archivos PDF, Word, imágenes o txt",
      * )
      * 
      * @var File
